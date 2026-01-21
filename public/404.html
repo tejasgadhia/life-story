@@ -3,12 +3,10 @@
   <head>
     <meta charset="utf-8">
     <title>Life Story</title>
-    <script>
-      // Single Page App GitHub Pages redirect
-      // This script takes the current URL and converts it to a query string
-      // then redirects to index.html with that query string
-      // index.html will then restore the correct URL
-      var pathSegmentsToKeep = 1; // /life-story is the base
+    <script type="text/javascript">
+      // GitHub Pages SPA redirect hack
+      // Converts the path into a query parameter so the SPA can handle it
+      var pathSegmentsToKeep = 1; // life-story is the repo name
       var l = window.location;
       l.replace(
         l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
@@ -20,5 +18,6 @@
     </script>
   </head>
   <body>
+    Redirecting...
   </body>
 </html>

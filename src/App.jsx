@@ -11,11 +11,13 @@ import birthdayData from './data/birthdays.json'
 // Font size context
 const FontSizeContext = createContext({ fontSize: 'base', setFontSize: () => {} })
 
+// Tab slugs - shared across all themes
+const TAB_SLUGS = ['overview', 'formative-years', 'world-events', 'personal-insights']
+
 // Assemble report data once
 const birthDate = '06-09'
 const birthday = birthdayData[birthDate]
 
-// Flatten and sort celebrities by birth year (oldest first)
 const allCelebrities = Object.values(birthday.celebrities_categorized || {})
   .flat()
   .sort((a, b) => a.year - b.year)
@@ -40,7 +42,7 @@ function ThemeSwitcher() {
   
   const pathParts = location.pathname.split('/').filter(Boolean)
   const currentTheme = pathParts[1] || 'timeline'
-  const currentTab = pathParts[2] ? parseInt(pathParts[2]) : 1
+  const currentSlug = pathParts[2] || 'overview'
 
   const themes = [
     { id: 'timeline', label: 'Timeline', icon: '📊' },
@@ -55,21 +57,20 @@ function ThemeSwitcher() {
   ]
 
   const handleThemeChange = (themeId) => {
-    if (themeId === 'timeline' && currentTab === 1) {
+    if (themeId === 'timeline' && currentSlug === 'overview') {
       navigate('/life-story/')
     } else if (themeId === 'timeline') {
-      navigate(`/life-story/timeline/${currentTab}`)
-    } else if (currentTab === 1) {
+      navigate(`/life-story/timeline/${currentSlug}`)
+    } else if (currentSlug === 'overview') {
       navigate(`/life-story/${themeId}`)
     } else {
-      navigate(`/life-story/${themeId}/${currentTab}`)
+      navigate(`/life-story/${themeId}/${currentSlug}`)
     }
   }
 
   return (
     <div className="fixed left-0 top-1/2 -translate-y-1/2 z-50">
       <div className="bg-dark-brown/95 backdrop-blur rounded-r-lg py-3 px-2 shadow-xl flex flex-col gap-1">
-        {/* Theme buttons */}
         <p className="text-[10px] font-body text-vintage-cream/50 uppercase tracking-wider text-center mb-1 px-1">
           Theme
         </p>
@@ -93,10 +94,8 @@ function ThemeSwitcher() {
           </button>
         ))}
 
-        {/* Divider */}
         <div className="h-px bg-vintage-cream/20 my-2" />
 
-        {/* Font size buttons */}
         <p className="text-[10px] font-body text-vintage-cream/50 uppercase tracking-wider text-center mb-1 px-1">
           Size
         </p>
@@ -128,18 +127,22 @@ function ThemeSwitcher() {
   )
 }
 
-// Generic wrapper for themes with tab state from URL
+// Generic wrapper for themes with tab state from URL (slug-based)
 function ThemeWrapper({ ThemeComponent, themePath }) {
   const { tab } = useParams()
   const navigate = useNavigate()
   const { fontSize } = useContext(FontSizeContext)
-  const currentTab = tab ? parseInt(tab) - 1 : 0
   
-  const setTab = (newTab) => {
-    if (newTab === 0) {
+  // Convert slug to tab index
+  const tabIndex = tab ? TAB_SLUGS.indexOf(tab) : 0
+  const currentTab = tabIndex >= 0 ? tabIndex : 0
+  
+  const setTab = (newTabIndex) => {
+    const slug = TAB_SLUGS[newTabIndex] || 'overview'
+    if (newTabIndex === 0) {
       navigate(`/life-story/${themePath}`)
     } else {
-      navigate(`/life-story/${themePath}/${newTab + 1}`)
+      navigate(`/life-story/${themePath}/${slug}`)
     }
   }
   
@@ -150,7 +153,6 @@ function ThemeWrapper({ ThemeComponent, themePath }) {
   return <ThemeComponent data={reportData} {...props} />
 }
 
-// Main layout with theme switcher
 function MainLayout({ children }) {
   return (
     <div className="min-h-screen">
@@ -160,17 +162,23 @@ function MainLayout({ children }) {
   )
 }
 
-// Protected routes wrapper
 function ProtectedRoutes() {
   return (
     <Routes>
+      {/* Timeline */}
       <Route path="/life-story" element={<MainLayout><ThemeWrapper ThemeComponent={TimelineTheme} themePath="timeline" /></MainLayout>} />
       <Route path="/life-story/timeline" element={<MainLayout><ThemeWrapper ThemeComponent={TimelineTheme} themePath="timeline" /></MainLayout>} />
       <Route path="/life-story/timeline/:tab" element={<MainLayout><ThemeWrapper ThemeComponent={TimelineTheme} themePath="timeline" /></MainLayout>} />
+      
+      {/* Newspaper */}
       <Route path="/life-story/newspaper" element={<MainLayout><ThemeWrapper ThemeComponent={NewspaperTheme} themePath="newspaper" /></MainLayout>} />
       <Route path="/life-story/newspaper/:tab" element={<MainLayout><ThemeWrapper ThemeComponent={NewspaperTheme} themePath="newspaper" /></MainLayout>} />
+      
+      {/* Case File */}
       <Route path="/life-story/casefile" element={<MainLayout><ThemeWrapper ThemeComponent={CaseFileTheme} themePath="casefile" /></MainLayout>} />
       <Route path="/life-story/casefile/:tab" element={<MainLayout><ThemeWrapper ThemeComponent={CaseFileTheme} themePath="casefile" /></MainLayout>} />
+      
+      {/* Fallback */}
       <Route path="*" element={<Navigate to="/life-story" replace />} />
     </Routes>
   )
@@ -184,7 +192,6 @@ function App() {
     return localStorage.getItem('life-story-font-size') || 'base'
   })
 
-  // Persist font size
   useEffect(() => {
     localStorage.setItem('life-story-font-size', fontSize)
   }, [fontSize])

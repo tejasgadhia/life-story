@@ -3,24 +3,28 @@ import { useState } from 'react'
 const TABS = [
   { 
     id: 'overview', 
+    slug: 'overview',
     title: 'Overview', 
     icon: '📊',
     sections: ['birthday', 'generation', 'comparison']
   },
   { 
     id: 'formative', 
+    slug: 'formative-years',
     title: 'Formative Years', 
     icon: '💒',
     sections: ['childhood', 'popculture', 'technology']
   },
   { 
     id: 'world', 
+    slug: 'world-events',
     title: 'World Events', 
     icon: '🌍',
     sections: ['history', 'career', 'financial']
   },
   { 
     id: 'personal', 
+    slug: 'personal-insights',
     title: 'Personal Insights', 
     icon: '💡',
     sections: ['relationships', 'blindspots', 'roadmap']
@@ -44,6 +48,9 @@ const SECTION_CONFIG = {
 
 const getWikiUrl = (name) => `https://en.wikipedia.org/wiki/${name.replace(/ /g, '_')}`
 
+// Export TABS for use in App.jsx routing
+export { TABS }
+
 function TimelineTheme({ data, currentTab: propTab = 0, setTab: propSetTab, fontSize = 'base' }) {
   const [internalTab, setInternalTab] = useState(propTab)
   const activeTab = propSetTab ? propTab : internalTab
@@ -63,20 +70,13 @@ function TimelineTheme({ data, currentTab: propTab = 0, setTab: propSetTab, font
 
   const renderBirthdaySection = () => (
     <div className="bg-white/50 rounded-lg border border-sepia-brown/10 p-6">
-      {/* Consolidated header - 3 column layout */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-stretch">
+      {/* 2-column layout for Generation + Rank/Percentile */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-stretch">
         {/* Left - Generation */}
         <div className="aged-paper rounded-lg p-5 border border-sepia-brown/20 text-center flex flex-col justify-center">
           <p className="font-body text-xs uppercase tracking-wider text-sepia-brown/70 mb-1">Generation</p>
           <p className="font-display text-2xl text-dark-brown">{data.generation}</p>
           <p className="font-body text-sm text-sepia-brown/70">{data.generationSpan}</p>
-        </div>
-
-        {/* Center - Birthday (accent color) */}
-        <div className="bg-dark-brown rounded-lg p-5 text-center flex flex-col justify-center">
-          <span className="text-4xl mb-2 block">🎂</span>
-          <h2 className="font-display text-2xl mb-1 text-vintage-cream">{data.birthDate}</h2>
-          <p className="font-body text-sm text-vintage-cream/70">Your Life Story Report</p>
         </div>
 
         {/* Right - Rank/Percentile */}
@@ -93,7 +93,7 @@ function TimelineTheme({ data, currentTab: propTab = 0, setTab: propSetTab, font
             </div>
           </div>
           <p className="font-body text-xs text-sepia-brown/60 mt-2">
-            {data.birthdayRank < 183 ? 'More common' : 'Less common'} than avg
+            {data.birthdayRank < 183 ? 'More common' : 'Less common'} than avg (of 366)
           </p>
         </div>
       </div>
@@ -154,10 +154,15 @@ function TimelineTheme({ data, currentTab: propTab = 0, setTab: propSetTab, font
 
   return (
     <div className="min-h-screen bg-vintage-cream">
-      {/* Header */}
-      <header className="bg-dark-brown text-vintage-cream py-4">
-        <div className="max-w-7xl mx-auto px-6">
-          <h1 className="font-display text-xl text-center">Life Story</h1>
+      {/* Header - Now includes birthday */}
+      <header className="bg-dark-brown text-vintage-cream py-3">
+        <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
+          <h1 className="font-display text-lg">Life Story</h1>
+          <div className="text-center">
+            <span className="text-2xl mr-2">🎂</span>
+            <span className="font-display text-xl">{data.birthDate}</span>
+          </div>
+          <p className="font-body text-sm text-vintage-cream/70">Your Life Story Report</p>
         </div>
       </header>
 
