@@ -32,7 +32,6 @@ function TimelineTheme({ data }) {
   const [progress, setProgress] = useState(0)
   const sectionRefs = useRef([])
 
-  // Throttled scroll handler (fires max every 50ms)
   const handleScroll = useCallback(
     throttle(() => {
       const scrollTop = window.scrollY
@@ -40,7 +39,6 @@ function TimelineTheme({ data }) {
       const scrollPercent = (scrollTop / docHeight) * 100
       setProgress(scrollPercent)
 
-      // Find active section
       sectionRefs.current.forEach((ref, index) => {
         if (ref) {
           const rect = ref.getBoundingClientRect()
@@ -80,6 +78,13 @@ function TimelineTheme({ data }) {
     return key ? data.sections[key]?.html : null
   }
 
+  // Group sections into pairs for two-column layout
+  const contentSections = SECTIONS.slice(1)
+  const sectionPairs = []
+  for (let i = 0; i < contentSections.length; i += 2) {
+    sectionPairs.push(contentSections.slice(i, i + 2))
+  }
+
   return (
     <div className="min-h-screen bg-vintage-cream">
       {/* Progress Bar */}
@@ -90,23 +95,23 @@ function TimelineTheme({ data }) {
         />
       </div>
 
-      {/* Timeline Navigation */}
-      <nav className="fixed left-6 top-1/2 -translate-y-1/2 z-40 hidden lg:block">
-        <div className="flex flex-col gap-3">
+      {/* Timeline Navigation - Compact */}
+      <nav className="fixed left-4 top-1/2 -translate-y-1/2 z-40 hidden xl:block">
+        <div className="flex flex-col gap-2">
           {SECTIONS.map((section, index) => (
             <button
               key={section.id}
               onClick={() => scrollToSection(index)}
-              className="group flex items-center gap-3 transition-all duration-300"
+              className="group flex items-center gap-2 transition-all duration-300"
               title={section.title}
             >
-              <span className={`w-3 h-3 rounded-full border-2 transition-all
+              <span className={`w-2.5 h-2.5 rounded-full border-2 transition-all
                 ${activeSection === index 
                   ? 'bg-dark-brown border-dark-brown scale-125' 
                   : 'bg-transparent border-sepia-brown hover:border-dark-brown'
                 }`} 
               />
-              <span className={`text-sm font-body whitespace-nowrap transition-all
+              <span className={`text-xs font-body whitespace-nowrap transition-all
                 ${activeSection === index 
                   ? 'opacity-100 text-dark-brown font-bold' 
                   : 'opacity-0 group-hover:opacity-100 text-sepia-brown'
@@ -119,123 +124,122 @@ function TimelineTheme({ data }) {
       </nav>
 
       {/* Main Content */}
-      <main className="max-w-2xl mx-auto px-8 py-24 lg:ml-48 lg:mr-auto">
-        {/* Hero Section - Birthday Analysis (centered) */}
+      <main className="max-w-6xl mx-auto px-6 py-12 xl:pl-32">
+        
+        {/* Hero Section - Birthday Analysis (Full Width) */}
         <section 
           ref={el => sectionRefs.current[0] = el}
-          className="min-h-screen flex flex-col justify-center text-center py-20"
+          className="py-12 mb-8"
         >
-          <span className="text-6xl mb-6">🎂</span>
-          <h1 className="font-display text-5xl md:text-6xl text-dark-brown mb-4">
-            {data.birthDate}
-          </h1>
-          <p className="font-accent text-xl text-sepia-brown mb-10">
-            Your Life Story Report
-          </p>
+          <div className="text-center mb-8">
+            <span className="text-5xl mb-4 block">🎂</span>
+            <h1 className="font-display text-4xl md:text-5xl text-dark-brown mb-2">
+              {data.birthDate}
+            </h1>
+            <p className="font-accent text-lg text-sepia-brown">
+              Your Life Story Report
+            </p>
+          </div>
           
-          {/* Birthday Rank Card */}
-          <div className="aged-paper rounded-lg p-10 mb-10 border border-sepia-brown/20">
-            <div className="flex flex-col md:flex-row items-center justify-center gap-10">
-              <div className="text-center">
-                <p className="text-6xl font-display text-dark-brown mb-2">
-                  #{data.birthdayRank}
-                </p>
-                <p className="font-body text-base text-sepia-brown">
-                  Birthday Rank
-                </p>
-                <p className="font-body text-sm text-sepia-brown/70 mt-1">
-                  out of 366 possible dates
-                </p>
-              </div>
-              <div className="w-px h-20 bg-sepia-brown/30 hidden md:block" />
-              <div className="text-center">
-                <p className="text-5xl font-display text-dark-brown mb-2">
-                  {data.birthdayPercentile}%
-                </p>
-                <p className="font-body text-base text-sepia-brown">
-                  Percentile
-                </p>
-              </div>
+          {/* Stats Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            {/* Birthday Rank */}
+            <div className="aged-paper rounded-lg p-6 border border-sepia-brown/20 text-center">
+              <p className="text-4xl font-display text-dark-brown mb-1">
+                #{data.birthdayRank}
+              </p>
+              <p className="font-body text-sm text-sepia-brown">
+                Birthday Rank
+              </p>
+              <p className="font-body text-xs text-sepia-brown/70 mt-1">
+                out of 366 dates
+              </p>
             </div>
-            
-            <div className="mt-8 p-4 bg-vintage-cream/50 rounded border border-sepia-brown/10">
-              <p className="font-body text-sm text-sepia-brown/80 text-center leading-relaxed">
-                <strong>How to read:</strong> #1 = most common birthday, #366 = least common. 
-                Your rank of #{data.birthdayRank} means {data.birthdayRank < 183 
-                  ? `your birthday is more common than average.` 
-                  : `your birthday is less common than average.`}
+
+            {/* Generation */}
+            <div className="bg-dark-brown text-vintage-cream rounded-lg p-6 text-center">
+              <p className="font-body text-xs uppercase tracking-wider opacity-70 mb-1">Generation</p>
+              <p className="font-display text-2xl mb-1">{data.generation}</p>
+              <p className="font-body text-sm opacity-70">{data.generationSpan}</p>
+            </div>
+
+            {/* Percentile */}
+            <div className="aged-paper rounded-lg p-6 border border-sepia-brown/20 text-center">
+              <p className="text-4xl font-display text-dark-brown mb-1">
+                {data.birthdayPercentile}%
+              </p>
+              <p className="font-body text-sm text-sepia-brown">
+                Percentile
+              </p>
+              <p className="font-body text-xs text-sepia-brown/70 mt-1">
+                {data.birthdayRank < 183 ? 'more common' : 'less common'} than avg
               </p>
             </div>
           </div>
 
-          {/* Generation Badge */}
-          <div className="inline-flex items-center gap-3 bg-dark-brown text-vintage-cream px-8 py-4 rounded-full mx-auto mb-10">
-            <span className="font-body text-sm uppercase tracking-wider">Generation:</span>
-            <span className="font-display text-xl">{data.generation}</span>
-            <span className="font-body text-sm opacity-70">({data.generationSpan})</span>
-          </div>
-
           {/* Celebrity Birthdays */}
           <div className="text-center">
-            <p className="font-body text-sm text-sepia-brown uppercase tracking-wider mb-4">
+            <p className="font-body text-xs text-sepia-brown uppercase tracking-wider mb-3">
               You share your birthday with
             </p>
-            <div className="flex flex-wrap justify-center gap-3">
+            <div className="flex flex-wrap justify-center gap-2">
               {data.celebrities.map((celeb, i) => (
                 <span 
                   key={i}
-                  className="bg-aged-paper px-4 py-2 rounded font-body text-base text-dark-brown"
+                  className="bg-aged-paper px-3 py-1.5 rounded font-body text-sm text-dark-brown"
                 >
                   {celeb}
                 </span>
               ))}
             </div>
           </div>
-
-          {/* Scroll indicator */}
-          <div className="mt-16 animate-bounce">
-            <span className="text-sepia-brown text-3xl">↓</span>
-          </div>
         </section>
 
-        {/* Content Sections - LEFT ALIGNED for readability */}
-        {SECTIONS.slice(1).map((section, index) => {
-          const content = getSectionContent(section.id)
-          if (!content) return null
-          
-          return (
-            <section
-              key={section.id}
-              ref={el => sectionRefs.current[index + 1] = el}
-              className="min-h-screen flex flex-col justify-center py-24 border-t border-sepia-brown/20"
-            >
-              <div className="text-center mb-12">
-                <span className="text-5xl mb-4 block">{section.icon}</span>
-                <h2 className="font-display text-4xl text-dark-brown">
-                  {section.title}
-                </h2>
-              </div>
+        {/* Two-Column Content Grid */}
+        {sectionPairs.map((pair, pairIndex) => (
+          <div 
+            key={pairIndex} 
+            className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8"
+          >
+            {pair.map((section, idx) => {
+              const globalIndex = pairIndex * 2 + idx + 1
+              const content = getSectionContent(section.id)
+              if (!content) return null
               
-              {/* LEFT-ALIGNED prose for readability */}
-              <div 
-                className="font-body text-dark-brown/90 text-lg leading-relaxed
-                         [&>h2]:hidden 
-                         [&>p]:mb-8 
-                         [&>p]:leading-[1.8]
-                         [&>p:first-of-type]:text-xl 
-                         [&>p:first-of-type]:font-accent
-                         [&>p:first-of-type]:text-dark-brown
-                         [&>strong]:text-dark-brown
-                         [&>strong]:font-bold"
-                dangerouslySetInnerHTML={{ __html: content }}
-              />
-            </section>
-          )
-        })}
+              return (
+                <section
+                  key={section.id}
+                  ref={el => sectionRefs.current[globalIndex] = el}
+                  className="bg-white/50 rounded-lg border border-sepia-brown/10 p-6"
+                >
+                  <div className="flex items-center gap-3 mb-4 pb-3 border-b border-sepia-brown/20">
+                    <span className="text-2xl">{section.icon}</span>
+                    <h2 className="font-display text-xl text-dark-brown">
+                      {section.title}
+                    </h2>
+                  </div>
+                  
+                  <div 
+                    className="font-body text-dark-brown/90 text-sm leading-relaxed
+                             [&>h2]:hidden 
+                             [&>p]:mb-4 
+                             [&>p]:leading-[1.7]
+                             [&>p:first-of-type]:font-accent
+                             [&>p:first-of-type]:text-base
+                             [&>strong]:font-bold
+                             max-h-[400px] overflow-y-auto pr-2
+                             scrollbar-thin scrollbar-thumb-sepia-brown/30"
+                    dangerouslySetInnerHTML={{ __html: content }}
+                  />
+                </section>
+              )
+            })}
+          </div>
+        ))}
 
         {/* Footer */}
-        <footer className="py-20 border-t border-sepia-brown/20">
-          <p className="font-body text-sm text-sepia-brown/60 max-w-lg leading-relaxed">
+        <footer className="py-8 border-t border-sepia-brown/20 text-center">
+          <p className="font-body text-xs text-sepia-brown/60 max-w-2xl mx-auto leading-relaxed">
             This report analyzes US cultural and historical context. Generational 
             characteristics are research-based generalizations. Birthday data sourced from 
             FiveThirtyEight (CDC/SSA 1994-2014). Generational definitions per Pew Research Center.
