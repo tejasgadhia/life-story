@@ -38,10 +38,14 @@ const SECTION_CONFIG = {
   roadmap: { title: 'Future Projections', key: 'life_roadmap' },
 }
 
-function CaseFileTheme({ data, currentTab: propTab = 0, setTab: propSetTab }) {
+function CaseFileTheme({ data, currentTab: propTab = 0, setTab: propSetTab, fontSize = 'base' }) {
   const [internalTab, setInternalTab] = useState(propTab)
   const activeTab = propSetTab ? propTab : internalTab
   const setActiveTab = propSetTab || setInternalTab
+
+  // Font size mapping
+  const fontSizeClasses = { sm: 'text-sm', base: 'text-base', lg: 'text-lg' }
+  const contentFontSize = fontSizeClasses[fontSize] || 'text-base'
 
   const getContent = (key) => data.sections[key]?.html || ''
 
@@ -123,11 +127,10 @@ function CaseFileTheme({ data, currentTab: propTab = 0, setTab: propSetTab }) {
           {config.title.toUpperCase()}
         </h3>
         <div 
-          className="text-base leading-[1.8] 
+          className={`${contentFontSize} leading-[1.8] 
                    [&>h2]:hidden 
                    [&>p]:mb-4 
-                   [&>p:first-of-type]:font-bold
-                   [&>strong]:font-bold"
+                   [&>strong]:font-bold`}
           dangerouslySetInnerHTML={{ __html: content }}
         />
       </div>

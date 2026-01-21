@@ -38,8 +38,12 @@ const SECTION_CONFIG = {
   roadmap: { title: 'Future Prospects', subtitle: 'What Lies Ahead', key: 'life_roadmap' },
 }
 
-function NewspaperTheme({ data, currentPage: propPage = 0, setPage: propSetPage }) {
+function NewspaperTheme({ data, currentPage: propPage = 0, setPage: propSetPage, fontSize = 'base' }) {
   const [internalPage, setInternalPage] = useState(propPage)
+  
+  // Font size mapping
+  const fontSizeClasses = { sm: 'text-sm', base: 'text-base', lg: 'text-lg' }
+  const contentFontSize = fontSizeClasses[fontSize] || 'text-base'
   const currentPage = propSetPage ? propPage : internalPage
   const setCurrentPage = propSetPage || setInternalPage
 
@@ -172,13 +176,13 @@ function NewspaperTheme({ data, currentPage: propPage = 0, setPage: propSetPage 
         </h2>
         <p className="text-sm text-stone-500 italic mb-4">{config.subtitle}</p>
         <div 
-          className="text-base leading-[1.8] text-justify text-stone-800
+          className={`${contentFontSize} leading-[1.8] text-justify text-stone-800
                    [&>h2]:hidden [&>p]:mb-4 
                    [&>p:first-of-type]:first-letter:float-left 
                    [&>p:first-of-type]:first-letter:text-4xl 
                    [&>p:first-of-type]:first-letter:font-display 
                    [&>p:first-of-type]:first-letter:mr-2 
-                   [&>p:first-of-type]:first-letter:leading-none"
+                   [&>p:first-of-type]:first-letter:leading-none`}
           dangerouslySetInnerHTML={{ __html: content }}
         />
       </article>

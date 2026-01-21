@@ -42,13 +42,18 @@ const SECTION_CONFIG = {
   roadmap: { title: 'Life Roadmap', icon: '🗺️', key: 'life_roadmap' },
 }
 
-// Generate Wikipedia URL from name
 const getWikiUrl = (name) => `https://en.wikipedia.org/wiki/${name.replace(/ /g, '_')}`
 
-function TimelineTheme({ data, currentTab: propTab = 0, setTab: propSetTab }) {
+function TimelineTheme({ data, currentTab: propTab = 0, setTab: propSetTab, fontSize = 'base' }) {
   const [internalTab, setInternalTab] = useState(propTab)
   const activeTab = propSetTab ? propTab : internalTab
   const setActiveTab = propSetTab || setInternalTab
+
+  const fontSizeClasses = {
+    sm: 'text-sm [&>p]:text-sm',
+    base: 'text-base [&>p]:text-base',
+    lg: 'text-lg [&>p]:text-lg',
+  }
 
   const getSectionContent = (sectionId) => {
     const config = SECTION_CONFIG[sectionId]
@@ -57,52 +62,44 @@ function TimelineTheme({ data, currentTab: propTab = 0, setTab: propSetTab }) {
   }
 
   const renderBirthdaySection = () => (
-    <div className="bg-white/50 rounded-lg border border-sepia-brown/10 p-8">
-      {/* Header */}
-      <div className="text-center mb-8">
-        <span className="text-5xl mb-4 block">🎂</span>
-        <h2 className="font-display text-3xl text-dark-brown mb-2">
-          {data.birthDate}
-        </h2>
-        <p className="font-accent text-lg text-sepia-brown">
-          Your Life Story Report
-        </p>
-      </div>
-      
-      {/* Stats - 2 column layout */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8 max-w-3xl mx-auto">
-        {/* Generation */}
-        <div className="bg-dark-brown text-vintage-cream rounded-lg p-6 text-center">
-          <p className="font-body text-xs uppercase tracking-wider opacity-70 mb-1">Generation</p>
-          <p className="font-display text-3xl mb-1">{data.generation}</p>
-          <p className="font-body text-sm opacity-70">{data.generationSpan}</p>
+    <div className="bg-white/50 rounded-lg border border-sepia-brown/10 p-6">
+      {/* Consolidated header - 3 column layout */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-stretch">
+        {/* Left - Generation */}
+        <div className="aged-paper rounded-lg p-5 border border-sepia-brown/20 text-center flex flex-col justify-center">
+          <p className="font-body text-xs uppercase tracking-wider text-sepia-brown/70 mb-1">Generation</p>
+          <p className="font-display text-2xl text-dark-brown">{data.generation}</p>
+          <p className="font-body text-sm text-sepia-brown/70">{data.generationSpan}</p>
         </div>
 
-        {/* Birthday Stats - consolidated */}
-        <div className="aged-paper rounded-lg p-6 border border-sepia-brown/20">
-          <div className="flex items-center justify-center gap-8">
+        {/* Center - Birthday (accent color) */}
+        <div className="bg-dark-brown text-vintage-cream rounded-lg p-5 text-center flex flex-col justify-center">
+          <span className="text-4xl mb-2 block">🎂</span>
+          <h2 className="font-display text-2xl mb-1">{data.birthDate}</h2>
+          <p className="font-body text-sm opacity-70">Your Life Story Report</p>
+        </div>
+
+        {/* Right - Rank/Percentile */}
+        <div className="aged-paper rounded-lg p-5 border border-sepia-brown/20 text-center flex flex-col justify-center">
+          <div className="flex items-center justify-center gap-6">
             <div className="text-center">
-              <p className="text-3xl font-display text-dark-brown mb-1">
-                #{data.birthdayRank}
-              </p>
+              <p className="text-2xl font-display text-dark-brown">#{data.birthdayRank}</p>
               <p className="font-body text-xs text-sepia-brown">Rank</p>
             </div>
-            <div className="w-px h-12 bg-sepia-brown/30" />
+            <div className="w-px h-10 bg-sepia-brown/30" />
             <div className="text-center">
-              <p className="text-3xl font-display text-dark-brown mb-1">
-                {data.birthdayPercentile}%
-              </p>
+              <p className="text-2xl font-display text-dark-brown">{data.birthdayPercentile}%</p>
               <p className="font-body text-xs text-sepia-brown">Percentile</p>
             </div>
           </div>
-          <p className="font-body text-xs text-sepia-brown/70 text-center mt-3">
-            {data.birthdayRank < 183 ? 'More common' : 'Less common'} than average (of 366 dates)
+          <p className="font-body text-xs text-sepia-brown/60 mt-2">
+            {data.birthdayRank < 183 ? 'More common' : 'Less common'} than avg
           </p>
         </div>
       </div>
 
-      {/* Celebrity Birthdays - with Wikipedia links, sorted by age */}
-      <div>
+      {/* Celebrity Birthdays */}
+      <div className="mt-6">
         <p className="font-body text-xs text-sepia-brown uppercase tracking-wider mb-4 text-center">
           You share your birthday with
         </p>
@@ -141,13 +138,12 @@ function TimelineTheme({ data, currentTab: propTab = 0, setTab: propSetTab }) {
         </div>
         
         <div 
-          className="font-body text-dark-brown/90 text-sm leading-relaxed
+          className={`font-body text-dark-brown/90 leading-relaxed
                    [&>h2]:hidden 
                    [&>p]:mb-4 
                    [&>p]:leading-[1.7]
-                   [&>p:first-of-type]:font-accent
-                   [&>p:first-of-type]:text-base
-                   [&>strong]:font-bold"
+                   [&>strong]:font-bold
+                   ${fontSizeClasses[fontSize]}`}
           dangerouslySetInnerHTML={{ __html: content }}
         />
       </div>
@@ -190,7 +186,6 @@ function TimelineTheme({ data, currentTab: propTab = 0, setTab: propSetTab }) {
       {/* Main Content */}
       <main className="max-w-7xl mx-auto px-6 py-6">
         {activeTab === 0 ? (
-          /* Overview - special layout */
           <div className="space-y-6">
             {renderBirthdaySection()}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
@@ -199,7 +194,6 @@ function TimelineTheme({ data, currentTab: propTab = 0, setTab: propSetTab }) {
             </div>
           </div>
         ) : (
-          /* Other tabs - 3 column grid */
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             {currentTabData.sections.map((sectionId) => (
               <div key={sectionId}>
