@@ -1,8 +1,8 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, useCallback } from 'react'
 
 const SECTIONS = [
   { id: 'birthday', title: 'Birthday Analysis', icon: '🎂' },
-  { id: 'childhood', title: 'Childhood', icon: '💠' },
+  { id: 'childhood', title: 'Childhood', icon: '💒' },
   { id: 'generation', title: 'Your Generation', icon: '👥' },
   { id: 'popculture', title: 'Pop Culture', icon: '🎬' },
   { id: 'technology', title: 'Technology', icon: '💻' },
@@ -15,13 +15,26 @@ const SECTIONS = [
   { id: 'comparison', title: 'Comparison', icon: '📊' },
 ]
 
+// Throttle utility
+function throttle(func, limit) {
+  let inThrottle
+  return function(...args) {
+    if (!inThrottle) {
+      func.apply(this, args)
+      inThrottle = true
+      setTimeout(() => inThrottle = false, limit)
+    }
+  }
+}
+
 function TimelineTheme({ data }) {
   const [activeSection, setActiveSection] = useState(0)
   const [progress, setProgress] = useState(0)
   const sectionRefs = useRef([])
 
-  useEffect(() => {
-    const handleScroll = () => {
+  // Throttled scroll handler (fires max every 50ms)
+  const handleScroll = useCallback(
+    throttle(() => {
       const scrollTop = window.scrollY
       const docHeight = document.documentElement.scrollHeight - window.innerHeight
       const scrollPercent = (scrollTop / docHeight) * 100
@@ -36,11 +49,14 @@ function TimelineTheme({ data }) {
           }
         }
       })
-    }
+    }, 50),
+    []
+  )
 
-    window.addEventListener('scroll', handleScroll)
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+  }, [handleScroll])
 
   const scrollToSection = (index) => {
     sectionRefs.current[index]?.scrollIntoView({ behavior: 'smooth', block: 'start' })
@@ -69,19 +85,19 @@ function TimelineTheme({ data }) {
       {/* Progress Bar */}
       <div className="fixed top-0 left-0 right-0 h-1 bg-aged-paper z-40">
         <div 
-          className="h-full bg-dark-brown transition-all duration-150"
+          className="h-full bg-dark-brown transition-all duration-100"
           style={{ width: `${progress}%` }}
         />
       </div>
 
       {/* Timeline Navigation */}
-      <nav className="fixed left-4 top-1/2 -translate-y-1/2 z-40 hidden lg:block">
-        <div className="flex flex-col gap-2">
+      <nav className="fixed left-6 top-1/2 -translate-y-1/2 z-40 hidden lg:block">
+        <div className="flex flex-col gap-3">
           {SECTIONS.map((section, index) => (
             <button
               key={section.id}
               onClick={() => scrollToSection(index)}
-              className={`group flex items-center gap-2 transition-all duration-300`}
+              className="group flex items-center gap-3 transition-all duration-300"
               title={section.title}
             >
               <span className={`w-3 h-3 rounded-full border-2 transition-all
@@ -90,7 +106,7 @@ function TimelineTheme({ data }) {
                   : 'bg-transparent border-sepia-brown hover:border-dark-brown'
                 }`} 
               />
-              <span className={`text-xs font-body whitespace-nowrap transition-all
+              <span className={`text-sm font-body whitespace-nowrap transition-all
                 ${activeSection === index 
                   ? 'opacity-100 text-dark-brown font-bold' 
                   : 'opacity-0 group-hover:opacity-100 text-sepia-brown'
@@ -103,8 +119,8 @@ function TimelineTheme({ data }) {
       </nav>
 
       {/* Main Content */}
-      <main className="max-w-3xl mx-auto px-6 py-20">
-        {/* Hero Section - Birthday Analysis */}
+      <main className="max-w-2xl mx-auto px-8 py-24 lg:ml-48 lg:mr-auto">
+        {/* Hero Section - Birthday Analysis (centered) */}
         <section 
           ref={el => sectionRefs.current[0] = el}
           className="min-h-screen flex flex-col justify-center text-center py-20"
@@ -113,38 +129,37 @@ function TimelineTheme({ data }) {
           <h1 className="font-display text-5xl md:text-6xl text-dark-brown mb-4">
             {data.birthDate}
           </h1>
-          <p className="font-accent text-xl text-sepia-brown mb-8">
+          <p className="font-accent text-xl text-sepia-brown mb-10">
             Your Life Story Report
           </p>
           
           {/* Birthday Rank Card */}
-          <div className="aged-paper rounded-lg p-8 mb-8 border border-sepia-brown/20">
-            <div className="flex flex-col md:flex-row items-center justify-center gap-8">
+          <div className="aged-paper rounded-lg p-10 mb-10 border border-sepia-brown/20">
+            <div className="flex flex-col md:flex-row items-center justify-center gap-10">
               <div className="text-center">
                 <p className="text-6xl font-display text-dark-brown mb-2">
                   #{data.birthdayRank}
                 </p>
-                <p className="font-body text-sm text-sepia-brown">
+                <p className="font-body text-base text-sepia-brown">
                   Birthday Rank
                 </p>
-                <p className="font-body text-xs text-sepia-brown/70 mt-1">
+                <p className="font-body text-sm text-sepia-brown/70 mt-1">
                   out of 366 possible dates
                 </p>
               </div>
-              <div className="w-px h-16 bg-sepia-brown/30 hidden md:block" />
+              <div className="w-px h-20 bg-sepia-brown/30 hidden md:block" />
               <div className="text-center">
-                <p className="text-4xl font-display text-dark-brown mb-2">
+                <p className="text-5xl font-display text-dark-brown mb-2">
                   {data.birthdayPercentile}%
                 </p>
-                <p className="font-body text-sm text-sepia-brown">
+                <p className="font-body text-base text-sepia-brown">
                   Percentile
                 </p>
               </div>
             </div>
             
-            {/* Rank explanation tooltip */}
-            <div className="mt-6 p-4 bg-vintage-cream/50 rounded border border-sepia-brown/10">
-              <p className="font-body text-xs text-sepia-brown/80 text-center">
+            <div className="mt-8 p-4 bg-vintage-cream/50 rounded border border-sepia-brown/10">
+              <p className="font-body text-sm text-sepia-brown/80 text-center leading-relaxed">
                 <strong>How to read:</strong> #1 = most common birthday, #366 = least common. 
                 Your rank of #{data.birthdayRank} means {data.birthdayRank < 183 
                   ? `your birthday is more common than average.` 
@@ -154,22 +169,22 @@ function TimelineTheme({ data }) {
           </div>
 
           {/* Generation Badge */}
-          <div className="inline-flex items-center gap-2 bg-dark-brown text-vintage-cream px-6 py-3 rounded-full mx-auto mb-8">
+          <div className="inline-flex items-center gap-3 bg-dark-brown text-vintage-cream px-8 py-4 rounded-full mx-auto mb-10">
             <span className="font-body text-sm uppercase tracking-wider">Generation:</span>
-            <span className="font-display text-lg">{data.generation}</span>
-            <span className="font-body text-xs opacity-70">({data.generationSpan})</span>
+            <span className="font-display text-xl">{data.generation}</span>
+            <span className="font-body text-sm opacity-70">({data.generationSpan})</span>
           </div>
 
           {/* Celebrity Birthdays */}
           <div className="text-center">
-            <p className="font-body text-sm text-sepia-brown uppercase tracking-wider mb-3">
+            <p className="font-body text-sm text-sepia-brown uppercase tracking-wider mb-4">
               You share your birthday with
             </p>
-            <div className="flex flex-wrap justify-center gap-2">
+            <div className="flex flex-wrap justify-center gap-3">
               {data.celebrities.map((celeb, i) => (
                 <span 
                   key={i}
-                  className="bg-aged-paper px-3 py-1 rounded font-body text-sm text-dark-brown"
+                  className="bg-aged-paper px-4 py-2 rounded font-body text-base text-dark-brown"
                 >
                   {celeb}
                 </span>
@@ -178,12 +193,12 @@ function TimelineTheme({ data }) {
           </div>
 
           {/* Scroll indicator */}
-          <div className="mt-12 animate-bounce">
-            <span className="text-sepia-brown text-2xl">↓</span>
+          <div className="mt-16 animate-bounce">
+            <span className="text-sepia-brown text-3xl">↓</span>
           </div>
         </section>
 
-        {/* Content Sections */}
+        {/* Content Sections - LEFT ALIGNED for readability */}
         {SECTIONS.slice(1).map((section, index) => {
           const content = getSectionContent(section.id)
           if (!content) return null
@@ -192,20 +207,26 @@ function TimelineTheme({ data }) {
             <section
               key={section.id}
               ref={el => sectionRefs.current[index + 1] = el}
-              className="min-h-screen flex flex-col justify-center py-20 border-t border-sepia-brown/20"
+              className="min-h-screen flex flex-col justify-center py-24 border-t border-sepia-brown/20"
             >
-              <div className="text-center mb-8">
-                <span className="text-4xl mb-4 block">{section.icon}</span>
-                <h2 className="font-display text-3xl text-dark-brown">
+              <div className="text-center mb-12">
+                <span className="text-5xl mb-4 block">{section.icon}</span>
+                <h2 className="font-display text-4xl text-dark-brown">
                   {section.title}
                 </h2>
               </div>
               
+              {/* LEFT-ALIGNED prose for readability */}
               <div 
-                className="prose prose-lg max-w-none font-body text-dark-brown/90
-                         [&>h2]:hidden [&>p]:mb-6 [&>p]:leading-relaxed
-                         [&>p:first-of-type]:text-lg [&>p:first-of-type]:font-accent
-                         text-center"
+                className="font-body text-dark-brown/90 text-lg leading-relaxed
+                         [&>h2]:hidden 
+                         [&>p]:mb-8 
+                         [&>p]:leading-[1.8]
+                         [&>p:first-of-type]:text-xl 
+                         [&>p:first-of-type]:font-accent
+                         [&>p:first-of-type]:text-dark-brown
+                         [&>strong]:text-dark-brown
+                         [&>strong]:font-bold"
                 dangerouslySetInnerHTML={{ __html: content }}
               />
             </section>
@@ -213,11 +234,11 @@ function TimelineTheme({ data }) {
         })}
 
         {/* Footer */}
-        <footer className="py-16 text-center border-t border-sepia-brown/20">
-          <p className="font-body text-xs text-sepia-brown/60 max-w-md mx-auto">
+        <footer className="py-20 border-t border-sepia-brown/20">
+          <p className="font-body text-sm text-sepia-brown/60 max-w-lg leading-relaxed">
             This report analyzes US cultural and historical context. Generational 
-            characteristics are research-based generalizations. Birthday data: 
-            FiveThirtyEight (CDC/SSA 1994-2014). Generational definitions: Pew Research.
+            characteristics are research-based generalizations. Birthday data sourced from 
+            FiveThirtyEight (CDC/SSA 1994-2014). Generational definitions per Pew Research Center.
           </p>
         </footer>
       </main>

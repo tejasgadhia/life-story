@@ -36,12 +36,12 @@ function NewspaperTheme({ data, currentPage: propPage = 0, setPage: propSetPage 
     return text.length > chars ? text.substring(0, chars) + '...' : text
   }
 
-  // Page 2: sections 0-5, Page 3: sections 6-10 (pad to 6 for symmetric grid)
+  // Page 2: sections 0-5, Page 3: sections 6-10
   const page2Sections = SECTIONS.slice(0, 6)
-  const page3Sections = SECTIONS.slice(6) // 5 sections
+  const page3Sections = SECTIONS.slice(6)
 
   return (
-    <div className="min-h-screen py-4 px-2" style={{ background: '#3d3529' }}>
+    <div className="min-h-screen py-6 px-4" style={{ background: '#3d3529' }}>
       <div 
         className="max-w-6xl mx-auto shadow-2xl relative"
         style={{ 
@@ -50,48 +50,48 @@ function NewspaperTheme({ data, currentPage: propPage = 0, setPage: propSetPage 
         }}
       >
         {/* TOP TAGLINE */}
-        <div className="flex justify-between items-center px-4 py-1 border-b border-stone-500/50 text-[11px] tracking-[0.15em] text-stone-600 italic">
+        <div className="flex justify-between items-center px-6 py-2 border-b border-stone-500/50 text-xs tracking-[0.15em] text-stone-600 italic">
           <span>This personal edition captures the essence of a life</span>
           <span>celebrating the spirit and simplicity of {data.birthYear}</span>
         </div>
 
         {/* MASTHEAD */}
-        <header className="text-center pt-2 pb-3 border-b-4 border-double border-stone-800 px-4">
-          <div className="flex items-center justify-center gap-3">
-            <span className="text-3xl text-stone-600">❧</span>
+        <header className="text-center pt-4 pb-4 border-b-4 border-double border-stone-800 px-6">
+          <div className="flex items-center justify-center gap-4">
+            <span className="text-4xl text-stone-600">❧</span>
             <h1 
               className="text-5xl md:text-7xl text-stone-900 leading-none"
               style={{ fontFamily: "'UnifrakturMaguntia', 'Old English Text MT', serif", textShadow: '1px 1px 0 rgba(0,0,0,0.1)' }}
             >
               The Personal Tribune
             </h1>
-            <span className="text-3xl text-stone-600">❧</span>
+            <span className="text-4xl text-stone-600">❧</span>
           </div>
           
-          <div className="flex items-center justify-center gap-2 my-1">
+          <div className="flex items-center justify-center gap-3 my-2">
             <div className="flex-1 max-w-32 h-px bg-stone-500" />
-            <span className="text-2xl text-stone-700">⚜</span>
+            <span className="text-3xl text-stone-700">⚜</span>
             <div className="flex-1 max-w-32 h-px bg-stone-500" />
           </div>
           
-          <div className="bg-stone-800 text-amber-50 py-1 px-6 mx-auto inline-block tracking-[0.4em] text-xs font-bold">
+          <div className="bg-stone-800 text-amber-50 py-2 px-8 mx-auto inline-block tracking-[0.4em] text-sm font-bold">
             COMPLETE PERSONAL HISTORY & ANALYSIS
           </div>
           
-          <div className="flex items-center justify-between mt-2 text-[11px] text-stone-600 tracking-wider px-8">
+          <div className="flex items-center justify-between mt-3 text-xs text-stone-600 tracking-wider px-8">
             <span className="font-bold">VOL. XXXVII, No. {data.birthdayRank}</span>
             <span className="uppercase font-bold">{formatDate()}</span>
             <span className="font-bold">PERSONAL EDITION</span>
           </div>
         </header>
 
-        {/* PAGE NAVIGATION - PROMINENT */}
+        {/* PAGE NAVIGATION */}
         <div className="flex justify-center bg-stone-700 border-b-4 border-stone-800">
           {['Front Page', 'Life & Times', 'Analysis'].map((label, i) => (
             <button
               key={i}
               onClick={() => setCurrentPage(i)}
-              className={`px-8 py-3 text-sm font-bold uppercase tracking-widest transition-all border-x border-stone-600
+              className={`px-10 py-4 text-base font-bold uppercase tracking-widest transition-all border-x border-stone-600
                 ${currentPage === i 
                   ? 'bg-amber-100 text-stone-900 shadow-inner' 
                   : 'bg-stone-700 text-amber-100 hover:bg-stone-600'
@@ -102,41 +102,40 @@ function NewspaperTheme({ data, currentPage: propPage = 0, setPage: propSetPage 
           ))}
         </div>
 
-
         {/* MAIN CONTENT */}
-        <div className="p-4">
+        <div className="p-6">
           
           {/* FRONT PAGE */}
           {currentPage === 0 && (
-            <div className="grid grid-cols-12 gap-4">
+            <div className="grid grid-cols-12 gap-6">
               {/* LEFT COLUMN */}
-              <div className="col-span-12 md:col-span-3 border-r border-stone-400 pr-4">
-                <div className="flex justify-center mb-3">
+              <div className="col-span-12 md:col-span-3 border-r border-stone-400 pr-6">
+                <div className="flex justify-center mb-4">
                   <div className="relative">
-                    <div className="w-28 h-28 rounded-full border-4 border-stone-700 bg-gradient-to-br from-stone-200 to-stone-300 flex items-center justify-center">
-                      <span className="text-4xl">👤</span>
+                    <div className="w-32 h-32 rounded-full border-4 border-stone-700 bg-gradient-to-br from-stone-200 to-stone-300 flex items-center justify-center">
+                      <span className="text-5xl">👤</span>
                     </div>
                     <div className="absolute inset-1 rounded-full border-2 border-stone-500/50" />
                   </div>
                 </div>
                 
-                <h3 className="font-display text-center text-xl font-bold text-stone-900 uppercase tracking-wide">
+                <h3 className="font-display text-center text-2xl font-bold text-stone-900 uppercase tracking-wide">
                   {data.generation}
                 </h3>
-                <p className="text-center text-sm text-stone-600 mb-2">Born {data.birthDate}</p>
+                <p className="text-center text-base text-stone-600 mb-4">Born {data.birthDate}</p>
                 
-                <p className="text-sm text-justify leading-relaxed text-stone-800 mb-3">
-                  <span className="float-left text-3xl font-display mr-1 leading-none">S</span>
+                <p className="text-base text-justify leading-relaxed text-stone-800 mb-4">
+                  <span className="float-left text-4xl font-display mr-2 leading-none">S</span>
                   ubject entered this world on {data.birthDate}, ranking #{data.birthdayRank} of 366 possible dates. 
                   A member of the {data.generation} generation ({data.generationSpan}).
                 </p>
                 
-                <div className="border-2 border-stone-600 p-3 bg-amber-100/30">
-                  <h4 className="text-sm font-bold text-center tracking-wider border-b border-stone-400 pb-1 mb-2">
+                <div className="border-2 border-stone-600 p-4 bg-amber-100/30">
+                  <h4 className="text-base font-bold text-center tracking-wider border-b border-stone-400 pb-2 mb-3">
                     NOTABLE JUNE 9TH BIRTHS
                   </h4>
                   {data.celebrities.map((celeb, i) => (
-                    <p key={i} className="text-sm py-1 border-b border-stone-300/50 last:border-0 text-stone-700">
+                    <p key={i} className="text-base py-2 border-b border-stone-300/50 last:border-0 text-stone-700">
                       ◆ {celeb}
                     </p>
                   ))}
@@ -144,34 +143,34 @@ function NewspaperTheme({ data, currentPage: propPage = 0, setPage: propSetPage 
               </div>
 
               {/* CENTER COLUMN */}
-              <div className="col-span-12 md:col-span-6 px-4 border-r border-stone-400">
-                <h2 className="font-display text-3xl font-bold text-center text-stone-900 uppercase mb-1">
+              <div className="col-span-12 md:col-span-6 px-6 border-r border-stone-400">
+                <h2 className="font-display text-4xl font-bold text-center text-stone-900 uppercase mb-2">
                   The Story of a Life
                 </h2>
-                <p className="text-center text-sm text-stone-600 mb-3 border-b border-stone-400 pb-2">
+                <p className="text-center text-base text-stone-600 mb-4 border-b border-stone-400 pb-3">
                   Complete Analysis of One Born in {data.birthYear}
                 </p>
                 
-                <div className="border-2 border-stone-500 p-2 mb-3 bg-stone-200">
-                  <div className="bg-gradient-to-br from-stone-300 to-stone-400 h-32 flex items-center justify-center">
+                <div className="border-2 border-stone-500 p-3 mb-4 bg-stone-200">
+                  <div className="bg-gradient-to-br from-stone-300 to-stone-400 h-36 flex items-center justify-center">
                     <div className="text-center">
-                      <span className="text-5xl">🏛️</span>
-                      <p className="text-sm text-stone-600 mt-1">Historical Scene, {data.birthYear}</p>
+                      <span className="text-6xl">🏛️</span>
+                      <p className="text-base text-stone-600 mt-2">Historical Scene, {data.birthYear}</p>
                     </div>
                   </div>
                 </div>
 
-                <div className="columns-2 gap-4 text-sm leading-relaxed text-justify" style={{ columnRule: '1px solid #78716c' }}>
-                  <p className="mb-3">
-                    <span className="float-left text-4xl font-display mr-1 leading-none text-stone-800">T</span>
+                <div className="columns-2 gap-6 text-base leading-[1.8] text-justify" style={{ columnRule: '1px solid #78716c' }}>
+                  <p className="mb-4">
+                    <span className="float-left text-5xl font-display mr-2 leading-none text-stone-800">T</span>
                     he subject of this comprehensive report entered the world on the ninth day of June, {data.birthYear}, 
                     a date ranking #{data.birthdayRank} among all possible calendar dates for frequency of birth.
                   </p>
-                  <p className="mb-3">
+                  <p className="mb-4">
                     As a member of the {data.generation} generation ({data.generationSpan}), this individual belongs 
                     to a cohort numbering approximately 72 million souls—a generation destined to witness profound transformation.
                   </p>
-                  <p className="mb-3">
+                  <p className="mb-4">
                     The defining events include September 11, 2001, the financial crisis of 2008, and the pandemic of 2020. 
                     Each left indelible marks upon the collective character.
                   </p>
@@ -179,21 +178,21 @@ function NewspaperTheme({ data, currentPage: propPage = 0, setPage: propSetPage 
               </div>
 
               {/* RIGHT COLUMN */}
-              <div className="col-span-12 md:col-span-3 pl-4">
-                <div className="border-2 border-stone-700 bg-amber-100/40 p-3 mb-4">
-                  <h4 className="text-sm font-bold text-center tracking-wider border-b border-stone-500 pb-1 mb-2">
+              <div className="col-span-12 md:col-span-3 pl-6">
+                <div className="border-2 border-stone-700 bg-amber-100/40 p-4 mb-6">
+                  <h4 className="text-base font-bold text-center tracking-wider border-b border-stone-500 pb-2 mb-3">
                     BY THE NUMBERS
                   </h4>
-                  <div className="space-y-1 text-sm">
-                    <div className="flex justify-between border-b border-stone-300/50 pb-1">
+                  <div className="space-y-2 text-base">
+                    <div className="flex justify-between border-b border-stone-300/50 pb-2">
                       <span className="text-stone-600">Rank:</span>
                       <span className="font-bold">#{data.birthdayRank}/366</span>
                     </div>
-                    <div className="flex justify-between border-b border-stone-300/50 pb-1">
+                    <div className="flex justify-between border-b border-stone-300/50 pb-2">
                       <span className="text-stone-600">Percentile:</span>
                       <span className="font-bold">{data.birthdayPercentile}%</span>
                     </div>
-                    <div className="flex justify-between border-b border-stone-300/50 pb-1">
+                    <div className="flex justify-between border-b border-stone-300/50 pb-2">
                       <span className="text-stone-600">Generation:</span>
                       <span className="font-bold">{data.generation}</span>
                     </div>
@@ -204,18 +203,18 @@ function NewspaperTheme({ data, currentPage: propPage = 0, setPage: propSetPage 
                   </div>
                 </div>
 
-                <div className="mb-4">
-                  <h4 className="font-display text-lg font-bold text-stone-900 border-b border-stone-500 pb-1 mb-2">
+                <div className="mb-6">
+                  <h4 className="font-display text-xl font-bold text-stone-900 border-b border-stone-500 pb-2 mb-3">
                     THE FORMATIVE YEARS
                   </h4>
-                  <p className="text-sm text-justify leading-relaxed text-stone-800">
+                  <p className="text-base text-justify leading-relaxed text-stone-800">
                     {getExcerpt('childhood_context', 250)}
                   </p>
                 </div>
 
-                <div className="border border-stone-500 p-3 bg-stone-200/30">
-                  <h4 className="text-sm font-bold text-center tracking-wider mb-2">THE MACHINE AGE</h4>
-                  <p className="text-sm text-justify leading-relaxed text-stone-700">
+                <div className="border border-stone-500 p-4 bg-stone-200/30">
+                  <h4 className="text-base font-bold text-center tracking-wider mb-3">THE MACHINE AGE</h4>
+                  <p className="text-base text-justify leading-relaxed text-stone-700">
                     {getExcerpt('technology', 180)}
                   </p>
                 </div>
@@ -223,26 +222,25 @@ function NewspaperTheme({ data, currentPage: propPage = 0, setPage: propSetPage 
             </div>
           )}
 
-
           {/* PAGE 2: LIFE & TIMES - 6 sections in 3x2 grid */}
           {currentPage === 1 && (
             <div className="grid grid-cols-1 md:grid-cols-3 gap-0">
               {page2Sections.map((section, idx) => (
                 <article 
                   key={section.id} 
-                  className={`p-4 ${idx % 3 !== 2 ? 'border-r border-stone-400' : ''} ${idx < 3 ? 'border-b border-stone-400' : ''}`}
+                  className={`p-6 ${idx % 3 !== 2 ? 'border-r border-stone-400' : ''} ${idx < 3 ? 'border-b border-stone-400' : ''}`}
                 >
-                  <h2 className="font-display text-lg font-bold text-stone-900 uppercase tracking-wide border-b-2 border-stone-700 pb-1 mb-2">
+                  <h2 className="font-display text-xl font-bold text-stone-900 uppercase tracking-wide border-b-2 border-stone-700 pb-2 mb-3">
                     {section.title}
                   </h2>
-                  <p className="text-xs text-stone-500 italic mb-2">{section.subtitle}</p>
+                  <p className="text-sm text-stone-500 italic mb-4">{section.subtitle}</p>
                   <div 
-                    className="text-sm leading-relaxed text-justify text-stone-800
-                             [&>h2]:hidden [&>p]:mb-3 
+                    className="text-base leading-[1.8] text-justify text-stone-800
+                             [&>h2]:hidden [&>p]:mb-4 
                              [&>p:first-of-type]:first-letter:float-left 
-                             [&>p:first-of-type]:first-letter:text-3xl 
+                             [&>p:first-of-type]:first-letter:text-4xl 
                              [&>p:first-of-type]:first-letter:font-display 
-                             [&>p:first-of-type]:first-letter:mr-1 
+                             [&>p:first-of-type]:first-letter:mr-2 
                              [&>p:first-of-type]:first-letter:leading-none"
                     dangerouslySetInnerHTML={{ __html: getContent(section.key) }}
                   />
@@ -251,25 +249,25 @@ function NewspaperTheme({ data, currentPage: propPage = 0, setPage: propSetPage 
             </div>
           )}
 
-          {/* PAGE 3: ANALYSIS - 5 sections in 2-column symmetric grid */}
+          {/* PAGE 3: ANALYSIS - 5 sections in 2-column grid */}
           {currentPage === 2 && (
             <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
               {page3Sections.map((section, idx) => (
                 <article 
                   key={section.id} 
-                  className={`p-4 ${idx % 2 === 0 ? 'border-r border-stone-400' : ''} ${idx < page3Sections.length - 1 ? 'border-b border-stone-400' : ''}`}
+                  className={`p-6 ${idx % 2 === 0 ? 'border-r border-stone-400' : ''} ${idx < page3Sections.length - 1 ? 'border-b border-stone-400' : ''}`}
                 >
-                  <h2 className="font-display text-lg font-bold text-stone-900 uppercase tracking-wide border-b-2 border-stone-700 pb-1 mb-2">
+                  <h2 className="font-display text-xl font-bold text-stone-900 uppercase tracking-wide border-b-2 border-stone-700 pb-2 mb-3">
                     {section.title}
                   </h2>
-                  <p className="text-xs text-stone-500 italic mb-2">{section.subtitle}</p>
+                  <p className="text-sm text-stone-500 italic mb-4">{section.subtitle}</p>
                   <div 
-                    className="text-sm leading-relaxed text-justify text-stone-800
-                             [&>h2]:hidden [&>p]:mb-3 
+                    className="text-base leading-[1.8] text-justify text-stone-800
+                             [&>h2]:hidden [&>p]:mb-4 
                              [&>p:first-of-type]:first-letter:float-left 
-                             [&>p:first-of-type]:first-letter:text-3xl 
+                             [&>p:first-of-type]:first-letter:text-4xl 
                              [&>p:first-of-type]:first-letter:font-display 
-                             [&>p:first-of-type]:first-letter:mr-1 
+                             [&>p:first-of-type]:first-letter:mr-2 
                              [&>p:first-of-type]:first-letter:leading-none"
                     dangerouslySetInnerHTML={{ __html: getContent(section.key) }}
                   />
@@ -282,31 +280,31 @@ function NewspaperTheme({ data, currentPage: propPage = 0, setPage: propSetPage 
 
         {/* FOOTER */}
         <footer className="border-t-2 border-double border-stone-700">
-          <div className="bg-stone-800 text-amber-50 py-1 px-4 text-center text-xs tracking-[0.3em] font-bold">
+          <div className="bg-stone-800 text-amber-50 py-2 px-6 text-center text-sm tracking-[0.3em] font-bold">
             NOTICES • DISCLAIMERS • LEGAL MATTERS
           </div>
           
-          <div className="grid grid-cols-4 gap-0 text-xs text-stone-700">
-            <div className="p-3 border-r border-stone-400">
-              <h5 className="font-bold text-sm mb-1 tracking-wider">DATA SOURCES</h5>
-              <p>Birthday frequency data from FiveThirtyEight (CDC/SSA 1994-2014).</p>
+          <div className="grid grid-cols-4 gap-0 text-sm text-stone-700">
+            <div className="p-4 border-r border-stone-400">
+              <h5 className="font-bold text-base mb-2 tracking-wider">DATA SOURCES</h5>
+              <p className="leading-relaxed">Birthday frequency data from FiveThirtyEight (CDC/SSA 1994-2014).</p>
             </div>
-            <div className="p-3 border-r border-stone-400">
-              <h5 className="font-bold text-sm mb-1 tracking-wider">METHODOLOGY</h5>
-              <p>Generational definitions per Pew Research Center.</p>
+            <div className="p-4 border-r border-stone-400">
+              <h5 className="font-bold text-base mb-2 tracking-wider">METHODOLOGY</h5>
+              <p className="leading-relaxed">Generational definitions per Pew Research Center.</p>
             </div>
-            <div className="p-3 border-r border-stone-400">
-              <h5 className="font-bold text-sm mb-1 tracking-wider">DISCLAIMER</h5>
-              <p>For entertainment and educational purposes only.</p>
+            <div className="p-4 border-r border-stone-400">
+              <h5 className="font-bold text-base mb-2 tracking-wider">DISCLAIMER</h5>
+              <p className="leading-relaxed">For entertainment and educational purposes only.</p>
             </div>
-            <div className="p-3">
-              <h5 className="font-bold text-sm mb-1 tracking-wider">EDITION</h5>
-              <p>Personal Edition • ID: LS-{data.birthYear}-0609</p>
+            <div className="p-4">
+              <h5 className="font-bold text-base mb-2 tracking-wider">EDITION</h5>
+              <p className="leading-relaxed">Personal Edition • ID: LS-{data.birthYear}-0609</p>
             </div>
           </div>
           
-          <div className="text-center py-2 border-t border-stone-500">
-            <div className="flex items-center justify-center gap-2 text-xs text-stone-500">
+          <div className="text-center py-3 border-t border-stone-500">
+            <div className="flex items-center justify-center gap-3 text-sm text-stone-500">
               <span>❧</span>
               <span>© {new Date().getFullYear()} The Personal Tribune • All Rights Reserved</span>
               <span>❧</span>

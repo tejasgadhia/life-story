@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { BrowserRouter, Routes, Route, Navigate, useNavigate, useParams, useLocation } from 'react-router-dom'
 import PasswordGate from './components/PasswordGate'
+import LoadingScreen from './components/LoadingScreen'
 import TimelineTheme from './components/themes/TimelineTheme'
 import NewspaperTheme from './components/themes/NewspaperTheme'
 import CaseFileTheme from './components/themes/CaseFileTheme'
@@ -126,11 +127,15 @@ function ProtectedRoutes() {
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
+  const [showContent, setShowContent] = useState(false)
 
   useEffect(() => {
     const auth = sessionStorage.getItem('life-story-auth')
     if (auth === 'true') {
+      // Already authenticated - skip loading on refresh
       setIsAuthenticated(true)
+      setShowContent(true)
     }
   }, [])
 
@@ -139,20 +144,37 @@ function App() {
     if (password === correctPassword) {
       sessionStorage.setItem('life-story-auth', 'true')
       setIsAuthenticated(true)
+      setIsLoading(true) // Trigger loading screen
       return true
     }
     return false
   }
 
+  const handleLoadingComplete = () => {
+    setIsLoading(false)
+    setShowContent(true)
+  }
+
+  // Show password gate
   if (!isAuthenticated) {
     return <PasswordGate onLogin={handleLogin} />
   }
 
-  return (
-    <BrowserRouter>
-      <ProtectedRoutes />
-    </BrowserRouter>
-  )
+  // Show loading screen after authentication
+  if (isLoading) {
+    return <LoadingScreen onComplete={handleLoadingComplete} birthYear={reportData.birthYear} />
+  }
+
+  // Show main content
+  if (showContent) {
+    return (
+      <BrowserRouter>
+        <ProtectedRoutes />
+      </BrowserRouter>
+    )
+  }
+
+  return null
 }
 
 export default App
