@@ -73,10 +73,10 @@ function TimelineTheme({ data, currentTab: propTab = 0, setTab: propSetTab, font
         </div>
 
         {/* Center - Birthday (accent color) */}
-        <div className="bg-dark-brown text-vintage-cream rounded-lg p-5 text-center flex flex-col justify-center">
+        <div className="bg-dark-brown rounded-lg p-5 text-center flex flex-col justify-center">
           <span className="text-4xl mb-2 block">🎂</span>
-          <h2 className="font-display text-2xl mb-1">{data.birthDate}</h2>
-          <p className="font-body text-sm opacity-70">Your Life Story Report</p>
+          <h2 className="font-display text-2xl mb-1 text-vintage-cream">{data.birthDate}</h2>
+          <p className="font-body text-sm text-vintage-cream/70">Your Life Story Report</p>
         </div>
 
         {/* Right - Rank/Percentile */}
