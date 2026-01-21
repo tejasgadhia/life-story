@@ -226,9 +226,7 @@ function TimelineTheme({ data }) {
                              [&>p]:leading-[1.7]
                              [&>p:first-of-type]:font-accent
                              [&>p:first-of-type]:text-base
-                             [&>strong]:font-bold
-                             max-h-[400px] overflow-y-auto pr-2
-                             scrollbar-thin scrollbar-thumb-sepia-brown/30"
+                             [&>strong]:font-bold"
                     dangerouslySetInnerHTML={{ __html: content }}
                   />
                 </section>
