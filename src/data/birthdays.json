@@ -2,6 +2,7 @@
   "06-09": {
     "rank": 177,
     "percentile": 52,
+    "conception_estimate_offset": -274,
     "celebrities": [
       "Johnny Depp (1963)",
       "Natalie Portman (1981)",
@@ -9,6 +10,33 @@
       "Cole Porter (1891)",
       "Peter the Great (1672)"
     ],
-    "conception_estimate_offset": -274
+    "celebrities_categorized": {
+      "entertainers": [
+        { "name": "Johnny Depp", "year": 1963, "description": "Actor, Pirates of the Caribbean" },
+        { "name": "Natalie Portman", "year": 1981, "description": "Actress, Black Swan, Star Wars" },
+        { "name": "Michael J. Fox", "year": 1961, "description": "Actor, Back to the Future" },
+        { "name": "Lucien Laviscount", "year": 1992, "description": "Actor, Emily in Paris" }
+      ],
+      "musicians": [
+        { "name": "Cole Porter", "year": 1891, "description": "Composer, songwriter" },
+        { "name": "Matthew Bellamy", "year": 1978, "description": "Lead singer, Muse" },
+        { "name": "Anoushka Shankar", "year": 1981, "description": "Sitar virtuoso, composer" },
+        { "name": "Dean Felber", "year": 1967, "description": "Bassist, Hootie & the Blowfish" }
+      ],
+      "athletes": [
+        { "name": "Dave Parker", "year": 1951, "description": "MLB outfielder, 1978 MVP" },
+        { "name": "Wayman Tisdale", "year": 1964, "description": "NBA player, jazz musician" }
+      ],
+      "leaders": [
+        { "name": "Peter the Great", "year": 1672, "description": "Russian Emperor, reformer" }
+      ],
+      "writers": [
+        { "name": "Aaron Sorkin", "year": 1961, "description": "Screenwriter, The West Wing" },
+        { "name": "Patricia Cornwell", "year": 1956, "description": "Crime novelist, Kay Scarpetta series" }
+      ],
+      "broadcasters": [
+        { "name": "Dick Vitale", "year": 1939, "description": "College basketball commentator" }
+      ]
+    }
   }
 }

@@ -48,5 +48,15 @@
     "created_at": "2026-01-20",
     "version": "1.0",
     "word_count": 4200
-  }
+  },
+  "images": [
+    { "id": "hero", "filename": "reagan-gorbachev.jpg", "caption": "Reagan and Gorbachev at Moscow Summit, 1988", "alt": "Reagan and Gorbachev shaking hands" },
+    { "id": "olympics", "filename": "seoul-olympics.jpg", "caption": "Seoul Olympics Opening Ceremony, 1988", "alt": "Seoul Olympics opening ceremony" },
+    { "id": "election", "filename": "bush-elected.jpg", "caption": "George H.W. Bush elected President", "alt": "Bush victory celebration" },
+    { "id": "lockerbie", "filename": "pan-am-103.jpg", "caption": "Pan Am Flight 103 Memorial, Lockerbie", "alt": "Lockerbie memorial" },
+    { "id": "yellowstone", "filename": "yellowstone-fire.jpg", "caption": "Yellowstone Fires, Summer 1988", "alt": "Yellowstone forest fire" },
+    { "id": "mandela", "filename": "mandela-concert.jpg", "caption": "Mandela 70th Birthday Concert, Wembley", "alt": "Wembley stadium concert" },
+    { "id": "diehard", "filename": "die-hard.jpg", "caption": "Die Hard movie poster, 1988", "alt": "Die Hard movie poster" },
+    { "id": "rainman", "filename": "rain-man.jpg", "caption": "Rain Man, Best Picture 1988", "alt": "Rain Man movie" }
+  ]
 }
