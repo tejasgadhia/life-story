@@ -18,10 +18,8 @@ const reportData = {
   birthdayRank: birthday.rank,
   birthdayPercentile: birthday.percentile,
   celebrities: birthday.celebrities,
-  celebritiesCategorized: birthday.celebrities_categorized || null,
   sections: yearData.sections,
-  yearEvents: yearData.year_events,
-  images: yearData.images || []
+  yearEvents: yearData.year_events
 }
 
 // Theme Switcher with routing
