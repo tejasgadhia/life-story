@@ -76,9 +76,16 @@ function NewspaperTheme({ data, currentPage: propPage = 0, setPage: propSetPage 
               NOTABLE JUNE 9TH BIRTHS
             </h4>
             {data.celebrities.map((celeb, i) => (
-              <p key={i} className="text-base py-2 border-b border-stone-300/50 last:border-0 text-stone-700">
-                ◆ {celeb}
-              </p>
+              <a 
+                key={i} 
+                href={`https://en.wikipedia.org/wiki/${celeb.name.replace(/ /g, '_')}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block text-base py-2 border-b border-stone-300/50 last:border-0 text-stone-700 hover:text-stone-900 hover:bg-stone-200/50 px-2 -mx-2 transition-colors"
+                title={celeb.description}
+              >
+                ◆ {celeb.name} ({celeb.year})
+              </a>
             ))}
           </div>
         </div>

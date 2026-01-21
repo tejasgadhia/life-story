@@ -11,6 +11,12 @@ import birthdayData from './data/birthdays.json'
 // Assemble report data once
 const birthDate = '06-09'
 const birthday = birthdayData[birthDate]
+
+// Flatten and sort celebrities by birth year (oldest first)
+const allCelebrities = Object.values(birthday.celebrities_categorized || {})
+  .flat()
+  .sort((a, b) => a.year - b.year)
+
 const reportData = {
   birthDate: 'June 9, 1988',
   birthYear: 1988,
@@ -18,7 +24,7 @@ const reportData = {
   generationSpan: yearData.generation_span,
   birthdayRank: birthday.rank,
   birthdayPercentile: birthday.percentile,
-  celebrities: birthday.celebrities,
+  celebrities: allCelebrities,
   sections: yearData.sections,
   yearEvents: yearData.year_events
 }

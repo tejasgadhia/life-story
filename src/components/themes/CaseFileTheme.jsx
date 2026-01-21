@@ -95,7 +95,16 @@ function CaseFileTheme({ data, currentTab: propTab = 0, setTab: propSetTab }) {
         <div className="bg-vintage-cream/50 p-4 border-2 border-sepia-brown/20">
           <div className="grid grid-cols-2 gap-2">
             {data.celebrities.map((celeb, i) => (
-              <div key={i} className="py-2 text-base">• {celeb}</div>
+              <a 
+                key={i} 
+                href={`https://en.wikipedia.org/wiki/${celeb.name.replace(/ /g, '_')}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="py-2 text-base hover:text-muted-blue transition-colors"
+                title={celeb.description}
+              >
+                • {celeb.name} ({celeb.year})
+              </a>
             ))}
           </div>
         </div>
