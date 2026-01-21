@@ -28,15 +28,29 @@ function ThemeSwitcher() {
   const navigate = useNavigate()
   const location = useLocation()
   
-  const currentTheme = location.pathname.includes('/newspaper') ? 'newspaper' 
-    : location.pathname.includes('/casefile') ? 'casefile' 
-    : 'timeline'
+  // Determine current theme and tab from path
+  const pathParts = location.pathname.split('/').filter(Boolean)
+  const currentTheme = pathParts[1] || 'timeline'
+  const currentTab = pathParts[2] ? parseInt(pathParts[2]) : 1
 
   const themes = [
-    { id: 'timeline', label: 'Timeline', icon: '📊', path: '/life-story/' },
-    { id: 'newspaper', label: 'Newspaper', icon: '📰', path: '/life-story/newspaper' },
-    { id: 'casefile', label: 'Case File', icon: '📁', path: '/life-story/casefile' },
+    { id: 'timeline', label: 'Timeline', icon: '📊' },
+    { id: 'newspaper', label: 'Newspaper', icon: '📰' },
+    { id: 'casefile', label: 'Case File', icon: '📁' },
   ]
+
+  const handleThemeChange = (themeId) => {
+    // Preserve current tab when switching themes
+    if (themeId === 'timeline' && currentTab === 1) {
+      navigate('/life-story/')
+    } else if (themeId === 'timeline') {
+      navigate(`/life-story/timeline/${currentTab}`)
+    } else if (currentTab === 1) {
+      navigate(`/life-story/${themeId}`)
+    } else {
+      navigate(`/life-story/${themeId}/${currentTab}`)
+    }
+  }
 
   return (
     <div className="fixed top-4 right-4 z-50">
@@ -48,7 +62,7 @@ function ThemeSwitcher() {
           {themes.map((theme) => (
             <button
               key={theme.id}
-              onClick={() => navigate(theme.path)}
+              onClick={() => handleThemeChange(theme.id)}
               className={`px-3 py-2 rounded font-body text-sm transition-all
                 ${currentTheme === theme.id 
                   ? 'bg-dark-brown text-vintage-cream' 
@@ -66,38 +80,26 @@ function ThemeSwitcher() {
   )
 }
 
-// Wrapper for Newspaper with page state from URL
-function NewspaperWrapper() {
-  const { page } = useParams()
-  const navigate = useNavigate()
-  const currentPage = page ? parseInt(page) - 1 : 0
-  
-  const setPage = (newPage) => {
-    if (newPage === 0) {
-      navigate('/life-story/newspaper')
-    } else {
-      navigate(`/life-story/newspaper/${newPage + 1}`)
-    }
-  }
-  
-  return <NewspaperTheme data={reportData} currentPage={currentPage} setPage={setPage} />
-}
-
-// Wrapper for CaseFile with tab state from URL
-function CaseFileWrapper() {
+// Generic wrapper for themes with tab state from URL
+function ThemeWrapper({ ThemeComponent, themePath }) {
   const { tab } = useParams()
   const navigate = useNavigate()
   const currentTab = tab ? parseInt(tab) - 1 : 0
   
   const setTab = (newTab) => {
     if (newTab === 0) {
-      navigate('/life-story/casefile')
+      navigate(`/life-story/${themePath}`)
     } else {
-      navigate(`/life-story/casefile/${newTab + 1}`)
+      navigate(`/life-story/${themePath}/${newTab + 1}`)
     }
   }
   
-  return <CaseFileTheme data={reportData} currentTab={currentTab} setTab={setTab} />
+  // Determine prop names based on theme
+  const props = themePath === 'newspaper' 
+    ? { currentPage: currentTab, setPage: setTab }
+    : { currentTab: currentTab, setTab: setTab }
+  
+  return <ThemeComponent data={reportData} {...props} />
 }
 
 // Main layout with theme switcher
@@ -114,12 +116,20 @@ function MainLayout({ children }) {
 function ProtectedRoutes() {
   return (
     <Routes>
-      <Route path="/life-story" element={<MainLayout><TimelineTheme data={reportData} /></MainLayout>} />
-      <Route path="/life-story/timeline" element={<MainLayout><TimelineTheme data={reportData} /></MainLayout>} />
-      <Route path="/life-story/newspaper" element={<MainLayout><NewspaperWrapper /></MainLayout>} />
-      <Route path="/life-story/newspaper/:page" element={<MainLayout><NewspaperWrapper /></MainLayout>} />
-      <Route path="/life-story/casefile" element={<MainLayout><CaseFileWrapper /></MainLayout>} />
-      <Route path="/life-story/casefile/:tab" element={<MainLayout><CaseFileWrapper /></MainLayout>} />
+      {/* Timeline routes */}
+      <Route path="/life-story" element={<MainLayout><ThemeWrapper ThemeComponent={TimelineTheme} themePath="timeline" /></MainLayout>} />
+      <Route path="/life-story/timeline" element={<MainLayout><ThemeWrapper ThemeComponent={TimelineTheme} themePath="timeline" /></MainLayout>} />
+      <Route path="/life-story/timeline/:tab" element={<MainLayout><ThemeWrapper ThemeComponent={TimelineTheme} themePath="timeline" /></MainLayout>} />
+      
+      {/* Newspaper routes */}
+      <Route path="/life-story/newspaper" element={<MainLayout><ThemeWrapper ThemeComponent={NewspaperTheme} themePath="newspaper" /></MainLayout>} />
+      <Route path="/life-story/newspaper/:tab" element={<MainLayout><ThemeWrapper ThemeComponent={NewspaperTheme} themePath="newspaper" /></MainLayout>} />
+      
+      {/* Case File routes */}
+      <Route path="/life-story/casefile" element={<MainLayout><ThemeWrapper ThemeComponent={CaseFileTheme} themePath="casefile" /></MainLayout>} />
+      <Route path="/life-story/casefile/:tab" element={<MainLayout><ThemeWrapper ThemeComponent={CaseFileTheme} themePath="casefile" /></MainLayout>} />
+      
+      {/* Fallback */}
       <Route path="*" element={<Navigate to="/life-story" replace />} />
     </Routes>
   )
@@ -133,7 +143,6 @@ function App() {
   useEffect(() => {
     const auth = sessionStorage.getItem('life-story-auth')
     if (auth === 'true') {
-      // Already authenticated - skip loading on refresh
       setIsAuthenticated(true)
       setShowContent(true)
     }
@@ -144,7 +153,7 @@ function App() {
     if (password === correctPassword) {
       sessionStorage.setItem('life-story-auth', 'true')
       setIsAuthenticated(true)
-      setIsLoading(true) // Trigger loading screen
+      setIsLoading(true)
       return true
     }
     return false
@@ -155,17 +164,14 @@ function App() {
     setShowContent(true)
   }
 
-  // Show password gate
   if (!isAuthenticated) {
     return <PasswordGate onLogin={handleLogin} />
   }
 
-  // Show loading screen after authentication
   if (isLoading) {
     return <LoadingScreen onComplete={handleLoadingComplete} birthYear={reportData.birthYear} />
   }
 
-  // Show main content
   if (showContent) {
     return (
       <BrowserRouter>

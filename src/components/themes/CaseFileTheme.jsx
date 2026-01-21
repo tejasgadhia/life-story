@@ -1,130 +1,150 @@
 import { useState } from 'react'
 
-const SECTIONS = [
-  { id: 'birthday', title: 'Subject Profile', key: null },
-  { id: 'childhood', title: 'Background', key: 'childhood_context' },
-  { id: 'generation', title: 'Cohort Analysis', key: 'generational_identity' },
-  { id: 'popculture', title: 'Cultural Intel', key: 'pop_culture' },
-  { id: 'technology', title: 'Tech History', key: 'technology' },
-  { id: 'history', title: 'Timeline', key: 'historical_milestones' },
-  { id: 'career', title: 'Employment', key: 'career' },
-  { id: 'relationships', title: 'Social Profile', key: 'relationships' },
-  { id: 'financial', title: 'Economic', key: 'financial' },
-  { id: 'blindspots', title: 'Risk Factors', key: 'blind_spots' },
-  { id: 'roadmap', title: 'Projections', key: 'life_roadmap' },
-  { id: 'comparison', title: 'Comparison', key: 'comparison' },
+const TABS = [
+  { 
+    id: 'overview', 
+    title: 'Overview', 
+    sections: ['birthday', 'generation', 'comparison']
+  },
+  { 
+    id: 'formative', 
+    title: 'Formative Years', 
+    sections: ['childhood', 'popculture', 'technology']
+  },
+  { 
+    id: 'world', 
+    title: 'World Events', 
+    sections: ['history', 'career', 'financial']
+  },
+  { 
+    id: 'personal', 
+    title: 'Personal Insights', 
+    sections: ['relationships', 'blindspots', 'roadmap']
+  },
 ]
+
+const SECTION_CONFIG = {
+  birthday: { title: 'Subject Profile', key: null },
+  generation: { title: 'Cohort Analysis', key: 'generational_identity' },
+  comparison: { title: 'Statistical Comparison', key: 'comparison' },
+  childhood: { title: 'Background Intel', key: 'childhood_context' },
+  popculture: { title: 'Cultural Markers', key: 'pop_culture' },
+  technology: { title: 'Tech History', key: 'technology' },
+  history: { title: 'Timeline of Events', key: 'historical_milestones' },
+  career: { title: 'Employment Profile', key: 'career' },
+  financial: { title: 'Economic Analysis', key: 'financial' },
+  relationships: { title: 'Social Profile', key: 'relationships' },
+  blindspots: { title: 'Risk Factors', key: 'blind_spots' },
+  roadmap: { title: 'Future Projections', key: 'life_roadmap' },
+}
 
 function CaseFileTheme({ data, currentTab: propTab = 0, setTab: propSetTab }) {
   const [internalTab, setInternalTab] = useState(propTab)
   const activeTab = propSetTab ? propTab : internalTab
   const setActiveTab = propSetTab || setInternalTab
 
-  const renderTabContent = () => {
-    const section = SECTIONS[activeTab]
-    
-    if (section.id === 'birthday') {
-      return (
-        <div className="space-y-8">
-          {/* Subject Info Grid */}
-          <div className="grid grid-cols-2 gap-6 text-base">
-            <div className="border-b-2 border-sepia-brown/30 pb-3">
-              <span className="text-sepia-brown/70 block text-sm mb-1">DATE OF BIRTH</span>
-              <span className="font-bold text-lg">{data.birthDate}</span>
-            </div>
-            <div className="border-b-2 border-sepia-brown/30 pb-3">
-              <span className="text-sepia-brown/70 block text-sm mb-1">CASE NUMBER</span>
-              <span className="font-bold text-lg">LS-1988-0609</span>
-            </div>
-            <div className="border-b-2 border-sepia-brown/30 pb-3">
-              <span className="text-sepia-brown/70 block text-sm mb-1">GENERATION</span>
-              <span className="font-bold text-lg">{data.generation}</span>
-            </div>
-            <div className="border-b-2 border-sepia-brown/30 pb-3">
-              <span className="text-sepia-brown/70 block text-sm mb-1">COHORT SPAN</span>
-              <span className="font-bold text-lg">{data.generationSpan}</span>
-            </div>
-            <div className="border-b-2 border-sepia-brown/30 pb-3">
-              <span className="text-sepia-brown/70 block text-sm mb-1">BIRTHDAY RANK</span>
-              <span className="font-bold text-lg">#{data.birthdayRank} of 366</span>
-            </div>
-            <div className="border-b-2 border-sepia-brown/30 pb-3">
-              <span className="text-sepia-brown/70 block text-sm mb-1">PERCENTILE</span>
-              <span className="font-bold text-lg">{data.birthdayPercentile}%</span>
-            </div>
-          </div>
+  const getContent = (key) => data.sections[key]?.html || ''
 
-          {/* Classification stamps */}
-          <div className="flex gap-6 justify-center my-10">
-            <div className="border-4 border-muted-red text-muted-red px-6 py-3 rotate-[-3deg] font-bold text-lg tracking-wider">
-              CLASSIFIED
-            </div>
-            <div className="border-4 border-muted-blue text-muted-blue px-6 py-3 rotate-[2deg] font-bold text-lg tracking-wider">
-              PERSONAL FILE
-            </div>
-          </div>
+  const renderBirthdaySection = () => (
+    <div className="bg-vintage-cream/30 border-2 border-sepia-brown/20 p-6">
+      <h3 className="font-bold text-lg mb-6 text-sepia-brown/70 tracking-wider border-b-2 border-sepia-brown/30 pb-2">
+        SUBJECT PROFILE
+      </h3>
+      
+      {/* Subject Info Grid */}
+      <div className="grid grid-cols-2 gap-6 text-base mb-8">
+        <div className="border-b-2 border-sepia-brown/30 pb-3">
+          <span className="text-sepia-brown/70 block text-sm mb-1">DATE OF BIRTH</span>
+          <span className="font-bold text-lg">{data.birthDate}</span>
+        </div>
+        <div className="border-b-2 border-sepia-brown/30 pb-3">
+          <span className="text-sepia-brown/70 block text-sm mb-1">CASE NUMBER</span>
+          <span className="font-bold text-lg">LS-{data.birthYear}-0609</span>
+        </div>
+        <div className="border-b-2 border-sepia-brown/30 pb-3">
+          <span className="text-sepia-brown/70 block text-sm mb-1">GENERATION</span>
+          <span className="font-bold text-lg">{data.generation}</span>
+        </div>
+        <div className="border-b-2 border-sepia-brown/30 pb-3">
+          <span className="text-sepia-brown/70 block text-sm mb-1">COHORT SPAN</span>
+          <span className="font-bold text-lg">{data.generationSpan}</span>
+        </div>
+        <div className="border-b-2 border-sepia-brown/30 pb-3">
+          <span className="text-sepia-brown/70 block text-sm mb-1">BIRTHDAY RANK</span>
+          <span className="font-bold text-lg">#{data.birthdayRank} of 366</span>
+        </div>
+        <div className="border-b-2 border-sepia-brown/30 pb-3">
+          <span className="text-sepia-brown/70 block text-sm mb-1">PERCENTILE</span>
+          <span className="font-bold text-lg">{data.birthdayPercentile}%</span>
+        </div>
+      </div>
 
-          {/* Known Associates */}
-          <div>
-            <h4 className="font-bold text-base mb-4 text-sepia-brown/70 tracking-wider">KNOWN BIRTHDAY ASSOCIATES:</h4>
-            <div className="bg-vintage-cream/50 p-6 border-2 border-sepia-brown/20">
-              {data.celebrities.map((celeb, i) => (
-                <div key={i} className="py-3 border-b-2 border-sepia-brown/10 last:border-0 text-lg">
-                  • {celeb}
-                </div>
-              ))}
-            </div>
-          </div>
+      {/* Classification stamps */}
+      <div className="flex gap-6 justify-center my-8">
+        <div className="border-4 border-muted-red text-muted-red px-6 py-3 rotate-[-3deg] font-bold text-lg tracking-wider">
+          CLASSIFIED
+        </div>
+        <div className="border-4 border-muted-blue text-muted-blue px-6 py-3 rotate-[2deg] font-bold text-lg tracking-wider">
+          PERSONAL FILE
+        </div>
+      </div>
 
-          {/* Year Events */}
-          <div>
-            <h4 className="font-bold text-base mb-4 text-sepia-brown/70 tracking-wider">EVENTS AT TIME OF BIRTH:</h4>
-            <div className="bg-vintage-cream/50 p-6 border-2 border-sepia-brown/20">
-              {data.yearEvents.map((event, i) => (
-                <div key={i} className="py-3 border-b-2 border-sepia-brown/10 last:border-0 text-lg">
-                  • {event}
-                </div>
-              ))}
-            </div>
+      {/* Known Associates */}
+      <div>
+        <h4 className="font-bold text-base mb-4 text-sepia-brown/70 tracking-wider">KNOWN BIRTHDAY ASSOCIATES:</h4>
+        <div className="bg-vintage-cream/50 p-4 border-2 border-sepia-brown/20">
+          <div className="grid grid-cols-2 gap-2">
+            {data.celebrities.map((celeb, i) => (
+              <div key={i} className="py-2 text-base">• {celeb}</div>
+            ))}
           </div>
         </div>
-      )
-    }
+      </div>
+    </div>
+  )
 
-    const content = data.sections[section.key]?.html
-    if (!content) return <p className="text-lg">No data available for this section.</p>
+  const renderSection = (sectionId) => {
+    const config = SECTION_CONFIG[sectionId]
+    const content = getContent(config.key)
+    if (!content) return null
 
     return (
-      <div 
-        className="text-lg leading-[1.9] 
+      <div className="bg-vintage-cream/30 border-2 border-sepia-brown/20 p-6 h-full">
+        <h3 className="font-bold text-lg mb-4 text-sepia-brown/70 tracking-wider border-b-2 border-sepia-brown/30 pb-2">
+          {config.title.toUpperCase()}
+        </h3>
+        <div 
+          className="text-base leading-[1.8] 
                    [&>h2]:hidden 
-                   [&>p]:mb-6 
+                   [&>p]:mb-4 
                    [&>p:first-of-type]:font-bold
-                   [&>p:first-of-type]:text-xl
                    [&>strong]:font-bold"
-        dangerouslySetInnerHTML={{ __html: content }}
-      />
+          dangerouslySetInnerHTML={{ __html: content }}
+        />
+      </div>
     )
   }
+
+  const currentTabData = TABS[activeTab]
 
   return (
     <div className="min-h-screen bg-zinc-800 p-6 md:p-10 font-typewriter">
       {/* Manila folder container */}
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         {/* File tabs */}
-        <div className="flex flex-wrap gap-1 mb-0 relative">
-          {SECTIONS.map((section, index) => (
+        <div className="flex gap-1 mb-0 relative">
+          {TABS.map((tab, index) => (
             <button
-              key={section.id}
+              key={tab.id}
               onClick={() => setActiveTab(index)}
-              className={`px-4 py-3 text-sm font-bold uppercase tracking-wide rounded-t-lg
-                        transition-all relative
+              className={`px-6 py-3 text-sm font-bold uppercase tracking-wide rounded-t-lg
+                        transition-all relative flex-1 text-center
                 ${activeTab === index 
                   ? 'bg-manila text-dark-brown z-10 -mb-px border-t-2 border-x-2 border-sepia-brown/30' 
                   : 'bg-sepia-brown/40 text-vintage-cream/80 hover:bg-sepia-brown/60'
                 }`}
             >
-              {section.title}
+              {tab.title}
             </button>
           ))}
         </div>
@@ -151,30 +171,48 @@ function CaseFileTheme({ data, currentTab: propTab = 0, setTab: propSetTab }) {
               <span className="text-sm opacity-70">LIFE STORY DIVISION</span>
             </div>
             <div className="text-sm opacity-70">
-              FILE: LS-1988-0609-{String(activeTab + 1).padStart(2, '0')}
+              FILE: LS-{data.birthYear}-0609 • {currentTabData.title.toUpperCase()}
             </div>
           </div>
 
           {/* Document content */}
-          <div className="p-10 md:p-14 min-h-[700px]">
+          <div className="p-8 md:p-12 min-h-[600px]">
             {/* Section header */}
-            <div className="border-b-4 border-dark-brown pb-6 mb-10">
-              <h2 className="text-3xl font-bold text-dark-brown uppercase tracking-wider">
-                Section {activeTab + 1}: {SECTIONS[activeTab].title}
+            <div className="border-b-4 border-dark-brown pb-4 mb-8">
+              <h2 className="text-2xl font-bold text-dark-brown uppercase tracking-wider">
+                {currentTabData.title}
               </h2>
-              <p className="text-base text-sepia-brown mt-2">
-                Page {activeTab + 1} of {SECTIONS.length} • Classification: PERSONAL
+              <p className="text-base text-sepia-brown mt-1">
+                Section {activeTab + 1} of {TABS.length} • Classification: PERSONAL
               </p>
             </div>
 
             {/* Content */}
             <div className="text-dark-brown">
-              {renderTabContent()}
+              {activeTab === 0 ? (
+                /* Overview with special birthday layout */
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                  <div className="lg:col-span-2">
+                    {renderBirthdaySection()}
+                  </div>
+                  {renderSection('generation')}
+                  {renderSection('comparison')}
+                </div>
+              ) : (
+                /* Other tabs - 3 sections */
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                  {currentTabData.sections.map((sectionId) => (
+                    <div key={sectionId}>
+                      {renderSection(sectionId)}
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
           </div>
 
           {/* Footer */}
-          <div className="bg-sepia-brown/20 px-10 py-6 flex justify-between items-center text-base text-sepia-brown rounded-b-lg">
+          <div className="bg-sepia-brown/20 px-8 py-4 flex justify-between items-center text-base text-sepia-brown rounded-b-lg">
             <div>
               Document generated: {new Date().toLocaleDateString()}
             </div>
@@ -187,21 +225,14 @@ function CaseFileTheme({ data, currentTab: propTab = 0, setTab: propSetTab }) {
                 ← Previous
               </button>
               <button 
-                onClick={() => setActiveTab(Math.min(SECTIONS.length - 1, activeTab + 1))}
-                disabled={activeTab === SECTIONS.length - 1}
+                onClick={() => setActiveTab(Math.min(TABS.length - 1, activeTab + 1))}
+                disabled={activeTab === TABS.length - 1}
                 className="px-5 py-2 bg-dark-brown text-vintage-cream rounded text-base disabled:opacity-30 hover:bg-sepia-brown transition-colors"
               >
                 Next →
               </button>
             </div>
           </div>
-        </div>
-
-        {/* Hole punches decoration */}
-        <div className="absolute left-2 top-1/2 -translate-y-1/2 hidden lg:flex flex-col gap-32">
-          <div className="w-8 h-8 rounded-full bg-zinc-800 border-4 border-zinc-600" />
-          <div className="w-8 h-8 rounded-full bg-zinc-800 border-4 border-zinc-600" />
-          <div className="w-8 h-8 rounded-full bg-zinc-800 border-4 border-zinc-600" />
         </div>
       </div>
 
