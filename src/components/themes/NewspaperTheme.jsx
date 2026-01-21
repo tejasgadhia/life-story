@@ -67,7 +67,10 @@ function NewspaperTheme({ data, currentPage: propPage = 0, setPage: propSetPage,
               {data.generation}
             </h3>
             <p className="text-center text-sm text-neutral-600 border-t border-neutral-400 pt-2">
-              Born {data.birthDate} • {data.generationSpan}
+              {data.generationSpan}
+            </p>
+            <p className="text-center text-xs text-neutral-500 mt-1">
+              Born {data.birthDate}
             </p>
           </div>
           
@@ -83,7 +86,7 @@ function NewspaperTheme({ data, currentPage: propPage = 0, setPage: propSetPage,
                   href={`https://en.wikipedia.org/wiki/${celeb.name.replace(/ /g, '_')}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block text-sm py-1 text-neutral-700 hover:text-neutral-900 hover:bg-neutral-200 px-1 transition-colors border-b border-neutral-300 last:border-0"
+                  className={`block ${contentFontSize} py-1 text-neutral-700 hover:text-neutral-900 hover:bg-neutral-200 px-1 transition-colors border-b border-neutral-300 last:border-0`}
                   title={celeb.description}
                 >
                   • {celeb.name} ({celeb.year})
@@ -103,7 +106,7 @@ function NewspaperTheme({ data, currentPage: propPage = 0, setPage: propSetPage,
           </p>
 
           {/* Main text - 2 columns */}
-          <div className="columns-2 gap-5 text-sm leading-[1.9] text-justify" style={{ columnRule: '1px solid #a3a3a3' }}>
+          <div className={`columns-2 gap-5 ${contentFontSize} leading-[1.9] text-justify`} style={{ columnRule: '1px solid #a3a3a3' }}>
             <p className="mb-4">
               <span className="float-left text-6xl font-display font-black mr-2 leading-none text-neutral-800">T</span>
               he subject of this comprehensive report entered the world on the ninth day of June, {data.birthYear}, 
@@ -135,7 +138,7 @@ function NewspaperTheme({ data, currentPage: propPage = 0, setPage: propSetPage,
             <h4 className="text-sm font-black text-center tracking-wider border-b-2 border-neutral-700 pb-2 mb-3 uppercase">
               By The Numbers
             </h4>
-            <div className="space-y-3 text-sm">
+            <div className={`space-y-3 ${contentFontSize}`}>
               <div className="border-b border-neutral-300 pb-2">
                 <div className="flex justify-between font-bold">
                   <span>Birthday Rank</span>
@@ -182,7 +185,7 @@ function NewspaperTheme({ data, currentPage: propPage = 0, setPage: propSetPage,
             </h4>
             <div className="space-y-2">
               {data.yearEvents.map((event, i) => (
-                <p key={i} className="text-sm text-neutral-700 border-b border-neutral-300 pb-2 last:border-0">
+                <p key={i} className={`${contentFontSize} text-neutral-700 border-b border-neutral-300 pb-2 last:border-0`}>
                   ▸ {event}
                 </p>
               ))}
