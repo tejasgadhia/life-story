@@ -15,8 +15,11 @@ const SECTIONS = [
   { id: 'comparison', title: 'Comparison', key: 'comparison' },
 ]
 
-function CaseFileTheme({ data }) {
-  const [activeTab, setActiveTab] = useState(0)
+function CaseFileTheme({ data, currentTab: propTab = 0, setTab: propSetTab }) {
+  // Use internal state if no setTab prop (backwards compatible)
+  const [internalTab, setInternalTab] = useState(propTab)
+  const activeTab = propSetTab ? propTab : internalTab
+  const setActiveTab = propSetTab || setInternalTab
 
   const renderTabContent = () => {
     const section = SECTIONS[activeTab]

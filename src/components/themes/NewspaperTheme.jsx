@@ -14,9 +14,13 @@ const SECTIONS = [
   { id: 'comparison', title: 'Statistical Survey', subtitle: 'By the Numbers', key: 'comparison' },
 ]
 
-function NewspaperTheme({ data }) {
-  const [currentPage, setCurrentPage] = useState(0)
+function NewspaperTheme({ data, currentPage: propPage = 0, setPage: propSetPage }) {
   const totalPages = 3
+  
+  // Use internal state if no setPage prop (backwards compatible)
+  const [internalPage, setInternalPage] = useState(propPage)
+  const currentPage = propSetPage ? propPage : internalPage
+  const setCurrentPage = propSetPage || setInternalPage
 
   const formatDate = () => {
     const d = new Date()
