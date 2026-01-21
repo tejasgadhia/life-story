@@ -40,7 +40,7 @@ function App() {
 
   const handleLogin = (password) => {
     // Simple password check - in production, use env variable
-    const correctPassword = 'lifestory2024'
+    const correctPassword = '1988'
     if (password === correctPassword) {
       sessionStorage.setItem('life-story-auth', 'true')
       setIsAuthenticated(true)
