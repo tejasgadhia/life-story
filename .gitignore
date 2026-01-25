@@ -24,3 +24,17 @@ npm-debug.log*
 # Cache
 .cache/
 .github/workflows/
+
+# Internal development docs (keep locally, don't publish)
+LEARNINGS.md
+NEXT-STEPS.md
+PROJECT-STATUS.md
+docs/sessions/
+docs/plans/
+docs/archive/
+docs/learnings/
+docs/troubleshooting/
+docs/test-results/
+docs/issues/
+docs/future/
+.ui-design/reviews/
