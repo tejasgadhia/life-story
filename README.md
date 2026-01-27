@@ -92,6 +92,11 @@ npm run preview  # Preview production build
 
 See [CHANGELOG.md](./CHANGELOG.md) for version history.
 
+
 ## License
 
-Private project - not open source.
+This project is licensed under the [O'Saasy License Agreement](https://osaasy.dev/).
+
+**TL;DR**: You can use, modify, and distribute this project freely. You can self-host it for personal or commercial use. However, you cannot offer it as a competing hosted/managed SaaS product.
+
+See [LICENSE.md](LICENSE.md) for full details.
