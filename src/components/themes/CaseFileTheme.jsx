@@ -140,7 +140,7 @@ function CaseFileTheme({ data, currentTab: propTab = 0, setTab: propSetTab, font
   const currentTabData = TABS[activeTab]
 
   return (
-    <div className="min-h-screen bg-zinc-800 p-3 sm:p-6 md:p-10 font-typewriter">
+    <div className="min-h-screen bg-zinc-800 p-4 md:p-6 font-typewriter">
       {/* Manila folder container */}
       <div className="max-w-6xl mx-auto">
         {/* File tabs */}
@@ -188,8 +188,8 @@ function CaseFileTheme({ data, currentTab: propTab = 0, setTab: propSetTab, font
             </div>
           </div>
 
-          {/* Document content */}
-          <div className="p-4 md:p-6 lg:p-8 min-h-[400px] md:min-h-[600px]">
+          {/* Document content - standardized responsive padding */}
+          <div className="p-4 md:p-6 min-h-[400px] md:min-h-[600px]">
             {/* Section header */}
             <div className="border-b-4 border-dark-brown pb-3 md:pb-4 mb-6 md:mb-8">
               <h2 className="text-xl md:text-2xl font-bold text-dark-brown uppercase tracking-wider">
@@ -224,8 +224,8 @@ function CaseFileTheme({ data, currentTab: propTab = 0, setTab: propSetTab, font
             </div>
           </div>
 
-          {/* Footer */}
-          <div className="bg-sepia-brown/20 px-4 md:px-8 py-3 md:py-4 flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-0 text-sm md:text-base text-sepia-brown rounded-b-lg">
+          {/* Footer - standardized responsive padding */}
+          <div className="bg-sepia-brown/20 px-4 md:px-6 py-3 md:py-4 flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-0 text-sm md:text-base text-sepia-brown rounded-b-lg">
             <div className="text-xs md:text-base">
               Document generated: {new Date().toLocaleDateString()}
             </div>

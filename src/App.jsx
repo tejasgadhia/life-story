@@ -111,7 +111,7 @@ function ThemeSwitcher() {
             <button
               key={theme.id}
               onClick={() => handleThemeChange(theme.id)}
-              className={`group relative px-3 py-2.5 rounded transition-all
+              className={`group relative px-3 py-2 rounded transition-all
                 ${currentTheme === theme.id
                   ? 'bg-vintage-cream text-dark-brown'
                   : 'text-vintage-cream/70 hover:bg-vintage-cream/20 hover:text-vintage-cream'

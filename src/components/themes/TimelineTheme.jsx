@@ -56,10 +56,11 @@ function TimelineTheme({ data, currentTab: propTab = 0, setTab: propSetTab, font
   const activeTab = propSetTab ? propTab : internalTab
   const setActiveTab = propSetTab || setInternalTab
 
+  // Font size scaling for all text elements
   const fontSizeClasses = {
-    sm: 'text-sm [&>p]:text-sm',
-    base: 'text-base [&>p]:text-base',
-    lg: 'text-lg [&>p]:text-lg',
+    sm: '[&_p]:text-sm [&_h2]:text-lg [&_h3]:text-base [&_strong]:text-sm',
+    base: '[&_p]:text-base [&_h2]:text-xl [&_h3]:text-lg [&_strong]:text-base',
+    lg: '[&_p]:text-lg [&_h2]:text-2xl [&_h3]:text-xl [&_strong]:text-lg',
   }
 
   const getSectionContent = (sectionId) => {

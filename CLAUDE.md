@@ -94,6 +94,33 @@ Tab slugs: `overview`, `formative-years`, `world-events`, `personal-insights`
 1. Create `src/data/YYYY.json` following 1988.json structure
 2. Update App.jsx to load correct year based on input
 
+## Design System
+
+### Button Padding
+- **Desktop theme/controls**: `px-3 py-2` (sidebar buttons)
+- **Desktop font size buttons**: `px-3 py-1.5` (smaller)
+- **Mobile buttons**: `py-4 px-4` (44px+ touch targets)
+- **Tab buttons**: `py-3` with responsive horizontal padding
+
+### Responsive Padding Pattern
+- **Content areas**: `p-4 md:p-6` (standardized across themes)
+
+### Font Size Scaling (TimelineTheme)
+Font size controls scale all text elements:
+```jsx
+{
+  sm: '[&_p]:text-sm [&_h2]:text-lg [&_h3]:text-base [&_strong]:text-sm',
+  base: '[&_p]:text-base [&_h2]:text-xl [&_h3]:text-lg [&_strong]:text-base',
+  lg: '[&_p]:text-lg [&_h2]:text-2xl [&_h3]:text-xl [&_strong]:text-lg',
+}
+```
+
+### Font Classes (Tailwind)
+- `font-display`: Playfair Display (headings)
+- `font-body`: Courier Prime (body text)
+- `font-blackletter`: UnifrakturMaguntia (Newspaper masthead)
+- `font-typewriter`: Special Elite (CaseFile theme)
+
 ## Writing Style Rules
 
 **NEVER use these AI phrases**:

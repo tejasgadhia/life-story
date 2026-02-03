@@ -238,10 +238,7 @@ function NewspaperTheme({ data, currentPage: propPage = 0, setPage: propSetPage,
 
         {/* MASTHEAD */}
         <header className="text-center pt-2 md:pt-3 pb-2 md:pb-3 border-b-4 border-double border-stone-800 px-3 md:px-6">
-          <h1
-            className="text-3xl sm:text-4xl md:text-6xl text-stone-900 leading-none"
-            style={{ fontFamily: "'UnifrakturMaguntia', 'Old English Text MT', serif" }}
-          >
+          <h1 className="font-blackletter text-3xl sm:text-4xl md:text-6xl text-stone-900 leading-none">
             The Personal Tribune
           </h1>
 
