@@ -110,7 +110,7 @@ function TimelineTheme({ data, currentTab: propTab = 0, setTab: propSetTab, font
               href={getWikiUrl(celeb.name)}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-aged-paper px-3 py-3 sm:py-2 rounded font-body text-sm text-dark-brown
+              className="bg-aged-paper px-3 py-3 rounded font-body text-sm text-dark-brown
                        hover:bg-sepia-brown hover:text-vintage-cream transition-colors
                        border border-sepia-brown/20 text-center sm:text-left"
               title={celeb.description}

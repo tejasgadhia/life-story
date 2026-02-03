@@ -25,6 +25,7 @@ export default {
         'muted-blue': '#4A6FA5',
         'aged-black': '#1A1A1A',
         'manila': '#D4B896',
+        'metal-gray': '#8B8B8B',
         // New landing page colors (Charcoal + Amber)
         'charcoal': {
           DEFAULT: '#292524',

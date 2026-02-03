@@ -41,7 +41,7 @@ const SECTION_CONFIG = {
 function NewspaperTheme({ data, currentPage: propPage = 0, setPage: propSetPage, fontSize = 'base' }) {
   const [internalPage, setInternalPage] = useState(propPage)
   
-  const fontSizeClasses = { sm: 'text-sm', base: 'text-base', lg: 'text-lg' }
+  const fontSizeClasses = { sm: 'content-scale-sm', base: 'content-scale-base', lg: 'content-scale-lg' }
   const contentFontSize = fontSizeClasses[fontSize] || 'text-base'
   const currentPage = propSetPage ? propPage : internalPage
   const setCurrentPage = propSetPage || setInternalPage
@@ -60,22 +60,22 @@ function NewspaperTheme({ data, currentPage: propPage = 0, setPage: propSetPage,
     <div className="col-span-3">
       <div className="grid grid-cols-12 gap-0">
         {/* LEFT COLUMN - Generation & Celebrities */}
-        <div className="col-span-12 md:col-span-3 md:border-r-2 border-neutral-400 pr-0 md:pr-4 mb-4 md:mb-0">
+        <div className="col-span-12 md:col-span-3 md:border-r-2 border-stone-400 pr-0 md:pr-4 mb-4 md:mb-0">
           {/* Generation Box */}
-          <div className="border-2 border-neutral-700 p-3 md:p-4 mb-4 bg-neutral-100">
-            <h3 className="font-display text-center text-2xl md:text-3xl font-black text-neutral-900 uppercase tracking-wide mb-1">
+          <div className="border-2 border-stone-700 p-3 md:p-4 mb-4 bg-stone-100">
+            <h3 className="font-display text-center text-2xl md:text-3xl font-black text-stone-900 uppercase tracking-wide mb-1">
               {data.generation}
             </h3>
-            <p className="text-center text-sm text-neutral-600 border-t border-neutral-400 pt-2">
+            <p className="text-center text-sm text-stone-600 border-t border-stone-400 pt-2">
               {data.generationSpan}
             </p>
-            <p className="text-center text-xs text-neutral-500 mt-1">
+            <p className="text-center text-xs text-stone-500 mt-1">
               Born {data.birthDate}
             </p>
           </div>
 
           {/* Notable Births */}
-          <div className="border-t-4 border-double border-neutral-700 pt-3">
+          <div className="border-t-4 border-double border-stone-700 pt-3">
             <h4 className="text-sm font-black text-center tracking-wider mb-3 uppercase">
               Notable June 9th Births
             </h4>
@@ -86,7 +86,7 @@ function NewspaperTheme({ data, currentPage: propPage = 0, setPage: propSetPage,
                   href={`https://en.wikipedia.org/wiki/${celeb.name.replace(/ /g, '_')}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`block ${contentFontSize} py-2 md:py-1 text-neutral-700 hover:text-neutral-900 hover:bg-neutral-200 px-1 transition-colors border-b border-neutral-300 md:last:border-0`}
+                  className={`block ${contentFontSize} py-3 text-stone-700 hover:text-stone-900 hover:bg-stone-200 px-1 transition-colors border-b border-stone-300 md:last:border-0`}
                   title={celeb.description}
                 >
                   • {celeb.name} ({celeb.year})
@@ -97,18 +97,18 @@ function NewspaperTheme({ data, currentPage: propPage = 0, setPage: propSetPage,
         </div>
 
         {/* CENTER COLUMN - Main Story */}
-        <div className="col-span-12 md:col-span-6 px-0 md:px-5 md:border-r-2 border-neutral-400 mb-4 md:mb-0">
-          <h2 className="font-display text-3xl md:text-5xl font-black text-center text-neutral-900 uppercase mb-1 leading-tight">
+        <div className="col-span-12 md:col-span-6 px-0 md:px-5 md:border-r-2 border-stone-400 mb-4 md:mb-0">
+          <h2 className="font-display text-3xl md:text-5xl font-black text-center text-stone-900 uppercase mb-1 leading-tight">
             The Story of a Life
           </h2>
-          <p className="text-center text-sm text-neutral-600 mb-4 border-b-2 border-neutral-400 pb-3">
+          <p className="text-center text-sm text-stone-600 mb-4 border-b-2 border-stone-400 pb-3">
             Complete Analysis of One Born in {data.birthYear}
           </p>
 
           {/* Main text - 1 column on mobile, 2 columns on desktop */}
-          <div className={`columns-1 md:columns-2 gap-5 ${contentFontSize} leading-[1.9] text-justify`} style={{ columnRule: '1px solid #a3a3a3' }}>
+          <div className={`columns-1 md:columns-2 gap-5 ${contentFontSize} leading-[1.9] text-justify`} style={{ columnRule: '1px solid var(--color-column-rule)' }}>
             <p className="mb-4">
-              <span className="float-left text-5xl md:text-6xl font-display font-black mr-2 leading-none text-neutral-800">T</span>
+              <span className="float-left text-5xl md:text-6xl font-display font-black mr-2 leading-none text-stone-800">T</span>
               he subject of this comprehensive report entered the world on the ninth day of June, {data.birthYear},
               a date ranking <strong>#{data.birthdayRank}</strong> among all 366 possible calendar dates for frequency of birth.
               This places the subject in the <strong>{data.birthdayPercentile}th percentile</strong> for birthday commonality.
@@ -134,35 +134,35 @@ function NewspaperTheme({ data, currentPage: propPage = 0, setPage: propSetPage,
         {/* RIGHT COLUMN - Stats & Events */}
         <div className="col-span-12 md:col-span-3 pl-0 md:pl-4">
           {/* By The Numbers - with context */}
-          <div className="border-2 border-neutral-700 bg-neutral-100 p-4 mb-4">
-            <h4 className="text-sm font-black text-center tracking-wider border-b-2 border-neutral-700 pb-2 mb-3 uppercase">
+          <div className="border-2 border-stone-700 bg-stone-100 p-4 mb-4">
+            <h4 className="text-sm font-black text-center tracking-wider border-b-2 border-stone-700 pb-2 mb-3 uppercase">
               By The Numbers
             </h4>
             <div className={`space-y-3 ${contentFontSize}`}>
-              <div className="border-b border-neutral-300 pb-2">
+              <div className="border-b border-stone-300 pb-2">
                 <div className="flex justify-between font-bold">
                   <span>Birthday Rank</span>
                   <span>#{data.birthdayRank}</span>
                 </div>
-                <p className="text-xs text-neutral-500 mt-1">
+                <p className="text-xs text-stone-500 mt-1">
                   Out of 366 possible dates
                 </p>
               </div>
-              <div className="border-b border-neutral-300 pb-2">
+              <div className="border-b border-stone-300 pb-2">
                 <div className="flex justify-between font-bold">
                   <span>Percentile</span>
                   <span>{data.birthdayPercentile}%</span>
                 </div>
-                <p className="text-xs text-neutral-500 mt-1">
+                <p className="text-xs text-stone-500 mt-1">
                   {data.birthdayRank < 183 ? 'More common' : 'Less common'} than average
                 </p>
               </div>
-              <div className="border-b border-neutral-300 pb-2">
+              <div className="border-b border-stone-300 pb-2">
                 <div className="flex justify-between font-bold">
                   <span>Generation</span>
                   <span>{data.generation}</span>
                 </div>
-                <p className="text-xs text-neutral-500 mt-1">
+                <p className="text-xs text-stone-500 mt-1">
                   ~72 million in the U.S.
                 </p>
               </div>
@@ -171,7 +171,7 @@ function NewspaperTheme({ data, currentPage: propPage = 0, setPage: propSetPage,
                   <span>Birth Year</span>
                   <span>{data.birthYear}</span>
                 </div>
-                <p className="text-xs text-neutral-500 mt-1">
+                <p className="text-xs text-stone-500 mt-1">
                   ~3.9 million born that year
                 </p>
               </div>
@@ -179,13 +179,13 @@ function NewspaperTheme({ data, currentPage: propPage = 0, setPage: propSetPage,
           </div>
 
           {/* Year Events */}
-          <div className="border-t-4 border-double border-neutral-700 pt-3">
+          <div className="border-t-4 border-double border-stone-700 pt-3">
             <h4 className="text-sm font-black tracking-wider mb-3 uppercase">
               {data.birthYear} Headlines
             </h4>
             <div className="space-y-2">
               {data.yearEvents.map((event, i) => (
-                <p key={i} className={`${contentFontSize} text-neutral-700 border-b border-neutral-300 pb-2 last:border-0`}>
+                <p key={i} className={`${contentFontSize} text-stone-700 border-b border-stone-300 pb-2 last:border-0`}>
                   ▸ {event}
                 </p>
               ))}
@@ -202,13 +202,13 @@ function NewspaperTheme({ data, currentPage: propPage = 0, setPage: propSetPage,
     if (!content) return null
 
     return (
-      <article className="p-3 sm:p-4 md:p-5 border-2 border-neutral-300 bg-white/50 h-full">
-        <h2 className="font-display text-lg md:text-xl font-black text-neutral-900 uppercase tracking-wide border-b-2 border-neutral-700 pb-2 mb-2">
+      <article className="p-3 sm:p-4 md:p-5 border-2 border-stone-300 bg-white/50 h-full">
+        <h2 className="font-display text-lg md:text-xl font-black text-stone-900 uppercase tracking-wide border-b-2 border-stone-700 pb-2 mb-2">
           {config.title}
         </h2>
-        <p className="text-[10px] md:text-xs text-neutral-500 italic mb-3 md:mb-4 uppercase tracking-wider">{config.subtitle}</p>
+        <p className="text-[10px] md:text-xs text-stone-500 italic mb-3 md:mb-4 uppercase tracking-wider">{config.subtitle}</p>
         <div
-          className={`${contentFontSize} leading-[1.8] text-justify text-neutral-800
+          className={`${contentFontSize} leading-[1.8] text-justify text-stone-800
                    [&>h2]:hidden [&>p]:mb-4
                    [&>p:first-of-type]:first-letter:float-left
                    [&>p:first-of-type]:first-letter:text-3xl
@@ -226,38 +226,34 @@ function NewspaperTheme({ data, currentPage: propPage = 0, setPage: propSetPage,
   const currentTabData = TABS[currentPage]
 
   return (
-    <div className="min-h-screen py-4 md:py-6 px-2 md:px-4 bg-neutral-400">
+    <div className="min-h-screen py-4 md:py-6 px-2 md:px-4 bg-stone-400">
       <div
-        className="max-w-6xl mx-auto shadow-2xl relative"
-        style={{
-          background: '#f5f1e8',
-          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E"), linear-gradient(to bottom, #f5f1e8, #ebe5d6)`,
-        }}
+        className="max-w-6xl mx-auto shadow-2xl relative newspaper-texture"
       >
         {/* TOP TAGLINE */}
-        <div className="flex justify-between items-center px-6 py-2 border-b border-neutral-400 text-xs tracking-[0.15em] text-neutral-500 italic">
+        <div className="flex justify-between items-center px-6 py-2 border-b border-stone-400 text-xs tracking-[0.15em] text-stone-500 italic">
           <span>A Personal Historical Record</span>
           <span>Est. {data.birthYear}</span>
         </div>
 
         {/* MASTHEAD */}
-        <header className="text-center pt-2 md:pt-3 pb-2 md:pb-3 border-b-4 border-double border-neutral-800 px-3 md:px-6">
+        <header className="text-center pt-2 md:pt-3 pb-2 md:pb-3 border-b-4 border-double border-stone-800 px-3 md:px-6">
           <h1
-            className="text-3xl sm:text-4xl md:text-6xl text-neutral-900 leading-none"
+            className="text-3xl sm:text-4xl md:text-6xl text-stone-900 leading-none"
             style={{ fontFamily: "'UnifrakturMaguntia', 'Old English Text MT', serif" }}
           >
             The Personal Tribune
           </h1>
 
           <div className="flex items-center justify-center gap-2 md:gap-3 my-2">
-            <div className="flex-1 max-w-16 md:max-w-24 h-px bg-neutral-500" />
-            <span className="text-lg md:text-xl text-neutral-600">✦</span>
-            <div className="flex-1 max-w-16 md:max-w-24 h-px bg-neutral-500" />
+            <div className="flex-1 max-w-16 md:max-w-24 h-px bg-stone-500" />
+            <span className="text-lg md:text-xl text-stone-600">✦</span>
+            <div className="flex-1 max-w-16 md:max-w-24 h-px bg-stone-500" />
           </div>
 
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-1 sm:gap-0 text-[10px] sm:text-xs text-neutral-600 tracking-wider px-2 md:px-4">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-1 sm:gap-0 text-[10px] sm:text-xs text-stone-600 tracking-wider px-2 md:px-4">
             <span className="font-bold">VOL. XXXVII • No. {data.birthdayRank}</span>
-            <span className="bg-neutral-800 text-neutral-100 py-1 px-2 sm:px-4 text-[10px] sm:text-xs font-bold tracking-widest">
+            <span className="bg-stone-800 text-stone-100 py-1 px-2 sm:px-4 text-[10px] sm:text-xs font-bold tracking-widest">
               COMPLETE PERSONAL HISTORY
             </span>
             <span className="font-bold uppercase hidden sm:inline">{formatDate()}</span>
@@ -265,15 +261,15 @@ function NewspaperTheme({ data, currentPage: propPage = 0, setPage: propSetPage,
         </header>
 
         {/* PAGE NAVIGATION */}
-        <div className="flex overflow-x-auto scrollbar-hide bg-neutral-800 border-b-2 border-neutral-900">
+        <div className="flex overflow-x-auto scrollbar-hide bg-stone-800 border-b-2 border-stone-900">
           {TABS.map((tab, i) => (
             <button
               key={tab.id}
               onClick={() => setCurrentPage(i)}
               className={`flex-1 min-w-fit px-3 sm:px-6 md:px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider sm:tracking-widest transition-all whitespace-nowrap
                 ${currentPage === i
-                  ? 'bg-neutral-100 text-neutral-900'
-                  : 'bg-neutral-800 text-neutral-300 hover:bg-neutral-700 hover:text-neutral-100'
+                  ? 'bg-stone-100 text-stone-900'
+                  : 'bg-stone-800 text-stone-300 hover:bg-stone-700 hover:text-stone-100'
                 }`}
             >
               <span className="hidden sm:inline">{tab.title}</span>
@@ -287,7 +283,7 @@ function NewspaperTheme({ data, currentPage: propPage = 0, setPage: propSetPage,
           {currentPage === 0 ? (
             <div className="grid grid-cols-1 gap-4 md:gap-6">
               {renderBirthdaySection()}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 border-t-4 border-double border-neutral-400 pt-4 md:pt-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 border-t-4 border-double border-stone-400 pt-4 md:pt-6">
                 {renderSection('generation')}
                 {renderSection('comparison')}
               </div>
@@ -304,17 +300,17 @@ function NewspaperTheme({ data, currentPage: propPage = 0, setPage: propSetPage,
         </div>
 
         {/* FOOTER */}
-        <footer className="border-t-2 border-neutral-500 bg-neutral-200/50">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-0 text-xs text-neutral-600">
-            <div className="p-3 md:p-4 border-r border-b md:border-b-0 border-neutral-400">
+        <footer className="border-t-2 border-stone-500 bg-stone-200/50">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-0 text-xs text-stone-600">
+            <div className="p-3 md:p-4 border-r border-b md:border-b-0 border-stone-400">
               <h5 className="font-bold mb-1 tracking-wider uppercase text-[10px] md:text-xs">Data Sources</h5>
               <p className="leading-relaxed text-[10px] md:text-xs">FiveThirtyEight (CDC/SSA)</p>
             </div>
-            <div className="p-3 md:p-4 md:border-r border-b md:border-b-0 border-neutral-400">
+            <div className="p-3 md:p-4 md:border-r border-b md:border-b-0 border-stone-400">
               <h5 className="font-bold mb-1 tracking-wider uppercase text-[10px] md:text-xs">Methodology</h5>
               <p className="leading-relaxed text-[10px] md:text-xs">Pew Research definitions</p>
             </div>
-            <div className="p-3 md:p-4 border-r border-neutral-400">
+            <div className="p-3 md:p-4 border-r border-stone-400">
               <h5 className="font-bold mb-1 tracking-wider uppercase text-[10px] md:text-xs">Disclaimer</h5>
               <p className="leading-relaxed text-[10px] md:text-xs">Entertainment & education</p>
             </div>
@@ -324,7 +320,7 @@ function NewspaperTheme({ data, currentPage: propPage = 0, setPage: propSetPage,
             </div>
           </div>
 
-          <div className="text-center py-2 border-t border-neutral-400 text-[10px] md:text-xs text-neutral-500">
+          <div className="text-center py-2 border-t border-stone-400 text-[10px] md:text-xs text-stone-500">
             © {new Date().getFullYear()} The Personal Tribune
           </div>
         </footer>

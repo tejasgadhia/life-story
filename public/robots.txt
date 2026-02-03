@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://tejasgadhia.github.io/life-story/sitemap.xml

@@ -44,7 +44,7 @@ function CaseFileTheme({ data, currentTab: propTab = 0, setTab: propSetTab, font
   const setActiveTab = propSetTab || setInternalTab
 
   // Font size mapping
-  const fontSizeClasses = { sm: 'text-sm', base: 'text-base', lg: 'text-lg' }
+  const fontSizeClasses = { sm: 'content-scale-sm', base: 'content-scale-base', lg: 'content-scale-lg' }
   const contentFontSize = fontSizeClasses[fontSize] || 'text-base'
 
   const getContent = (key) => data.sections[key]?.html || ''
@@ -165,12 +165,12 @@ function CaseFileTheme({ data, currentTab: propTab = 0, setTab: propSetTab, font
         {/* Main folder */}
         <div className="bg-manila rounded-b-lg rounded-tr-lg shadow-2xl relative">
           {/* Paperclip decoration */}
-          <div className="absolute -top-2 left-10 w-10 h-20 z-20">
+          <div className="absolute -top-2 left-10 w-10 h-20 z-20 text-metal-gray">
             <svg viewBox="0 0 32 64" className="w-full h-full drop-shadow-lg">
               <path
                 d="M16 4 C8 4 4 10 4 18 L4 46 C4 54 10 60 18 60 C26 60 30 54 30 46 L30 18 C30 12 26 8 20 8 L20 46 C20 50 18 52 16 52 C14 52 12 50 12 46 L12 18"
                 fill="none"
-                stroke="#8B8B8B"
+                stroke="currentColor"
                 strokeWidth="3"
                 strokeLinecap="round"
               />
@@ -189,7 +189,7 @@ function CaseFileTheme({ data, currentTab: propTab = 0, setTab: propSetTab, font
           </div>
 
           {/* Document content */}
-          <div className="p-4 sm:p-6 md:p-8 lg:p-12 min-h-[400px] md:min-h-[600px]">
+          <div className="p-4 md:p-6 lg:p-8 min-h-[400px] md:min-h-[600px]">
             {/* Section header */}
             <div className="border-b-4 border-dark-brown pb-3 md:pb-4 mb-6 md:mb-8">
               <h2 className="text-xl md:text-2xl font-bold text-dark-brown uppercase tracking-wider">
@@ -233,14 +233,14 @@ function CaseFileTheme({ data, currentTab: propTab = 0, setTab: propSetTab, font
               <button
                 onClick={() => setActiveTab(Math.max(0, activeTab - 1))}
                 disabled={activeTab === 0}
-                className="flex-1 sm:flex-none px-4 md:px-5 py-3 md:py-2 bg-dark-brown text-vintage-cream rounded text-sm md:text-base disabled:opacity-30 hover:bg-sepia-brown transition-colors"
+                className="flex-1 sm:flex-none px-4 md:px-5 py-3 bg-dark-brown text-vintage-cream rounded text-sm md:text-base disabled:opacity-30 hover:bg-sepia-brown transition-colors"
               >
                 ← Prev
               </button>
               <button
                 onClick={() => setActiveTab(Math.min(TABS.length - 1, activeTab + 1))}
                 disabled={activeTab === TABS.length - 1}
-                className="flex-1 sm:flex-none px-4 md:px-5 py-3 md:py-2 bg-dark-brown text-vintage-cream rounded text-sm md:text-base disabled:opacity-30 hover:bg-sepia-brown transition-colors"
+                className="flex-1 sm:flex-none px-4 md:px-5 py-3 bg-dark-brown text-vintage-cream rounded text-sm md:text-base disabled:opacity-30 hover:bg-sepia-brown transition-colors"
               >
                 Next →
               </button>

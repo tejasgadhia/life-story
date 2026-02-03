@@ -1,0 +1,14 @@
+{
+  "name": "Life Story - Your Personal Historical Report",
+  "short_name": "Life Story",
+  "description": "Discover your personalized historical report based on your birth date.",
+  "start_url": "/life-story/",
+  "scope": "/life-story/",
+  "display": "standalone",
+  "background_color": "#F5F0E8",
+  "theme_color": "#292524",
+  "icons": [
+    { "src": "/life-story/favicon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/life-story/favicon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

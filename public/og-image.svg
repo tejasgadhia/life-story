@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#292524"/>
+
+  <!-- Decorative border -->
+  <rect x="40" y="40" width="1120" height="550" fill="none" stroke="#D99E46" stroke-width="2" rx="8"/>
+  <rect x="50" y="50" width="1100" height="530" fill="none" stroke="#D99E46" stroke-width="1" rx="4"/>
+
+  <!-- Main title -->
+  <text x="600" y="280" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="120" font-weight="700" fill="#D99E46">LIFE STORY</text>
+
+  <!-- Subtitle -->
+  <text x="600" y="380" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="36" fill="#F5F0E8">Your Personal Historical Report</text>
+
+  <!-- Decorative line -->
+  <line x1="400" y1="420" x2="800" y2="420" stroke="#D99E46" stroke-width="2"/>
+
+  <!-- Tagline -->
+  <text x="600" y="480" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="24" fill="#A8A29E">Discover your generation's defining moments</text>
+</svg>
