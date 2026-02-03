@@ -36,7 +36,6 @@ export default {
           dark: '#C48B35',
           light: '#E5B564',
         },
-        'vintage-gold': '#D99E46',
       },
       fontFamily: {
         // Existing fonts (for report themes)

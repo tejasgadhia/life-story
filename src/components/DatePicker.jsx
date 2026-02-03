@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useRef } from 'react'
 import { Sparkles, Clock, Globe, Compass } from 'lucide-react'
 
 const MIN_YEAR = 1946
@@ -56,27 +56,11 @@ function isValidDate(month, day, year) {
   return true
 }
 
-function useDarkMode() {
-  const [isDark, setIsDark] = useState(false)
-
-  useEffect(() => {
-    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
-    setIsDark(mediaQuery.matches)
-
-    const handler = (e) => setIsDark(e.matches)
-    mediaQuery.addEventListener('change', handler)
-    return () => mediaQuery.removeEventListener('change', handler)
-  }, [])
-
-  return isDark
-}
-
 export default function DatePicker({ onSubmit }) {
   const [inputValue, setInputValue] = useState('')
   const [error, setError] = useState('')
   const [isLoading, setIsLoading] = useState(false)
   const inputRef = useRef(null)
-  const isDark = useDarkMode()
 
   // Parse the masked input value
   const parseInput = (value) => {
@@ -172,22 +156,14 @@ export default function DatePicker({ onSubmit }) {
   const isComplete = month.length === 2 && day.length === 2 && year.length === 4
 
   return (
-    <div className={`min-h-screen flex items-center justify-center p-4 transition-colors duration-300 ${
-      isDark
-        ? 'bg-gradient-to-b from-charcoal-950 to-charcoal-900'
-        : 'bg-gradient-to-b from-charcoal-50 to-charcoal-100'
-    }`}>
+    <div className="min-h-screen flex items-center justify-center p-4 bg-gradient-to-b from-charcoal-50 to-charcoal-100">
       <div className="max-w-lg w-full">
         {/* Header */}
         <div className="text-center mb-10">
-          <h1 className={`font-heading text-5xl md:text-[52px] font-semibold mb-3 transition-colors ${
-            isDark ? 'text-charcoal-50' : 'text-charcoal-800'
-          }`}>
+          <h1 className="font-heading text-5xl md:text-[52px] font-semibold mb-3 text-charcoal-800">
             Life Story
           </h1>
-          <p className={`font-sans text-[17px] transition-colors ${
-            isDark ? 'text-charcoal-400' : 'text-charcoal-500'
-          }`}>
+          <p className="font-sans text-[17px] text-charcoal-500">
             Enter your birth date to discover your personalized story
           </p>
         </div>
@@ -208,16 +184,10 @@ export default function DatePicker({ onSubmit }) {
               onKeyDown={handleKeyDown}
               placeholder="MM / DD / YYYY"
               disabled={isLoading}
-              className={`w-full px-5 py-4 text-lg font-sans text-center rounded-xl border-2 transition-all duration-200 focus:outline-none ${
-                isDark
-                  ? 'bg-charcoal-900 border-charcoal-700 text-charcoal-50 placeholder-charcoal-500 focus:border-amber focus:ring-2 focus:ring-amber/20'
-                  : 'bg-white border-charcoal-200 text-charcoal-800 placeholder-charcoal-400 focus:border-amber focus:ring-2 focus:ring-amber/20'
-              } ${isLoading ? 'opacity-50 cursor-not-allowed' : ''}`}
+              className={`w-full px-5 py-4 text-lg font-sans text-center rounded-xl border-2 transition-all duration-200 focus:outline-none bg-white border-charcoal-200 text-charcoal-800 placeholder-charcoal-400 focus:border-amber focus:ring-2 focus:ring-amber/20 ${isLoading ? 'opacity-50 cursor-not-allowed' : ''}`}
               autoComplete="off"
             />
-            <p className={`text-xs font-sans text-center mt-2 transition-colors ${
-              isDark ? 'text-charcoal-500' : 'text-charcoal-400'
-            }`}>
+            <p className="text-xs font-sans text-center mt-2 text-charcoal-400">
               Supporting birth years from {MIN_YEAR} to {MAX_YEAR}
             </p>
           </div>
@@ -246,25 +216,15 @@ export default function DatePicker({ onSubmit }) {
           {SECTION_CARDS.map(({ id, title, description, highlight, suffix, Icon }) => (
             <div
               key={id}
-              className={`p-4 rounded-xl transition-all duration-200 ${
-                isDark
-                  ? 'bg-charcoal-900 hover:bg-charcoal-800'
-                  : 'bg-white shadow-sm hover:shadow-md'
-              }`}
+              className="p-4 rounded-xl bg-white shadow-sm hover:shadow-md transition-all duration-200"
             >
-              <div className={`w-8 h-8 rounded-lg flex items-center justify-center mb-3 ${
-                isDark ? 'bg-charcoal-800' : 'bg-charcoal-50'
-              }`}>
-                <Icon className={`w-4 h-4 ${isDark ? 'text-amber' : 'text-amber'}`} />
+              <div className="w-8 h-8 rounded-lg flex items-center justify-center mb-3 bg-charcoal-50">
+                <Icon className="w-4 h-4 text-amber" />
               </div>
-              <h3 className={`font-sans text-[13px] font-semibold mb-1 transition-colors ${
-                isDark ? 'text-charcoal-100' : 'text-charcoal-800'
-              }`}>
+              <h3 className="font-sans text-[13px] font-semibold mb-1 text-charcoal-800">
                 {title}
               </h3>
-              <p className={`font-sans text-[12px] leading-relaxed transition-colors ${
-                isDark ? 'text-charcoal-400' : 'text-charcoal-500'
-              }`}>
+              <p className="font-sans text-[12px] leading-relaxed text-charcoal-500">
                 {description}{description && ' '}
                 <span className="text-amber font-medium">{highlight}</span>
                 {suffix && ` ${suffix}`}
@@ -274,9 +234,7 @@ export default function DatePicker({ onSubmit }) {
         </div>
 
         {/* Privacy note */}
-        <p className={`text-xs font-sans text-center mt-8 transition-colors ${
-          isDark ? 'text-charcoal-500' : 'text-charcoal-400'
-        }`}>
+        <p className="text-xs font-sans text-center mt-8 text-charcoal-400">
           Your birth date is used only to generate your personalized report.
           <br />
           No data is stored or shared.
