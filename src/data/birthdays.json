@@ -1,41 +1,4887 @@
 {
-  "06-09": {
-    "rank": 177,
-    "percentile": 52,
-    "conception_estimate_offset": -274,
-    "celebrities": [
-      "Johnny Depp (1963)",
-      "Natalie Portman (1981)",
-      "Michael J. Fox (1961)",
-      "Cole Porter (1891)",
-      "Peter the Great (1672)"
-    ],
+  "09-01": {
+    "rank": 1,
+    "percentile": 100,
     "celebrities_categorized": {
       "entertainers": [
-        { "name": "Johnny Depp", "year": 1963, "description": "Actor, Pirates of the Caribbean" },
-        { "name": "Natalie Portman", "year": 1981, "description": "Actress, Black Swan, Star Wars" },
-        { "name": "Michael J. Fox", "year": 1961, "description": "Actor, Back to the Future" },
-        { "name": "Lucien Laviscount", "year": 1992, "description": "Actor, Emily in Paris" }
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "09-02": {
+    "rank": 2,
+    "percentile": 100,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "09-03": {
+    "rank": 3,
+    "percentile": 99,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "09-04": {
+    "rank": 4,
+    "percentile": 99,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "09-05": {
+    "rank": 5,
+    "percentile": 99,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "09-06": {
+    "rank": 6,
+    "percentile": 99,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "09-07": {
+    "rank": 7,
+    "percentile": 98,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "09-08": {
+    "rank": 8,
+    "percentile": 98,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "09-09": {
+    "rank": 9,
+    "percentile": 98,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Adam Sandler",
+          "year": 1966,
+          "description": "Actor, comedian"
+        },
+        {
+          "name": "Michelle Williams",
+          "year": 1980,
+          "description": "Actress"
+        }
       ],
       "musicians": [
-        { "name": "Cole Porter", "year": 1891, "description": "Composer, songwriter" },
-        { "name": "Matthew Bellamy", "year": 1978, "description": "Lead singer, Muse" },
-        { "name": "Anoushka Shankar", "year": 1981, "description": "Sitar virtuoso, composer" },
-        { "name": "Dean Felber", "year": 1967, "description": "Bassist, Hootie & the Blowfish" }
-      ],
-      "athletes": [
-        { "name": "Dave Parker", "year": 1951, "description": "MLB outfielder, 1978 MVP" },
-        { "name": "Wayman Tisdale", "year": 1964, "description": "NBA player, jazz musician" }
+        {
+          "name": "Otis Redding",
+          "year": 1941,
+          "description": "Soul singer"
+        }
       ],
       "leaders": [
-        { "name": "Peter the Great", "year": 1672, "description": "Russian Emperor, reformer" }
+        {
+          "name": "Colonel Sanders",
+          "year": 1890,
+          "description": "KFC founder"
+        }
+      ]
+    }
+  },
+  "09-10": {
+    "rank": 10,
+    "percentile": 98,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "08-01": {
+    "rank": 11,
+    "percentile": 97,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "09-11": {
+    "rank": 12,
+    "percentile": 97,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "08-02": {
+    "rank": 13,
+    "percentile": 97,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "09-12": {
+    "rank": 14,
+    "percentile": 96,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "08-03": {
+    "rank": 15,
+    "percentile": 96,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "09-13": {
+    "rank": 16,
+    "percentile": 96,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "08-04": {
+    "rank": 17,
+    "percentile": 96,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "09-14": {
+    "rank": 18,
+    "percentile": 95,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "08-05": {
+    "rank": 19,
+    "percentile": 95,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "09-15": {
+    "rank": 20,
+    "percentile": 95,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "08-06": {
+    "rank": 21,
+    "percentile": 95,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "08-07": {
+    "rank": 22,
+    "percentile": 94,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "09-16": {
+    "rank": 23,
+    "percentile": 94,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "08-08": {
+    "rank": 24,
+    "percentile": 94,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "09-17": {
+    "rank": 25,
+    "percentile": 93,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "08-09": {
+    "rank": 26,
+    "percentile": 93,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "09-18": {
+    "rank": 27,
+    "percentile": 93,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "08-10": {
+    "rank": 28,
+    "percentile": 93,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "09-19": {
+    "rank": 29,
+    "percentile": 92,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "07-01": {
+    "rank": 30,
+    "percentile": 92,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "08-11": {
+    "rank": 31,
+    "percentile": 92,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "09-20": {
+    "rank": 32,
+    "percentile": 92,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "07-02": {
+    "rank": 33,
+    "percentile": 91,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "08-12": {
+    "rank": 34,
+    "percentile": 91,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "09-21": {
+    "rank": 35,
+    "percentile": 91,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "07-03": {
+    "rank": 36,
+    "percentile": 90,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "08-13": {
+    "rank": 37,
+    "percentile": 90,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "09-22": {
+    "rank": 38,
+    "percentile": 90,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "07-04": {
+    "rank": 39,
+    "percentile": 90,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Post Malone",
+          "year": 1995,
+          "description": "Rapper, singer"
+        }
+      ],
+      "leaders": [
+        {
+          "name": "Calvin Coolidge",
+          "year": 1872,
+          "description": "30th U.S. President"
+        }
       ],
       "writers": [
-        { "name": "Aaron Sorkin", "year": 1961, "description": "Screenwriter, The West Wing" },
-        { "name": "Patricia Cornwell", "year": 1956, "description": "Crime novelist, Kay Scarpetta series" }
+        {
+          "name": "Nathaniel Hawthorne",
+          "year": 1804,
+          "description": "Author, The Scarlet Letter"
+        }
+      ]
+    }
+  },
+  "08-14": {
+    "rank": 40,
+    "percentile": 89,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "09-23": {
+    "rank": 41,
+    "percentile": 89,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "07-05": {
+    "rank": 42,
+    "percentile": 89,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "08-15": {
+    "rank": 43,
+    "percentile": 88,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "09-24": {
+    "rank": 44,
+    "percentile": 88,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "07-06": {
+    "rank": 45,
+    "percentile": 88,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "08-16": {
+    "rank": 46,
+    "percentile": 88,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "09-25": {
+    "rank": 47,
+    "percentile": 87,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "07-07": {
+    "rank": 48,
+    "percentile": 87,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "08-17": {
+    "rank": 49,
+    "percentile": 87,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "09-26": {
+    "rank": 50,
+    "percentile": 87,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "07-08": {
+    "rank": 51,
+    "percentile": 86,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "08-18": {
+    "rank": 52,
+    "percentile": 86,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "09-27": {
+    "rank": 53,
+    "percentile": 86,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "07-09": {
+    "rank": 54,
+    "percentile": 85,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "08-19": {
+    "rank": 55,
+    "percentile": 85,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "09-28": {
+    "rank": 56,
+    "percentile": 85,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "07-10": {
+    "rank": 57,
+    "percentile": 85,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "08-20": {
+    "rank": 58,
+    "percentile": 84,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "09-29": {
+    "rank": 59,
+    "percentile": 84,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "07-11": {
+    "rank": 60,
+    "percentile": 84,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "08-21": {
+    "rank": 61,
+    "percentile": 84,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "09-30": {
+    "rank": 62,
+    "percentile": 83,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "10-01": {
+    "rank": 63,
+    "percentile": 83,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "07-12": {
+    "rank": 64,
+    "percentile": 83,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "08-22": {
+    "rank": 65,
+    "percentile": 82,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "10-02": {
+    "rank": 66,
+    "percentile": 82,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "07-13": {
+    "rank": 67,
+    "percentile": 82,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "08-23": {
+    "rank": 68,
+    "percentile": 82,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "10-03": {
+    "rank": 69,
+    "percentile": 81,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "07-14": {
+    "rank": 70,
+    "percentile": 81,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "08-24": {
+    "rank": 71,
+    "percentile": 81,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "10-04": {
+    "rank": 72,
+    "percentile": 81,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "07-15": {
+    "rank": 73,
+    "percentile": 80,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "08-25": {
+    "rank": 74,
+    "percentile": 80,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "10-05": {
+    "rank": 75,
+    "percentile": 80,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "07-16": {
+    "rank": 76,
+    "percentile": 79,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "08-26": {
+    "rank": 77,
+    "percentile": 79,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "10-06": {
+    "rank": 78,
+    "percentile": 79,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "07-17": {
+    "rank": 79,
+    "percentile": 79,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "08-27": {
+    "rank": 80,
+    "percentile": 78,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "10-07": {
+    "rank": 81,
+    "percentile": 78,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "07-18": {
+    "rank": 82,
+    "percentile": 78,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "08-28": {
+    "rank": 83,
+    "percentile": 78,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "10-08": {
+    "rank": 84,
+    "percentile": 77,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "07-19": {
+    "rank": 85,
+    "percentile": 77,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "08-29": {
+    "rank": 86,
+    "percentile": 77,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "10-09": {
+    "rank": 87,
+    "percentile": 76,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "07-20": {
+    "rank": 88,
+    "percentile": 76,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "08-30": {
+    "rank": 89,
+    "percentile": 76,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "10-10": {
+    "rank": 90,
+    "percentile": 76,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "06-01": {
+    "rank": 91,
+    "percentile": 75,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "07-21": {
+    "rank": 92,
+    "percentile": 75,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "08-31": {
+    "rank": 93,
+    "percentile": 75,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "10-11": {
+    "rank": 94,
+    "percentile": 75,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "06-02": {
+    "rank": 95,
+    "percentile": 74,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "07-22": {
+    "rank": 96,
+    "percentile": 74,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "10-12": {
+    "rank": 97,
+    "percentile": 74,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "06-03": {
+    "rank": 98,
+    "percentile": 73,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "07-23": {
+    "rank": 99,
+    "percentile": 73,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "10-13": {
+    "rank": 100,
+    "percentile": 73,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "06-04": {
+    "rank": 101,
+    "percentile": 73,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "07-24": {
+    "rank": 102,
+    "percentile": 72,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "10-14": {
+    "rank": 103,
+    "percentile": 72,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "06-05": {
+    "rank": 104,
+    "percentile": 72,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "07-25": {
+    "rank": 105,
+    "percentile": 72,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "10-15": {
+    "rank": 106,
+    "percentile": 71,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "06-06": {
+    "rank": 107,
+    "percentile": 71,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "07-26": {
+    "rank": 108,
+    "percentile": 71,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "10-16": {
+    "rank": 109,
+    "percentile": 70,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "06-07": {
+    "rank": 110,
+    "percentile": 70,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "07-27": {
+    "rank": 111,
+    "percentile": 70,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "10-17": {
+    "rank": 112,
+    "percentile": 70,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "06-08": {
+    "rank": 113,
+    "percentile": 69,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "07-28": {
+    "rank": 114,
+    "percentile": 69,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "10-18": {
+    "rank": 115,
+    "percentile": 69,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "07-29": {
+    "rank": 116,
+    "percentile": 68,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "10-19": {
+    "rank": 117,
+    "percentile": 68,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "06-09": {
+    "rank": 118,
+    "percentile": 68,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Johnny Depp",
+          "year": 1963,
+          "description": "Actor, Pirates of the Caribbean"
+        },
+        {
+          "name": "Natalie Portman",
+          "year": 1981,
+          "description": "Actress, Black Swan, Star Wars"
+        },
+        {
+          "name": "Michael J. Fox",
+          "year": 1961,
+          "description": "Actor, Back to the Future"
+        }
+      ],
+      "musicians": [
+        {
+          "name": "Cole Porter",
+          "year": 1891,
+          "description": "Composer, songwriter"
+        },
+        {
+          "name": "Matthew Bellamy",
+          "year": 1978,
+          "description": "Lead singer, Muse"
+        }
+      ],
+      "athletes": [
+        {
+          "name": "Dave Parker",
+          "year": 1951,
+          "description": "MLB outfielder, 1978 MVP"
+        }
+      ],
+      "leaders": [
+        {
+          "name": "Peter the Great",
+          "year": 1672,
+          "description": "Russian Emperor, reformer"
+        }
+      ],
+      "writers": [
+        {
+          "name": "Aaron Sorkin",
+          "year": 1961,
+          "description": "Screenwriter, The West Wing"
+        }
       ],
       "broadcasters": [
-        { "name": "Dick Vitale", "year": 1939, "description": "College basketball commentator" }
+        {
+          "name": "Dick Vitale",
+          "year": 1939,
+          "description": "College basketball commentator"
+        }
+      ]
+    }
+  },
+  "07-30": {
+    "rank": 119,
+    "percentile": 68,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "10-20": {
+    "rank": 120,
+    "percentile": 67,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "06-10": {
+    "rank": 121,
+    "percentile": 67,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "07-31": {
+    "rank": 122,
+    "percentile": 67,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "10-21": {
+    "rank": 123,
+    "percentile": 67,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "06-11": {
+    "rank": 124,
+    "percentile": 66,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "10-22": {
+    "rank": 125,
+    "percentile": 66,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "06-12": {
+    "rank": 126,
+    "percentile": 66,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "10-23": {
+    "rank": 127,
+    "percentile": 65,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "06-13": {
+    "rank": 128,
+    "percentile": 65,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "10-24": {
+    "rank": 129,
+    "percentile": 65,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "06-14": {
+    "rank": 130,
+    "percentile": 65,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "10-25": {
+    "rank": 131,
+    "percentile": 64,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "06-15": {
+    "rank": 132,
+    "percentile": 64,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "10-26": {
+    "rank": 133,
+    "percentile": 64,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "06-16": {
+    "rank": 134,
+    "percentile": 64,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "10-27": {
+    "rank": 135,
+    "percentile": 63,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "06-17": {
+    "rank": 136,
+    "percentile": 63,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "10-28": {
+    "rank": 137,
+    "percentile": 63,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "06-18": {
+    "rank": 138,
+    "percentile": 62,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "10-29": {
+    "rank": 139,
+    "percentile": 62,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "06-19": {
+    "rank": 140,
+    "percentile": 62,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "10-30": {
+    "rank": 141,
+    "percentile": 62,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "06-20": {
+    "rank": 142,
+    "percentile": 61,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "05-01": {
+    "rank": 143,
+    "percentile": 61,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "10-31": {
+    "rank": 144,
+    "percentile": 61,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "06-21": {
+    "rank": 145,
+    "percentile": 61,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "05-02": {
+    "rank": 146,
+    "percentile": 60,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "06-22": {
+    "rank": 147,
+    "percentile": 60,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "05-03": {
+    "rank": 148,
+    "percentile": 60,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "05-04": {
+    "rank": 149,
+    "percentile": 59,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "06-23": {
+    "rank": 150,
+    "percentile": 59,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "05-05": {
+    "rank": 151,
+    "percentile": 59,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "06-24": {
+    "rank": 152,
+    "percentile": 59,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "05-06": {
+    "rank": 153,
+    "percentile": 58,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "06-25": {
+    "rank": 154,
+    "percentile": 58,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "05-07": {
+    "rank": 155,
+    "percentile": 58,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "06-26": {
+    "rank": 156,
+    "percentile": 58,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "05-08": {
+    "rank": 157,
+    "percentile": 57,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "06-27": {
+    "rank": 158,
+    "percentile": 57,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "05-09": {
+    "rank": 159,
+    "percentile": 57,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "06-28": {
+    "rank": 160,
+    "percentile": 56,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "05-10": {
+    "rank": 161,
+    "percentile": 56,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "06-29": {
+    "rank": 162,
+    "percentile": 56,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "04-01": {
+    "rank": 163,
+    "percentile": 56,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "05-11": {
+    "rank": 164,
+    "percentile": 55,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "06-30": {
+    "rank": 165,
+    "percentile": 55,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "04-02": {
+    "rank": 166,
+    "percentile": 55,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "05-12": {
+    "rank": 167,
+    "percentile": 55,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "04-03": {
+    "rank": 168,
+    "percentile": 54,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "05-13": {
+    "rank": 169,
+    "percentile": 54,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "04-04": {
+    "rank": 170,
+    "percentile": 54,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "05-14": {
+    "rank": 171,
+    "percentile": 53,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "04-05": {
+    "rank": 172,
+    "percentile": 53,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "05-15": {
+    "rank": 173,
+    "percentile": 53,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "04-06": {
+    "rank": 174,
+    "percentile": 53,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "05-16": {
+    "rank": 175,
+    "percentile": 52,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "04-07": {
+    "rank": 176,
+    "percentile": 52,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "05-17": {
+    "rank": 177,
+    "percentile": 52,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "04-08": {
+    "rank": 178,
+    "percentile": 52,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "05-18": {
+    "rank": 179,
+    "percentile": 51,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "05-19": {
+    "rank": 180,
+    "percentile": 51,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "04-09": {
+    "rank": 181,
+    "percentile": 51,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "05-20": {
+    "rank": 182,
+    "percentile": 50,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "04-10": {
+    "rank": 183,
+    "percentile": 50,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "05-21": {
+    "rank": 184,
+    "percentile": 50,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "11-01": {
+    "rank": 185,
+    "percentile": 50,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "04-11": {
+    "rank": 186,
+    "percentile": 49,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "05-22": {
+    "rank": 187,
+    "percentile": 49,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "11-02": {
+    "rank": 188,
+    "percentile": 49,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "04-12": {
+    "rank": 189,
+    "percentile": 48,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "05-23": {
+    "rank": 190,
+    "percentile": 48,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "11-03": {
+    "rank": 191,
+    "percentile": 48,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "04-13": {
+    "rank": 192,
+    "percentile": 48,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "05-24": {
+    "rank": 193,
+    "percentile": 47,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "11-04": {
+    "rank": 194,
+    "percentile": 47,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "04-14": {
+    "rank": 195,
+    "percentile": 47,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "05-25": {
+    "rank": 196,
+    "percentile": 47,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "11-05": {
+    "rank": 197,
+    "percentile": 46,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "04-15": {
+    "rank": 198,
+    "percentile": 46,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "05-26": {
+    "rank": 199,
+    "percentile": 46,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "11-06": {
+    "rank": 200,
+    "percentile": 45,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "04-16": {
+    "rank": 201,
+    "percentile": 45,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "05-27": {
+    "rank": 202,
+    "percentile": 45,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "11-07": {
+    "rank": 203,
+    "percentile": 45,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "04-17": {
+    "rank": 204,
+    "percentile": 44,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "05-28": {
+    "rank": 205,
+    "percentile": 44,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "11-08": {
+    "rank": 206,
+    "percentile": 44,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "04-18": {
+    "rank": 207,
+    "percentile": 44,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "05-29": {
+    "rank": 208,
+    "percentile": 43,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "04-19": {
+    "rank": 209,
+    "percentile": 43,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "11-09": {
+    "rank": 210,
+    "percentile": 43,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "05-30": {
+    "rank": 211,
+    "percentile": 42,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "04-20": {
+    "rank": 212,
+    "percentile": 42,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "11-10": {
+    "rank": 213,
+    "percentile": 42,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "03-01": {
+    "rank": 214,
+    "percentile": 42,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "05-31": {
+    "rank": 215,
+    "percentile": 41,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "04-21": {
+    "rank": 216,
+    "percentile": 41,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "11-11": {
+    "rank": 217,
+    "percentile": 41,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "03-02": {
+    "rank": 218,
+    "percentile": 41,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "04-22": {
+    "rank": 219,
+    "percentile": 40,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "11-12": {
+    "rank": 220,
+    "percentile": 40,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "03-03": {
+    "rank": 221,
+    "percentile": 40,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "11-13": {
+    "rank": 222,
+    "percentile": 39,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "03-04": {
+    "rank": 223,
+    "percentile": 39,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "04-23": {
+    "rank": 224,
+    "percentile": 39,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "11-14": {
+    "rank": 225,
+    "percentile": 39,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "03-05": {
+    "rank": 226,
+    "percentile": 38,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "04-24": {
+    "rank": 227,
+    "percentile": 38,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "11-15": {
+    "rank": 228,
+    "percentile": 38,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "03-06": {
+    "rank": 229,
+    "percentile": 38,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "04-25": {
+    "rank": 230,
+    "percentile": 37,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "11-16": {
+    "rank": 231,
+    "percentile": 37,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "03-07": {
+    "rank": 232,
+    "percentile": 37,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "04-26": {
+    "rank": 233,
+    "percentile": 36,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "11-17": {
+    "rank": 234,
+    "percentile": 36,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "03-08": {
+    "rank": 235,
+    "percentile": 36,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "04-27": {
+    "rank": 236,
+    "percentile": 36,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "11-18": {
+    "rank": 237,
+    "percentile": 35,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "03-09": {
+    "rank": 238,
+    "percentile": 35,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "04-28": {
+    "rank": 239,
+    "percentile": 35,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "11-19": {
+    "rank": 240,
+    "percentile": 35,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "03-10": {
+    "rank": 241,
+    "percentile": 34,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "04-29": {
+    "rank": 242,
+    "percentile": 34,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "11-20": {
+    "rank": 243,
+    "percentile": 34,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "02-01": {
+    "rank": 244,
+    "percentile": 33,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "03-11": {
+    "rank": 245,
+    "percentile": 33,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "04-30": {
+    "rank": 246,
+    "percentile": 33,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "11-21": {
+    "rank": 247,
+    "percentile": 33,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "03-12": {
+    "rank": 248,
+    "percentile": 32,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "02-02": {
+    "rank": 249,
+    "percentile": 32,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "11-22": {
+    "rank": 250,
+    "percentile": 32,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "03-13": {
+    "rank": 251,
+    "percentile": 32,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "02-03": {
+    "rank": 252,
+    "percentile": 31,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "03-14": {
+    "rank": 253,
+    "percentile": 31,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "11-23": {
+    "rank": 254,
+    "percentile": 31,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "03-15": {
+    "rank": 255,
+    "percentile": 30,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "11-24": {
+    "rank": 256,
+    "percentile": 30,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "02-04": {
+    "rank": 257,
+    "percentile": 30,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "03-16": {
+    "rank": 258,
+    "percentile": 30,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "11-25": {
+    "rank": 259,
+    "percentile": 29,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "02-05": {
+    "rank": 260,
+    "percentile": 29,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "03-17": {
+    "rank": 261,
+    "percentile": 29,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "11-26": {
+    "rank": 262,
+    "percentile": 28,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "03-18": {
+    "rank": 263,
+    "percentile": 28,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "11-27": {
+    "rank": 264,
+    "percentile": 28,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "02-06": {
+    "rank": 265,
+    "percentile": 28,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "03-19": {
+    "rank": 266,
+    "percentile": 27,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "11-28": {
+    "rank": 267,
+    "percentile": 27,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "02-07": {
+    "rank": 268,
+    "percentile": 27,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "03-20": {
+    "rank": 269,
+    "percentile": 27,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "11-29": {
+    "rank": 270,
+    "percentile": 26,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "03-21": {
+    "rank": 271,
+    "percentile": 26,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "11-30": {
+    "rank": 272,
+    "percentile": 26,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "02-08": {
+    "rank": 273,
+    "percentile": 25,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "03-22": {
+    "rank": 274,
+    "percentile": 25,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "02-09": {
+    "rank": 275,
+    "percentile": 25,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "03-23": {
+    "rank": 276,
+    "percentile": 25,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "03-24": {
+    "rank": 277,
+    "percentile": 24,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "02-10": {
+    "rank": 278,
+    "percentile": 24,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "03-25": {
+    "rank": 279,
+    "percentile": 24,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "02-11": {
+    "rank": 280,
+    "percentile": 24,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "03-26": {
+    "rank": 281,
+    "percentile": 23,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "03-27": {
+    "rank": 282,
+    "percentile": 23,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "02-12": {
+    "rank": 283,
+    "percentile": 23,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "03-28": {
+    "rank": 284,
+    "percentile": 22,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "02-13": {
+    "rank": 285,
+    "percentile": 22,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "03-29": {
+    "rank": 286,
+    "percentile": 22,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "03-30": {
+    "rank": 287,
+    "percentile": 22,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "02-14": {
+    "rank": 288,
+    "percentile": 21,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "03-31": {
+    "rank": 289,
+    "percentile": 21,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "12-01": {
+    "rank": 290,
+    "percentile": 21,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "02-15": {
+    "rank": 291,
+    "percentile": 21,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "12-02": {
+    "rank": 292,
+    "percentile": 20,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "02-16": {
+    "rank": 293,
+    "percentile": 20,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "12-03": {
+    "rank": 294,
+    "percentile": 20,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "02-17": {
+    "rank": 295,
+    "percentile": 19,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "12-04": {
+    "rank": 296,
+    "percentile": 19,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "02-18": {
+    "rank": 297,
+    "percentile": 19,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "12-05": {
+    "rank": 298,
+    "percentile": 19,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "02-19": {
+    "rank": 299,
+    "percentile": 18,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "12-06": {
+    "rank": 300,
+    "percentile": 18,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "02-20": {
+    "rank": 301,
+    "percentile": 18,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "12-07": {
+    "rank": 302,
+    "percentile": 18,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "02-21": {
+    "rank": 303,
+    "percentile": 17,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "12-08": {
+    "rank": 304,
+    "percentile": 17,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "12-09": {
+    "rank": 305,
+    "percentile": 17,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "02-22": {
+    "rank": 306,
+    "percentile": 16,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "12-10": {
+    "rank": 307,
+    "percentile": 16,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "02-23": {
+    "rank": 308,
+    "percentile": 16,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "12-11": {
+    "rank": 309,
+    "percentile": 16,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "02-24": {
+    "rank": 310,
+    "percentile": 15,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "12-12": {
+    "rank": 311,
+    "percentile": 15,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "02-25": {
+    "rank": 312,
+    "percentile": 15,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "12-13": {
+    "rank": 313,
+    "percentile": 15,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "02-26": {
+    "rank": 314,
+    "percentile": 14,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "12-14": {
+    "rank": 315,
+    "percentile": 14,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "02-27": {
+    "rank": 316,
+    "percentile": 14,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "12-15": {
+    "rank": 317,
+    "percentile": 13,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "01-01": {
+    "rank": 318,
+    "percentile": 13,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Vidya Balan",
+          "year": 1978,
+          "description": "Actress, The Dirty Picture"
+        }
+      ],
+      "leaders": [
+        {
+          "name": "J. Edgar Hoover",
+          "year": 1895,
+          "description": "FBI Director for 48 years"
+        }
+      ]
+    }
+  },
+  "02-28": {
+    "rank": 319,
+    "percentile": 13,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "12-16": {
+    "rank": 320,
+    "percentile": 13,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "01-02": {
+    "rank": 321,
+    "percentile": 12,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "12-17": {
+    "rank": 322,
+    "percentile": 12,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "01-03": {
+    "rank": 323,
+    "percentile": 12,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "12-18": {
+    "rank": 324,
+    "percentile": 12,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "01-04": {
+    "rank": 325,
+    "percentile": 11,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "01-05": {
+    "rank": 326,
+    "percentile": 11,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "12-19": {
+    "rank": 327,
+    "percentile": 11,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "01-06": {
+    "rank": 328,
+    "percentile": 10,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "12-20": {
+    "rank": 329,
+    "percentile": 10,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "01-07": {
+    "rank": 330,
+    "percentile": 10,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "12-21": {
+    "rank": 331,
+    "percentile": 10,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "01-08": {
+    "rank": 332,
+    "percentile": 9,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "01-09": {
+    "rank": 333,
+    "percentile": 9,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "12-22": {
+    "rank": 334,
+    "percentile": 9,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "01-10": {
+    "rank": 335,
+    "percentile": 8,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "12-23": {
+    "rank": 336,
+    "percentile": 8,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "01-11": {
+    "rank": 337,
+    "percentile": 8,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "12-24": {
+    "rank": 338,
+    "percentile": 8,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "01-12": {
+    "rank": 339,
+    "percentile": 7,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "01-13": {
+    "rank": 340,
+    "percentile": 7,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "12-25": {
+    "rank": 341,
+    "percentile": 7,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Humphrey Bogart",
+          "year": 1899,
+          "description": "Actor, Casablanca"
+        },
+        {
+          "name": "Sissy Spacek",
+          "year": 1949,
+          "description": "Actress, Carrie"
+        }
+      ],
+      "musicians": [
+        {
+          "name": "Annie Lennox",
+          "year": 1954,
+          "description": "Singer, Eurythmics"
+        }
+      ],
+      "leaders": [
+        {
+          "name": "Isaac Newton",
+          "year": 1642,
+          "description": "Physicist, mathematician"
+        }
+      ]
+    }
+  },
+  "01-14": {
+    "rank": 342,
+    "percentile": 7,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "12-26": {
+    "rank": 343,
+    "percentile": 6,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "01-15": {
+    "rank": 344,
+    "percentile": 6,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "12-27": {
+    "rank": 345,
+    "percentile": 6,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "01-16": {
+    "rank": 346,
+    "percentile": 5,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "01-17": {
+    "rank": 347,
+    "percentile": 5,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "12-28": {
+    "rank": 348,
+    "percentile": 5,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "01-18": {
+    "rank": 349,
+    "percentile": 5,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "12-29": {
+    "rank": 350,
+    "percentile": 4,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "01-19": {
+    "rank": 351,
+    "percentile": 4,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "12-30": {
+    "rank": 352,
+    "percentile": 4,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "01-20": {
+    "rank": 353,
+    "percentile": 4,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "01-21": {
+    "rank": 354,
+    "percentile": 3,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "12-31": {
+    "rank": 355,
+    "percentile": 3,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Val Kilmer",
+          "year": 1959,
+          "description": "Actor, Top Gun"
+        },
+        {
+          "name": "Anthony Hopkins",
+          "year": 1937,
+          "description": "Actor, Silence of the Lambs"
+        }
+      ],
+      "musicians": [
+        {
+          "name": "John Denver",
+          "year": 1943,
+          "description": "Singer-songwriter"
+        }
+      ]
+    }
+  },
+  "01-22": {
+    "rank": 356,
+    "percentile": 3,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "01-23": {
+    "rank": 357,
+    "percentile": 2,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "01-24": {
+    "rank": 358,
+    "percentile": 2,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "01-25": {
+    "rank": 359,
+    "percentile": 2,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "01-26": {
+    "rank": 360,
+    "percentile": 2,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "01-27": {
+    "rank": 361,
+    "percentile": 1,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "01-28": {
+    "rank": 362,
+    "percentile": 1,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "01-29": {
+    "rank": 363,
+    "percentile": 1,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "01-30": {
+    "rank": 364,
+    "percentile": 1,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "01-31": {
+    "rank": 365,
+    "percentile": 0,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Notable person",
+          "year": 1950,
+          "description": "Celebrity data pending"
+        }
+      ]
+    }
+  },
+  "02-29": {
+    "rank": 366,
+    "percentile": 0,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Ja Rule",
+          "year": 1976,
+          "description": "Rapper, actor"
+        }
+      ],
+      "athletes": [
+        {
+          "name": "Cam Ward",
+          "year": 1984,
+          "description": "NHL goaltender"
+        }
       ]
     }
   }

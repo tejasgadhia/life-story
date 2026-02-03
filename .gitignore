@@ -25,6 +25,10 @@ npm-debug.log*
 .cache/
 .github/workflows/
 
+# Development artifacts
+screenshots/
+scripts/
+
 # Internal development docs (keep locally, don't publish)
 LEARNINGS.md
 NEXT-STEPS.md
