@@ -67,32 +67,32 @@ function LoadingScreen({ onComplete, birthYear = 1988 }) {
       />
 
       {/* Content */}
-      <div className={`relative text-center transition-all duration-500 ${showReport ? 'scale-110 opacity-0' : 'scale-100 opacity-100'}`}>
+      <div className={`relative text-center transition-all duration-500 px-4 ${showReport ? 'scale-110 opacity-0' : 'scale-100 opacity-100'}`}>
         {/* Logo/Brand */}
-        <div className="mb-12">
+        <div className="mb-8 md:mb-12">
           <h1
-            className="text-5xl md:text-6xl text-amber mb-4"
+            className="text-4xl sm:text-5xl md:text-6xl text-amber mb-3 md:mb-4"
             style={{ fontFamily: "'Fraunces', Georgia, serif" }}
           >
             Life Story
           </h1>
-          <div className="flex items-center justify-center gap-3">
-            <div className="w-16 h-px bg-charcoal-300" />
-            <span className="text-amber text-2xl">⚜</span>
-            <div className="w-16 h-px bg-charcoal-300" />
+          <div className="flex items-center justify-center gap-2 md:gap-3">
+            <div className="w-12 md:w-16 h-px bg-charcoal-300" />
+            <span className="text-amber text-xl md:text-2xl">⚜</span>
+            <div className="w-12 md:w-16 h-px bg-charcoal-300" />
           </div>
         </div>
 
         {/* Year being analyzed */}
-        <div className="mb-10">
-          <p className="text-charcoal-500 text-sm uppercase tracking-[0.3em] mb-2">
+        <div className="mb-8 md:mb-10">
+          <p className="text-charcoal-500 text-xs sm:text-sm uppercase tracking-[0.2em] sm:tracking-[0.3em] mb-2">
             Generating Report For
           </p>
-          <p className="text-charcoal-800 text-4xl font-heading">{birthYear}</p>
+          <p className="text-charcoal-800 text-3xl md:text-4xl font-heading">{birthYear}</p>
         </div>
 
         {/* Progress bar container */}
-        <div className="w-80 md:w-96 mx-auto mb-8">
+        <div className="w-full max-w-xs sm:max-w-sm md:max-w-md mx-auto mb-6 md:mb-8">
           <div className="h-2 bg-charcoal-200 rounded-full overflow-hidden">
             <div
               className="h-full bg-gradient-to-r from-amber to-amber-light rounded-full transition-all duration-100 ease-out"
@@ -107,18 +107,18 @@ function LoadingScreen({ onComplete, birthYear = 1988 }) {
         </div>
 
         {/* Current stage text */}
-        <div className="h-8">
-          <p className="text-charcoal-600 text-base font-sans animate-pulse">
+        <div className="h-8 px-2">
+          <p className="text-charcoal-600 text-sm md:text-base font-sans animate-pulse">
             {LOADING_STAGES[currentStage].text}
           </p>
         </div>
 
         {/* Decorative elements */}
-        <div className="mt-12 flex justify-center gap-2">
+        <div className="mt-8 md:mt-12 flex justify-center gap-1.5 md:gap-2">
           {LOADING_STAGES.map((_, idx) => (
             <div
               key={idx}
-              className={`w-2 h-2 rounded-full transition-all duration-300 ${
+              className={`w-1.5 md:w-2 h-1.5 md:h-2 rounded-full transition-all duration-300 ${
                 idx <= currentStage
                   ? 'bg-amber'
                   : 'bg-charcoal-200'
@@ -128,18 +128,18 @@ function LoadingScreen({ onComplete, birthYear = 1988 }) {
         </div>
 
         {/* Typewriter effect dots */}
-        <div className="mt-8 flex justify-center gap-1">
-          <span className="w-2 h-2 bg-charcoal-400 rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
-          <span className="w-2 h-2 bg-charcoal-400 rounded-full animate-bounce" style={{ animationDelay: '150ms' }} />
-          <span className="w-2 h-2 bg-charcoal-400 rounded-full animate-bounce" style={{ animationDelay: '300ms' }} />
+        <div className="mt-6 md:mt-8 flex justify-center gap-1">
+          <span className="w-1.5 md:w-2 h-1.5 md:h-2 bg-charcoal-400 rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
+          <span className="w-1.5 md:w-2 h-1.5 md:h-2 bg-charcoal-400 rounded-full animate-bounce" style={{ animationDelay: '150ms' }} />
+          <span className="w-1.5 md:w-2 h-1.5 md:h-2 bg-charcoal-400 rounded-full animate-bounce" style={{ animationDelay: '300ms' }} />
         </div>
       </div>
 
-      {/* Corner decorations */}
-      <div className="absolute top-8 left-8 text-charcoal-200 text-3xl">❧</div>
-      <div className="absolute top-8 right-8 text-charcoal-200 text-3xl">❧</div>
-      <div className="absolute bottom-8 left-8 text-charcoal-200 text-3xl">❧</div>
-      <div className="absolute bottom-8 right-8 text-charcoal-200 text-3xl">❧</div>
+      {/* Corner decorations - hidden on small screens */}
+      <div className="absolute top-4 md:top-8 left-4 md:left-8 text-charcoal-200 text-xl md:text-3xl hidden sm:block">❧</div>
+      <div className="absolute top-4 md:top-8 right-4 md:right-8 text-charcoal-200 text-xl md:text-3xl hidden sm:block">❧</div>
+      <div className="absolute bottom-4 md:bottom-8 left-4 md:left-8 text-charcoal-200 text-xl md:text-3xl hidden sm:block">❧</div>
+      <div className="absolute bottom-4 md:bottom-8 right-4 md:right-8 text-charcoal-200 text-xl md:text-3xl hidden sm:block">❧</div>
     </div>
   )
 }

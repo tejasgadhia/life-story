@@ -156,14 +156,14 @@ export default function DatePicker({ onSubmit }) {
   const isComplete = month.length === 2 && day.length === 2 && year.length === 4
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-4 bg-gradient-to-b from-charcoal-50 to-charcoal-100">
+    <div className="min-h-screen flex items-center justify-center px-4 py-8 bg-gradient-to-b from-charcoal-50 to-charcoal-100">
       <div className="max-w-lg w-full">
         {/* Header */}
-        <div className="text-center mb-10">
-          <h1 className="font-heading text-5xl md:text-[52px] font-semibold mb-3 text-charcoal-800">
+        <div className="text-center mb-8 md:mb-10">
+          <h1 className="font-heading text-4xl sm:text-5xl md:text-[52px] font-semibold mb-2 sm:mb-3 text-charcoal-800">
             Life Story
           </h1>
-          <p className="font-sans text-[17px] text-charcoal-500">
+          <p className="font-sans text-base sm:text-[17px] text-charcoal-500 px-2">
             Enter your birth date to discover your personalized story
           </p>
         </div>
@@ -212,7 +212,7 @@ export default function DatePicker({ onSubmit }) {
         </form>
 
         {/* Section Preview Cards */}
-        <div className="mt-12 grid grid-cols-2 gap-4">
+        <div className="mt-8 md:mt-12 grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
           {SECTION_CARDS.map(({ id, title, description, highlight, suffix, Icon }) => (
             <div
               key={id}
@@ -221,10 +221,10 @@ export default function DatePicker({ onSubmit }) {
               <div className="w-8 h-8 rounded-lg flex items-center justify-center mb-3 bg-charcoal-50">
                 <Icon className="w-4 h-4 text-amber" />
               </div>
-              <h3 className="font-sans text-[13px] font-semibold mb-1 text-charcoal-800">
+              <h3 className="font-sans text-sm sm:text-[13px] font-semibold mb-1 text-charcoal-800">
                 {title}
               </h3>
-              <p className="font-sans text-[12px] leading-relaxed text-charcoal-500">
+              <p className="font-sans text-xs sm:text-[12px] leading-relaxed text-charcoal-500">
                 {description}{description && ' '}
                 <span className="text-amber font-medium">{highlight}</span>
                 {suffix && ` ${suffix}`}
@@ -234,9 +234,10 @@ export default function DatePicker({ onSubmit }) {
         </div>
 
         {/* Privacy note */}
-        <p className="text-xs font-sans text-center mt-8 text-charcoal-400">
+        <p className="text-xs font-sans text-center mt-6 md:mt-8 text-charcoal-400 px-2">
           Your birth date is used only to generate your personalized report.
-          <br />
+          <br className="hidden sm:block" />
+          <span className="sm:hidden"> </span>
           No data is stored or shared.
         </p>
       </div>

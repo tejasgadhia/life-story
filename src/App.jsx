@@ -57,12 +57,13 @@ function formatBirthdayForUrl({ year, month, day }) {
   return `${year}-${m}-${d}`
 }
 
-// Theme Switcher - Left sidebar
+// Theme Switcher - Desktop sidebar + Mobile FAB with bottom sheet
 function ThemeSwitcher() {
   const navigate = useNavigate()
   const { birthday, tab } = useParams()
   const location = useLocation()
   const { fontSize, setFontSize } = useContext(FontSizeContext)
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   // Determine current theme from path
   const pathParts = location.pathname.split('/').filter(Boolean)
@@ -89,64 +90,162 @@ function ThemeSwitcher() {
     } else {
       navigate(`/life-story/${birthday}/${themeId}/${currentSlug}`)
     }
+    setIsMobileMenuOpen(false)
+  }
+
+  const handleFontSizeChange = (sizeId) => {
+    setFontSize(sizeId)
+    setIsMobileMenuOpen(false)
   }
 
   return (
-    <div className="fixed left-0 top-1/2 -translate-y-1/2 z-50">
-      <div className="bg-dark-brown/95 backdrop-blur rounded-r-lg py-3 px-2 shadow-xl flex flex-col gap-1">
-        <p className="text-[10px] font-body text-vintage-cream/50 uppercase tracking-wider text-center mb-1 px-1">
-          Theme
-        </p>
-        {themes.map((theme) => (
-          <button
-            key={theme.id}
-            onClick={() => handleThemeChange(theme.id)}
-            className={`group relative px-3 py-2.5 rounded transition-all
-              ${currentTheme === theme.id
-                ? 'bg-vintage-cream text-dark-brown'
-                : 'text-vintage-cream/70 hover:bg-vintage-cream/20 hover:text-vintage-cream'
-              }`}
-            title={theme.label}
-          >
-            <span className="text-lg">{theme.icon}</span>
-            <span className="absolute left-full ml-2 top-1/2 -translate-y-1/2 bg-dark-brown text-vintage-cream
-                           text-xs px-2 py-1 rounded whitespace-nowrap opacity-0 group-hover:opacity-100
-                           transition-opacity pointer-events-none shadow-lg">
-              {theme.label}
-            </span>
-          </button>
-        ))}
-
-        <div className="h-px bg-vintage-cream/20 my-2" />
-
-        <p className="text-[10px] font-body text-vintage-cream/50 uppercase tracking-wider text-center mb-1 px-1">
-          Size
-        </p>
-        <div className="flex flex-col gap-1">
-          {fontSizes.map((size, idx) => (
+    <>
+      {/* Desktop sidebar - hidden on mobile */}
+      <div className="fixed left-0 top-1/2 -translate-y-1/2 z-50 hidden md:block">
+        <div className="bg-dark-brown/95 backdrop-blur rounded-r-lg py-3 px-2 shadow-xl flex flex-col gap-1">
+          <p className="text-[10px] font-body text-vintage-cream/50 uppercase tracking-wider text-center mb-1 px-1">
+            Theme
+          </p>
+          {themes.map((theme) => (
             <button
-              key={size.id}
-              onClick={() => setFontSize(size.id)}
-              className={`group relative px-3 py-1.5 rounded transition-all font-body
-                ${fontSize === size.id
+              key={theme.id}
+              onClick={() => handleThemeChange(theme.id)}
+              className={`group relative px-3 py-2.5 rounded transition-all
+                ${currentTheme === theme.id
                   ? 'bg-vintage-cream text-dark-brown'
                   : 'text-vintage-cream/70 hover:bg-vintage-cream/20 hover:text-vintage-cream'
                 }`}
-              title={size.label}
+              title={theme.label}
             >
-              <span className={idx === 0 ? 'text-xs' : idx === 1 ? 'text-sm' : 'text-base'}>
-                {size.icon}
-              </span>
+              <span className="text-lg">{theme.icon}</span>
               <span className="absolute left-full ml-2 top-1/2 -translate-y-1/2 bg-dark-brown text-vintage-cream
                              text-xs px-2 py-1 rounded whitespace-nowrap opacity-0 group-hover:opacity-100
                              transition-opacity pointer-events-none shadow-lg">
-                {size.label}
+                {theme.label}
               </span>
             </button>
           ))}
+
+          <div className="h-px bg-vintage-cream/20 my-2" />
+
+          <p className="text-[10px] font-body text-vintage-cream/50 uppercase tracking-wider text-center mb-1 px-1">
+            Size
+          </p>
+          <div className="flex flex-col gap-1">
+            {fontSizes.map((size, idx) => (
+              <button
+                key={size.id}
+                onClick={() => setFontSize(size.id)}
+                className={`group relative px-3 py-1.5 rounded transition-all font-body
+                  ${fontSize === size.id
+                    ? 'bg-vintage-cream text-dark-brown'
+                    : 'text-vintage-cream/70 hover:bg-vintage-cream/20 hover:text-vintage-cream'
+                  }`}
+                title={size.label}
+              >
+                <span className={idx === 0 ? 'text-xs' : idx === 1 ? 'text-sm' : 'text-base'}>
+                  {size.icon}
+                </span>
+                <span className="absolute left-full ml-2 top-1/2 -translate-y-1/2 bg-dark-brown text-vintage-cream
+                               text-xs px-2 py-1 rounded whitespace-nowrap opacity-0 group-hover:opacity-100
+                               transition-opacity pointer-events-none shadow-lg">
+                  {size.label}
+                </span>
+              </button>
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+
+      {/* Mobile FAB - visible only on mobile */}
+      <button
+        onClick={() => setIsMobileMenuOpen(true)}
+        className="fixed bottom-6 right-6 z-50 md:hidden w-14 h-14 bg-dark-brown/95 backdrop-blur
+                   rounded-full shadow-xl flex items-center justify-center text-2xl
+                   active:scale-95 transition-transform"
+        aria-label="Open theme settings"
+      >
+        <span className="text-vintage-cream">⚙️</span>
+      </button>
+
+      {/* Mobile bottom sheet overlay */}
+      {isMobileMenuOpen && (
+        <div
+          className="fixed inset-0 z-50 md:hidden"
+          onClick={() => setIsMobileMenuOpen(false)}
+        >
+          {/* Backdrop */}
+          <div className="absolute inset-0 bg-black/50" />
+
+          {/* Bottom sheet */}
+          <div
+            className="absolute bottom-0 left-0 right-0 bg-dark-brown rounded-t-2xl p-6 pb-8
+                       animate-slide-up"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Handle */}
+            <div className="w-10 h-1 bg-vintage-cream/30 rounded-full mx-auto mb-6" />
+
+            {/* Theme selection */}
+            <div className="mb-6">
+              <p className="text-xs font-body text-vintage-cream/50 uppercase tracking-wider mb-3">
+                Theme
+              </p>
+              <div className="flex gap-3">
+                {themes.map((theme) => (
+                  <button
+                    key={theme.id}
+                    onClick={() => handleThemeChange(theme.id)}
+                    className={`flex-1 py-4 px-4 rounded-lg transition-all flex flex-col items-center gap-2
+                      ${currentTheme === theme.id
+                        ? 'bg-vintage-cream text-dark-brown'
+                        : 'bg-vintage-cream/10 text-vintage-cream/70 active:bg-vintage-cream/20'
+                      }`}
+                  >
+                    <span className="text-2xl">{theme.icon}</span>
+                    <span className="text-sm font-medium">{theme.label}</span>
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Font size selection */}
+            <div>
+              <p className="text-xs font-body text-vintage-cream/50 uppercase tracking-wider mb-3">
+                Text Size
+              </p>
+              <div className="flex gap-3">
+                {fontSizes.map((size, idx) => (
+                  <button
+                    key={size.id}
+                    onClick={() => handleFontSizeChange(size.id)}
+                    className={`flex-1 py-4 px-4 rounded-lg transition-all flex flex-col items-center gap-2 font-body
+                      ${fontSize === size.id
+                        ? 'bg-vintage-cream text-dark-brown'
+                        : 'bg-vintage-cream/10 text-vintage-cream/70 active:bg-vintage-cream/20'
+                      }`}
+                  >
+                    <span className={idx === 0 ? 'text-base' : idx === 1 ? 'text-xl' : 'text-2xl'}>
+                      {size.icon}
+                    </span>
+                    <span className="text-sm font-medium">{size.label}</span>
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Close button */}
+            <button
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="mt-6 w-full py-4 bg-vintage-cream/10 text-vintage-cream rounded-lg
+                         font-medium active:bg-vintage-cream/20 transition-colors"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
+    </>
   )
 }
 

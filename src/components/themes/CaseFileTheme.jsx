@@ -50,61 +50,61 @@ function CaseFileTheme({ data, currentTab: propTab = 0, setTab: propSetTab, font
   const getContent = (key) => data.sections[key]?.html || ''
 
   const renderBirthdaySection = () => (
-    <div className="bg-vintage-cream/30 border-2 border-sepia-brown/20 p-6">
-      <h3 className="font-bold text-lg mb-6 text-sepia-brown/70 tracking-wider border-b-2 border-sepia-brown/30 pb-2">
+    <div className="bg-vintage-cream/30 border-2 border-sepia-brown/20 p-4 md:p-6">
+      <h3 className="font-bold text-base md:text-lg mb-4 md:mb-6 text-sepia-brown/70 tracking-wider border-b-2 border-sepia-brown/30 pb-2">
         SUBJECT PROFILE
       </h3>
-      
+
       {/* Subject Info Grid */}
-      <div className="grid grid-cols-2 gap-6 text-base mb-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6 text-base mb-6 md:mb-8">
         <div className="border-b-2 border-sepia-brown/30 pb-3">
-          <span className="text-sepia-brown/70 block text-sm mb-1">DATE OF BIRTH</span>
-          <span className="font-bold text-lg">{data.birthDate}</span>
+          <span className="text-sepia-brown/70 block text-xs md:text-sm mb-1">DATE OF BIRTH</span>
+          <span className="font-bold text-base md:text-lg">{data.birthDate}</span>
         </div>
         <div className="border-b-2 border-sepia-brown/30 pb-3">
-          <span className="text-sepia-brown/70 block text-sm mb-1">CASE NUMBER</span>
-          <span className="font-bold text-lg">LS-{data.birthYear}-0609</span>
+          <span className="text-sepia-brown/70 block text-xs md:text-sm mb-1">CASE NUMBER</span>
+          <span className="font-bold text-base md:text-lg">LS-{data.birthYear}-0609</span>
         </div>
         <div className="border-b-2 border-sepia-brown/30 pb-3">
-          <span className="text-sepia-brown/70 block text-sm mb-1">GENERATION</span>
-          <span className="font-bold text-lg">{data.generation}</span>
+          <span className="text-sepia-brown/70 block text-xs md:text-sm mb-1">GENERATION</span>
+          <span className="font-bold text-base md:text-lg">{data.generation}</span>
         </div>
         <div className="border-b-2 border-sepia-brown/30 pb-3">
-          <span className="text-sepia-brown/70 block text-sm mb-1">COHORT SPAN</span>
-          <span className="font-bold text-lg">{data.generationSpan}</span>
+          <span className="text-sepia-brown/70 block text-xs md:text-sm mb-1">COHORT SPAN</span>
+          <span className="font-bold text-base md:text-lg">{data.generationSpan}</span>
         </div>
         <div className="border-b-2 border-sepia-brown/30 pb-3">
-          <span className="text-sepia-brown/70 block text-sm mb-1">BIRTHDAY RANK</span>
-          <span className="font-bold text-lg">#{data.birthdayRank} of 366</span>
+          <span className="text-sepia-brown/70 block text-xs md:text-sm mb-1">BIRTHDAY RANK</span>
+          <span className="font-bold text-base md:text-lg">#{data.birthdayRank} of 366</span>
         </div>
         <div className="border-b-2 border-sepia-brown/30 pb-3">
-          <span className="text-sepia-brown/70 block text-sm mb-1">PERCENTILE</span>
-          <span className="font-bold text-lg">{data.birthdayPercentile}%</span>
+          <span className="text-sepia-brown/70 block text-xs md:text-sm mb-1">PERCENTILE</span>
+          <span className="font-bold text-base md:text-lg">{data.birthdayPercentile}%</span>
         </div>
       </div>
 
       {/* Classification stamps */}
-      <div className="flex gap-6 justify-center my-8">
-        <div className="border-4 border-muted-red text-muted-red px-6 py-3 rotate-[-3deg] font-bold text-lg tracking-wider">
+      <div className="flex flex-wrap gap-4 md:gap-6 justify-center my-6 md:my-8">
+        <div className="border-4 border-muted-red text-muted-red px-4 md:px-6 py-2 md:py-3 rotate-[-3deg] font-bold text-sm md:text-lg tracking-wider">
           CLASSIFIED
         </div>
-        <div className="border-4 border-muted-blue text-muted-blue px-6 py-3 rotate-[2deg] font-bold text-lg tracking-wider">
+        <div className="border-4 border-muted-blue text-muted-blue px-4 md:px-6 py-2 md:py-3 rotate-[2deg] font-bold text-sm md:text-lg tracking-wider">
           PERSONAL FILE
         </div>
       </div>
 
       {/* Known Associates */}
       <div>
-        <h4 className="font-bold text-base mb-4 text-sepia-brown/70 tracking-wider">KNOWN BIRTHDAY ASSOCIATES:</h4>
-        <div className="bg-vintage-cream/50 p-4 border-2 border-sepia-brown/20">
-          <div className="grid grid-cols-2 gap-2">
+        <h4 className="font-bold text-sm md:text-base mb-3 md:mb-4 text-sepia-brown/70 tracking-wider">KNOWN BIRTHDAY ASSOCIATES:</h4>
+        <div className="bg-vintage-cream/50 p-3 md:p-4 border-2 border-sepia-brown/20">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-1 md:gap-2">
             {data.celebrities.map((celeb, i) => (
-              <a 
-                key={i} 
+              <a
+                key={i}
                 href={`https://en.wikipedia.org/wiki/${celeb.name.replace(/ /g, '_')}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="py-2 text-base hover:text-muted-blue transition-colors"
+                className="py-2 md:py-2 text-sm md:text-base hover:text-muted-blue transition-colors"
                 title={celeb.description}
               >
                 • {celeb.name} ({celeb.year})
@@ -122,14 +122,14 @@ function CaseFileTheme({ data, currentTab: propTab = 0, setTab: propSetTab, font
     if (!content) return null
 
     return (
-      <div className="bg-vintage-cream/30 border-2 border-sepia-brown/20 p-6 h-full">
-        <h3 className="font-bold text-lg mb-4 text-sepia-brown/70 tracking-wider border-b-2 border-sepia-brown/30 pb-2">
+      <div className="bg-vintage-cream/30 border-2 border-sepia-brown/20 p-4 md:p-6 h-full">
+        <h3 className="font-bold text-base md:text-lg mb-3 md:mb-4 text-sepia-brown/70 tracking-wider border-b-2 border-sepia-brown/30 pb-2">
           {config.title.toUpperCase()}
         </h3>
-        <div 
-          className={`${contentFontSize} leading-[1.8] 
-                   [&>h2]:hidden 
-                   [&>p]:mb-4 
+        <div
+          className={`${contentFontSize} leading-[1.8]
+                   [&>h2]:hidden
+                   [&>p]:mb-4
                    [&>strong]:font-bold`}
           dangerouslySetInnerHTML={{ __html: content }}
         />
@@ -140,23 +140,24 @@ function CaseFileTheme({ data, currentTab: propTab = 0, setTab: propSetTab, font
   const currentTabData = TABS[activeTab]
 
   return (
-    <div className="min-h-screen bg-zinc-800 p-6 md:p-10 font-typewriter">
+    <div className="min-h-screen bg-zinc-800 p-3 sm:p-6 md:p-10 font-typewriter">
       {/* Manila folder container */}
       <div className="max-w-6xl mx-auto">
         {/* File tabs */}
-        <div className="flex gap-1 mb-0 relative">
+        <div className="flex overflow-x-auto scrollbar-hide gap-1 mb-0 relative -mx-1 px-1">
           {TABS.map((tab, index) => (
             <button
               key={tab.id}
               onClick={() => setActiveTab(index)}
-              className={`px-6 py-3 text-sm font-bold uppercase tracking-wide rounded-t-lg
-                        transition-all relative flex-1 text-center
-                ${activeTab === index 
-                  ? 'bg-manila text-dark-brown z-10 -mb-px border-t-2 border-x-2 border-sepia-brown/30' 
+              className={`min-w-fit px-3 sm:px-4 md:px-6 py-3 text-xs sm:text-sm font-bold uppercase tracking-wide rounded-t-lg
+                        transition-all relative flex-1 text-center whitespace-nowrap
+                ${activeTab === index
+                  ? 'bg-manila text-dark-brown z-10 -mb-px border-t-2 border-x-2 border-sepia-brown/30'
                   : 'bg-sepia-brown/40 text-vintage-cream/80 hover:bg-sepia-brown/60'
                 }`}
             >
-              {tab.title}
+              <span className="hidden sm:inline">{tab.title}</span>
+              <span className="sm:hidden">{tab.title.split(' ')[0]}</span>
             </button>
           ))}
         </div>
@@ -177,24 +178,24 @@ function CaseFileTheme({ data, currentTab: propTab = 0, setTab: propSetTab, font
           </div>
 
           {/* Classification header */}
-          <div className="bg-dark-brown text-vintage-cream py-4 px-8 flex justify-between items-center rounded-tr-lg">
-            <div className="flex items-center gap-6">
-              <span className="text-muted-red font-bold text-base">● CONFIDENTIAL</span>
-              <span className="text-sm opacity-70">LIFE STORY DIVISION</span>
+          <div className="bg-dark-brown text-vintage-cream py-3 md:py-4 px-4 md:px-8 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 sm:gap-0 rounded-tr-lg">
+            <div className="flex items-center gap-3 md:gap-6">
+              <span className="text-muted-red font-bold text-sm md:text-base">● CONFIDENTIAL</span>
+              <span className="text-xs md:text-sm opacity-70 hidden sm:inline">LIFE STORY DIVISION</span>
             </div>
-            <div className="text-sm opacity-70">
-              FILE: LS-{data.birthYear}-0609 • {currentTabData.title.toUpperCase()}
+            <div className="text-xs md:text-sm opacity-70">
+              FILE: LS-{data.birthYear}-0609
             </div>
           </div>
 
           {/* Document content */}
-          <div className="p-8 md:p-12 min-h-[600px]">
+          <div className="p-4 sm:p-6 md:p-8 lg:p-12 min-h-[400px] md:min-h-[600px]">
             {/* Section header */}
-            <div className="border-b-4 border-dark-brown pb-4 mb-8">
-              <h2 className="text-2xl font-bold text-dark-brown uppercase tracking-wider">
+            <div className="border-b-4 border-dark-brown pb-3 md:pb-4 mb-6 md:mb-8">
+              <h2 className="text-xl md:text-2xl font-bold text-dark-brown uppercase tracking-wider">
                 {currentTabData.title}
               </h2>
-              <p className="text-base text-sepia-brown mt-1">
+              <p className="text-sm md:text-base text-sepia-brown mt-1">
                 Section {activeTab + 1} of {TABS.length} • Classification: PERSONAL
               </p>
             </div>
@@ -224,22 +225,22 @@ function CaseFileTheme({ data, currentTab: propTab = 0, setTab: propSetTab, font
           </div>
 
           {/* Footer */}
-          <div className="bg-sepia-brown/20 px-8 py-4 flex justify-between items-center text-base text-sepia-brown rounded-b-lg">
-            <div>
+          <div className="bg-sepia-brown/20 px-4 md:px-8 py-3 md:py-4 flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-0 text-sm md:text-base text-sepia-brown rounded-b-lg">
+            <div className="text-xs md:text-base">
               Document generated: {new Date().toLocaleDateString()}
             </div>
-            <div className="flex gap-4">
-              <button 
+            <div className="flex gap-2 md:gap-4 w-full sm:w-auto">
+              <button
                 onClick={() => setActiveTab(Math.max(0, activeTab - 1))}
                 disabled={activeTab === 0}
-                className="px-5 py-2 bg-dark-brown text-vintage-cream rounded text-base disabled:opacity-30 hover:bg-sepia-brown transition-colors"
+                className="flex-1 sm:flex-none px-4 md:px-5 py-3 md:py-2 bg-dark-brown text-vintage-cream rounded text-sm md:text-base disabled:opacity-30 hover:bg-sepia-brown transition-colors"
               >
-                ← Previous
+                ← Prev
               </button>
-              <button 
+              <button
                 onClick={() => setActiveTab(Math.min(TABS.length - 1, activeTab + 1))}
                 disabled={activeTab === TABS.length - 1}
-                className="px-5 py-2 bg-dark-brown text-vintage-cream rounded text-base disabled:opacity-30 hover:bg-sepia-brown transition-colors"
+                className="flex-1 sm:flex-none px-4 md:px-5 py-3 md:py-2 bg-dark-brown text-vintage-cream rounded text-sm md:text-base disabled:opacity-30 hover:bg-sepia-brown transition-colors"
               >
                 Next →
               </button>
@@ -249,7 +250,7 @@ function CaseFileTheme({ data, currentTab: propTab = 0, setTab: propSetTab, font
       </div>
 
       {/* Disclaimer */}
-      <p className="text-center text-sm text-zinc-500 mt-10 max-w-lg mx-auto leading-relaxed">
+      <p className="text-center text-xs md:text-sm text-zinc-500 mt-6 md:mt-10 max-w-lg mx-auto leading-relaxed px-4">
         This report analyzes US cultural and historical context. For entertainment purposes only.
       </p>
     </div>
