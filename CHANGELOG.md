@@ -2,6 +2,22 @@
 
 All notable changes to Life Story will be documented in this file.
 
+## [0.4.0] - 2026-02-03
+
+### Added
+- **Shareable URLs**: Birthday is now part of the URL (`/life-story/1988-06-09/timeline`)
+- **Direct URL Access**: Navigate directly to any report by entering the URL
+- **Session Caching**: Reports are cached in sessionStorage per birthday for faster navigation
+
+### Changed
+- **URL Structure**: Changed from `/life-story/{theme}/{tab}` to `/life-story/{YYYY-MM-DD}/{theme}/{tab}`
+- **Landing Page**: DatePicker now navigates to URL with birthday instead of managing state internally
+- **Theme/Tab Switching**: Preserves birthday in URL when changing themes or tabs
+
+### Fixed
+- Old-style URLs (without birthday) now redirect to landing page
+- Invalid dates in URL redirect to landing page with proper validation
+
 ## [0.3.0] - 2025-01-21
 
 ### Added

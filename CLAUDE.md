@@ -6,10 +6,9 @@ Quick reference for Claude to understand this project. Read this first.
 
 Birthday analysis webapp. User enters birthdate → gets personalized ~5,000 word report about their generation, historical context, and cultural touchstones. Vintage magazine aesthetic (TIME 1950s-70s style).
 
-## Current State (v0.3.0)
+## Current State (v0.4.0)
 
-- **MVP**: Only supports June 9, 1988
-- **Password**: `1988`
+- **Supports**: All birthdates from 1946-2012
 - **Live URL**: https://tejasgadhia.github.io/life-story/
 - **Local path**: `/Users/tejasgadhia/Claude/life-story`
 
@@ -32,10 +31,19 @@ Birthday analysis webapp. User enters birthdate → gets personalized ~5,000 wor
 ## URL Format
 
 ```
-/life-story/{theme}/{tab-slug}
+/life-story/                              → Landing page (DatePicker)
+/life-story/{YYYY-MM-DD}/{theme}          → Report view (default: overview tab)
+/life-story/{YYYY-MM-DD}/{theme}/{tab}    → Report view with specific tab
+
+Examples:
+/life-story/1988-06-09/timeline           → Timeline theme, Overview tab
+/life-story/1988-06-09/newspaper/world-events
+/life-story/1965-03-15/casefile/personal-insights
 ```
 
 Tab slugs: `overview`, `formative-years`, `world-events`, `personal-insights`
+
+**Shareable URLs**: Reports can now be shared/bookmarked - the birthday is in the URL.
 
 ## Key Files
 
@@ -113,7 +121,6 @@ git push --tags
 
 ## Next Priorities
 
-1. Support more birthdates (expand beyond June 9, 1988)
-2. Mobile responsive
-3. PDF export
-4. Heat map visualization
+1. Mobile responsive
+2. PDF export
+3. Heat map visualization
