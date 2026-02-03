@@ -6,6 +6,7 @@ import TimelineTheme from './components/themes/TimelineTheme'
 import NewspaperTheme from './components/themes/NewspaperTheme'
 import CaseFileTheme from './components/themes/CaseFileTheme'
 import { assembleReport } from './utils/assembleReport'
+import { useMetaTags } from './hooks/useMetaTags'
 
 // Font size context
 const FontSizeContext = createContext({ fontSize: 'base', setFontSize: () => {} })
@@ -260,6 +261,9 @@ function ThemeWrapper({ ThemeComponent, themePath }) {
 
   // Parse birthday from URL - memoize to avoid infinite loops
   const parsedDate = useMemo(() => parseBirthdayFromUrl(birthday), [birthday])
+
+  // Update meta tags for social sharing
+  useMetaTags(reportData, birthday, themePath)
 
   // Redirect to landing if invalid date
   useEffect(() => {

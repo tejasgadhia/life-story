@@ -2,6 +2,16 @@
 
 All notable changes to Life Story will be documented in this file.
 
+## [0.4.1] - 2026-02-03
+
+### Added
+- **Dynamic Social Sharing**: Personalized Open Graph and Twitter Card meta tags
+  - Shared links now show "Born June 9, 1988 - A Millennial Story" instead of generic text
+  - Description includes generation span and birthday ranking
+  - Canonical URLs update per-page for SEO
+- New `useMetaTags` hook for managing document head metadata
+- New `metaTags.js` utility with helper functions
+
 ## [0.4.0] - 2026-02-03
 
 ### Added
