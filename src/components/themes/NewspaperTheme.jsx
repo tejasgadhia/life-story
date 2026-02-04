@@ -16,6 +16,17 @@ const getMonthName = (m) => {
   return months[m - 1]
 }
 
+// Helper to get ordinal word (first, second, ninth, etc.)
+const getOrdinalWord = (n) => {
+  const words = [
+    '', 'first', 'second', 'third', 'fourth', 'fifth', 'sixth', 'seventh', 'eighth', 'ninth', 'tenth',
+    'eleventh', 'twelfth', 'thirteenth', 'fourteenth', 'fifteenth', 'sixteenth', 'seventeenth', 'eighteenth', 'nineteenth', 'twentieth',
+    'twenty-first', 'twenty-second', 'twenty-third', 'twenty-fourth', 'twenty-fifth', 'twenty-sixth', 'twenty-seventh', 'twenty-eighth', 'twenty-ninth', 'thirtieth',
+    'thirty-first'
+  ]
+  return words[n] || `${n}${getOrdinalSuffix(n)}`
+}
+
 const SECTION_CONFIG = {
   birthday: { title: 'Subject Profile', subtitle: 'A Personal Record', key: null },
   generation: { title: 'Generational Identity', subtitle: 'Character of the Cohort', key: 'generational_identity' },
@@ -100,7 +111,7 @@ function NewspaperTheme({ data, currentTab: propTab = 0, setTab: propSetTab, fon
           <div className={`columns-1 md:columns-2 gap-5 ${contentFontSize} leading-[1.9] text-justify`} style={{ columnRule: '1px solid var(--color-column-rule)' }}>
             <p className="mb-4">
               <span className="float-left text-5xl md:text-6xl font-display font-black mr-2 leading-none text-stone-800">T</span>
-              he subject of this comprehensive report entered the world on the ninth day of June, {data.birthYear},
+              he subject of this comprehensive report entered the world on the {getOrdinalWord(data.birthDay)} day of {getMonthName(data.birthMonth)}, {data.birthYear},
               a date ranking <strong>#{data.birthdayRank}</strong> among all 366 possible calendar dates for frequency of birth.
               This places the subject in the <strong>{data.birthdayPercentile}th percentile</strong> for birthday commonality.
             </p>
