@@ -2,6 +2,16 @@
 
 All notable changes to Life Story will be documented in this file.
 
+## [0.5.0] - 2026-02-04
+
+### Changed
+- **Content Quality Update (v2.0)**: All 66 year files (1946-2012) rewritten to professional magazine standard
+  - ~4,850 words per year with vivid sensory details
+  - Sharp, witty magazine journalism voice (TIME 1950s-70s style)
+  - Specific cultural references and historical context
+  - All template placeholders replaced with actual values
+  - 11 sections per year: childhood, pop culture, technology, history, career, financial, comparison, generation, relationships, blind spots, roadmap
+
 ## [0.4.1] - 2026-02-03
 
 ### Added
