@@ -1,27 +1,7 @@
-import { useState } from 'react'
-
-const TABS = [
-  { 
-    id: 'overview', 
-    title: 'Overview', 
-    sections: ['birthday', 'generation', 'comparison']
-  },
-  { 
-    id: 'formative', 
-    title: 'Formative Years', 
-    sections: ['childhood', 'popculture', 'technology']
-  },
-  { 
-    id: 'world', 
-    title: 'World Events', 
-    sections: ['history', 'career', 'financial']
-  },
-  { 
-    id: 'personal', 
-    title: 'Personal Insights', 
-    sections: ['relationships', 'blindspots', 'roadmap']
-  },
-]
+import { memo } from 'react'
+import { TABS } from '../../config/tabs'
+import { useTabState } from '../../hooks/useTabState'
+import { CelebrityList } from '../shared/CelebrityList'
 
 const SECTION_CONFIG = {
   birthday: { title: 'Subject Profile', key: null },
@@ -39,10 +19,7 @@ const SECTION_CONFIG = {
 }
 
 function CaseFileTheme({ data, currentTab: propTab = 0, setTab: propSetTab, fontSize = 'base' }) {
-  const [internalTab, setInternalTab] = useState(propTab)
-  const [celebritiesExpanded, setCelebritiesExpanded] = useState(false)
-  const activeTab = propSetTab ? propTab : internalTab
-  const setActiveTab = propSetTab || setInternalTab
+  const [activeTab, setActiveTab] = useTabState(propTab, propSetTab)
 
   // Font size mapping
   const fontSizeClasses = { sm: 'content-scale-sm', base: 'content-scale-base', lg: 'content-scale-lg' }
@@ -95,52 +72,6 @@ function CaseFileTheme({ data, currentTab: propTab = 0, setTab: propSetTab, font
       </div>
     </div>
   )
-
-  const renderCelebritySection = () => {
-    const visibleCelebrities = celebritiesExpanded
-      ? data.celebrities
-      : data.celebrities.slice(0, 10)
-    const hasMore = data.celebrities.length > 10
-
-    return (
-      <div className="bg-vintage-cream/30 border-2 border-sepia-brown/20 p-4 md:p-6">
-        <h4 className="font-bold text-sm md:text-base mb-3 md:mb-4 text-sepia-brown/70 tracking-wider">
-          KNOWN BIRTHDAY ASSOCIATES:
-        </h4>
-        <div className="bg-vintage-cream/50 p-3 md:p-4 border-2 border-sepia-brown/20">
-          <div className={`overflow-hidden transition-all duration-300 ease-in-out`}>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-1 md:gap-2">
-              {visibleCelebrities.map((celeb, i) => (
-                <a
-                  key={i}
-                  href={`https://en.wikipedia.org/wiki/${celeb.name.replace(/ /g, '_')}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="py-2 md:py-2 text-sm md:text-base hover:text-muted-blue transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-sepia-brown/50 focus:ring-offset-1 rounded"
-                  title={celeb.description}
-                >
-                  • {celeb.name} ({celeb.year})
-                </a>
-              ))}
-            </div>
-          </div>
-          {hasMore && (
-            <button
-              onClick={() => setCelebritiesExpanded(!celebritiesExpanded)}
-              className="mt-4 px-4 py-2 text-sm text-sepia-brown/70
-                         hover:text-sepia-brown transition-colors duration-200 flex items-center gap-2
-                         focus:outline-none focus:ring-2 focus:ring-sepia-brown/50 focus:ring-offset-1 rounded"
-            >
-              {celebritiesExpanded ? 'Show less' : `Show all ${data.celebrities.length}`}
-              <span className={`transition-transform duration-300 ${celebritiesExpanded ? 'rotate-180' : ''}`}>
-                ▼
-              </span>
-            </button>
-          )}
-        </div>
-      </div>
-    )
-  }
 
   const renderSection = (sectionId) => {
     const config = SECTION_CONFIG[sectionId]
@@ -239,7 +170,7 @@ function CaseFileTheme({ data, currentTab: propTab = 0, setTab: propSetTab, font
                     {renderSection('generation')}
                     {renderSection('comparison')}
                   </div>
-                  {renderCelebritySection()}
+                  <CelebrityList celebrities={data.celebrities} variant="casefile" />
                 </div>
               ) : (
                 /* Other tabs - 3 sections */
@@ -287,4 +218,4 @@ function CaseFileTheme({ data, currentTab: propTab = 0, setTab: propSetTab, font
   )
 }
 
-export default CaseFileTheme
+export default memo(CaseFileTheme)

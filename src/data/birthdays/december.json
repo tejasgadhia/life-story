@@ -1,0 +1,4856 @@
+{
+  "10": {
+    "rank": 307,
+    "percentile": 16,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Una Merkel",
+          "year": 1903,
+          "description": "American actress"
+        },
+        {
+          "name": "Harold Adamson",
+          "year": 1906,
+          "description": "American lyricist"
+        },
+        {
+          "name": "Jules Ladoumègue",
+          "year": 1906,
+          "description": "French runner"
+        },
+        {
+          "name": "Amedeo Nazzari",
+          "year": 1907,
+          "description": "Italian actor"
+        },
+        {
+          "name": "Olivier Messiaen",
+          "year": 1908,
+          "description": "French composer and ornithologist"
+        }
+      ],
+      "athletes": [
+        {
+          "name": "Lucien Laurent",
+          "year": 1907,
+          "description": "French footballer and coach"
+        },
+        {
+          "name": "Ambrosio Padilla",
+          "year": 1910,
+          "description": "Filipino basketball player and politician"
+        },
+        {
+          "name": "Nicky Barr",
+          "year": 1915,
+          "description": "Australian rugby player, soldier, and pilot"
+        },
+        {
+          "name": "Anatoli Tarasov",
+          "year": 1918,
+          "description": "Russian ice hockey player and coach"
+        },
+        {
+          "name": "Wayne D. Anderson",
+          "year": 1930,
+          "description": "American baseball player and coach"
+        }
+      ],
+      "leaders": [
+        {
+          "name": "Antonín Novotný",
+          "year": 1904,
+          "description": "Czechoslovak politician, President of Czechoslovak Socialist Republic, Genera..."
+        },
+        {
+          "name": "Philip Hart",
+          "year": 1912,
+          "description": "American lawyer and politician, 49th Lieutenant Governor of Michigan"
+        },
+        {
+          "name": "René Toribio",
+          "year": 1912,
+          "description": "Guadeloupean politician"
+        },
+        {
+          "name": "Toh Chin Chye",
+          "year": 1921,
+          "description": "Singaporean academic and politician, 1st Deputy Prime Minister of Singapore"
+        },
+        {
+          "name": "Michael Manley",
+          "year": 1924,
+          "description": "Jamaican pilot and politician, 4th Prime Minister of Jamaica"
+        }
+      ],
+      "artists": [
+        {
+          "name": "Clorindo Testa",
+          "year": 1923,
+          "description": "Italian-Argentinian architect, designed the National Library of the Argentine..."
+        },
+        {
+          "name": "Jasuben Shilpi",
+          "year": 1948,
+          "description": "Indian sculptor"
+        }
+      ],
+      "writers": [
+        {
+          "name": "Rumer Godden",
+          "year": 1907,
+          "description": "English author and poet"
+        },
+        {
+          "name": "Chet Huntley",
+          "year": 1911,
+          "description": "American journalist"
+        },
+        {
+          "name": "Pannonica de Koenigswarter",
+          "year": 1913,
+          "description": "English-American jazz patron and writer"
+        },
+        {
+          "name": "Clarice Lispector",
+          "year": 1920,
+          "description": "Ukrainian-Brazilian journalist and author"
+        },
+        {
+          "name": "Carolyn Kizer",
+          "year": 1925,
+          "description": "American poet and academic"
+        }
+      ]
+    }
+  },
+  "11": {
+    "rank": 309,
+    "percentile": 16,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Hermína Týrlová",
+          "year": 1900,
+          "description": "Czech animator, screenwriter and film director"
+        },
+        {
+          "name": "Gilbert Roland",
+          "year": 1905,
+          "description": "Mexican-American actor and singer"
+        },
+        {
+          "name": "Elliott Carter",
+          "year": 1908,
+          "description": "American composer and academic"
+        },
+        {
+          "name": "Manoel de Oliveira",
+          "year": 1908,
+          "description": "Portuguese actor, director, producer, and screenwriter"
+        },
+        {
+          "name": "Amon Göth",
+          "year": 1908,
+          "description": "Austrian Nazi war criminal"
+        }
+      ],
+      "athletes": [
+        {
+          "name": "Denis Jenkinson",
+          "year": 1920,
+          "description": "English motorcycle racer and journalist"
+        },
+        {
+          "name": "Doc Blanchard",
+          "year": 1924,
+          "description": "American football player and colonel"
+        },
+        {
+          "name": "Ernie Beck",
+          "year": 1931,
+          "description": "American basketball player"
+        },
+        {
+          "name": "Pierre Pilote",
+          "year": 1931,
+          "description": "Canadian ice hockey player"
+        },
+        {
+          "name": "Elmer Vasko",
+          "year": 1935,
+          "description": "Canadian ice hockey player"
+        }
+      ],
+      "leaders": [
+        {
+          "name": "Hákun Djurhuus",
+          "year": 1908,
+          "description": "Faroese educator and politician, fourth Prime Minister of the Faroe Islands"
+        },
+        {
+          "name": "Lillian Cahn",
+          "year": 1923,
+          "description": "Hungarian-born American businesswoman, co-founded Coach, Inc."
+        },
+        {
+          "name": "Aaron Feuerstein",
+          "year": 1925,
+          "description": "American businessman and philanthropist"
+        },
+        {
+          "name": "James Sullivan",
+          "year": 1925,
+          "description": "American politician"
+        },
+        {
+          "name": "Aquilino Pimentel",
+          "year": 1933,
+          "description": "Jr., Filipino civil servant and politician, 23rd President of the Senate of t..."
+        }
+      ],
+      "scientists": [
+        {
+          "name": "Paul Greengard",
+          "year": 1925,
+          "description": "American neuroscientist and academic, Nobel Prize laureate"
+        },
+        {
+          "name": "Enrique Bermúdez",
+          "year": 1932,
+          "description": "Nicaraguan colonel and engineer"
+        },
+        {
+          "name": "Mazlan Othman",
+          "year": 1951,
+          "description": "Malaysian astrophysicist and astronomer"
+        },
+        {
+          "name": "Guðlaugur Kristinn Óttarsson",
+          "year": 1954,
+          "description": "Icelandic guitarist, mathematician, and engineer"
+        },
+        {
+          "name": "Emmanuelle Charpentier",
+          "year": 1968,
+          "description": "French researcher in microbiology, genetics and biochemistry, and Nobel laureate"
+        }
+      ],
+      "artists": [
+        {
+          "name": "Gerd Arntz",
+          "year": 1900,
+          "description": "German Modernist artist, co-creator of Isotype"
+        },
+        {
+          "name": "Marge",
+          "year": 1904,
+          "description": "American cartoonist"
+        },
+        {
+          "name": "Clinton Adams",
+          "year": 1918,
+          "description": "American painter and historian"
+        },
+        {
+          "name": "John Buscema",
+          "year": 1927,
+          "description": "American illustrator"
+        },
+        {
+          "name": "Ray Kelvin",
+          "year": 1955,
+          "description": "British fashion designer"
+        }
+      ],
+      "writers": [
+        {
+          "name": "Robert Henriques",
+          "year": 1905,
+          "description": "English farmer, author, and broadcaster"
+        },
+        {
+          "name": "Ronald McKie",
+          "year": 1909,
+          "description": "Australian soldier, journalist, and author"
+        },
+        {
+          "name": "Naguib Mahfouz",
+          "year": 1911,
+          "description": "Egyptian author, playwright, and screenwriter, Nobel Prize laureate"
+        },
+        {
+          "name": "Elena Garro",
+          "year": 1916,
+          "description": "Mexican author and playwright"
+        },
+        {
+          "name": "Aleksandr Solzhenitsyn",
+          "year": 1918,
+          "description": "Russian novelist, historian, and short story writer, Nobel Prize laureate"
+        }
+      ]
+    }
+  },
+  "12": {
+    "rank": 311,
+    "percentile": 15,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Roy Douglas",
+          "year": 1907,
+          "description": "English pianist and composer"
+        },
+        {
+          "name": "Frank Sinatra",
+          "year": 1915,
+          "description": "American singer, actor, and producer"
+        },
+        {
+          "name": "Joe Williams",
+          "year": 1918,
+          "description": "American singer and pianist"
+        },
+        {
+          "name": "Josef Doležal",
+          "year": 1920,
+          "description": "Czech race walker"
+        },
+        {
+          "name": "Bob Barker",
+          "year": 1923,
+          "description": "American game show host and producer"
+        }
+      ],
+      "athletes": [
+        {
+          "name": "Harald Kaarmann",
+          "year": 1901,
+          "description": "Estonian footballer"
+        },
+        {
+          "name": "Henry Armstrong",
+          "year": 1912,
+          "description": "American boxer"
+        },
+        {
+          "name": "Ted Kennedy",
+          "year": 1925,
+          "description": "Canadian ice hockey player"
+        },
+        {
+          "name": "Bob Pettit",
+          "year": 1932,
+          "description": "American basketball player and coach"
+        },
+        {
+          "name": "Randy Smith",
+          "year": 1948,
+          "description": "American basketball player"
+        }
+      ],
+      "leaders": [
+        {
+          "name": "Ed Koch",
+          "year": 1924,
+          "description": "American politician, 105th Mayor of New York City"
+        },
+        {
+          "name": "Robert Noyce",
+          "year": 1927,
+          "description": "American inventor and businessman, co-founded the Intel Corporation"
+        },
+        {
+          "name": "Miguel de la Madrid",
+          "year": 1934,
+          "description": "Mexican lawyer and politician, 52nd President of Mexico"
+        },
+        {
+          "name": "Sharad Pawar",
+          "year": 1940,
+          "description": "Indian politician, Indian Minister of Agriculture"
+        },
+        {
+          "name": "Gísli S. Einarsson",
+          "year": 1945,
+          "description": "Icelandic politician"
+        }
+      ],
+      "scientists": [
+        {
+          "name": "Étienne-Émile Baulieu",
+          "year": 1926,
+          "description": "French biochemist and endocrinologist"
+        }
+      ],
+      "artists": [
+        {
+          "name": "Helen Frankenthaler",
+          "year": 1928,
+          "description": "American painter and academic"
+        }
+      ],
+      "writers": [
+        {
+          "name": "Patrick O'Brian",
+          "year": 1914,
+          "description": "English author"
+        },
+        {
+          "name": "Don Keith",
+          "year": 1947,
+          "description": "American writer"
+        },
+        {
+          "name": "Pedro Ferriz de Con",
+          "year": 1950,
+          "description": "Mexican journalist"
+        }
+      ]
+    }
+  },
+  "13": {
+    "rank": 313,
+    "percentile": 15,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Jonel Perlea",
+          "year": 1900,
+          "description": "Romanian-American conductor and educator"
+        },
+        {
+          "name": "Olev Roomet",
+          "year": 1901,
+          "description": "Estonian singer, violinist, and bagpipe player"
+        },
+        {
+          "name": "Talcott Parsons",
+          "year": 1902,
+          "description": "American sociologist and academic"
+        },
+        {
+          "name": "Ella Baker",
+          "year": 1903,
+          "description": "American activist"
+        },
+        {
+          "name": "Carlos Montoya",
+          "year": 1903,
+          "description": "Spanish guitarist and composer"
+        }
+      ],
+      "athletes": [
+        {
+          "name": "Larry Doby",
+          "year": 1923,
+          "description": "American baseball player"
+        },
+        {
+          "name": "J. C. Martin",
+          "year": 1936,
+          "description": "American baseball player"
+        },
+        {
+          "name": "Ron Taylor",
+          "year": 1937,
+          "description": "Canadian physician and baseball player"
+        },
+        {
+          "name": "Gus Johnson",
+          "year": 1938,
+          "description": "American basketball player"
+        },
+        {
+          "name": "Ferguson Jenkins",
+          "year": 1942,
+          "description": "Canadian baseball player"
+        }
+      ],
+      "leaders": [
+        {
+          "name": "Panagiotis Kanellopoulos",
+          "year": 1902,
+          "description": "Greek philosopher and politician, 138th Prime Minister of Greece"
+        },
+        {
+          "name": "B. J. Vorster",
+          "year": 1915,
+          "description": "South African lawyer and politician, 4th State President of South Africa"
+        },
+        {
+          "name": "George P. Shultz",
+          "year": 1920,
+          "description": "American economist and politician, 60th United States Secretary of State"
+        },
+        {
+          "name": "Herman Cain",
+          "year": 1945,
+          "description": "American businessman, politician, and activist"
+        },
+        {
+          "name": "Petra Wimmer",
+          "year": 1965,
+          "description": "Austrian politician"
+        }
+      ],
+      "scientists": [
+        {
+          "name": "Elizabeth Alexander",
+          "year": 1908,
+          "description": "English geologist, academic, and physicist"
+        },
+        {
+          "name": "Trygve Haavelmo",
+          "year": 1911,
+          "description": "Norwegian economist and mathematician, Nobel Prize laureate"
+        },
+        {
+          "name": "Philip Warren Anderson",
+          "year": 1923,
+          "description": "American physicist and academic, Nobel Prize laureate"
+        },
+        {
+          "name": "Solomon Feferman",
+          "year": 1928,
+          "description": "American philosopher and mathematician"
+        }
+      ],
+      "artists": [
+        {
+          "name": "Kenneth Patchen",
+          "year": 1911,
+          "description": "American poet and painter"
+        },
+        {
+          "name": "Leonard Weisgard",
+          "year": 1916,
+          "description": "American author and illustrator"
+        },
+        {
+          "name": "Paul Bracq",
+          "year": 1933,
+          "description": "French automotive designer"
+        }
+      ],
+      "writers": [
+        {
+          "name": "Ann Barzel",
+          "year": 1905,
+          "description": "American writer and dance critic"
+        },
+        {
+          "name": "Laurens van der Post",
+          "year": 1906,
+          "description": "South African-English soldier and author"
+        },
+        {
+          "name": "Alan Bullock",
+          "year": 1914,
+          "description": "English historian and author"
+        },
+        {
+          "name": "James Wright",
+          "year": 1927,
+          "description": "American poet and academic"
+        },
+        {
+          "name": "Ida Vos",
+          "year": 1931,
+          "description": "Dutch Jewish author of books for children and adults"
+        }
+      ]
+    }
+  },
+  "14": {
+    "rank": 315,
+    "percentile": 14,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Paul of Greece",
+          "year": 1901,
+          "description": "Notable figure"
+        },
+        {
+          "name": "Frances Bavier",
+          "year": 1902,
+          "description": "American actress"
+        },
+        {
+          "name": "Herbert Feigl",
+          "year": 1902,
+          "description": "Austrian philosopher from the Vienna Circle"
+        },
+        {
+          "name": "Walter Rangeley",
+          "year": 1903,
+          "description": "English sprinter"
+        },
+        {
+          "name": "Virginia Coffey",
+          "year": 1904,
+          "description": "American civil rights activist"
+        }
+      ],
+      "athletes": [
+        {
+          "name": "Henri Cochet",
+          "year": 1901,
+          "description": "French tennis player"
+        },
+        {
+          "name": "Claude Davey",
+          "year": 1908,
+          "description": "Welsh rugby player"
+        },
+        {
+          "name": "Jerzy Iwanow-Szajnowicz",
+          "year": 1911,
+          "description": "Greek-Polish swimmer and water polo player"
+        },
+        {
+          "name": "Rosalyn Tureck",
+          "year": 1914,
+          "description": "American pianist and harpsichord player"
+        },
+        {
+          "name": "Ron Jarden",
+          "year": 1929,
+          "description": "New Zealand rugby player"
+        }
+      ],
+      "leaders": [
+        {
+          "name": "Karl Carstens",
+          "year": 1914,
+          "description": "German lieutenant and politician, 5th President of the Federal Republic of Ge..."
+        },
+        {
+          "name": "C.-H. Hermansson",
+          "year": 1917,
+          "description": "Swedish author and politician"
+        },
+        {
+          "name": "Koos Rietkerk",
+          "year": 1927,
+          "description": "Dutch lawyer and politician, Dutch Minister of the Interior"
+        },
+        {
+          "name": "Ann Cryer",
+          "year": 1939,
+          "description": "English academic and politician"
+        },
+        {
+          "name": "Tommy McAvoy",
+          "year": 1943,
+          "description": "Scottish politician"
+        }
+      ],
+      "scientists": [
+        {
+          "name": "Hans von Ohain",
+          "year": 1911,
+          "description": "German-American physicist and engineer"
+        },
+        {
+          "name": "Nikolay Basov",
+          "year": 1922,
+          "description": "Russian physicist and academic, Nobel Prize laureate"
+        },
+        {
+          "name": "Steve MacLean",
+          "year": 1954,
+          "description": "Canadian physicist and astronaut"
+        },
+        {
+          "name": "Jill Pipher",
+          "year": 1955,
+          "description": "American mathematician and academic"
+        }
+      ],
+      "artists": [
+        {
+          "name": "Michael Ovitz",
+          "year": 1946,
+          "description": "American talent agent, co-founded Creative Artists Agency"
+        },
+        {
+          "name": "David A. Cherry",
+          "year": 1949,
+          "description": "American artist and illustrator"
+        },
+        {
+          "name": "Wade Davis",
+          "year": 1953,
+          "description": "Canadian anthropologist, author, and photographer"
+        }
+      ],
+      "writers": [
+        {
+          "name": "Mária Szepes",
+          "year": 1908,
+          "description": "Hungarian journalist, author, and screenwriter"
+        },
+        {
+          "name": "Shirley Jackson",
+          "year": 1916,
+          "description": "American novelist and short story writer"
+        },
+        {
+          "name": "B. K. S. Iyengar",
+          "year": 1918,
+          "description": "Indian yoga instructor and author, founded Iyengar Yoga"
+        },
+        {
+          "name": "Gerard Reve",
+          "year": 1923,
+          "description": "Dutch-Belgian author and poet"
+        },
+        {
+          "name": "Margaret Bakkes",
+          "year": 1930,
+          "description": "South African author"
+        }
+      ]
+    }
+  },
+  "15": {
+    "rank": 317,
+    "percentile": 13,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Gordon Douglas",
+          "year": 1907,
+          "description": "American actor, director, and screenwriter"
+        },
+        {
+          "name": "Eliza Atkins Gleason",
+          "year": 1909,
+          "description": "American librarian"
+        },
+        {
+          "name": "John Hammond",
+          "year": 1910,
+          "description": "American record producer and critic"
+        },
+        {
+          "name": "Stan Kenton",
+          "year": 1911,
+          "description": "American pianist and composer"
+        },
+        {
+          "name": "Eila Campbell",
+          "year": 1915,
+          "description": "English geographer and cartographer"
+        }
+      ],
+      "athletes": [
+        {
+          "name": "Tamanishiki San'emon",
+          "year": 1903,
+          "description": "Japanese sumo wrestler, the 32nd Yokozuna"
+        },
+        {
+          "name": "Billy Shaw",
+          "year": 1938,
+          "description": "American football player"
+        },
+        {
+          "name": "Nick Buoniconti",
+          "year": 1940,
+          "description": "American football player and sportscaster"
+        },
+        {
+          "name": "Jim Leyland",
+          "year": 1944,
+          "description": "American baseball player and manager"
+        },
+        {
+          "name": "Art Howe",
+          "year": 1946,
+          "description": "American baseball player and manager"
+        }
+      ],
+      "leaders": [
+        {
+          "name": "Robert F. Bradford",
+          "year": 1902,
+          "description": "American lawyer and politician, 57th Governor of Massachusetts"
+        },
+        {
+          "name": "Roger Gaudry",
+          "year": 1913,
+          "description": "Canadian chemist and businessman"
+        },
+        {
+          "name": "Miguel Arraes",
+          "year": 1916,
+          "description": "Brazilian lawyer and politician, Governor of Pernambuco"
+        },
+        {
+          "name": "Valentin Varennikov",
+          "year": 1923,
+          "description": "Russian general and politician"
+        },
+        {
+          "name": "Kathleen Blanco",
+          "year": 1942,
+          "description": "American educator and politician, 54th Governor of Louisiana"
+        }
+      ],
+      "scientists": [
+        {
+          "name": "Maurice Wilkins",
+          "year": 1916,
+          "description": "New Zealand-English physicist and biologist, Nobel Prize laureate"
+        },
+        {
+          "name": "Freeman Dyson",
+          "year": 1923,
+          "description": "English-American physicist and mathematician"
+        },
+        {
+          "name": "Uziel Gal",
+          "year": 1923,
+          "description": "German-Israeli engineer, designed the Uzi gun"
+        },
+        {
+          "name": "Frank W. J. Olver",
+          "year": 1924,
+          "description": "English-American mathematician and academic"
+        },
+        {
+          "name": "John Meurig Thomas",
+          "year": 1932,
+          "description": "Welsh chemist and academic"
+        }
+      ],
+      "artists": [
+        {
+          "name": "Oscar Niemeyer",
+          "year": 1907,
+          "description": "Brazilian architect, designed the United Nations Headquarters and the Cathedr..."
+        },
+        {
+          "name": "Sattar Bahlulzade",
+          "year": 1909,
+          "description": "Azerbaijani-Russian painter"
+        },
+        {
+          "name": "Nicholas P. Dallis",
+          "year": 1911,
+          "description": "American psychiatrist and illustrator"
+        },
+        {
+          "name": "Chihiro Iwasaki",
+          "year": 1918,
+          "description": "Japanese painter and illustrator"
+        },
+        {
+          "name": "Kurt Schaffenberger",
+          "year": 1920,
+          "description": "German-American sergeant and illustrator"
+        }
+      ],
+      "writers": [
+        {
+          "name": "Swami Ranganathananda",
+          "year": 1908,
+          "description": "Indian monk, scholar, and author"
+        },
+        {
+          "name": "Muriel Rukeyser",
+          "year": 1913,
+          "description": "American poet, academic, and activist"
+        },
+        {
+          "name": "Gamal al-Banna",
+          "year": 1920,
+          "description": "Egyptian author and scholar"
+        },
+        {
+          "name": "Edna O'Brien",
+          "year": 1930,
+          "description": "Irish novelist, playwright, poet and short story writer"
+        },
+        {
+          "name": "Klaus Rifbjerg",
+          "year": 1931,
+          "description": "Danish author and poet"
+        }
+      ]
+    }
+  },
+  "16": {
+    "rank": 320,
+    "percentile": 13,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Lucille Lortel",
+          "year": 1900,
+          "description": "American actress and producer"
+        },
+        {
+          "name": "Hardie Albright",
+          "year": 1903,
+          "description": "American actor"
+        },
+        {
+          "name": "Harold Whitlock",
+          "year": 1903,
+          "description": "English race walker and coach"
+        },
+        {
+          "name": "Barbara Kent",
+          "year": 1907,
+          "description": "Canadian-born American film actress"
+        },
+        {
+          "name": "Freddie Brown",
+          "year": 1910,
+          "description": "Peruvian-English cricketer and sportscaster"
+        }
+      ],
+      "athletes": [
+        {
+          "name": "Sam Most",
+          "year": 1930,
+          "description": "American flute player and saxophonist"
+        },
+        {
+          "name": "Don Meyer",
+          "year": 1944,
+          "description": "American basketball player and coach"
+        },
+        {
+          "name": "Trevor Pinnock",
+          "year": 1946,
+          "description": "English harpsichord player and conductor"
+        },
+        {
+          "name": "Roy Schuiten",
+          "year": 1950,
+          "description": "Dutch cyclist and manager"
+        },
+        {
+          "name": "Mike Flanagan",
+          "year": 1951,
+          "description": "American baseball player, coach, and sportscaster"
+        }
+      ],
+      "leaders": [
+        {
+          "name": "Pete T. Cenarrusa",
+          "year": 1917,
+          "description": "American soldier, pilot, and politician, Secretary of State of Idaho"
+        },
+        {
+          "name": "Frederick Rotimi Williams",
+          "year": 1920,
+          "description": "Nigerian lawyer and politician"
+        },
+        {
+          "name": "A. N. R. Robinson",
+          "year": 1926,
+          "description": "Tobagonian lawyer and politician, 3rd President of Trinidad and Tobago"
+        },
+        {
+          "name": "Bill Young",
+          "year": 1930,
+          "description": "American sergeant and politician"
+        },
+        {
+          "name": "Roger Neil Wheeler",
+          "year": 1941,
+          "description": "English general"
+        }
+      ],
+      "scientists": [
+        {
+          "name": "Piet Hein",
+          "year": 1905,
+          "description": "Danish mathematician, author, and poet"
+        },
+        {
+          "name": "Ruben Nirvi",
+          "year": 1905,
+          "description": "Finnish linguist and professor"
+        },
+        {
+          "name": "Ernst Florian Winter",
+          "year": 1923,
+          "description": "Austrian-American historian and political scientist"
+        },
+        {
+          "name": "Grace Alele-Williams",
+          "year": 1932,
+          "description": "Nigerian mathematician and academic"
+        },
+        {
+          "name": "Martyn Poliakoff",
+          "year": 1947,
+          "description": "English chemist and academic"
+        }
+      ],
+      "artists": [
+        {
+          "name": "Remedios Varo",
+          "year": 1908,
+          "description": "Spanish-Mexican surrealist painter & anarchist"
+        },
+        {
+          "name": "O. Winston Link",
+          "year": 1914,
+          "description": "American photographer"
+        },
+        {
+          "name": "Quentin Blake",
+          "year": 1932,
+          "description": "English author and illustrator"
+        },
+        {
+          "name": "Edward Ruscha",
+          "year": 1937,
+          "description": "American painter and photographer"
+        },
+        {
+          "name": "Trevor Żahra",
+          "year": 1947,
+          "description": "Maltese novelist, poet and illustrator"
+        }
+      ],
+      "writers": [
+        {
+          "name": "V. S. Pritchett",
+          "year": 1900,
+          "description": "British writer and literary critic"
+        },
+        {
+          "name": "Margaret Mead",
+          "year": 1901,
+          "description": "American anthropologist and author"
+        },
+        {
+          "name": "Rafael Alberti",
+          "year": 1902,
+          "description": "Spanish poet and playwright"
+        },
+        {
+          "name": "Ruth Johnson Colvin",
+          "year": 1916,
+          "description": "American author and educator, founded ProLiteracy Worldwide"
+        },
+        {
+          "name": "Nabi Bux Khan Baloch",
+          "year": 1917,
+          "description": "Pakistani author and scholar"
+        }
+      ]
+    }
+  },
+  "17": {
+    "rank": 322,
+    "percentile": 12,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Ray Noble",
+          "year": 1903,
+          "description": "English bandleader, composer, and actor"
+        },
+        {
+          "name": "Simo Häyhä",
+          "year": 1905,
+          "description": "Finnish soldier and sniper"
+        },
+        {
+          "name": "Fernando Lopes-Graça",
+          "year": 1906,
+          "description": "Portuguese composer and conductor"
+        },
+        {
+          "name": "Sy Oliver",
+          "year": 1910,
+          "description": "American singer-songwriter and trumpet player"
+        },
+        {
+          "name": "Mushtaq Ali",
+          "year": 1914,
+          "description": "Indian cricketer"
+        }
+      ],
+      "athletes": [
+        {
+          "name": "Ray Jablonski",
+          "year": 1926,
+          "description": "American baseball player"
+        },
+        {
+          "name": "John Bond",
+          "year": 1932,
+          "description": "English footballer and manager"
+        },
+        {
+          "name": "Ray Wilson",
+          "year": 1934,
+          "description": "English footballer and manager"
+        },
+        {
+          "name": "Cal Ripken Sr.",
+          "year": 1935,
+          "description": "American baseball player, coach, and manager"
+        },
+        {
+          "name": "Valery Belousov",
+          "year": 1948,
+          "description": "Russian ice hockey player and coach"
+        }
+      ],
+      "leaders": [
+        {
+          "name": "Mohammad Hidayatullah",
+          "year": 1905,
+          "description": "11th Chief Justice of India, and politician, sixth Vice President of India"
+        },
+        {
+          "name": "Edward Short",
+          "year": 1912,
+          "description": "Baron Glenamara, English captain and politician, Lord President of the Council"
+        },
+        {
+          "name": "Burt Baskin",
+          "year": 1913,
+          "description": "American businessman, co-founded Baskin-Robbins"
+        },
+        {
+          "name": "John Hans Krebs",
+          "year": 1926,
+          "description": "American lawyer and politician"
+        },
+        {
+          "name": "Doyle Conner",
+          "year": 1928,
+          "description": "American farmer and politician, seventh Florida Commissioner of Agriculture"
+        }
+      ],
+      "scientists": [
+        {
+          "name": "Mary Cartwright",
+          "year": 1900,
+          "description": "English mathematician and academic, one of the first people to analyze a dyna..."
+        },
+        {
+          "name": "Russell C. Newhouse",
+          "year": 1906,
+          "description": "American pilot and engineer"
+        },
+        {
+          "name": "Willard Libby",
+          "year": 1908,
+          "description": "American chemist and academic, Nobel Prize laureate"
+        },
+        {
+          "name": "Kenneth E. Iverson",
+          "year": 1920,
+          "description": "Canadian computer scientist, developed the APL programming language"
+        },
+        {
+          "name": "Alan Voorhees",
+          "year": 1922,
+          "description": "American engineer and academic"
+        }
+      ],
+      "artists": [
+        {
+          "name": "Paul Cadmus",
+          "year": 1904,
+          "description": "American painter and illustrator"
+        },
+        {
+          "name": "Edward Meneeley",
+          "year": 1927,
+          "description": "American painter and sculptor"
+        },
+        {
+          "name": "Bob Guccione",
+          "year": 1930,
+          "description": "American photographer and publisher, founded Penthouse"
+        },
+        {
+          "name": "Irving Petlin",
+          "year": 1934,
+          "description": "American painter and academic"
+        },
+        {
+          "name": "Jerry Hsu",
+          "year": 1981,
+          "description": "American skateboarder and photographer"
+        }
+      ],
+      "writers": [
+        {
+          "name": "Erskine Caldwell",
+          "year": 1903,
+          "description": "American novelist and short story writer"
+        },
+        {
+          "name": "Erico Verissimo",
+          "year": 1905,
+          "description": "Brazilian author and translator"
+        },
+        {
+          "name": "Eknath Easwaran",
+          "year": 1910,
+          "description": "Indian-American educator and author"
+        },
+        {
+          "name": "Penelope Fitzgerald",
+          "year": 1916,
+          "description": "English author and poet"
+        },
+        {
+          "name": "Kenneth Dike",
+          "year": 1917,
+          "description": "Nigerian historian, author, and academic"
+        }
+      ]
+    }
+  },
+  "18": {
+    "rank": 324,
+    "percentile": 12,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "George Stevens",
+          "year": 1904,
+          "description": "American director, producer, screenwriter, and cinematographer"
+        },
+        {
+          "name": "Bill Holland",
+          "year": 1907,
+          "description": "American race car driver"
+        },
+        {
+          "name": "Lawrence Lucie",
+          "year": 1907,
+          "description": "American guitarist and educator"
+        },
+        {
+          "name": "Celia Johnson",
+          "year": 1908,
+          "description": "English actress"
+        },
+        {
+          "name": "Paul Siple",
+          "year": 1908,
+          "description": "American geographer and explorer"
+        }
+      ],
+      "athletes": [
+        {
+          "name": "Eric Tindill",
+          "year": 1910,
+          "description": "New Zealand rugby player, cricketer, and umpire"
+        },
+        {
+          "name": "Ray Meyer",
+          "year": 1913,
+          "description": "American basketball player and coach"
+        },
+        {
+          "name": "Gino Cimoli",
+          "year": 1929,
+          "description": "American baseball player"
+        },
+        {
+          "name": "Moose Skowron",
+          "year": 1930,
+          "description": "American baseball player"
+        },
+        {
+          "name": "Gene Shue",
+          "year": 1931,
+          "description": "American basketball player, coach, and executive"
+        }
+      ],
+      "leaders": [
+        {
+          "name": "Benjamin O. Davis",
+          "year": 1912,
+          "description": "Jr., American general and pilot"
+        },
+        {
+          "name": "Willy Brandt",
+          "year": 1913,
+          "description": "German politician, 4th Chancellor of Germany, Nobel Prize laureate"
+        },
+        {
+          "name": "Jack Brooks",
+          "year": 1922,
+          "description": "American colonel, lawyer, and politician"
+        },
+        {
+          "name": "Edwin Bramall",
+          "year": 1923,
+          "description": "Baron Bramall, English field marshal and politician, Lord Lieutenant of Great..."
+        },
+        {
+          "name": "Ramsey Clark",
+          "year": 1927,
+          "description": "American lawyer and politician, 66th United States Attorney General"
+        }
+      ],
+      "scientists": [
+        {
+          "name": "Esther Lederberg",
+          "year": 1922,
+          "description": "American microbiologist"
+        },
+        {
+          "name": "Boris Volynov",
+          "year": 1934,
+          "description": "Russian colonel, engineer, and cosmonaut"
+        },
+        {
+          "name": "Harold E. Varmus",
+          "year": 1939,
+          "description": "American biologist and academic, Nobel Prize laureate"
+        },
+        {
+          "name": "Lenore Blum",
+          "year": 1942,
+          "description": "American mathematician and academic"
+        }
+      ],
+      "artists": [
+        {
+          "name": "Mimmo Paladino",
+          "year": 1948,
+          "description": "Italian sculptor and painter"
+        },
+        {
+          "name": "Jonathan Yeo",
+          "year": 1970,
+          "description": "English painter"
+        }
+      ],
+      "writers": [
+        {
+          "name": "Alfred Bester",
+          "year": 1913,
+          "description": "American author and screenwriter"
+        },
+        {
+          "name": "Robert Leckie",
+          "year": 1920,
+          "description": "American soldier and author"
+        },
+        {
+          "name": "Mirza Tahir Ahmad",
+          "year": 1928,
+          "description": "Indian-English caliph and author"
+        },
+        {
+          "name": "Alison Plowden",
+          "year": 1931,
+          "description": "English historian and author"
+        },
+        {
+          "name": "Jacques Pépin",
+          "year": 1935,
+          "description": "French-American chef and author"
+        }
+      ]
+    }
+  },
+  "19": {
+    "rank": 327,
+    "percentile": 11,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Ralph Richardson",
+          "year": 1902,
+          "description": "English actor"
+        },
+        {
+          "name": "George Davis Snell",
+          "year": 1903,
+          "description": "American geneticist and immunologist, Nobel Prize laureate"
+        },
+        {
+          "name": "Jimmy McLarnin",
+          "year": 1907,
+          "description": "Irish-American boxer, actor, and golfer"
+        },
+        {
+          "name": "Édith Piaf",
+          "year": 1915,
+          "description": "French singer-songwriter and actress"
+        },
+        {
+          "name": "Claudia Testoni",
+          "year": 1915,
+          "description": "Italian hurdler, sprinter, and long jumper"
+        }
+      ],
+      "athletes": [
+        {
+          "name": "Fritz Mauruschat",
+          "year": 1901,
+          "description": "German footballer and manager"
+        },
+        {
+          "name": "Doug Harvey",
+          "year": 1924,
+          "description": "Canadian ice hockey player and coach"
+        },
+        {
+          "name": "Bobby Layne",
+          "year": 1926,
+          "description": "American football player and coach"
+        },
+        {
+          "name": "Al Kaline",
+          "year": 1934,
+          "description": "American baseball player and sportscaster"
+        },
+        {
+          "name": "Tony Taylor",
+          "year": 1935,
+          "description": "Cuban baseball player and coach"
+        }
+      ],
+      "leaders": [
+        {
+          "name": "Irving Kahn",
+          "year": 1905,
+          "description": "American businessman"
+        },
+        {
+          "name": "Leonid Brezhnev",
+          "year": 1906,
+          "description": "Ukrainian-Russian marshal, engineer, and politician, 4th Head of State of the..."
+        },
+        {
+          "name": "David Douglas",
+          "year": 1929,
+          "description": "12th Marquess of Queensberry, Scottish potter"
+        },
+        {
+          "name": "Wally Olins",
+          "year": 1930,
+          "description": "English businessman and academic"
+        },
+        {
+          "name": "Kevan Gosper",
+          "year": 1933,
+          "description": "Australian runner and politician"
+        }
+      ],
+      "scientists": [
+        {
+          "name": "Rudolf Hell",
+          "year": 1901,
+          "description": "German engineer, invented the Hellschreiber"
+        },
+        {
+          "name": "Giovanni Lurani",
+          "year": 1905,
+          "description": "Italian race car driver, engineer, and journalist"
+        },
+        {
+          "name": "Elisabeth Noelle-Neumann",
+          "year": 1916,
+          "description": "German political scientist, journalist, and academic"
+        },
+        {
+          "name": "Carlo Chiti",
+          "year": 1924,
+          "description": "Italian engineer"
+        },
+        {
+          "name": "Knut Helle",
+          "year": 1930,
+          "description": "Norwegian historian and professor"
+        }
+      ],
+      "artists": [
+        {
+          "name": "Fikret Otyam",
+          "year": 1926,
+          "description": "Turkish painter and journalist"
+        },
+        {
+          "name": "Nathan Oliveira",
+          "year": 1928,
+          "description": "American painter and sculptor"
+        }
+      ],
+      "writers": [
+        {
+          "name": "Oliver La Farge",
+          "year": 1901,
+          "description": "American anthropologist and author"
+        },
+        {
+          "name": "W. A. Criswell",
+          "year": 1909,
+          "description": "American pastor and author"
+        },
+        {
+          "name": "Jean Genet",
+          "year": 1910,
+          "description": "French novelist, playwright, and poet"
+        },
+        {
+          "name": "Mel Shaw",
+          "year": 1914,
+          "description": "American animator and screenwriter"
+        },
+        {
+          "name": "Robert V. Bruce",
+          "year": 1923,
+          "description": "American historian and author"
+        }
+      ]
+    }
+  },
+  "20": {
+    "rank": 329,
+    "percentile": 10,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Lissy Arna",
+          "year": 1900,
+          "description": "German actress"
+        },
+        {
+          "name": "Prince George",
+          "year": 1902,
+          "description": "Duke of Kent"
+        },
+        {
+          "name": "Bill O'Reilly",
+          "year": 1905,
+          "description": "Australian cricketer and sportscaster"
+        },
+        {
+          "name": "Dennis Morgan",
+          "year": 1908,
+          "description": "American actor and singer"
+        },
+        {
+          "name": "Michel Chartrand",
+          "year": 1916,
+          "description": "Canadian trade union leader and activist"
+        }
+      ],
+      "athletes": [
+        {
+          "name": "Gabby Hartnett",
+          "year": 1900,
+          "description": "American baseball player and manager"
+        },
+        {
+          "name": "Spud Davis",
+          "year": 1904,
+          "description": "American baseball player, coach, and manager"
+        },
+        {
+          "name": "Benito Lorenzi",
+          "year": 1925,
+          "description": "Italian footballer"
+        },
+        {
+          "name": "Don Sunderlage",
+          "year": 1929,
+          "description": "American basketball player"
+        },
+        {
+          "name": "Rik Van Looy",
+          "year": 1933,
+          "description": "Belgian cyclist"
+        }
+      ],
+      "leaders": [
+        {
+          "name": "Vakkom Majeed",
+          "year": 1909,
+          "description": "Indian journalist and politician"
+        },
+        {
+          "name": "Harry F. Byrd Jr.",
+          "year": 1914,
+          "description": "American lieutenant, publisher, and politician"
+        },
+        {
+          "name": "Jean Marchand",
+          "year": 1918,
+          "description": "Canadian trade union leader and politician, 43rd Secretary of State for Canada"
+        },
+        {
+          "name": "William Soeryadjaya",
+          "year": 1922,
+          "description": "Chinese-Indonesian businessman and co-founder of Astra International"
+        },
+        {
+          "name": "Judy LaMarsh",
+          "year": 1924,
+          "description": "Canadian soldier, lawyer, and politician, 42nd Secretary of State for Canada"
+        }
+      ],
+      "scientists": [
+        {
+          "name": "Robert J. Van de Graaff",
+          "year": 1901,
+          "description": "American physicist and academic, invented the Van de Graaff generator"
+        },
+        {
+          "name": "David Bohm",
+          "year": 1917,
+          "description": "American-English physicist, neuropsychologist, and philosopher"
+        },
+        {
+          "name": "James Thomson",
+          "year": 1958,
+          "description": "American biologist and academic"
+        },
+        {
+          "name": "George Coupland",
+          "year": 1959,
+          "description": "Scottish scientist"
+        }
+      ],
+      "artists": [
+        {
+          "name": "Beverly Pepper",
+          "year": 1922,
+          "description": "American sculptor and painter"
+        }
+      ],
+      "writers": [
+        {
+          "name": "Sidney Hook",
+          "year": 1902,
+          "description": "American philosopher and author"
+        },
+        {
+          "name": "Yevgenia Ginzburg",
+          "year": 1904,
+          "description": "Russian author"
+        },
+        {
+          "name": "Paul Francis Webster",
+          "year": 1907,
+          "description": "American soldier and songwriter"
+        },
+        {
+          "name": "Hortense Calisher",
+          "year": 1911,
+          "description": "American author"
+        },
+        {
+          "name": "Aziz Nesin",
+          "year": 1915,
+          "description": "Turkish author and poet"
+        }
+      ]
+    }
+  },
+  "21": {
+    "rank": 331,
+    "percentile": 10,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Doug Young",
+          "year": 1919,
+          "description": "American voice actor"
+        },
+        {
+          "name": "Alicia Alonso",
+          "year": 1920,
+          "description": "Cuban ballerina and choreographer, founded the Cuban National Ballet"
+        },
+        {
+          "name": "Adele Goldstine",
+          "year": 1920,
+          "description": "American computer programmer"
+        },
+        {
+          "name": "Paul Winchell",
+          "year": 1922,
+          "description": "American actor, voice artist, and ventriloquist"
+        },
+        {
+          "name": "Phil Roman",
+          "year": 1930,
+          "description": "American animator"
+        }
+      ],
+      "athletes": [
+        {
+          "name": "Josh Gibson",
+          "year": 1911,
+          "description": "American baseball player"
+        },
+        {
+          "name": "Iris Cummings",
+          "year": 1920,
+          "description": "American swimmer and aviator"
+        },
+        {
+          "name": "Wat Misaka",
+          "year": 1923,
+          "description": "American basketball player"
+        },
+        {
+          "name": "Joe Paterno",
+          "year": 1926,
+          "description": "American football player and coach"
+        },
+        {
+          "name": "Walter Spanghero",
+          "year": 1943,
+          "description": "French rugby player"
+        }
+      ],
+      "leaders": [
+        {
+          "name": "Luis Arturo González López",
+          "year": 1900,
+          "description": "Guatemalan supreme court judge and briefly acting president"
+        },
+        {
+          "name": "Donald Regan",
+          "year": 1918,
+          "description": "American colonel and politician, 11th White House Chief of Staff"
+        },
+        {
+          "name": "Kurt Waldheim",
+          "year": 1918,
+          "description": "Austrian colonel and politician; 9th President of Austria"
+        },
+        {
+          "name": "Itubwa Amram",
+          "year": 1922,
+          "description": "Nauruan pastor and politician"
+        },
+        {
+          "name": "Robert Worcester",
+          "year": 1933,
+          "description": "American businessman and academic, founded MORI"
+        }
+      ],
+      "scientists": [
+        {
+          "name": "Käte Fenchel",
+          "year": 1905,
+          "description": "German mathematician"
+        },
+        {
+          "name": "Frank Fenner",
+          "year": 1914,
+          "description": "Australian microbiologist and virologist"
+        },
+        {
+          "name": "Cécile DeWitt-Morette",
+          "year": 1922,
+          "description": "French mathematician and physicist"
+        }
+      ],
+      "artists": [
+        {
+          "name": "Arnold Friberg",
+          "year": 1913,
+          "description": "American illustrator and painter"
+        }
+      ],
+      "writers": [
+        {
+          "name": "Anthony Powell",
+          "year": 1905,
+          "description": "English author"
+        },
+        {
+          "name": "Seichō Matsumoto",
+          "year": 1909,
+          "description": "Japanese journalist and author"
+        },
+        {
+          "name": "Heinrich Böll",
+          "year": 1917,
+          "description": "German novelist and short story writer, Nobel Prize laureate"
+        },
+        {
+          "name": "Arnošt Lustig",
+          "year": 1926,
+          "description": "Czech author and playwright"
+        },
+        {
+          "name": "U. R. Ananthamurthy",
+          "year": 1932,
+          "description": "Indian author, poet, and critic"
+        }
+      ]
+    }
+  },
+  "22": {
+    "rank": 334,
+    "percentile": 9,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Marc Allégret",
+          "year": 1900,
+          "description": "French director and screenwriter"
+        },
+        {
+          "name": "Andre Kostelanetz",
+          "year": 1901,
+          "description": "Russian-American conductor and composer"
+        },
+        {
+          "name": "Haldan Keffer Hartline",
+          "year": 1903,
+          "description": "American physiologist and academic, Nobel Prize laureate"
+        },
+        {
+          "name": "Pierre Brasseur",
+          "year": 1905,
+          "description": "French-Italian actor and screenwriter"
+        },
+        {
+          "name": "Peggy Ashcroft",
+          "year": 1907,
+          "description": "English actress"
+        }
+      ],
+      "athletes": [
+        {
+          "name": "Pierre Levegh",
+          "year": 1905,
+          "description": "French ice hockey player and racing driver"
+        },
+        {
+          "name": "Lefter Küçükandonyadis",
+          "year": 1925,
+          "description": "Turkish footballer and manager"
+        },
+        {
+          "name": "Alcides Ghiggia",
+          "year": 1926,
+          "description": "Italian-Uruguayan footballer and manager"
+        },
+        {
+          "name": "Phil Woosnam",
+          "year": 1932,
+          "description": "Welsh soccer player and manager"
+        },
+        {
+          "name": "John Hartle",
+          "year": 1933,
+          "description": "English motorcycle racer"
+        }
+      ],
+      "leaders": [
+        {
+          "name": "Jim Wright",
+          "year": 1922,
+          "description": "American soldier, lawyer, and politician, 56th Speaker of the United States H..."
+        },
+        {
+          "name": "Lewis Glucksman",
+          "year": 1925,
+          "description": "American businessman and philanthropist"
+        },
+        {
+          "name": "Carlos Graça",
+          "year": 1931,
+          "description": "São Toméan lawyer and politician, Prime Minister of São Tomé and Príncipe"
+        },
+        {
+          "name": "Lucien Bouchard",
+          "year": 1938,
+          "description": "Canadian lawyer and politician, 27th Premier of Quebec"
+        },
+        {
+          "name": "Luis Francisco Cuéllar",
+          "year": 1940,
+          "description": "Colombian rancher and politician"
+        }
+      ],
+      "scientists": [
+        {
+          "name": "Stefan Janos",
+          "year": 1943,
+          "description": "Slovak-Swiss physicist and academic"
+        },
+        {
+          "name": "Mary Archer",
+          "year": 1944,
+          "description": "English chemist and academic"
+        },
+        {
+          "name": "Thomas C. Südhof",
+          "year": 1955,
+          "description": "German-American biochemist and academic, Nobel Prize laureate"
+        }
+      ],
+      "artists": [
+        {
+          "name": "Giacomo Manzù",
+          "year": 1908,
+          "description": "Italian sculptor and academic"
+        },
+        {
+          "name": "Mike Molloy",
+          "year": 1940,
+          "description": "English journalist, author, and illustrator"
+        },
+        {
+          "name": "Jean-Michel Basquiat",
+          "year": 1960,
+          "description": "American painter and poet"
+        },
+        {
+          "name": "Paul Kuniholm",
+          "year": 1960,
+          "description": "Artist"
+        },
+        {
+          "name": "Luna H. Mitani",
+          "year": 1963,
+          "description": "Japanese-American painter and illustrator"
+        }
+      ],
+      "writers": [
+        {
+          "name": "Kenneth Rexroth",
+          "year": 1905,
+          "description": "American poet, translator, and academic"
+        },
+        {
+          "name": "Phillip Glasier",
+          "year": 1915,
+          "description": "English author and academic"
+        },
+        {
+          "name": "Peregrine Worsthorne",
+          "year": 1923,
+          "description": "English journalist and author"
+        },
+        {
+          "name": "James Burke",
+          "year": 1936,
+          "description": "Irish historian and author"
+        },
+        {
+          "name": "Charlotte Lamb",
+          "year": 1937,
+          "description": "English author"
+        }
+      ]
+    }
+  },
+  "23": {
+    "rank": 336,
+    "percentile": 8,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Merle Barwis",
+          "year": 1900,
+          "description": "American-Canadian supercentenarian"
+        },
+        {
+          "name": "Marie Bell",
+          "year": 1900,
+          "description": "French actress and stage director"
+        },
+        {
+          "name": "Viktor Gutić",
+          "year": 1901,
+          "description": "Croatian fascist official"
+        },
+        {
+          "name": "Avraham Stern",
+          "year": 1907,
+          "description": "Polish Zionist leader"
+        },
+        {
+          "name": "Gertrude Bancroft",
+          "year": 1908,
+          "description": "American economist"
+        }
+      ],
+      "athletes": [
+        {
+          "name": "Bob Kurland",
+          "year": 1924,
+          "description": "American basketball player and politician"
+        },
+        {
+          "name": "Noella Leduc",
+          "year": 1933,
+          "description": "American baseball player"
+        },
+        {
+          "name": "Paul Hornung",
+          "year": 1935,
+          "description": "American football player and sportscaster"
+        },
+        {
+          "name": "Abdul Ghani Minhat",
+          "year": 1935,
+          "description": "Malaysian footballer and manager"
+        },
+        {
+          "name": "Bobby Ross",
+          "year": 1936,
+          "description": "American football player and coach"
+        }
+      ],
+      "leaders": [
+        {
+          "name": "Charan Singh",
+          "year": 1902,
+          "description": "Indian lawyer and politician, 5th Prime Minister of India"
+        },
+        {
+          "name": "James Roosevelt",
+          "year": 1907,
+          "description": "American general and politician"
+        },
+        {
+          "name": "Kurt Meyer",
+          "year": 1910,
+          "description": "German SS general and convicted war criminal"
+        },
+        {
+          "name": "Helmut Schmidt",
+          "year": 1918,
+          "description": "German soldier, economist, and politician, 5th Chancellor of Germany"
+        },
+        {
+          "name": "Kenneth M. Taylor",
+          "year": 1919,
+          "description": "American general and pilot"
+        }
+      ],
+      "scientists": [
+        {
+          "name": "Anna J. Harrison",
+          "year": 1912,
+          "description": "American organic chemist and academic"
+        },
+        {
+          "name": "Bob Kahn",
+          "year": 1938,
+          "description": "American computer scientist and engineer, co-developed the Transmission Contr..."
+        },
+        {
+          "name": "Mikhail Leonidovich Gromov",
+          "year": 1943,
+          "description": "Russian-French mathematician and academic"
+        },
+        {
+          "name": "Ketan J. Patel",
+          "year": 1961,
+          "description": "Kenyan-English biologist and academic"
+        },
+        {
+          "name": "Stefan Hell",
+          "year": 1962,
+          "description": "Romanian-German physicist and chemist, Nobel Prize laureate"
+        }
+      ],
+      "artists": [
+        {
+          "name": "Otto Soglow",
+          "year": 1900,
+          "description": "American cartoonist"
+        },
+        {
+          "name": "Yousuf Karsh",
+          "year": 1908,
+          "description": "Armenian-Canadian photographer"
+        },
+        {
+          "name": "Nelson Shanks",
+          "year": 1937,
+          "description": "American painter, historian, and educator"
+        },
+        {
+          "name": "Nancy Graves",
+          "year": 1939,
+          "description": "American sculptor and painter"
+        },
+        {
+          "name": "Andres Alver",
+          "year": 1953,
+          "description": "Estonian architect and academic"
+        }
+      ],
+      "writers": [
+        {
+          "name": "Norman Maclean",
+          "year": 1902,
+          "description": "American author and academic"
+        },
+        {
+          "name": "Manuel Lopes",
+          "year": 1907,
+          "description": "Cape Verdean author and poet"
+        },
+        {
+          "name": "Robert Bly",
+          "year": 1926,
+          "description": "American poet and essayist"
+        },
+        {
+          "name": "Geoffrey Wheatcroft",
+          "year": 1945,
+          "description": "English journalist and author"
+        },
+        {
+          "name": "Ilchi Lee",
+          "year": 1950,
+          "description": "South Korean author and educator"
+        }
+      ]
+    }
+  },
+  "24": {
+    "rank": 338,
+    "percentile": 8,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Hawayo Takata",
+          "year": 1900,
+          "description": "Japanese-American teacher and master practitioner of Reiki"
+        },
+        {
+          "name": "Joseph Cornell",
+          "year": 1903,
+          "description": "American sculptor and director"
+        },
+        {
+          "name": "Ernst Krenkel",
+          "year": 1903,
+          "description": "Polish-Russian geographer and explorer"
+        },
+        {
+          "name": "Ava Helen Pauling",
+          "year": 1903,
+          "description": "American humanitarian and activist"
+        },
+        {
+          "name": "Franz Waxman",
+          "year": 1906,
+          "description": "German-American composer and conductor"
+        }
+      ],
+      "athletes": [
+        {
+          "name": "Ellen Braumüller",
+          "year": 1910,
+          "description": "German javelin thrower and triathlete"
+        },
+        {
+          "name": "Ralph Marterie",
+          "year": 1914,
+          "description": "Italian-American trumpet player and bandleader"
+        },
+        {
+          "name": "Lennart Skoglund",
+          "year": 1929,
+          "description": "Swedish footballer"
+        },
+        {
+          "name": "Red Sullivan",
+          "year": 1929,
+          "description": "Canadian ice hockey player and coach"
+        },
+        {
+          "name": "Félix",
+          "year": 1937,
+          "description": "Brazilian footballer and manager"
+        }
+      ],
+      "leaders": [
+        {
+          "name": "Joey Smallwood",
+          "year": 1900,
+          "description": "Canadian journalist and politician, 1st Premier of Newfoundland"
+        },
+        {
+          "name": "Joseph M. Juran",
+          "year": 1904,
+          "description": "Romanian-American engineer and businessman"
+        },
+        {
+          "name": "Howard Hughes",
+          "year": 1905,
+          "description": "American businessman, engineer, and pilot"
+        },
+        {
+          "name": "George Patton IV",
+          "year": 1923,
+          "description": "American general"
+        },
+        {
+          "name": "Abdirizak Haji Hussein",
+          "year": 1924,
+          "description": "Somalian soldier and politician, 4th Prime Minister of Somalia"
+        }
+      ],
+      "scientists": [
+        {
+          "name": "William C. Schneider",
+          "year": 1923,
+          "description": "American aerospace engineer"
+        },
+        {
+          "name": "Oleg Skripochka",
+          "year": 1969,
+          "description": "Russian astronaut and engineer"
+        }
+      ],
+      "artists": [
+        {
+          "name": "Nina Negri",
+          "year": 1901,
+          "description": "Argentine-French painter and engraver"
+        },
+        {
+          "name": "Max Miedinger",
+          "year": 1910,
+          "description": "Swiss typeface designer, created Helvetica"
+        },
+        {
+          "name": "Ad Reinhardt",
+          "year": 1913,
+          "description": "American painter and academic"
+        },
+        {
+          "name": "Pierre Soulages",
+          "year": 1919,
+          "description": "French artist"
+        },
+        {
+          "name": "On Kawara",
+          "year": 1932,
+          "description": "Japanese-American painter"
+        }
+      ],
+      "writers": [
+        {
+          "name": "I. F. Stone",
+          "year": 1907,
+          "description": "American journalist and author"
+        },
+        {
+          "name": "Fritz Leiber",
+          "year": 1910,
+          "description": "American author and poet"
+        },
+        {
+          "name": "Herbert Reinecker",
+          "year": 1914,
+          "description": "German author and screenwriter"
+        },
+        {
+          "name": "Qateel Shifai",
+          "year": 1919,
+          "description": "Pakistani poet and songwriter"
+        },
+        {
+          "name": "Franco Lucentini",
+          "year": 1920,
+          "description": "Italian author and screenwriter"
+        }
+      ]
+    }
+  },
+  "25": {
+    "rank": 341,
+    "percentile": 7,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Princess Alice",
+          "year": 1901,
+          "description": "Duchess of Gloucester"
+        },
+        {
+          "name": "Barton MacLane",
+          "year": 1902,
+          "description": "American actor, playwright, and screenwriter"
+        },
+        {
+          "name": "Antiochos Evangelatos",
+          "year": 1903,
+          "description": "Greek composer and conductor"
+        },
+        {
+          "name": "Philip Vera Cruz",
+          "year": 1904,
+          "description": "Filipino-American labor leader and farmworker"
+        },
+        {
+          "name": "Lew Grade",
+          "year": 1906,
+          "description": "Baron Grade, Ukrainian-English film producer"
+        }
+      ],
+      "athletes": [
+        {
+          "name": "William Bell",
+          "year": 1902,
+          "description": "American tuba player and educator"
+        },
+        {
+          "name": "Jo-Jo Moore",
+          "year": 1908,
+          "description": "American baseball player"
+        },
+        {
+          "name": "Ned Garver",
+          "year": 1925,
+          "description": "American baseball player"
+        },
+        {
+          "name": "Nellie Fox",
+          "year": 1927,
+          "description": "American baseball player and coach"
+        },
+        {
+          "name": "Ram Narayan",
+          "year": 1927,
+          "description": "Indian sarangi player"
+        }
+      ],
+      "leaders": [
+        {
+          "name": "Glenn McCarthy",
+          "year": 1907,
+          "description": "American businessman, founded the Shamrock Hotel"
+        },
+        {
+          "name": "Ernest L. Massad",
+          "year": 1908,
+          "description": "American general"
+        },
+        {
+          "name": "James Fletcher Jnr",
+          "year": 1914,
+          "description": "New Zealand businessman"
+        },
+        {
+          "name": "Ahmed Ben Bella",
+          "year": 1916,
+          "description": "Algerian soldier and politician, 1st President of Algeria"
+        },
+        {
+          "name": "Lincoln Verduga Loor",
+          "year": 1917,
+          "description": "Ecuadorian journalist and politician"
+        }
+      ],
+      "scientists": [
+        {
+          "name": "Gerhard Herzberg",
+          "year": 1904,
+          "description": "German-Canadian physicist and chemist, Nobel Prize laureate"
+        },
+        {
+          "name": "Ernst Ruska",
+          "year": 1906,
+          "description": "German physicist and academic, Nobel Prize laureate"
+        },
+        {
+          "name": "Zora Arkus-Duntov",
+          "year": 1909,
+          "description": "Belgian-American engineer"
+        },
+        {
+          "name": "Arseny Mironov",
+          "year": 1917,
+          "description": "Russian scientist, engineer, pilot, oldest active researcher in aircraft aero..."
+        }
+      ],
+      "artists": [
+        {
+          "name": "Quentin Crisp",
+          "year": 1908,
+          "description": "English author and illustrator"
+        },
+        {
+          "name": "Louise Bourgeois",
+          "year": 1911,
+          "description": "French-American sculptor and painter"
+        },
+        {
+          "name": "Duane Armstrong",
+          "year": 1938,
+          "description": "American painter"
+        },
+        {
+          "name": "Warren Robinett",
+          "year": 1951,
+          "description": "American video game designer"
+        }
+      ],
+      "writers": [
+        {
+          "name": "Zaib-un-Nissa Hamidullah",
+          "year": 1921,
+          "description": "Indian-Pakistani journalist and author"
+        },
+        {
+          "name": "William Demby",
+          "year": 1922,
+          "description": "American author"
+        },
+        {
+          "name": "Carlos Castaneda",
+          "year": 1925,
+          "description": "Peruvian-American anthropologist and author"
+        },
+        {
+          "name": "Hilary Spurling",
+          "year": 1940,
+          "description": "English journalist and author"
+        },
+        {
+          "name": "Eve Pollard",
+          "year": 1943,
+          "description": "English journalist and author"
+        }
+      ]
+    }
+  },
+  "26": {
+    "rank": 343,
+    "percentile": 6,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Evelyn Bark",
+          "year": 1900,
+          "description": "Leading member of the British Red Cross, first female recipient of the CMG"
+        },
+        {
+          "name": "Elisha Cook",
+          "year": 1903,
+          "description": "Jr., American actor"
+        },
+        {
+          "name": "William Loeb III",
+          "year": 1905,
+          "description": "American publisher"
+        },
+        {
+          "name": "Ralph Hill",
+          "year": 1908,
+          "description": "American runner"
+        },
+        {
+          "name": "Matt Gordy",
+          "year": 1909,
+          "description": "American pole vaulter"
+        }
+      ],
+      "athletes": [
+        {
+          "name": "Frank Swift",
+          "year": 1913,
+          "description": "English footballer and journalist"
+        },
+        {
+          "name": "Frank Broyles",
+          "year": 1924,
+          "description": "American football player, coach, and sportscaster"
+        },
+        {
+          "name": "Stu Miller",
+          "year": 1927,
+          "description": "American baseball player"
+        },
+        {
+          "name": "Harry Gamble",
+          "year": 1930,
+          "description": "American football player, coach, and manager"
+        },
+        {
+          "name": "Norm Ullman",
+          "year": 1935,
+          "description": "Canadian ice hockey player"
+        }
+      ],
+      "leaders": [
+        {
+          "name": "Albert Gore",
+          "year": 1907,
+          "description": "Sr., American lawyer and politician"
+        },
+        {
+          "name": "Arsenio Lacson",
+          "year": 1912,
+          "description": "Filipino journalist and politician, Mayor of Manila"
+        },
+        {
+          "name": "Georgios Rallis",
+          "year": 1918,
+          "description": "Greek lieutenant and politician, 173rd Prime Minister of Greece"
+        },
+        {
+          "name": "Vinicio Cerezo",
+          "year": 1942,
+          "description": "Guatemalan politician, 28th President of Guatemala"
+        },
+        {
+          "name": "Gray Davis",
+          "year": 1942,
+          "description": "American captain, lawyer, and politician, 37th Governor of California"
+        }
+      ],
+      "scientists": [
+        {
+          "name": "Martin Cooper",
+          "year": 1928,
+          "description": "American engineer, invented the mobile phone"
+        },
+        {
+          "name": "John Horton Conway",
+          "year": 1937,
+          "description": "English mathematician, known for Conway's Game of Life"
+        },
+        {
+          "name": "Adrian Newey",
+          "year": 1958,
+          "description": "English aerodynamicist and engineer"
+        },
+        {
+          "name": "Keith Martin Ball",
+          "year": 1960,
+          "description": "American mathematician and academic"
+        }
+      ],
+      "artists": [
+        {
+          "name": "Anatoli Lvovich Kaplan",
+          "year": 1902,
+          "description": "Russian painter and sculptor"
+        },
+        {
+          "name": "John Severin",
+          "year": 1921,
+          "description": "American illustrator"
+        },
+        {
+          "name": "Richard Artschwager",
+          "year": 1923,
+          "description": "American painter, illustrator, and sculptor"
+        },
+        {
+          "name": "Peep Jänes",
+          "year": 1936,
+          "description": "Estonian architect"
+        },
+        {
+          "name": "Alexander Wang",
+          "year": 1983,
+          "description": "American fashion designer"
+        }
+      ],
+      "writers": [
+        {
+          "name": "Elmar Muuk",
+          "year": 1901,
+          "description": "Estonian linguist and author"
+        },
+        {
+          "name": "Alejo Carpentier",
+          "year": 1904,
+          "description": "Swiss-Cuban musicologist and author"
+        },
+        {
+          "name": "Denis Gifford",
+          "year": 1927,
+          "description": "English journalist and historian"
+        },
+        {
+          "name": "Kitty Dukakis",
+          "year": 1936,
+          "description": "American author, First Lady of Massachusetts"
+        },
+        {
+          "name": "Robert Hamerton-Kelly",
+          "year": 1938,
+          "description": "South African-American pastor, scholar, and author"
+        }
+      ]
+    }
+  },
+  "27": {
+    "rank": 345,
+    "percentile": 6,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Hans Stuck",
+          "year": 1900,
+          "description": "German racing driver"
+        },
+        {
+          "name": "Marlene Dietrich",
+          "year": 1901,
+          "description": "German-American actress and singer"
+        },
+        {
+          "name": "Irene Handl",
+          "year": 1901,
+          "description": "English actress"
+        },
+        {
+          "name": "Cliff Arquette",
+          "year": 1905,
+          "description": "American actor and comedian"
+        },
+        {
+          "name": "Oscar Levant",
+          "year": 1906,
+          "description": "American pianist, composer, and actor"
+        }
+      ],
+      "athletes": [
+        {
+          "name": "Conrad L. Raiford",
+          "year": 1907,
+          "description": "American baseball player and activist"
+        },
+        {
+          "name": "James Riddell",
+          "year": 1909,
+          "description": "English skier and author"
+        },
+        {
+          "name": "Gyula Zsengellér",
+          "year": 1915,
+          "description": "Hungarian-Cypriot footballer and manager"
+        },
+        {
+          "name": "Buddy Boudreaux",
+          "year": 1917,
+          "description": "American saxophonist and clarinet player"
+        },
+        {
+          "name": "Audrey Wagner",
+          "year": 1927,
+          "description": "American baseball player, obstetrician, and gynecologist"
+        }
+      ],
+      "leaders": [
+        {
+          "name": "Charles Sweeney",
+          "year": 1919,
+          "description": "American general and pilot"
+        },
+        {
+          "name": "Lucas Mangope",
+          "year": 1923,
+          "description": "South African politician"
+        },
+        {
+          "name": "James A. McClure",
+          "year": 1924,
+          "description": "American soldier, lawyer, and politician"
+        },
+        {
+          "name": "Antony Gardner",
+          "year": 1927,
+          "description": "English engineer and politician"
+        },
+        {
+          "name": "Nityanand Swami",
+          "year": 1927,
+          "description": "Indian lawyer and politician, 1st Chief Minister of Uttarakhand"
+        }
+      ],
+      "scientists": [
+        {
+          "name": "René Bonnet",
+          "year": 1904,
+          "description": "French racing driver and engineer"
+        },
+        {
+          "name": "Jean Bartik",
+          "year": 1924,
+          "description": "American computer scientist and engineer"
+        }
+      ],
+      "artists": [
+        {
+          "name": "John Celardo",
+          "year": 1918,
+          "description": "American captain and illustrator"
+        },
+        {
+          "name": "Bruno Bobak",
+          "year": 1923,
+          "description": "Polish-Canadian painter and educator"
+        },
+        {
+          "name": "Erin E. Stead",
+          "year": 1982,
+          "description": "American illustrator"
+        }
+      ],
+      "writers": [
+        {
+          "name": "Asaf Halet Çelebi",
+          "year": 1907,
+          "description": "Turkish poet"
+        },
+        {
+          "name": "Sebastian Haffner",
+          "year": 1907,
+          "description": "German journalist and author"
+        },
+        {
+          "name": "Mary Howard",
+          "year": 1907,
+          "description": "English author"
+        },
+        {
+          "name": "Charles Olson",
+          "year": 1910,
+          "description": "American poet and educator"
+        },
+        {
+          "name": "Elizabeth Smart",
+          "year": 1913,
+          "description": "Canadian poet and novelist"
+        }
+      ]
+    }
+  },
+  "28": {
+    "rank": 348,
+    "percentile": 5,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Earl Hines",
+          "year": 1903,
+          "description": "American pianist and bandleader"
+        },
+        {
+          "name": "Ze'ev Ben-Haim",
+          "year": 1907,
+          "description": "Ukrainian-Israeli linguist and academic"
+        },
+        {
+          "name": "Lew Ayres",
+          "year": 1908,
+          "description": "American actor"
+        },
+        {
+          "name": "Billy Williams",
+          "year": 1910,
+          "description": "American singer"
+        },
+        {
+          "name": "Lou Jacobi",
+          "year": 1913,
+          "description": "Canadian-American actor"
+        }
+      ],
+      "athletes": [
+        {
+          "name": "Ted Lyons",
+          "year": 1900,
+          "description": "American baseball player"
+        },
+        {
+          "name": "Steve Van Buren",
+          "year": 1920,
+          "description": "Honduran-American football player"
+        },
+        {
+          "name": "Al Wistert",
+          "year": 1920,
+          "description": "American football player and coach"
+        },
+        {
+          "name": "Terry Sawchuk",
+          "year": 1929,
+          "description": "Canadian-American ice hockey player"
+        },
+        {
+          "name": "Harry Howell",
+          "year": 1932,
+          "description": "Canadian ice hockey player and coach"
+        }
+      ],
+      "leaders": [
+        {
+          "name": "Ellis Clarke",
+          "year": 1917,
+          "description": "Trinidadian politician, 1st President of Trinidad and Tobago"
+        },
+        {
+          "name": "Lionel Bowen",
+          "year": 1922,
+          "description": "Australian politician, 6th Deputy Prime Minister of Australia"
+        },
+        {
+          "name": "Girma Wolde-Giorgis",
+          "year": 1924,
+          "description": "Ethiopian politician; President of Ethiopia"
+        },
+        {
+          "name": "Milton Obote",
+          "year": 1925,
+          "description": "Ugandan engineer and politician, 2nd President of Uganda"
+        },
+        {
+          "name": "John William Thomson",
+          "year": 1928,
+          "description": "Canadian politician"
+        }
+      ],
+      "scientists": [
+        {
+          "name": "John von Neumann",
+          "year": 1903,
+          "description": "Hungarian-American mathematician and physicist"
+        },
+        {
+          "name": "Maarten Schmidt",
+          "year": 1929,
+          "description": "Dutch astronomer"
+        },
+        {
+          "name": "Sandra Faber",
+          "year": 1944,
+          "description": "American astronomer and academic"
+        },
+        {
+          "name": "Kary Mullis",
+          "year": 1944,
+          "description": "American biochemist and academic, Nobel Prize laureate"
+        },
+        {
+          "name": "Clifford Cocks",
+          "year": 1950,
+          "description": "English mathematician and cryptographer"
+        }
+      ],
+      "artists": [
+        {
+          "name": "Bruce McCarty",
+          "year": 1920,
+          "description": "American architect, designed the Knoxville City-County Building"
+        },
+        {
+          "name": "Mariam A. Aleem",
+          "year": 1930,
+          "description": "Egyptian illustrator and academic"
+        },
+        {
+          "name": "Michelle Urry",
+          "year": 1939,
+          "description": "American journalist and illustrator"
+        },
+        {
+          "name": "Rainer Maria Latzke",
+          "year": 1950,
+          "description": "German-American painter and academic"
+        },
+        {
+          "name": "Chris Ware",
+          "year": 1967,
+          "description": "American illustrator"
+        }
+      ],
+      "writers": [
+        {
+          "name": "Mortimer J. Adler",
+          "year": 1902,
+          "description": "American philosopher and author"
+        },
+        {
+          "name": "Shen Congwen",
+          "year": 1902,
+          "description": "Chinese author and educator"
+        },
+        {
+          "name": "Wil van Beveren",
+          "year": 1911,
+          "description": "Dutch sprinter and journalist"
+        },
+        {
+          "name": "Bidia Dandaron",
+          "year": 1914,
+          "description": "Russian author and educator"
+        },
+        {
+          "name": "Emily Cheney Neville",
+          "year": 1919,
+          "description": "American author"
+        }
+      ]
+    }
+  },
+  "29": {
+    "rank": 350,
+    "percentile": 4,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Billy Tipton",
+          "year": 1914,
+          "description": "American pianist and saxophonist"
+        },
+        {
+          "name": "Jo Van Fleet",
+          "year": 1915,
+          "description": "American actress"
+        },
+        {
+          "name": "Ramanand Sagar",
+          "year": 1917,
+          "description": "Indian director and producer"
+        },
+        {
+          "name": "Roman Vlad",
+          "year": 1919,
+          "description": "Italian pianist and composer"
+        },
+        {
+          "name": "Viveca Lindfors",
+          "year": 1920,
+          "description": "Swedish-American actress, singer and poet"
+        }
+      ],
+      "athletes": [
+        {
+          "name": "Nels Stewart",
+          "year": 1902,
+          "description": "Canadian ice hockey player"
+        },
+        {
+          "name": "Bill Osmanski",
+          "year": 1915,
+          "description": "American football player and coach"
+        },
+        {
+          "name": "Pete Dye",
+          "year": 1925,
+          "description": "American golfer and architect"
+        },
+        {
+          "name": "Stasys Stonkus",
+          "year": 1931,
+          "description": "Lithuanian basketball player and coach"
+        },
+        {
+          "name": "Ray Nitschke",
+          "year": 1936,
+          "description": "American football player"
+        }
+      ],
+      "leaders": [
+        {
+          "name": "Tom Bradley",
+          "year": 1917,
+          "description": "American lieutenant, lawyer, and politician, 38th Mayor of Los Angeles"
+        },
+        {
+          "name": "Dobrica Ćosić",
+          "year": 1921,
+          "description": "Serbian politician, 1st President of the Federal Republic of Yugoslavia"
+        },
+        {
+          "name": "Joe Allbritton",
+          "year": 1924,
+          "description": "American businessman and publisher, founded the Allbritton Communications Com..."
+        },
+        {
+          "name": "Kim Song-ae",
+          "year": 1924,
+          "description": "Korean politician"
+        },
+        {
+          "name": "Yi Ku",
+          "year": 1931,
+          "description": "Korean prince"
+        }
+      ],
+      "scientists": [
+        {
+          "name": "Magnus Pyke",
+          "year": 1908,
+          "description": "English scientist and author"
+        },
+        {
+          "name": "Klaus Fuchs",
+          "year": 1911,
+          "description": "German physicist and spy"
+        },
+        {
+          "name": "Alfred de Grazia",
+          "year": 1919,
+          "description": "American political scientist and author"
+        },
+        {
+          "name": "Robert C. Baker",
+          "year": 1921,
+          "description": "American inventor and professor"
+        },
+        {
+          "name": "Michael Horne",
+          "year": 1921,
+          "description": "English structural engineer, scientist and academic"
+        }
+      ],
+      "artists": [
+        {
+          "name": "Candido Portinari",
+          "year": 1903,
+          "description": "Brazilian painter"
+        },
+        {
+          "name": "Zainul Abedin",
+          "year": 1914,
+          "description": "Bangladeshi painter and academic"
+        },
+        {
+          "name": "Albert Tucker",
+          "year": 1914,
+          "description": "Australian painter and illustrator"
+        },
+        {
+          "name": "Molly Bang",
+          "year": 1943,
+          "description": "American author and illustrator"
+        },
+        {
+          "name": "Keith Milow",
+          "year": 1945,
+          "description": "British artist"
+        }
+      ],
+      "writers": [
+        {
+          "name": "Kuvempu",
+          "year": 1904,
+          "description": "Indian author and poet"
+        },
+        {
+          "name": "Helmut Gollwitzer",
+          "year": 1908,
+          "description": "German theologian and author"
+        },
+        {
+          "name": "Ronald Coase",
+          "year": 1910,
+          "description": "English-American economist, author, and academic, Nobel Prize laureate"
+        },
+        {
+          "name": "Robert Ruark",
+          "year": 1915,
+          "description": "American hunter and author"
+        },
+        {
+          "name": "William Gaddis",
+          "year": 1922,
+          "description": "American author and academic"
+        }
+      ]
+    }
+  },
+  "30": {
+    "rank": 352,
+    "percentile": 4,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Dmitry Kabalevsky",
+          "year": 1904,
+          "description": "Russian composer and academic"
+        },
+        {
+          "name": "Carol Reed",
+          "year": 1906,
+          "description": "English director and producer"
+        },
+        {
+          "name": "Paul Bowles",
+          "year": 1910,
+          "description": "American composer and author"
+        },
+        {
+          "name": "Jeanette Nolan",
+          "year": 1911,
+          "description": "American actress"
+        },
+        {
+          "name": "Lucio Agostini",
+          "year": 1913,
+          "description": "Italian-Canadian conductor and composer"
+        }
+      ],
+      "athletes": [
+        {
+          "name": "Frank Torre",
+          "year": 1931,
+          "description": "American baseball player and manager"
+        },
+        {
+          "name": "Barry Briggs",
+          "year": 1934,
+          "description": "New Zealand motorcycle racer and sportscaster"
+        },
+        {
+          "name": "Sandy Koufax",
+          "year": 1935,
+          "description": "American baseball player and sportscaster"
+        },
+        {
+          "name": "Gordon Banks",
+          "year": 1937,
+          "description": "English footballer and manager"
+        },
+        {
+          "name": "Jim Marshall",
+          "year": 1937,
+          "description": "American football player"
+        }
+      ],
+      "leaders": [
+        {
+          "name": "Rashid Karami",
+          "year": 1921,
+          "description": "Lebanese lawyer and politician, 32nd Prime Minister of Lebanon"
+        },
+        {
+          "name": "Prakash Vir Shastri",
+          "year": 1923,
+          "description": "Indian academic and politician"
+        },
+        {
+          "name": "Elmira Minita Gordon",
+          "year": 1930,
+          "description": "Belizean educator, 1st Governor-General of Belize"
+        },
+        {
+          "name": "Joseph P. Hoar",
+          "year": 1934,
+          "description": "American general"
+        },
+        {
+          "name": "Omar Bongo",
+          "year": 1935,
+          "description": "Gabonese lieutenant and politician, President of Gabon"
+        }
+      ],
+      "scientists": [
+        {
+          "name": "Seymour Melman",
+          "year": 1917,
+          "description": "American engineer and author"
+        },
+        {
+          "name": "Yvonne Brill",
+          "year": 1924,
+          "description": "Canadian-American propulsion engineer"
+        },
+        {
+          "name": "Rosalinde Hurley",
+          "year": 1929,
+          "description": "English physician, microbiologist, and academic"
+        },
+        {
+          "name": "Tu Youyou",
+          "year": 1930,
+          "description": "Chinese chemist and pharmacist, Nobel Prize laureate"
+        },
+        {
+          "name": "John T. Houghton",
+          "year": 1931,
+          "description": "Welsh physicist and author"
+        }
+      ],
+      "artists": [
+        {
+          "name": "Alziro Bergonzo",
+          "year": 1906,
+          "description": "Italian architect and painter"
+        },
+        {
+          "name": "Jane Langton",
+          "year": 1922,
+          "description": "American author and illustrator"
+        },
+        {
+          "name": "Jan Kubíček",
+          "year": 1927,
+          "description": "Czech painter and sculptor"
+        },
+        {
+          "name": "Kåre Thomsen",
+          "year": 1959,
+          "description": "Norwegian guitarist and graphic designer"
+        },
+        {
+          "name": "Dr. Jitheshji",
+          "year": 1974,
+          "description": "Indian Speed Cartoonist and Pictorial Orator"
+        }
+      ],
+      "writers": [
+        {
+          "name": "Daniil Kharms",
+          "year": 1905,
+          "description": "Russian poet, author, and playwright"
+        },
+        {
+          "name": "Elyne Mitchell",
+          "year": 1913,
+          "description": "Australian author"
+        },
+        {
+          "name": "Glenda Adams",
+          "year": 1939,
+          "description": "Australian author and academic"
+        },
+        {
+          "name": "Vladimir Bukovsky",
+          "year": 1942,
+          "description": "Russian author and activist"
+        },
+        {
+          "name": "Clive Bunker",
+          "year": 1946,
+          "description": "English drummer and songwriter"
+        }
+      ]
+    }
+  },
+  "31": {
+    "rank": 355,
+    "percentile": 3,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Lionel Daunais",
+          "year": 1902,
+          "description": "Canadian singer-songwriter"
+        },
+        {
+          "name": "Carl Dudley",
+          "year": 1910,
+          "description": "American director, producer, and screenwriter"
+        },
+        {
+          "name": "Mary Logan Reddick",
+          "year": 1914,
+          "description": "American neuroembryologist"
+        },
+        {
+          "name": "Evelyn Knight",
+          "year": 1917,
+          "description": "American singer"
+        },
+        {
+          "name": "Carmen Contreras-Bozak",
+          "year": 1919,
+          "description": "Puerto Rican-American soldier"
+        }
+      ],
+      "athletes": [
+        {
+          "name": "Roy Goodall",
+          "year": 1902,
+          "description": "English footballer"
+        },
+        {
+          "name": "Jonah Jones",
+          "year": 1909,
+          "description": "American trumpet player and saxophonist"
+        },
+        {
+          "name": "Enrique Maier",
+          "year": 1910,
+          "description": "Spanish tennis player"
+        },
+        {
+          "name": "Ray Graves",
+          "year": 1918,
+          "description": "American football player and coach"
+        },
+        {
+          "name": "Tommy Byrne",
+          "year": 1919,
+          "description": "American baseball player, coach, and politician"
+        }
+      ],
+      "leaders": [
+        {
+          "name": "Karl-August Fagerholm",
+          "year": 1901,
+          "description": "Finnish politician, 20th Prime Minister of Finland"
+        },
+        {
+          "name": "Nikos Ploumpidis",
+          "year": 1901,
+          "description": "Greek educator and politician"
+        },
+        {
+          "name": "John Frost",
+          "year": 1912,
+          "description": "Indian-English general"
+        },
+        {
+          "name": "Billy Snedden",
+          "year": 1926,
+          "description": "Australian lawyer and politician, 17th Attorney-General for Australia"
+        },
+        {
+          "name": "Nigel Rudd",
+          "year": 1946,
+          "description": "English businessman, founder of Williams Holdings"
+        }
+      ],
+      "scientists": [
+        {
+          "name": "William Heynes",
+          "year": 1903,
+          "description": "English engineer"
+        },
+        {
+          "name": "Helen Dodson Prince",
+          "year": 1905,
+          "description": "American astronomer and academic"
+        },
+        {
+          "name": "Avram Hershko",
+          "year": 1937,
+          "description": "Hungarian-Israeli biochemist and physician"
+        },
+        {
+          "name": "Vaughan Jones",
+          "year": 1952,
+          "description": "New Zealand mathematician and academic"
+        },
+        {
+          "name": "Hermann Tilke",
+          "year": 1954,
+          "description": "German racing driver, architect and engineer"
+        }
+      ],
+      "artists": [
+        {
+          "name": "Siné",
+          "year": 1928,
+          "description": "French cartoonist"
+        },
+        {
+          "name": "Tess Jaray",
+          "year": 1937,
+          "description": "Austrian-English painter and educator"
+        },
+        {
+          "name": "Steve Rude",
+          "year": 1956,
+          "description": "American author and illustrator"
+        },
+        {
+          "name": "Julie Doucet",
+          "year": 1965,
+          "description": "Canadian cartoonist and author"
+        },
+        {
+          "name": "Carlos Morales Quintana",
+          "year": 1970,
+          "description": "Spanish-Danish architect and sailor"
+        }
+      ],
+      "writers": [
+        {
+          "name": "Simon Wiesenthal",
+          "year": 1908,
+          "description": "Ukrainian-Austrian Nazi hunter and author"
+        },
+        {
+          "name": "Dal Stivens",
+          "year": 1911,
+          "description": "Australian soldier and author"
+        },
+        {
+          "name": "Sam Ragan",
+          "year": 1915,
+          "description": "American journalist, author, and poet"
+        },
+        {
+          "name": "Wilfrid Noyce",
+          "year": 1917,
+          "description": "English mountaineer and author"
+        },
+        {
+          "name": "Irina Korschunow",
+          "year": 1925,
+          "description": "German author and screenwriter"
+        }
+      ]
+    }
+  },
+  "01": {
+    "rank": 290,
+    "percentile": 21,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Ilona Fehér",
+          "year": 1901,
+          "description": "Hungarian-Israeli violinist and educator"
+        },
+        {
+          "name": "Nikolai Voznesensky",
+          "year": 1903,
+          "description": "Soviet economic planner, member of the Politburo of the Central Committee of ..."
+        },
+        {
+          "name": "Alex Wilson",
+          "year": 1905,
+          "description": "Canadian sprinter and coach"
+        },
+        {
+          "name": "Alicia Markova",
+          "year": 1910,
+          "description": "English ballerina and choreographer"
+        },
+        {
+          "name": "Mary Martin",
+          "year": 1913,
+          "description": "American actress and singer"
+        }
+      ],
+      "athletes": [
+        {
+          "name": "Walter Alston",
+          "year": 1911,
+          "description": "American baseball player and manager"
+        },
+        {
+          "name": "Billy Raimondi",
+          "year": 1912,
+          "description": "American baseball player"
+        },
+        {
+          "name": "Marty Marion",
+          "year": 1917,
+          "description": "American baseball player and manager"
+        },
+        {
+          "name": "Vsevolod Bobrov",
+          "year": 1922,
+          "description": "Russian ice hockey player, footballer, and manager"
+        },
+        {
+          "name": "Lee Trevino",
+          "year": 1939,
+          "description": "American golfer and sportscaster"
+        }
+      ],
+      "leaders": [
+        {
+          "name": "Calvin Griffith",
+          "year": 1911,
+          "description": "Canadian-American businessman"
+        },
+        {
+          "name": "Wan Li",
+          "year": 1916,
+          "description": "Chinese educator and politician, 4th Vice Premier of the People's Republic of..."
+        },
+        {
+          "name": "Masao Horiba",
+          "year": 1924,
+          "description": "Japanese businessman, founded Horiba"
+        },
+        {
+          "name": "Colin Tennant",
+          "year": 1926,
+          "description": "3rd Baron Glenconner, Scottish businessman"
+        },
+        {
+          "name": "Marie Bashir",
+          "year": 1930,
+          "description": "Australian psychiatrist, academic, and politician, 37th Governor of New South..."
+        }
+      ],
+      "scientists": [
+        {
+          "name": "Martin Rodbell",
+          "year": 1925,
+          "description": "American biochemist and endocrinologist, Nobel Prize laureate"
+        },
+        {
+          "name": "Jerry Lawson",
+          "year": 1940,
+          "description": "American electronic engineer and inventor"
+        },
+        {
+          "name": "Manju Bansal",
+          "year": 1950,
+          "description": "Indian biologist and academic"
+        },
+        {
+          "name": "Judith Hackitt",
+          "year": 1954,
+          "description": "English chemist and engineer"
+        },
+        {
+          "name": "Shirin M. Rai",
+          "year": 1960,
+          "description": "Indian-English political scientist and academic"
+        }
+      ],
+      "artists": [
+        {
+          "name": "Karna Maria Birmingham",
+          "year": 1900,
+          "description": "Australian artist, illustrator and print maker"
+        },
+        {
+          "name": "Minoru Yamasaki",
+          "year": 1912,
+          "description": "American architect, designed the World Trade Center"
+        },
+        {
+          "name": "Jan Brett",
+          "year": 1949,
+          "description": "American author and illustrator"
+        },
+        {
+          "name": "Gary Panter",
+          "year": 1950,
+          "description": "American illustrator and painter"
+        }
+      ],
+      "writers": [
+        {
+          "name": "Joachim Hoffmann",
+          "year": 1930,
+          "description": "German historian and author"
+        },
+        {
+          "name": "John Crowley",
+          "year": 1942,
+          "description": "American author and academic"
+        },
+        {
+          "name": "Kenny Moore",
+          "year": 1943,
+          "description": "American runner and journalist"
+        },
+        {
+          "name": "John Densmore",
+          "year": 1944,
+          "description": "American drummer and songwriter"
+        },
+        {
+          "name": "Tahar Ben Jelloun",
+          "year": 1944,
+          "description": "Moroccan author and poet"
+        }
+      ]
+    }
+  },
+  "02": {
+    "rank": 292,
+    "percentile": 20,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Elisa Godínez Gómez de Batista",
+          "year": 1900,
+          "description": "Former First Lady of Cuba"
+        },
+        {
+          "name": "Arvo Askola",
+          "year": 1909,
+          "description": "Finnish runner"
+        },
+        {
+          "name": "Taisto Mäki",
+          "year": 1910,
+          "description": "Finnish runner"
+        },
+        {
+          "name": "George Emmett",
+          "year": 1912,
+          "description": "English cricketer and coach"
+        },
+        {
+          "name": "Marc Platt",
+          "year": 1913,
+          "description": "American actor, singer, and dancer"
+        }
+      ],
+      "athletes": [
+        {
+          "name": "Raimundo Orsi",
+          "year": 1901,
+          "description": "Argentinian-Italian footballer"
+        },
+        {
+          "name": "Walenty Kłyszejko",
+          "year": 1909,
+          "description": "Estonian–Polish basketball player and coach"
+        },
+        {
+          "name": "Ralph Beard",
+          "year": 1927,
+          "description": "American basketball player"
+        },
+        {
+          "name": "Masaaki Hatsumi",
+          "year": 1931,
+          "description": "Japanese martial artist and educator, founded Bujinkan"
+        },
+        {
+          "name": "Willie Brown",
+          "year": 1940,
+          "description": "American football player, coach, and manager"
+        }
+      ],
+      "leaders": [
+        {
+          "name": "Takahito",
+          "year": 1915,
+          "description": "Prince Mikasa of Japan"
+        },
+        {
+          "name": "Alexander Haig",
+          "year": 1924,
+          "description": "American general and politician, 59th United States Secretary of State"
+        },
+        {
+          "name": "Edwin Meese",
+          "year": 1931,
+          "description": "American lawyer, 75th United States Attorney General"
+        },
+        {
+          "name": "Manohar Joshi",
+          "year": 1937,
+          "description": "Indian lawyer and politician, 15th Chief Minister of Maharashtra"
+        },
+        {
+          "name": "Yael Dayan",
+          "year": 1939,
+          "description": "Israeli journalist, author, and politician"
+        }
+      ],
+      "scientists": [
+        {
+          "name": "Herta Hammerbacher",
+          "year": 1900,
+          "description": "German landscape architect and professor"
+        },
+        {
+          "name": "Khan Bahadur Abdul Hakim",
+          "year": 1905,
+          "description": "Bangladeshi mathematician"
+        },
+        {
+          "name": "Peter Carl Goldmark",
+          "year": 1906,
+          "description": "Hungarian-American engineer"
+        },
+        {
+          "name": "Anna G. Jónasdóttir",
+          "year": 1942,
+          "description": "Icelandic political scientist and academic"
+        },
+        {
+          "name": "Amin Saikal",
+          "year": 1950,
+          "description": "Afghan-Australian political scientist and academic"
+        }
+      ],
+      "artists": [
+        {
+          "name": "Russell Lynes",
+          "year": 1910,
+          "description": "American photographer, historian, and author"
+        },
+        {
+          "name": "Howard Finster",
+          "year": 1916,
+          "description": "American minister and painter"
+        },
+        {
+          "name": "Guy Bourdin",
+          "year": 1928,
+          "description": "French photographer"
+        },
+        {
+          "name": "David Macaulay",
+          "year": 1946,
+          "description": "English-American author and illustrator"
+        },
+        {
+          "name": "Gianni Versace",
+          "year": 1946,
+          "description": "Italian fashion designer, founded Versace"
+        }
+      ],
+      "writers": [
+        {
+          "name": "Joseph P. Lash",
+          "year": 1909,
+          "description": "American activist and author"
+        },
+        {
+          "name": "Iakovos Kambanelis",
+          "year": 1922,
+          "description": "Greek author, poet, and screenwriter"
+        },
+        {
+          "name": "Dan Jenkins",
+          "year": 1929,
+          "description": "American journalist and author"
+        },
+        {
+          "name": "Leon Litwack",
+          "year": 1929,
+          "description": "American historian and author"
+        },
+        {
+          "name": "Nigel Calder",
+          "year": 1931,
+          "description": "English journalist, author, and screenwriter"
+        }
+      ]
+    }
+  },
+  "03": {
+    "rank": 294,
+    "percentile": 20,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Ulrich Inderbinen",
+          "year": 1900,
+          "description": "Swiss mountaineer"
+        },
+        {
+          "name": "Glenn Hartranft",
+          "year": 1901,
+          "description": "American shot putter and discus thrower"
+        },
+        {
+          "name": "Mildred Wiley",
+          "year": 1901,
+          "description": "American high jumper"
+        },
+        {
+          "name": "Mitsuo Fuchida",
+          "year": 1902,
+          "description": "Japanese captain and pilot"
+        },
+        {
+          "name": "Les Ames",
+          "year": 1905,
+          "description": "English cricketer"
+        }
+      ],
+      "athletes": [
+        {
+          "name": "Feliks Kibbermann",
+          "year": 1902,
+          "description": "Estonian chess player and philologist"
+        },
+        {
+          "name": "Edgar Moon",
+          "year": 1904,
+          "description": "Australian tennis player"
+        },
+        {
+          "name": "Stjepan Bobek",
+          "year": 1923,
+          "description": "Croatian-Serbian footballer and manager"
+        },
+        {
+          "name": "Wiel Coerver",
+          "year": 1924,
+          "description": "Dutch footballer and manager"
+        },
+        {
+          "name": "Mike Gibson",
+          "year": 1942,
+          "description": "Northern Irish-Irish rugby player"
+        }
+      ],
+      "leaders": [
+        {
+          "name": "Bert Hawke",
+          "year": 1900,
+          "description": "Australian politician, 18th Premier of Western Australia"
+        },
+        {
+          "name": "Abdul Haris Nasution",
+          "year": 1918,
+          "description": "Indonesian general and politician, 12th Indonesian Minister of Defence"
+        },
+        {
+          "name": "Thomas M. Foglietta",
+          "year": 1928,
+          "description": "American politician and diplomat, United States Ambassador to Italy"
+        },
+        {
+          "name": "Muhammad Habibur Rahman",
+          "year": 1928,
+          "description": "Indian-Bangladeshi jurist and politician, Prime Minister of Bangladesh"
+        },
+        {
+          "name": "Raul M. Gonzalez",
+          "year": 1930,
+          "description": "Filipino lawyer and politician, 42nd Filipino Secretary of Justice"
+        }
+      ],
+      "scientists": [
+        {
+          "name": "Richard Kuhn",
+          "year": 1900,
+          "description": "Austrian-German biochemist and academic, Nobel Prize laureate"
+        },
+        {
+          "name": "John Backus",
+          "year": 1924,
+          "description": "American computer scientist, led the team that developed FORTRAN"
+        },
+        {
+          "name": "Paul J. Crutzen",
+          "year": 1933,
+          "description": "Dutch chemist and engineer, Nobel Prize laureate"
+        },
+        {
+          "name": "Sally Shlaer",
+          "year": 1938,
+          "description": "American mathematician and engineer"
+        },
+        {
+          "name": "David Phillips",
+          "year": 1939,
+          "description": "English chemist and academic"
+        }
+      ],
+      "artists": [
+        {
+          "name": "Yves Trudeau",
+          "year": 1930,
+          "description": "Canadian sculptor"
+        }
+      ],
+      "writers": [
+        {
+          "name": "Charles Lynch",
+          "year": 1919,
+          "description": "Canadian journalist and author"
+        },
+        {
+          "name": "Eli Mandel",
+          "year": 1922,
+          "description": "Canadian poet, critic, and academic"
+        },
+        {
+          "name": "F. Sionil José",
+          "year": 1924,
+          "description": "Filipino journalist, writer and author"
+        },
+        {
+          "name": "Franz Josef Degenhardt",
+          "year": 1931,
+          "description": "German author and poet"
+        },
+        {
+          "name": "Alice Schwarzer",
+          "year": 1942,
+          "description": "German journalist and publisher, founded EMMA Magazine"
+        }
+      ]
+    }
+  },
+  "04": {
+    "rank": 296,
+    "percentile": 19,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Alfred Hershey",
+          "year": 1908,
+          "description": "American bacteriologist and geneticist, Nobel Prize laureate"
+        },
+        {
+          "name": "Alex North",
+          "year": 1910,
+          "description": "American composer and conductor"
+        },
+        {
+          "name": "Pappy Boyington",
+          "year": 1912,
+          "description": "American colonel and pilot, Medal of Honor recipient"
+        },
+        {
+          "name": "Mark Robson",
+          "year": 1913,
+          "description": "Canadian-American director and producer"
+        },
+        {
+          "name": "Claude Renoir",
+          "year": 1914,
+          "description": "French cinematographer"
+        }
+      ],
+      "athletes": [
+        {
+          "name": "Eagle Keys",
+          "year": 1923,
+          "description": "American-Canadian football player and coach"
+        },
+        {
+          "name": "Alex Delvecchio",
+          "year": 1931,
+          "description": "Canadian ice hockey player, coach, and manager"
+        },
+        {
+          "name": "Dick Ricketts",
+          "year": 1933,
+          "description": "American baseball and basketball player"
+        },
+        {
+          "name": "Gerd Achterberg",
+          "year": 1940,
+          "description": "German footballer and manager"
+        },
+        {
+          "name": "Marty Riessen",
+          "year": 1941,
+          "description": "American tennis player and coach"
+        }
+      ],
+      "leaders": [
+        {
+          "name": "Albert Norden",
+          "year": 1904,
+          "description": "German journalist and politician"
+        },
+        {
+          "name": "R. Venkataraman",
+          "year": 1910,
+          "description": "Indian lawyer and politician, 6th President of India"
+        },
+        {
+          "name": "I. K. Gujral",
+          "year": 1919,
+          "description": "Indian poet and politician, 12th Prime Minister of India"
+        },
+        {
+          "name": "Şakir Eczacıbaşı",
+          "year": 1929,
+          "description": "Turkish pharmacist, photographer, and businessman"
+        },
+        {
+          "name": "Roh Tae-woo",
+          "year": 1932,
+          "description": "South Korean general and politician, 6th President of South Korea"
+        }
+      ],
+      "artists": [
+        {
+          "name": "Rudolf Hausner",
+          "year": 1914,
+          "description": "Austrian painter and sculptor"
+        },
+        {
+          "name": "Nadir Afonso",
+          "year": 1920,
+          "description": "Portuguese painter and architect"
+        },
+        {
+          "name": "John C. Portman Jr.",
+          "year": 1924,
+          "description": "American architect, designed the Renaissance Center and Tomorrow Square"
+        },
+        {
+          "name": "John Giorno",
+          "year": 1936,
+          "description": "American poet and performance artist"
+        }
+      ],
+      "writers": [
+        {
+          "name": "Cornell Woolrich",
+          "year": 1903,
+          "description": "American author"
+        },
+        {
+          "name": "Ely Jacques Kahn Jr.",
+          "year": 1916,
+          "description": "American journalist and author"
+        },
+        {
+          "name": "Joan Brady",
+          "year": 1939,
+          "description": "American-British author"
+        },
+        {
+          "name": "Eric S. Raymond",
+          "year": 1957,
+          "description": "American computer programmer and author"
+        },
+        {
+          "name": "Suzanne Malveaux",
+          "year": 1966,
+          "description": "American journalist"
+        }
+      ]
+    }
+  },
+  "05": {
+    "rank": 298,
+    "percentile": 19,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Walt Disney",
+          "year": 1901,
+          "description": "American animator, director, producer, and screenwriter, co-founded The Walt ..."
+        },
+        {
+          "name": "Emeric Pressburger",
+          "year": 1902,
+          "description": "Hungarian-English director, producer, and screenwriter"
+        },
+        {
+          "name": "Johannes Heesters",
+          "year": 1903,
+          "description": "Dutch-German actor and singer"
+        },
+        {
+          "name": "Francisco Javier Arana",
+          "year": 1905,
+          "description": "Guatemalan Army colonel and briefly Guatemalan head of state"
+        },
+        {
+          "name": "Otto Preminger",
+          "year": 1905,
+          "description": "Austrian-American actor, director, and producer"
+        }
+      ],
+      "athletes": [
+        {
+          "name": "Jimmy Dimmock",
+          "year": 1900,
+          "description": "English footballer"
+        },
+        {
+          "name": "Helen Dettweiler",
+          "year": 1914,
+          "description": "American golfer"
+        },
+        {
+          "name": "Walt McPherson",
+          "year": 1916,
+          "description": "American basketball player and coach"
+        },
+        {
+          "name": "Ladislav Novák",
+          "year": 1931,
+          "description": "Czech footballer and manager"
+        },
+        {
+          "name": "Boris Ignatyev",
+          "year": 1940,
+          "description": "Russian footballer and manager"
+        }
+      ],
+      "leaders": [
+        {
+          "name": "Strom Thurmond",
+          "year": 1902,
+          "description": "American educator, general, and politician, 103rd Governor of South Carolina"
+        },
+        {
+          "name": "Lin Biao",
+          "year": 1907,
+          "description": "Chinese general and politician, 2nd Vice Premier of the People's Republic of ..."
+        },
+        {
+          "name": "Alun Gwynne Jones",
+          "year": 1919,
+          "description": "Baron Chalfont, English historian and politician"
+        },
+        {
+          "name": "Robert Sobukwe",
+          "year": 1924,
+          "description": "South African banker and politician"
+        },
+        {
+          "name": "Anastasio Somoza Debayle",
+          "year": 1925,
+          "description": "Nicaraguan politician, 73rd President of Nicaragua"
+        }
+      ],
+      "scientists": [
+        {
+          "name": "Werner Heisenberg",
+          "year": 1901,
+          "description": "German physicist and academic, Nobel Prize laureate"
+        },
+        {
+          "name": "C. F. Powell",
+          "year": 1903,
+          "description": "English-Italian physicist and academic, Nobel Prize laureate"
+        },
+        {
+          "name": "Giuseppe Occhialini",
+          "year": 1907,
+          "description": "Italian-French physicist and academic"
+        },
+        {
+          "name": "Adetoun Ogunsheye",
+          "year": 1926,
+          "description": "First female Nigerian professor and university dean"
+        },
+        {
+          "name": "Madis Kõiv",
+          "year": 1929,
+          "description": "Estonian physicist, philosopher, and author"
+        }
+      ],
+      "artists": [
+        {
+          "name": "Serge Chapleau",
+          "year": 1945,
+          "description": "Canadian cartoonist"
+        },
+        {
+          "name": "Anne-Mie van Kerckhoven",
+          "year": 1951,
+          "description": "Belgian painter and illustrator"
+        },
+        {
+          "name": "Manish Malhotra",
+          "year": 1965,
+          "description": "Indian fashion designer"
+        },
+        {
+          "name": "Neil Druckmann",
+          "year": 1978,
+          "description": "American video game designer and author"
+        }
+      ],
+      "writers": [
+        {
+          "name": "Milton H. Erickson",
+          "year": 1901,
+          "description": "American psychiatrist and author"
+        },
+        {
+          "name": "Kate Simon",
+          "year": 1912,
+          "description": "American travel writer"
+        },
+        {
+          "name": "Hans Hellmut Kirst",
+          "year": 1914,
+          "description": "German lieutenant and author"
+        },
+        {
+          "name": "Don Robertson",
+          "year": 1922,
+          "description": "American songwriter and pianist"
+        },
+        {
+          "name": "Joan Didion",
+          "year": 1934,
+          "description": "American novelist and screenwriter"
+        }
+      ]
+    }
+  },
+  "06": {
+    "rank": 300,
+    "percentile": 18,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Agnes Moorehead",
+          "year": 1900,
+          "description": "American actress"
+        },
+        {
+          "name": "John Barkley Rosser Sr.",
+          "year": 1907,
+          "description": "American logician"
+        },
+        {
+          "name": "Baby Face Nelson",
+          "year": 1908,
+          "description": "American gangster"
+        },
+        {
+          "name": "Miklós Szabó",
+          "year": 1908,
+          "description": "Hungarian runner"
+        },
+        {
+          "name": "Rulon Jeffs",
+          "year": 1909,
+          "description": "American religious leader"
+        }
+      ],
+      "athletes": [
+        {
+          "name": "Tony Lazzeri",
+          "year": 1903,
+          "description": "American baseball player and manager"
+        },
+        {
+          "name": "Otto Graham",
+          "year": 1921,
+          "description": "American football player and coach"
+        },
+        {
+          "name": "Alberto Spencer",
+          "year": 1937,
+          "description": "Ecuadorian-American soccer player"
+        },
+        {
+          "name": "Robb Royer",
+          "year": 1942,
+          "description": "American guitarist, keyboard player, and songwriter"
+        },
+        {
+          "name": "Willy van der Kuijlen",
+          "year": 1946,
+          "description": "Dutch footballer and manager"
+        }
+      ],
+      "leaders": [
+        {
+          "name": "Pierre Graber",
+          "year": 1908,
+          "description": "Swiss lawyer and politician, 69th President of the Swiss Confederation"
+        },
+        {
+          "name": "Kristján Eldjárn",
+          "year": 1916,
+          "description": "Icelandic educator and politician, 3rd President of Iceland"
+        },
+        {
+          "name": "Kamal Jumblatt",
+          "year": 1917,
+          "description": "Lebanese lawyer and politician"
+        },
+        {
+          "name": "Irv Robbins",
+          "year": 1917,
+          "description": "Canadian-American businessman, co-founded Baskin-Robbins"
+        },
+        {
+          "name": "Benjamin A. Gilman",
+          "year": 1922,
+          "description": "American soldier and politician"
+        }
+      ],
+      "scientists": [
+        {
+          "name": "Herta Freitag",
+          "year": 1908,
+          "description": "Austrian-American mathematician"
+        },
+        {
+          "name": "George Porter",
+          "year": 1920,
+          "description": "English chemist and academic, Nobel Prize laureate"
+        },
+        {
+          "name": "Geoffrey Hinton",
+          "year": 1947,
+          "description": "British-Canadian computer scientist, cognitive scientist, and cognitive psych..."
+        },
+        {
+          "name": "Deborah Estrin",
+          "year": 1959,
+          "description": "American computer scientist and academic"
+        },
+        {
+          "name": "Stephen Muggleton",
+          "year": 1959,
+          "description": "English computer scientist and engineer"
+        }
+      ],
+      "artists": [
+        {
+          "name": "Eliot Porter",
+          "year": 1901,
+          "description": "American photographer and academic"
+        },
+        {
+          "name": "Frank Springer",
+          "year": 1929,
+          "description": "American comic book illustrator"
+        },
+        {
+          "name": "Richard Edlund",
+          "year": 1940,
+          "description": "American visual effects designer and cinematographer"
+        },
+        {
+          "name": "Bruce Nauman",
+          "year": 1941,
+          "description": "American sculptor and illustrator"
+        },
+        {
+          "name": "Henk van Woerden",
+          "year": 1947,
+          "description": "Dutch-South African painter and author"
+        }
+      ],
+      "writers": [
+        {
+          "name": "Ève Curie",
+          "year": 1904,
+          "description": "French-American journalist and pianist"
+        },
+        {
+          "name": "Elizabeth Yates",
+          "year": 1905,
+          "description": "American journalist and author"
+        },
+        {
+          "name": "David M. Potter",
+          "year": 1910,
+          "description": "American historian, author, and academic"
+        },
+        {
+          "name": "Kamleshwar",
+          "year": 1932,
+          "description": "Indian author, screenwriter, and critic"
+        },
+        {
+          "name": "Kenneth Copeland",
+          "year": 1936,
+          "description": "American evangelist and author"
+        }
+      ]
+    }
+  },
+  "07": {
+    "rank": 302,
+    "percentile": 18,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Clarence Nash",
+          "year": 1904,
+          "description": "American voice actor and singer"
+        },
+        {
+          "name": "Erika Fuchs",
+          "year": 1906,
+          "description": "German translator"
+        },
+        {
+          "name": "Duncan McNaughton",
+          "year": 1910,
+          "description": "Canadian high jumper and geologist"
+        },
+        {
+          "name": "Louis Prima",
+          "year": 1910,
+          "description": "American singer-songwriter, trumpet player, and actor"
+        },
+        {
+          "name": "Daniel Jones",
+          "year": 1912,
+          "description": "Welsh captain and composer"
+        }
+      ],
+      "athletes": [
+        {
+          "name": "Fiorenzo Magni",
+          "year": 1920,
+          "description": "Italian cyclist"
+        },
+        {
+          "name": "Max Zaslofsky",
+          "year": 1925,
+          "description": "American basketball player and coach"
+        },
+        {
+          "name": "Hal Smith",
+          "year": 1930,
+          "description": "American baseball player"
+        },
+        {
+          "name": "Bobby Whitton",
+          "year": 1932,
+          "description": "Australian rugby league player"
+        },
+        {
+          "name": "Gerry Cheevers",
+          "year": 1940,
+          "description": "Canadian ice hockey player and coach"
+        }
+      ],
+      "leaders": [
+        {
+          "name": "Fred Rose",
+          "year": 1907,
+          "description": "Polish-Canadian politician and spy"
+        },
+        {
+          "name": "Mário Soares",
+          "year": 1924,
+          "description": "Portuguese historian, lawyer, and politician, 17th President of Portugal"
+        },
+        {
+          "name": "Jack S. Blanton",
+          "year": 1927,
+          "description": "American businessman and philanthropist"
+        },
+        {
+          "name": "Oktay Ekşi",
+          "year": 1932,
+          "description": "Turkish journalist and politician"
+        },
+        {
+          "name": "J. B. Sumarlin",
+          "year": 1932,
+          "description": "Indonesian economist and politician, 17th Indonesian Minister of Finance"
+        }
+      ],
+      "scientists": [
+        {
+          "name": "Danilo Blanuša",
+          "year": 1903,
+          "description": "Croatian mathematician, physicist, and academic"
+        },
+        {
+          "name": "Gerard Kuiper",
+          "year": 1905,
+          "description": "Dutch-American astronomer and academic"
+        },
+        {
+          "name": "Mary Ellen Rudin",
+          "year": 1924,
+          "description": "American mathematician"
+        },
+        {
+          "name": "Nick Katz",
+          "year": 1943,
+          "description": "American mathematician and academic"
+        }
+      ],
+      "artists": [
+        {
+          "name": "Kateryna Vasylivna Bilokur",
+          "year": 1900,
+          "description": "Ukrainian folk artist"
+        },
+        {
+          "name": "Hilda Taba",
+          "year": 1902,
+          "description": "Estonian architect, author, and educator"
+        },
+        {
+          "name": "Allan B. Calhamer",
+          "year": 1931,
+          "description": "American game designer, created Diplomacy"
+        },
+        {
+          "name": "James Rivière",
+          "year": 1949,
+          "description": "Italian sculptor and jeweler"
+        },
+        {
+          "name": "Katsuya Terada",
+          "year": 1963,
+          "description": "Japanese illustrator"
+        }
+      ],
+      "writers": [
+        {
+          "name": "Nikola Vaptsarov",
+          "year": 1909,
+          "description": "Bulgarian poet and author"
+        },
+        {
+          "name": "Kersti Merilaas",
+          "year": 1913,
+          "description": "Estonian author and poet"
+        },
+        {
+          "name": "Leigh Brackett",
+          "year": 1915,
+          "description": "American author and screenwriter"
+        },
+        {
+          "name": "Tatamkhulu Afrika",
+          "year": 1920,
+          "description": "South African poet and author"
+        },
+        {
+          "name": "Intizar Hussain",
+          "year": 1923,
+          "description": "Indian-Pakistani author and scholar"
+        }
+      ]
+    }
+  },
+  "08": {
+    "rank": 304,
+    "percentile": 17,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Zelma Watson George",
+          "year": 1903,
+          "description": "Black American opera singer"
+        },
+        {
+          "name": "Concha Piquer",
+          "year": 1908,
+          "description": "Spanish singer and actress"
+        },
+        {
+          "name": "Lee J. Cobb",
+          "year": 1911,
+          "description": "American actor"
+        },
+        {
+          "name": "Floyd Tillman",
+          "year": 1914,
+          "description": "American country music singer-songwriter and guitarist"
+        },
+        {
+          "name": "Ernie Toshack",
+          "year": 1914,
+          "description": "Australian cricketer"
+        }
+      ],
+      "athletes": [
+        {
+          "name": "McDonald Bailey",
+          "year": 1920,
+          "description": "Trinidadian-English sprinter and rugby player"
+        },
+        {
+          "name": "Johnny Green",
+          "year": 1933,
+          "description": "American basketball player"
+        },
+        {
+          "name": "Tatiana Zatulovskaya",
+          "year": 1935,
+          "description": "Russian-Israeli chess player"
+        },
+        {
+          "name": "Juan Ricardo Faccio",
+          "year": 1936,
+          "description": "Uruguayan football player and manager"
+        },
+        {
+          "name": "Red Berenson",
+          "year": 1939,
+          "description": "Canadian ice hockey player and coach"
+        }
+      ],
+      "leaders": [
+        {
+          "name": "Sun Li-jen",
+          "year": 1900,
+          "description": "Chinese general and politician"
+        },
+        {
+          "name": "John A. Volpe",
+          "year": 1908,
+          "description": "American soldier and politician, 61st Governor of Massachusetts"
+        },
+        {
+          "name": "Peter Tali Coleman",
+          "year": 1919,
+          "description": "Samoan-American lawyer and politician, 43rd Governor of American Samoa"
+        },
+        {
+          "name": "Vladimir Shatalov",
+          "year": 1927,
+          "description": "Kazakhstani general, pilot, and astronaut"
+        },
+        {
+          "name": "Julian Critchley",
+          "year": 1930,
+          "description": "English journalist and politician"
+        }
+      ],
+      "scientists": [
+        {
+          "name": "Julia Bowman Robinson",
+          "year": 1919,
+          "description": "American mathematician and theorist"
+        },
+        {
+          "name": "Kateryna Yushchenko",
+          "year": 1919,
+          "description": "Ukrainian computer scientist and academic"
+        },
+        {
+          "name": "Rudolph Pariser",
+          "year": 1923,
+          "description": "Chinese-American soldier and chemist"
+        },
+        {
+          "name": "Ulric Neisser",
+          "year": 1928,
+          "description": "German-American psychologist, neuroscientist, and academic"
+        },
+        {
+          "name": "Thomas Cech",
+          "year": 1947,
+          "description": "American chemist and academic, Nobel Prize laureate"
+        }
+      ],
+      "artists": [
+        {
+          "name": "Wifredo Lam",
+          "year": 1902,
+          "description": "Cuban-French painter"
+        },
+        {
+          "name": "Lucian Freud",
+          "year": 1922,
+          "description": "German-English painter and illustrator"
+        },
+        {
+          "name": "Claus Luthe",
+          "year": 1932,
+          "description": "German automotive designer"
+        },
+        {
+          "name": "Aaron Allston",
+          "year": 1960,
+          "description": "American game designer and author"
+        },
+        {
+          "name": "Indrek Allmann",
+          "year": 1972,
+          "description": "Estonian architect"
+        }
+      ],
+      "writers": [
+        {
+          "name": "Ants Oras",
+          "year": 1900,
+          "description": "Estonian-American author and academic"
+        },
+        {
+          "name": "Nikos Gatsos",
+          "year": 1911,
+          "description": "Greek poet and songwriter"
+        },
+        {
+          "name": "Delmore Schwartz",
+          "year": 1913,
+          "description": "American poet and short story writer"
+        },
+        {
+          "name": "Lionel Gilbert",
+          "year": 1924,
+          "description": "Australian historian, author, and academic"
+        },
+        {
+          "name": "Nasir Kazmi",
+          "year": 1925,
+          "description": "Pakistani Urdu poet"
+        }
+      ]
+    }
+  },
+  "09": {
+    "rank": 305,
+    "percentile": 17,
+    "celebrities_categorized": {
+      "entertainers": [
+        {
+          "name": "Albert Weisbord",
+          "year": 1900,
+          "description": "American activist, founded the Communist League of Struggle"
+        },
+        {
+          "name": "Margaret Hamilton",
+          "year": 1902,
+          "description": "American schoolteacher, actress and voice artist"
+        },
+        {
+          "name": "Robert Livingston",
+          "year": 1904,
+          "description": "American actor and singer"
+        },
+        {
+          "name": "Freddy Martin",
+          "year": 1906,
+          "description": "American bandleader and tenor saxophonist"
+        },
+        {
+          "name": "Douglas Fairbanks Jr.",
+          "year": 1909,
+          "description": "American captain, actor, and producer"
+        }
+      ],
+      "athletes": [
+        {
+          "name": "Jim Turnesa",
+          "year": 1912,
+          "description": "American golfer"
+        },
+        {
+          "name": "Bruno Ruffo",
+          "year": 1920,
+          "description": "Italian motorcycle racer and race car driver"
+        },
+        {
+          "name": "Roy Rubin",
+          "year": 1925,
+          "description": "American basketball player and coach"
+        },
+        {
+          "name": "Cliff Hagan",
+          "year": 1931,
+          "description": "American basketball player-coach"
+        },
+        {
+          "name": "Donald Byrd",
+          "year": 1932,
+          "description": "American trumpet player and academic"
+        }
+      ],
+      "leaders": [
+        {
+          "name": "Jean Mermoz",
+          "year": 1901,
+          "description": "French pilot and politician"
+        },
+        {
+          "name": "Grace Hopper",
+          "year": 1906,
+          "description": "American admiral and computer scientist, designed COBOL"
+        },
+        {
+          "name": "Vere Bird",
+          "year": 1910,
+          "description": "First Prime Minister of Antigua and Barbuda"
+        },
+        {
+          "name": "Ryūzō Sejima",
+          "year": 1911,
+          "description": "Japanese colonel and businessman"
+        },
+        {
+          "name": "Tip O'Neill",
+          "year": 1912,
+          "description": "American lawyer and politician, 55th Speaker of the United States House of Re..."
+        }
+      ],
+      "scientists": [
+        {
+          "name": "James Rainwater",
+          "year": 1917,
+          "description": "American physicist and academic, Nobel Prize laureate"
+        },
+        {
+          "name": "William Lipscomb",
+          "year": 1919,
+          "description": "American chemist and academic, Nobel Prize laureate"
+        },
+        {
+          "name": "Henry Way Kendall",
+          "year": 1926,
+          "description": "American physicist, photographer, and mountaineer, Nobel Prize laureate"
+        },
+        {
+          "name": "Raphaël Rouquier",
+          "year": 1969,
+          "description": "French mathematician and academic"
+        },
+        {
+          "name": "Mona Hanna-Attisha",
+          "year": 1976,
+          "description": "American pediatrician, professor, and public health advocate"
+        }
+      ],
+      "artists": [
+        {
+          "name": "Margaret Brundage",
+          "year": 1900,
+          "description": "American illustrator, known for illustrating pulp magazine Weird Tales"
+        },
+        {
+          "name": "Ljubica Sokić",
+          "year": 1914,
+          "description": "Serbian painter and illustrator"
+        },
+        {
+          "name": "Ashleigh Brilliant",
+          "year": 1933,
+          "description": "English-American author and illustrator"
+        }
+      ],
+      "writers": [
+        {
+          "name": "Ödön von Horváth",
+          "year": 1901,
+          "description": "Hungarian-German author and playwright"
+        },
+        {
+          "name": "Dalton Trumbo",
+          "year": 1905,
+          "description": "American author, screenwriter, and blacklistee"
+        },
+        {
+          "name": "Eloise Jarvis McGraw",
+          "year": 1915,
+          "description": "American author"
+        },
+        {
+          "name": "Jerome Beatty Jr.",
+          "year": 1916,
+          "description": "American soldier, journalist, and author"
+        },
+        {
+          "name": "Jan Křesadlo",
+          "year": 1926,
+          "description": "Czech-English psychologist and author"
+        }
+      ]
+    }
+  }
+}

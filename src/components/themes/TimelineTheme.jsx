@@ -1,35 +1,13 @@
-import { useState } from 'react'
+import { memo } from 'react'
+import { TABS as BASE_TABS } from '../../config/tabs'
+import { useTabState } from '../../hooks/useTabState'
+import { CelebrityList } from '../shared/CelebrityList'
 
-const TABS = [
-  { 
-    id: 'overview', 
-    slug: 'overview',
-    title: 'Overview', 
-    icon: '📊',
-    sections: ['birthday', 'generation', 'comparison']
-  },
-  { 
-    id: 'formative', 
-    slug: 'formative-years',
-    title: 'Formative Years', 
-    icon: '💒',
-    sections: ['childhood', 'popculture', 'technology']
-  },
-  { 
-    id: 'world', 
-    slug: 'world-events',
-    title: 'World Events', 
-    icon: '🌍',
-    sections: ['history', 'career', 'financial']
-  },
-  { 
-    id: 'personal', 
-    slug: 'personal-insights',
-    title: 'Personal Insights', 
-    icon: '💡',
-    sections: ['relationships', 'blindspots', 'roadmap']
-  },
-]
+// Extend base tabs with theme-specific icons
+const TABS = BASE_TABS.map(tab => ({
+  ...tab,
+  icon: { overview: '📊', formative: '💒', world: '🌍', personal: '💡' }[tab.id]
+}))
 
 const SECTION_CONFIG = {
   birthday: { title: 'Birthday Analysis', icon: '🎂', key: null },
@@ -46,16 +24,11 @@ const SECTION_CONFIG = {
   roadmap: { title: 'Life Roadmap', icon: '🗺️', key: 'life_roadmap' },
 }
 
-const getWikiUrl = (name) => `https://en.wikipedia.org/wiki/${name.replace(/ /g, '_')}`
-
 // Export TABS for use in App.jsx routing
 export { TABS }
 
 function TimelineTheme({ data, currentTab: propTab = 0, setTab: propSetTab, fontSize = 'base' }) {
-  const [internalTab, setInternalTab] = useState(propTab)
-  const [celebritiesExpanded, setCelebritiesExpanded] = useState(false)
-  const activeTab = propSetTab ? propTab : internalTab
-  const setActiveTab = propSetTab || setInternalTab
+  const [activeTab, setActiveTab] = useTabState(propTab, propSetTab)
 
   // Font size scaling for all text elements
   const fontSizeClasses = {
@@ -102,53 +75,6 @@ function TimelineTheme({ data, currentTab: propTab = 0, setTab: propSetTab, font
 
     </div>
   )
-
-  const renderCelebritySection = () => {
-    const visibleCelebrities = celebritiesExpanded
-      ? data.celebrities
-      : data.celebrities.slice(0, 10)
-    const hasMore = data.celebrities.length > 10
-
-    return (
-      <div className="bg-white/50 rounded-lg border border-sepia-brown/10 p-4 md:p-6">
-        <p className="font-body text-xs text-sepia-brown uppercase tracking-wider mb-3 md:mb-4 text-center">
-          You share your birthday with
-        </p>
-        <div className={`overflow-hidden transition-all duration-300 ease-in-out`}>
-          <div className="flex flex-col sm:flex-row sm:flex-wrap justify-center gap-2">
-            {visibleCelebrities.map((celeb, i) => (
-              <a
-                key={i}
-                href={getWikiUrl(celeb.name)}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-aged-paper px-3 py-3 rounded font-body text-sm text-dark-brown
-                         hover:bg-sepia-brown hover:text-vintage-cream transition-colors duration-200
-                         border border-sepia-brown/20 text-center sm:text-left
-                         focus:outline-none focus:ring-2 focus:ring-dark-brown/50 focus:ring-offset-1"
-                title={celeb.description}
-              >
-                {celeb.name} ({celeb.year})
-              </a>
-            ))}
-          </div>
-        </div>
-        {hasMore && (
-          <button
-            onClick={() => setCelebritiesExpanded(!celebritiesExpanded)}
-            className="mt-4 mx-auto px-4 py-2 text-sm font-body text-sepia-brown/70
-                       hover:text-sepia-brown transition-colors duration-200 flex items-center gap-2
-                       focus:outline-none focus:ring-2 focus:ring-dark-brown/30 focus:ring-offset-1 rounded"
-          >
-            {celebritiesExpanded ? 'Show less' : `Show all ${data.celebrities.length}`}
-            <span className={`transition-transform duration-300 ${celebritiesExpanded ? 'rotate-180' : ''}`}>
-              ▼
-            </span>
-          </button>
-        )}
-      </div>
-    )
-  }
 
   const renderSection = (sectionId) => {
     if (sectionId === 'birthday') return renderBirthdaySection()
@@ -226,7 +152,7 @@ function TimelineTheme({ data, currentTab: propTab = 0, setTab: propSetTab, font
               {renderSection('generation')}
               {renderSection('comparison')}
             </div>
-            {renderCelebritySection()}
+            <CelebrityList celebrities={data.celebrities} variant="timeline" />
           </div>
         ) : (
           <div className="grid grid-cols-1 lg:grid-cols-2 desktop:grid-cols-3 gap-4 md:gap-6">
@@ -251,4 +177,4 @@ function TimelineTheme({ data, currentTab: propTab = 0, setTab: propSetTab, font
   )
 }
 
-export default TimelineTheme
+export default memo(TimelineTheme)

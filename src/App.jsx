@@ -344,11 +344,7 @@ function ThemeWrapper({ ThemeComponent, themePath }) {
     }
   }
 
-  const props = themePath === 'newspaper'
-    ? { currentPage: currentTab, setPage: setTab, fontSize }
-    : { currentTab: currentTab, setTab: setTab, fontSize }
-
-  return <ThemeComponent data={reportData} {...props} />
+  return <ThemeComponent data={reportData} currentTab={currentTab} setTab={setTab} fontSize={fontSize} />
 }
 
 function MainLayout({ children }) {

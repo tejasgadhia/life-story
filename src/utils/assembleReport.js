@@ -65,16 +65,31 @@ async function loadGenerationData(generationId) {
 }
 
 /**
- * Dynamically import birthdays data
- * @returns {Promise<object>}
+ * Month names for dynamic imports
  */
-async function loadBirthdaysData() {
+const MONTH_NAMES = ['january', 'february', 'march', 'april', 'may', 'june',
+                     'july', 'august', 'september', 'october', 'november', 'december']
+
+/**
+ * Dynamically import birthday data for a specific month/day
+ * @param {number} month - 1-12
+ * @param {number} day - 1-31
+ * @returns {Promise<object>} - Birthday data for that day
+ */
+async function loadBirthdayData(month, day) {
   try {
-    const module = await import('../data/birthdays.json')
-    return module.default || module
+    const monthName = MONTH_NAMES[month - 1]
+    const module = await import(`../data/birthdays/${monthName}.json`)
+    const monthData = module.default || module
+    const dayKey = String(day).padStart(2, '0')
+    const birthday = monthData[dayKey]
+    if (!birthday) {
+      throw new Error(`Birthday data not found for ${month}-${day}`)
+    }
+    return birthday
   } catch (error) {
-    console.error('Failed to load birthdays data:', error)
-    throw new Error('Birthday data not available')
+    console.error(`Failed to load birthday data for ${month}-${day}:`, error)
+    throw new Error(`Birthday data not available for ${month}-${day}`)
   }
 }
 
@@ -90,19 +105,11 @@ export async function assembleReport({ year, month, day }) {
   // Load all data in parallel
   const generationId = getGenerationId(year)
 
-  const [yearData, generationData, birthdaysData] = await Promise.all([
+  const [yearData, generationData, birthday] = await Promise.all([
     loadYearData(year),
     loadGenerationData(generationId),
-    loadBirthdaysData()
+    loadBirthdayData(month, day)
   ])
-
-  // Get birthday-specific data
-  const birthdayKey = formatBirthdayKey(month, day)
-  const birthday = birthdaysData[birthdayKey]
-
-  if (!birthday) {
-    throw new Error(`Birthday data not found for ${birthdayKey}`)
-  }
 
   // Build placeholder map for this specific date
   const placeholderMap = buildPlaceholderMap({

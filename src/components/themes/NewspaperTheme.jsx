@@ -1,27 +1,6 @@
-import { useState } from 'react'
-
-const TABS = [
-  { 
-    id: 'overview', 
-    title: 'Overview', 
-    sections: ['birthday', 'generation', 'comparison']
-  },
-  { 
-    id: 'formative', 
-    title: 'Formative Years', 
-    sections: ['childhood', 'popculture', 'technology']
-  },
-  { 
-    id: 'world', 
-    title: 'World Events', 
-    sections: ['history', 'career', 'financial']
-  },
-  { 
-    id: 'personal', 
-    title: 'Personal Insights', 
-    sections: ['relationships', 'blindspots', 'roadmap']
-  },
-]
+import { memo } from 'react'
+import { TABS } from '../../config/tabs'
+import { useTabState } from '../../hooks/useTabState'
 
 const SECTION_CONFIG = {
   birthday: { title: 'Subject Profile', subtitle: 'A Personal Record', key: null },
@@ -38,13 +17,11 @@ const SECTION_CONFIG = {
   roadmap: { title: 'Future Prospects', subtitle: 'What Lies Ahead', key: 'life_roadmap' },
 }
 
-function NewspaperTheme({ data, currentPage: propPage = 0, setPage: propSetPage, fontSize = 'base' }) {
-  const [internalPage, setInternalPage] = useState(propPage)
-  
+function NewspaperTheme({ data, currentTab: propTab = 0, setTab: propSetTab, fontSize = 'base' }) {
+  const [currentPage, setCurrentPage] = useTabState(propTab, propSetTab)
+
   const fontSizeClasses = { sm: 'content-scale-sm', base: 'content-scale-base', lg: 'content-scale-lg' }
   const contentFontSize = fontSizeClasses[fontSize] || 'text-base'
-  const currentPage = propSetPage ? propPage : internalPage
-  const setCurrentPage = propSetPage || setInternalPage
 
   const formatDate = () => {
     const d = new Date()
@@ -327,4 +304,4 @@ function NewspaperTheme({ data, currentPage: propPage = 0, setPage: propSetPage,
   )
 }
 
-export default NewspaperTheme
+export default memo(NewspaperTheme)
