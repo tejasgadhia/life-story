@@ -1,12 +1,15 @@
-import { useState, useEffect, useMemo, createContext, useContext } from 'react'
+import { useState, useEffect, useMemo, createContext, useContext, lazy, Suspense } from 'react'
 import { BrowserRouter, Routes, Route, Navigate, useNavigate, useParams, useLocation } from 'react-router-dom'
 import DatePicker from './components/DatePicker'
 import LoadingScreen from './components/LoadingScreen'
-import TimelineTheme from './components/themes/TimelineTheme'
-import NewspaperTheme from './components/themes/NewspaperTheme'
-import CaseFileTheme from './components/themes/CaseFileTheme'
+
 import { assembleReport } from './utils/assembleReport'
 import { useMetaTags } from './hooks/useMetaTags'
+
+// Lazy load theme components for code splitting
+const TimelineTheme = lazy(() => import('./components/themes/TimelineTheme'))
+const NewspaperTheme = lazy(() => import('./components/themes/NewspaperTheme'))
+const CaseFileTheme = lazy(() => import('./components/themes/CaseFileTheme'))
 
 // Font size context
 const FontSizeContext = createContext({ fontSize: 'base', setFontSize: () => {} })
@@ -344,7 +347,11 @@ function ThemeWrapper({ ThemeComponent, themePath }) {
     }
   }
 
-  return <ThemeComponent data={reportData} currentTab={currentTab} setTab={setTab} fontSize={fontSize} />
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-charcoal-50" />}>
+      <ThemeComponent data={reportData} currentTab={currentTab} setTab={setTab} fontSize={fontSize} />
+    </Suspense>
+  )
 }
 
 function MainLayout({ children }) {
