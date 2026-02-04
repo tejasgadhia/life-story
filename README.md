@@ -6,8 +6,6 @@ A birthday analysis webapp that generates personalized historical and generation
 
 https://tejasgadhia.github.io/life-story/
 
-**Password**: `1988` (MVP is limited to June 9, 1988)
-
 ## Features
 
 - **12-Section Report**: Birthday analysis, generational identity, childhood context, pop culture, technology timeline, historical milestones, career patterns, financial psychology, relationships, blind spots, and life roadmap
@@ -19,16 +17,19 @@ https://tejasgadhia.github.io/life-story/
 - **Birthday Ranking**: How common is your birthday? (1-366)
 - **Celebrity Birthdays**: Wikipedia-linked, sorted by birth year
 - **Font Size Controls**: Small, Medium, Large
-- **Stateful URLs**: Bookmarkable tabs (e.g., `/timeline/formative-years`)
+- **Shareable URLs**: Bookmarkable reports with birthday in URL
 
 ## URL Structure
 
 ```
-/life-story/                          → Timeline, Overview tab
-/life-story/timeline/overview         → Timeline, Overview tab
-/life-story/timeline/formative-years  → Timeline, Formative Years tab
-/life-story/newspaper/world-events    → Newspaper, World Events tab
-/life-story/casefile/personal-insights → Case File, Personal Insights tab
+/life-story/                              → Landing page (DatePicker)
+/life-story/{YYYY-MM-DD}/{theme}          → Report view
+/life-story/{YYYY-MM-DD}/{theme}/{tab}    → Report with specific tab
+
+Examples:
+/life-story/1988-06-09/timeline           → Timeline, Overview tab
+/life-story/1965-03-15/newspaper/world-events
+/life-story/2000-01-01/casefile/personal-insights
 ```
 
 ## Tech Stack
@@ -54,7 +55,7 @@ src/
 │   │   ├── TimelineTheme.jsx
 │   │   ├── NewspaperTheme.jsx
 │   │   └── CaseFileTheme.jsx
-│   ├── PasswordGate.jsx
+│   ├── DatePicker.jsx
 │   ├── LoadingScreen.jsx
 │   └── ErrorBoundary.jsx
 ├── data/
@@ -73,20 +74,17 @@ npm run build    # Build for production
 npm run preview  # Preview production build
 ```
 
-## Current Limitations (MVP)
+## Current Limitations
 
-- Only supports one birthdate: June 9, 1988
+- Supports birthdates from 1946-2012
 - US-centric content and data
-- Desktop-first (not optimized for mobile)
-- Password-protected (for controlled testing)
+- Desktop-first (mobile coming soon)
 
 ## Roadmap
 
-- [ ] Support full date range (1960-2007)
 - [ ] Mobile responsive design
 - [ ] PDF export
 - [ ] Birthday heat map visualization
-- [ ] Remove password gate for public launch
 
 ## Changelog
 
