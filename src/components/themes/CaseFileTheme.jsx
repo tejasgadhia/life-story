@@ -243,7 +243,7 @@ function CaseFileTheme({ data, currentTab: propTab = 0, setTab: propSetTab, font
                 </div>
               ) : (
                 /* Other tabs - 3 sections */
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 lg:grid-cols-2 desktop:grid-cols-3 gap-6">
                   {currentTabData.sections.map((sectionId) => (
                     <div key={sectionId}>
                       {renderSection(sectionId)}
