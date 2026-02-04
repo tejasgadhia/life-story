@@ -53,6 +53,7 @@ export { TABS }
 
 function TimelineTheme({ data, currentTab: propTab = 0, setTab: propSetTab, fontSize = 'base' }) {
   const [internalTab, setInternalTab] = useState(propTab)
+  const [celebritiesExpanded, setCelebritiesExpanded] = useState(false)
   const activeTab = propSetTab ? propTab : internalTab
   const setActiveTab = propSetTab || setInternalTab
 
@@ -99,30 +100,53 @@ function TimelineTheme({ data, currentTab: propTab = 0, setTab: propSetTab, font
         </div>
       </div>
 
-      {/* Celebrity Birthdays */}
-      <div className="mt-4 md:mt-6">
+    </div>
+  )
+
+  const renderCelebritySection = () => {
+    const visibleCelebrities = celebritiesExpanded
+      ? data.celebrities
+      : data.celebrities.slice(0, 10)
+    const hasMore = data.celebrities.length > 10
+
+    return (
+      <div className="bg-white/50 rounded-lg border border-sepia-brown/10 p-4 md:p-6">
         <p className="font-body text-xs text-sepia-brown uppercase tracking-wider mb-3 md:mb-4 text-center">
           You share your birthday with
         </p>
-        <div className="flex flex-col sm:flex-row sm:flex-wrap justify-center gap-2">
-          {data.celebrities.map((celeb, i) => (
-            <a
-              key={i}
-              href={getWikiUrl(celeb.name)}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-aged-paper px-3 py-3 rounded font-body text-sm text-dark-brown
-                       hover:bg-sepia-brown hover:text-vintage-cream transition-colors
-                       border border-sepia-brown/20 text-center sm:text-left"
-              title={celeb.description}
-            >
-              {celeb.name} ({celeb.year})
-            </a>
-          ))}
+        <div className={`overflow-hidden transition-all duration-300 ease-in-out`}>
+          <div className="flex flex-col sm:flex-row sm:flex-wrap justify-center gap-2">
+            {visibleCelebrities.map((celeb, i) => (
+              <a
+                key={i}
+                href={getWikiUrl(celeb.name)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-aged-paper px-3 py-3 rounded font-body text-sm text-dark-brown
+                         hover:bg-sepia-brown hover:text-vintage-cream transition-colors
+                         border border-sepia-brown/20 text-center sm:text-left"
+                title={celeb.description}
+              >
+                {celeb.name} ({celeb.year})
+              </a>
+            ))}
+          </div>
         </div>
+        {hasMore && (
+          <button
+            onClick={() => setCelebritiesExpanded(!celebritiesExpanded)}
+            className="mt-4 mx-auto px-4 py-2 text-sm font-body text-sepia-brown/70
+                       hover:text-sepia-brown transition-colors flex items-center gap-2"
+          >
+            {celebritiesExpanded ? 'Show less' : `Show all ${data.celebrities.length}`}
+            <span className={`transition-transform duration-300 ${celebritiesExpanded ? 'rotate-180' : ''}`}>
+              ▼
+            </span>
+          </button>
+        )}
       </div>
-    </div>
-  )
+    )
+  }
 
   const renderSection = (sectionId) => {
     if (sectionId === 'birthday') return renderBirthdaySection()
@@ -200,6 +224,7 @@ function TimelineTheme({ data, currentTab: propTab = 0, setTab: propSetTab, font
               {renderSection('generation')}
               {renderSection('comparison')}
             </div>
+            {renderCelebritySection()}
           </div>
         ) : (
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 md:gap-6">

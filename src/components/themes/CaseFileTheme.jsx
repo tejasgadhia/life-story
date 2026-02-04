@@ -40,6 +40,7 @@ const SECTION_CONFIG = {
 
 function CaseFileTheme({ data, currentTab: propTab = 0, setTab: propSetTab, fontSize = 'base' }) {
   const [internalTab, setInternalTab] = useState(propTab)
+  const [celebritiesExpanded, setCelebritiesExpanded] = useState(false)
   const activeTab = propSetTab ? propTab : internalTab
   const setActiveTab = propSetTab || setInternalTab
 
@@ -92,29 +93,53 @@ function CaseFileTheme({ data, currentTab: propTab = 0, setTab: propSetTab, font
           PERSONAL FILE
         </div>
       </div>
-
-      {/* Known Associates */}
-      <div>
-        <h4 className="font-bold text-sm md:text-base mb-3 md:mb-4 text-sepia-brown/70 tracking-wider">KNOWN BIRTHDAY ASSOCIATES:</h4>
-        <div className="bg-vintage-cream/50 p-3 md:p-4 border-2 border-sepia-brown/20">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-1 md:gap-2">
-            {data.celebrities.map((celeb, i) => (
-              <a
-                key={i}
-                href={`https://en.wikipedia.org/wiki/${celeb.name.replace(/ /g, '_')}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="py-2 md:py-2 text-sm md:text-base hover:text-muted-blue transition-colors"
-                title={celeb.description}
-              >
-                • {celeb.name} ({celeb.year})
-              </a>
-            ))}
-          </div>
-        </div>
-      </div>
     </div>
   )
+
+  const renderCelebritySection = () => {
+    const visibleCelebrities = celebritiesExpanded
+      ? data.celebrities
+      : data.celebrities.slice(0, 10)
+    const hasMore = data.celebrities.length > 10
+
+    return (
+      <div className="bg-vintage-cream/30 border-2 border-sepia-brown/20 p-4 md:p-6">
+        <h4 className="font-bold text-sm md:text-base mb-3 md:mb-4 text-sepia-brown/70 tracking-wider">
+          KNOWN BIRTHDAY ASSOCIATES:
+        </h4>
+        <div className="bg-vintage-cream/50 p-3 md:p-4 border-2 border-sepia-brown/20">
+          <div className={`overflow-hidden transition-all duration-300 ease-in-out`}>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-1 md:gap-2">
+              {visibleCelebrities.map((celeb, i) => (
+                <a
+                  key={i}
+                  href={`https://en.wikipedia.org/wiki/${celeb.name.replace(/ /g, '_')}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="py-2 md:py-2 text-sm md:text-base hover:text-muted-blue transition-colors"
+                  title={celeb.description}
+                >
+                  • {celeb.name} ({celeb.year})
+                </a>
+              ))}
+            </div>
+          </div>
+          {hasMore && (
+            <button
+              onClick={() => setCelebritiesExpanded(!celebritiesExpanded)}
+              className="mt-4 px-4 py-2 text-sm text-sepia-brown/70
+                         hover:text-sepia-brown transition-colors flex items-center gap-2"
+            >
+              {celebritiesExpanded ? 'Show less' : `Show all ${data.celebrities.length}`}
+              <span className={`transition-transform duration-300 ${celebritiesExpanded ? 'rotate-180' : ''}`}>
+                ▼
+              </span>
+            </button>
+          )}
+        </div>
+      </div>
+    )
+  }
 
   const renderSection = (sectionId) => {
     const config = SECTION_CONFIG[sectionId]
@@ -205,12 +230,15 @@ function CaseFileTheme({ data, currentTab: propTab = 0, setTab: propSetTab, font
             <div className="text-dark-brown">
               {activeTab === 0 ? (
                 /* Overview with special birthday layout */
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                  <div className="lg:col-span-2">
-                    {renderBirthdaySection()}
+                <div className="space-y-6">
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    <div className="lg:col-span-2">
+                      {renderBirthdaySection()}
+                    </div>
+                    {renderSection('generation')}
+                    {renderSection('comparison')}
                   </div>
-                  {renderSection('generation')}
-                  {renderSection('comparison')}
+                  {renderCelebritySection()}
                 </div>
               ) : (
                 /* Other tabs - 3 sections */
