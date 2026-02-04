@@ -86,7 +86,7 @@ function NewspaperTheme({ data, currentPage: propPage = 0, setPage: propSetPage,
                   href={`https://en.wikipedia.org/wiki/${celeb.name.replace(/ /g, '_')}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`block ${contentFontSize} py-3 text-stone-700 hover:text-stone-900 hover:bg-stone-200 px-1 transition-colors border-b border-stone-300 md:last:border-0`}
+                  className={`block ${contentFontSize} py-3 text-stone-700 hover:text-stone-900 hover:bg-stone-200 px-1 transition-colors duration-200 border-b border-stone-300 md:last:border-0 focus:outline-none focus:ring-2 focus:ring-stone-500/50 focus:ring-offset-1`}
                   title={celeb.description}
                 >
                   • {celeb.name} ({celeb.year})
@@ -263,8 +263,8 @@ function NewspaperTheme({ data, currentPage: propPage = 0, setPage: propSetPage,
             <button
               key={tab.id}
               onClick={() => setCurrentPage(i)}
-              className={`flex-1 min-w-fit px-3 sm:px-6 md:px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider sm:tracking-widest transition-all whitespace-nowrap
-                active:scale-[0.98] focus:ring-2 focus:ring-stone-400/50 focus:outline-none
+              className={`flex-1 min-w-fit px-3 sm:px-6 md:px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider sm:tracking-widest whitespace-nowrap
+                transition-colors duration-200 active:scale-[0.98] focus:ring-2 focus:ring-stone-400/50 focus:outline-none
                 ${currentPage === i
                   ? 'bg-stone-100 text-stone-900'
                   : 'bg-stone-800 text-stone-300 hover:bg-stone-700 hover:text-stone-100'

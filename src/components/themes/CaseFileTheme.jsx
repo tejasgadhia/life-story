@@ -116,7 +116,7 @@ function CaseFileTheme({ data, currentTab: propTab = 0, setTab: propSetTab, font
                   href={`https://en.wikipedia.org/wiki/${celeb.name.replace(/ /g, '_')}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="py-2 md:py-2 text-sm md:text-base hover:text-muted-blue transition-colors"
+                  className="py-2 md:py-2 text-sm md:text-base hover:text-muted-blue transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-sepia-brown/50 focus:ring-offset-1 rounded"
                   title={celeb.description}
                 >
                   • {celeb.name} ({celeb.year})
@@ -128,7 +128,8 @@ function CaseFileTheme({ data, currentTab: propTab = 0, setTab: propSetTab, font
             <button
               onClick={() => setCelebritiesExpanded(!celebritiesExpanded)}
               className="mt-4 px-4 py-2 text-sm text-sepia-brown/70
-                         hover:text-sepia-brown transition-colors flex items-center gap-2"
+                         hover:text-sepia-brown transition-colors duration-200 flex items-center gap-2
+                         focus:outline-none focus:ring-2 focus:ring-sepia-brown/50 focus:ring-offset-1 rounded"
             >
               {celebritiesExpanded ? 'Show less' : `Show all ${data.celebrities.length}`}
               <span className={`transition-transform duration-300 ${celebritiesExpanded ? 'rotate-180' : ''}`}>
@@ -175,7 +176,7 @@ function CaseFileTheme({ data, currentTab: propTab = 0, setTab: propSetTab, font
               key={tab.id}
               onClick={() => setActiveTab(index)}
               className={`min-w-fit px-3 sm:px-4 md:px-6 py-3 text-xs sm:text-sm font-bold uppercase tracking-wide rounded-t-lg
-                        transition-all relative flex-1 text-center whitespace-nowrap
+                        relative flex-1 text-center whitespace-nowrap transition-colors duration-200
                         active:scale-[0.98] focus:ring-2 focus:ring-sepia-brown/50 focus:outline-none
                 ${activeTab === index
                   ? 'bg-manila text-dark-brown z-10 -mb-px border-t-2 border-x-2 border-sepia-brown/30'
@@ -262,14 +263,14 @@ function CaseFileTheme({ data, currentTab: propTab = 0, setTab: propSetTab, font
               <button
                 onClick={() => setActiveTab(Math.max(0, activeTab - 1))}
                 disabled={activeTab === 0}
-                className="flex-1 sm:flex-none px-4 md:px-5 py-3 bg-dark-brown text-vintage-cream rounded text-sm md:text-base disabled:opacity-30 hover:bg-sepia-brown transition-colors"
+                className="flex-1 sm:flex-none px-4 md:px-5 py-3 bg-dark-brown text-vintage-cream rounded text-sm md:text-base disabled:opacity-30 disabled:cursor-not-allowed hover:bg-sepia-brown transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-sepia-brown/50 focus:ring-offset-1"
               >
                 ← Prev
               </button>
               <button
                 onClick={() => setActiveTab(Math.min(TABS.length - 1, activeTab + 1))}
                 disabled={activeTab === TABS.length - 1}
-                className="flex-1 sm:flex-none px-4 md:px-5 py-3 bg-dark-brown text-vintage-cream rounded text-sm md:text-base disabled:opacity-30 hover:bg-sepia-brown transition-colors"
+                className="flex-1 sm:flex-none px-4 md:px-5 py-3 bg-dark-brown text-vintage-cream rounded text-sm md:text-base disabled:opacity-30 disabled:cursor-not-allowed hover:bg-sepia-brown transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-sepia-brown/50 focus:ring-offset-1"
               >
                 Next →
               </button>

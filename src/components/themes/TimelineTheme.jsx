@@ -123,8 +123,9 @@ function TimelineTheme({ data, currentTab: propTab = 0, setTab: propSetTab, font
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-aged-paper px-3 py-3 rounded font-body text-sm text-dark-brown
-                         hover:bg-sepia-brown hover:text-vintage-cream transition-colors
-                         border border-sepia-brown/20 text-center sm:text-left"
+                         hover:bg-sepia-brown hover:text-vintage-cream transition-colors duration-200
+                         border border-sepia-brown/20 text-center sm:text-left
+                         focus:outline-none focus:ring-2 focus:ring-dark-brown/50 focus:ring-offset-1"
                 title={celeb.description}
               >
                 {celeb.name} ({celeb.year})
@@ -136,7 +137,8 @@ function TimelineTheme({ data, currentTab: propTab = 0, setTab: propSetTab, font
           <button
             onClick={() => setCelebritiesExpanded(!celebritiesExpanded)}
             className="mt-4 mx-auto px-4 py-2 text-sm font-body text-sepia-brown/70
-                       hover:text-sepia-brown transition-colors flex items-center gap-2"
+                       hover:text-sepia-brown transition-colors duration-200 flex items-center gap-2
+                       focus:outline-none focus:ring-2 focus:ring-dark-brown/30 focus:ring-offset-1 rounded"
           >
             {celebritiesExpanded ? 'Show less' : `Show all ${data.celebrities.length}`}
             <span className={`transition-transform duration-300 ${celebritiesExpanded ? 'rotate-180' : ''}`}>
@@ -199,8 +201,8 @@ function TimelineTheme({ data, currentTab: propTab = 0, setTab: propSetTab, font
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(index)}
-                className={`min-w-fit px-3 md:px-6 py-3 font-body text-sm transition-all border-b-2 whitespace-nowrap
-                  active:scale-[0.98] focus:ring-2 focus:ring-dark-brown/30 focus:outline-none
+                className={`min-w-fit px-3 md:px-6 py-3 font-body text-sm border-b-2 whitespace-nowrap
+                  transition-colors duration-200 active:scale-[0.98] focus:ring-2 focus:ring-dark-brown/30 focus:outline-none
                   ${activeTab === index
                     ? 'border-dark-brown text-dark-brown font-bold bg-vintage-cream'
                     : 'border-transparent text-sepia-brown hover:text-dark-brown hover:bg-vintage-cream/50'
