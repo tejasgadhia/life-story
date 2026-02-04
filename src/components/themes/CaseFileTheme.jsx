@@ -41,7 +41,7 @@ function CaseFileTheme({ data, currentTab: propTab = 0, setTab: propSetTab, font
         </div>
         <div className="border-b-2 border-sepia-brown/30 pb-3">
           <span className="text-sepia-brown/70 block text-xs md:text-sm mb-1">CASE NUMBER</span>
-          <span className="font-bold text-base md:text-lg">LS-{data.birthYear}-0609</span>
+          <span className="font-bold text-base md:text-lg">LS-{data.birthYear}-{String(data.birthMonth).padStart(2, '0')}{String(data.birthDay).padStart(2, '0')}</span>
         </div>
         <div className="border-b-2 border-sepia-brown/30 pb-3">
           <span className="text-sepia-brown/70 block text-xs md:text-sm mb-1">GENERATION</span>
@@ -142,7 +142,7 @@ function CaseFileTheme({ data, currentTab: propTab = 0, setTab: propSetTab, font
               <span className="text-xs md:text-sm opacity-70 hidden sm:inline">LIFE STORY DIVISION</span>
             </div>
             <div className="text-xs md:text-sm opacity-70">
-              FILE: LS-{data.birthYear}-0609
+              FILE: LS-{data.birthYear}-{String(data.birthMonth).padStart(2, '0')}{String(data.birthDay).padStart(2, '0')}
             </div>
           </div>
 

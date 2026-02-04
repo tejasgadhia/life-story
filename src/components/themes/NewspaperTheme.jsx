@@ -2,6 +2,20 @@ import { memo } from 'react'
 import { TABS } from '../../config/tabs'
 import { useTabState } from '../../hooks/useTabState'
 
+// Helper to get ordinal suffix (1st, 2nd, 3rd, etc.)
+const getOrdinalSuffix = (n) => {
+  const s = ['th', 'st', 'nd', 'rd']
+  const v = n % 100
+  return s[(v - 20) % 10] || s[v] || s[0]
+}
+
+// Helper to get month name from 1-12
+const getMonthName = (m) => {
+  const months = ['January', 'February', 'March', 'April', 'May', 'June',
+                  'July', 'August', 'September', 'October', 'November', 'December']
+  return months[m - 1]
+}
+
 const SECTION_CONFIG = {
   birthday: { title: 'Subject Profile', subtitle: 'A Personal Record', key: null },
   generation: { title: 'Generational Identity', subtitle: 'Character of the Cohort', key: 'generational_identity' },
@@ -54,7 +68,7 @@ function NewspaperTheme({ data, currentTab: propTab = 0, setTab: propSetTab, fon
           {/* Notable Births */}
           <div className="border-t-4 border-double border-stone-700 pt-3">
             <h4 className="text-sm font-black text-center tracking-wider mb-3 uppercase">
-              Notable June 9th Births
+              Notable {getMonthName(data.birthMonth)} {data.birthDay}{getOrdinalSuffix(data.birthDay)} Births
             </h4>
             <div className="grid grid-cols-2 md:grid-cols-1 gap-0">
               {data.celebrities.slice(0, 8).map((celeb, i) => (
@@ -291,7 +305,7 @@ function NewspaperTheme({ data, currentTab: propTab = 0, setTab: propSetTab, fon
             </div>
             <div className="p-3 md:p-4">
               <h5 className="font-bold mb-1 tracking-wider uppercase text-[10px] md:text-xs">Edition</h5>
-              <p className="leading-relaxed text-[10px] md:text-xs">ID: LS-{data.birthYear}-0609</p>
+              <p className="leading-relaxed text-[10px] md:text-xs">ID: LS-{data.birthYear}-{String(data.birthMonth).padStart(2, '0')}{String(data.birthDay).padStart(2, '0')}</p>
             </div>
           </div>
 
