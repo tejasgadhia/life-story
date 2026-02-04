@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 
 const LOADING_STAGES = [
   { text: 'Accessing historical archives...', duration: 600 },
@@ -14,15 +14,21 @@ function LoadingScreen({ onComplete, birthYear = 1988 }) {
   const [currentStage, setCurrentStage] = useState(0)
   const [progress, setProgress] = useState(0)
   const [showReport, setShowReport] = useState(false)
+  const stageRef = useRef(0)
+
+  // Keep ref in sync with state
+  useEffect(() => {
+    stageRef.current = currentStage
+  }, [currentStage])
 
   useEffect(() => {
     let stageTimeout
     let progressInterval
 
-    // Progress bar animation
+    // Progress bar animation - use ref to avoid stale closure
     progressInterval = setInterval(() => {
       setProgress(prev => {
-        const target = ((currentStage + 1) / LOADING_STAGES.length) * 100
+        const target = ((stageRef.current + 1) / LOADING_STAGES.length) * 100
         const increment = 0.5
         if (prev < target) {
           return Math.min(prev + increment, target)
@@ -33,9 +39,9 @@ function LoadingScreen({ onComplete, birthYear = 1988 }) {
 
     // Stage progression
     const advanceStage = () => {
-      if (currentStage < LOADING_STAGES.length - 1) {
+      if (stageRef.current < LOADING_STAGES.length - 1) {
         setCurrentStage(prev => prev + 1)
-        stageTimeout = setTimeout(advanceStage, LOADING_STAGES[currentStage + 1]?.duration || 500)
+        stageTimeout = setTimeout(advanceStage, LOADING_STAGES[stageRef.current + 1]?.duration || 500)
       } else {
         // Final stage complete
         setTimeout(() => {
@@ -54,7 +60,7 @@ function LoadingScreen({ onComplete, birthYear = 1988 }) {
       clearTimeout(stageTimeout)
       clearInterval(progressInterval)
     }
-  }, [currentStage, onComplete])
+  }, [onComplete])
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-charcoal-50">
