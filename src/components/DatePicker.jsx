@@ -204,7 +204,7 @@ export default function DatePicker({ onSubmit }) {
             className={`w-full py-4 px-6 text-base font-sans font-semibold rounded-xl transition-all duration-200 ${
               isLoading || !isComplete
                 ? 'bg-charcoal-300 text-charcoal-500 cursor-not-allowed'
-                : 'bg-amber text-charcoal-900 hover:bg-amber-dark active:scale-[0.98] shadow-lg shadow-amber/20'
+                : 'bg-amber text-charcoal-900 hover:bg-amber-dark active:scale-[0.98] shadow-lg shadow-amber/20 focus:ring-2 focus:ring-amber/50 focus:outline-none'
             }`}
           >
             {isLoading ? 'Loading your story...' : 'Discover Your Story'}

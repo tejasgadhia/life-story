@@ -176,6 +176,7 @@ function TimelineTheme({ data, currentTab: propTab = 0, setTab: propSetTab, font
                 key={tab.id}
                 onClick={() => setActiveTab(index)}
                 className={`min-w-fit px-3 md:px-6 py-3 font-body text-sm transition-all border-b-2 whitespace-nowrap
+                  active:scale-[0.98] focus:ring-2 focus:ring-dark-brown/30 focus:outline-none
                   ${activeTab === index
                     ? 'border-dark-brown text-dark-brown font-bold bg-vintage-cream'
                     : 'border-transparent text-sepia-brown hover:text-dark-brown hover:bg-vintage-cream/50'

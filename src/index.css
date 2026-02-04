@@ -12,6 +12,10 @@
   --color-newsprint-dark: #ebe5d6;
   --color-column-rule: #a3a3a3;
   --color-metal-gray: #8B8B8B;
+
+  /* Timing variables for consistent animations */
+  --timing-fast: 150ms;
+  --timing-normal: 300ms;
 }
 
 /* Base styles */

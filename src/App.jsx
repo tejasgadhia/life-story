@@ -112,6 +112,7 @@ function ThemeSwitcher() {
               key={theme.id}
               onClick={() => handleThemeChange(theme.id)}
               className={`group relative px-3 py-2 rounded transition-all
+                active:scale-[0.98] focus:ring-2 focus:ring-vintage-cream/50 focus:outline-none
                 ${currentTheme === theme.id
                   ? 'bg-vintage-cream text-dark-brown'
                   : 'text-vintage-cream/70 hover:bg-vintage-cream/20 hover:text-vintage-cream'
@@ -138,6 +139,7 @@ function ThemeSwitcher() {
                 key={size.id}
                 onClick={() => setFontSize(size.id)}
                 className={`group relative px-3 py-1.5 rounded transition-all font-body
+                  active:scale-[0.98] focus:ring-2 focus:ring-vintage-cream/50 focus:outline-none
                   ${fontSize === size.id
                     ? 'bg-vintage-cream text-dark-brown'
                     : 'text-vintage-cream/70 hover:bg-vintage-cream/20 hover:text-vintage-cream'

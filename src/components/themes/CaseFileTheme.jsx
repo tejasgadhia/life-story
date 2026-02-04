@@ -151,6 +151,7 @@ function CaseFileTheme({ data, currentTab: propTab = 0, setTab: propSetTab, font
               onClick={() => setActiveTab(index)}
               className={`min-w-fit px-3 sm:px-4 md:px-6 py-3 text-xs sm:text-sm font-bold uppercase tracking-wide rounded-t-lg
                         transition-all relative flex-1 text-center whitespace-nowrap
+                        active:scale-[0.98] focus:ring-2 focus:ring-sepia-brown/50 focus:outline-none
                 ${activeTab === index
                   ? 'bg-manila text-dark-brown z-10 -mb-px border-t-2 border-x-2 border-sepia-brown/30'
                   : 'bg-sepia-brown/40 text-vintage-cream/80 hover:bg-sepia-brown/60'
