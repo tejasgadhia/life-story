@@ -99,10 +99,8 @@ function LoadingScreen({ onComplete, birthYear = 1988 }) {
               style={{ width: `${progress}%` }}
             />
           </div>
-          <div className="flex justify-between mt-2 text-xs text-charcoal-400">
-            <span>0%</span>
-            <span>{Math.round(progress)}%</span>
-            <span>100%</span>
+          <div className="flex justify-center mt-2 text-xs">
+            <span className="font-medium text-charcoal-600 tabular-nums">{Math.round(progress)}%</span>
           </div>
         </div>
 
