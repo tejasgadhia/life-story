@@ -51,8 +51,13 @@ Tab slugs: `overview`, `formative-years`, `world-events`, `personal-insights`
 |------|---------|
 | `src/App.jsx` | Router, theme switcher, font size context |
 | `src/components/themes/*.jsx` | The three theme components |
-| `src/data/1988.json` | Year-specific content (sections) |
-| `src/data/birthdays.json` | Birthday rankings, celebrities |
+| `src/components/shared/CelebrityList.jsx` | Shared celebrity list component |
+| `src/config/tabs.js` | Centralized tab configuration |
+| `src/hooks/useTabState.js` | Shared tab state management |
+| `src/data/years/*.json` | Year-specific content (67 files: 1946-2012) |
+| `src/data/generations/*.json` | Generation definitions (boomer, genx, millennial, genz) |
+| `src/data/birthdays/*.json` | Birthday rankings, celebrities (12 monthly files) |
+| `src/utils/assembleReport.js` | Assembles report data from year/generation/birthday data |
 | `public/404.html` | GitHub Pages SPA routing fix |
 | `CHANGELOG.md` | Version history |
 
@@ -87,12 +92,12 @@ Tab slugs: `overview`, `formative-years`, `world-events`, `personal-insights`
 3. Add to theme switcher in `App.jsx`
 
 ### Change tab structure
-1. Update `TABS` array in each theme file
-2. Update `TAB_SLUGS` in `App.jsx`
+1. Update `TABS` array in `src/config/tabs.js` (centralized)
+2. Update `TAB_SLUGS` in `App.jsx` for URL routing
 
 ### Add content for new year
-1. Create `src/data/YYYY.json` following 1988.json structure
-2. Update App.jsx to load correct year based on input
+1. Create `src/data/years/YYYY.json` following existing year file structure
+2. Year data is dynamically imported based on birth year in `assembleReport.js`
 
 ## Design System
 
