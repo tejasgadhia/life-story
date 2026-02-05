@@ -113,13 +113,6 @@ src/
 - US-centric content and data
 - Desktop-optimized (mobile responsive but not mobile-first)
 
-## Roadmap
-
-- [ ] PDF export
-- [ ] Birthday heat map visualization
-- [ ] Additional storytelling improvements
-- [ ] Bundle size optimization
-
 ## License
 
 This project is licensed under the [O'Saasy License Agreement](https://osaasy.dev/).
