@@ -16,6 +16,9 @@ export default defineConfig({
     VitePWA({
       registerType: 'autoUpdate',
       workbox: {
+        skipWaiting: true,           // Force new SW to activate immediately
+        clientsClaim: true,          // Take control of all clients immediately
+        cleanupOutdatedCaches: true, // Remove old precached assets
         globPatterns: ['**/*.{js,css,html,ico,png,svg,json}'],
         runtimeCaching: [
           {
