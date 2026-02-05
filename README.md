@@ -1,10 +1,12 @@
 # Life Story
 
-A birthday analysis webapp that generates personalized historical and generational reports. Enter a birthdate, get a ~5,000 word magazine-style report about your generation, cultural touchstones, and historical context.
+> A birthday analysis webapp that generates personalized historical and generational reports.
 
-## Live Demo
+**[Live Demo](https://tejasgadhia.github.io/life-story/)** | **[Changelog](CHANGELOG.md)**
 
-https://tejasgadhia.github.io/life-story/
+## What It Does
+
+Enter a birthdate and get a ~5,000 word magazine-style report about your generation, cultural touchstones, and historical context. The report covers everything from how common your birthday is to what technology shaped your childhood to what historical events defined your formative years.
 
 ## Features
 
@@ -18,6 +20,16 @@ https://tejasgadhia.github.io/life-story/
 - **Celebrity Birthdays**: Wikipedia-linked, sorted by birth year
 - **Font Size Controls**: Small, Medium, Large
 - **Shareable URLs**: Bookmarkable reports with birthday in URL
+- **Offline Support**: Works offline after first visit (via service worker)
+
+## Tech Stack
+
+- React 18 + Vite
+- Tailwind CSS
+- React Router v7 (client-side routing)
+- vite-plugin-pwa (offline caching)
+- GitHub Pages (static hosting)
+- GitHub Actions (auto-deploy on push)
 
 ## URL Structure
 
@@ -32,19 +44,40 @@ Examples:
 /life-story/2000-01-01/casefile/personal-insights
 ```
 
-## Tech Stack
+## Local Development
 
-- React 18 + Vite
-- Tailwind CSS
-- React Router v7 (client-side routing)
-- GitHub Pages (static hosting)
-- GitHub Actions (auto-deploy on push)
+```bash
+npm install
+npm run dev      # Start dev server at localhost:5173
+npm run build    # Build for production
+npm run preview  # Preview production build
+```
+
+## Deployment
+
+### GitHub Pages Setup
+
+1. Enable GitHub Pages in repo settings
+2. Set source to "GitHub Actions"
+
+### How It Works
+
+- Vite builds to `dist/` with `base: '/life-story/'`
+- GitHub Actions auto-deploys on push to main
+- SPA routing uses 404.html redirect hack (GitHub Pages limitation)
+
+### Verifying Deployment
+
+1. Push changes to main
+2. Wait for Actions workflow to complete (~1-2 min)
+3. Visit https://tejasgadhia.github.io/life-story/
+4. Test a deep link: `/life-story/1988-06-09/timeline`
 
 ## Data Sources
 
-- Birthday frequency: FiveThirtyEight (CDC/SSA 1994-2014)
-- Generational definitions: Pew Research Center
-- Historical events, tech timeline, pop culture: Curated JSON datasets
+- **Birthday frequency**: FiveThirtyEight (CDC/SSA 1994-2014)
+- **Generational definitions**: Pew Research Center
+- **Historical events, tech timeline, pop culture**: Curated JSON datasets
 
 ## Project Structure
 
@@ -55,41 +88,37 @@ src/
 │   │   ├── TimelineTheme.jsx
 │   │   ├── NewspaperTheme.jsx
 │   │   └── CaseFileTheme.jsx
+│   ├── shared/
+│   │   └── CelebrityList.jsx
 │   ├── DatePicker.jsx
 │   ├── LoadingScreen.jsx
 │   └── ErrorBoundary.jsx
+├── config/
+│   └── tabs.js              # Centralized tab configuration
+├── hooks/
+│   └── useTabState.js       # Shared tab state management
 ├── data/
-│   ├── 1988.json          # Year-specific content
-│   └── birthdays.json     # Birthday rankings & celebrities
-├── App.jsx                # Router, theme switching, font size
+│   ├── years/               # 67 year files (1946-2012)
+│   ├── generations/         # 4 generation definitions
+│   └── birthdays/           # 12 monthly celebrity files
+├── utils/
+│   └── assembleReport.js    # Report data assembly
+├── App.jsx                  # Router, theme switching, font size
 └── main.jsx
-```
-
-## Local Development
-
-```bash
-npm install
-npm run dev      # Start dev server at localhost:5173
-npm run build    # Build for production
-npm run preview  # Preview production build
 ```
 
 ## Current Limitations
 
-- Supports birthdates from 1946-2012
+- Supports birthdates from 1946-2012 only
 - US-centric content and data
-- Desktop-first (mobile coming soon)
+- Desktop-optimized (mobile responsive but not mobile-first)
 
 ## Roadmap
 
-- [ ] Mobile responsive design
 - [ ] PDF export
 - [ ] Birthday heat map visualization
-
-## Changelog
-
-See [CHANGELOG.md](./CHANGELOG.md) for version history.
-
+- [ ] Additional storytelling improvements
+- [ ] Bundle size optimization
 
 ## License
 
