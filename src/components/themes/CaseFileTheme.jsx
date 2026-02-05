@@ -130,7 +130,7 @@ function CaseFileTheme({ data, currentTab: propTab = 0, setTab: propSetTab, font
         {config.title.toUpperCase()}
       </h3>
         <div
-          className={`${contentFontSize} leading-[1.8]
+          className={`${contentFontSize} leading-[1.8] max-w-prose
                    [&>h2]:hidden
                    [&>p]:mb-4
                    [&>strong]:font-bold

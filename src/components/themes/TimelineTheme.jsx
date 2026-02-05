@@ -120,26 +120,26 @@ function TimelineTheme({ data, currentTab: propTab = 0, setTab: propSetTab, font
       <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4 items-stretch">
         {/* Left - Generation */}
         <div className="aged-paper rounded-lg p-4 md:p-5 border border-sepia-brown/20 text-center flex flex-col justify-center">
-          <p className="font-body text-xs uppercase tracking-wider text-sepia-brown mb-1">Generation</p>
+          <p className="font-sans text-xs uppercase tracking-wider text-sepia-brown mb-1">Generation</p>
           <p className="font-display text-xl md:text-2xl text-dark-brown">{data.generation}</p>
-          <p className="font-body text-sm text-sepia-brown">{data.generationSpan}</p>
+          <p className="font-sans text-sm text-sepia-brown">{data.generationSpan}</p>
         </div>
 
         {/* Right - Rank/Percentile */}
         <div className="aged-paper rounded-lg p-4 md:p-5 border border-sepia-brown/20 text-center flex flex-col justify-center">
-          <p className="font-body text-xs uppercase tracking-wider text-sepia-brown mb-2">Birthday Popularity</p>
+          <p className="font-sans text-xs uppercase tracking-wider text-sepia-brown mb-2">Birthday Popularity</p>
           <div className="flex items-center justify-center gap-4 md:gap-6">
             <div className="text-center">
               <p className="text-xl md:text-2xl font-display text-dark-brown">#{data.birthdayRank}</p>
-              <p className="font-body text-xs text-sepia-brown">Birthday Rank</p>
+              <p className="font-sans text-xs text-sepia-brown">Birthday Rank</p>
             </div>
             <div className="w-px h-10 bg-sepia-brown/30" />
             <div className="text-center">
               <p className="text-xl md:text-2xl font-display text-dark-brown">{data.birthdayPercentile}%</p>
-              <p className="font-body text-xs text-sepia-brown">Popularity</p>
+              <p className="font-sans text-xs text-sepia-brown">Popularity</p>
             </div>
           </div>
-          <p className="font-body text-xs text-sepia-brown mt-2">
+          <p className="font-sans text-xs text-sepia-brown mt-2">
             Your birthday is {data.birthdayRank < 183 ? 'more' : 'less'} common than the average calendar date
           </p>
         </div>
@@ -163,7 +163,7 @@ function TimelineTheme({ data, currentTab: propTab = 0, setTab: propSetTab, font
         </div>
         
         <div
-          className={`font-body text-dark-brown/90 leading-relaxed
+          className={`font-sans text-dark-brown/90 leading-relaxed max-w-prose
                    [&>h2]:hidden
                    [&>p]:mb-4
                    [&>p]:leading-[1.7]
@@ -195,7 +195,7 @@ function TimelineTheme({ data, currentTab: propTab = 0, setTab: propSetTab, font
             <Cake className="w-5 h-5 md:w-6 md:h-6 mr-1 md:mr-2 inline" aria-hidden="true" />
             <span className="font-display text-lg md:text-xl">{data.birthDate}</span>
           </div>
-          <p className="font-body text-xs md:text-sm text-vintage-cream hidden sm:block">Your Life Story Report</p>
+          <p className="font-sans text-xs md:text-sm text-vintage-cream hidden sm:block">Your Life Story Report</p>
         </div>
       </header>
 
@@ -219,7 +219,7 @@ function TimelineTheme({ data, currentTab: propTab = 0, setTab: propSetTab, font
                 tabIndex={activeTab === index ? 0 : -1}
                 onClick={() => setActiveTab(index)}
                 onKeyDown={(e) => handleTabKeyDown(e, index)}
-                className={`min-w-fit px-2 xs:px-3 md:px-6 py-3 font-body text-sm border-b-2 whitespace-nowrap
+                className={`min-w-fit px-2 xs:px-3 md:px-6 py-3 font-sans text-sm border-b-2 whitespace-nowrap
                   transition-colors duration-200 active:scale-[0.98] focus:ring-2 focus:ring-dark-brown/30 focus:outline-none
                   ${activeTab === index
                     ? 'border-dark-brown text-dark-brown font-bold bg-vintage-cream'
@@ -271,7 +271,7 @@ function TimelineTheme({ data, currentTab: propTab = 0, setTab: propSetTab, font
 
       {/* Footer */}
       <footer className="bg-aged-paper py-4 border-t border-sepia-brown/20">
-        <p className="font-body text-xs text-sepia-brown max-w-2xl mx-auto text-center leading-relaxed px-4 md:px-6">
+        <p className="font-sans text-xs text-sepia-brown max-w-2xl mx-auto text-center leading-relaxed px-4 md:px-6">
           This report analyzes US cultural and historical context. Generational
           characteristics are research-based generalizations. Birthday data: FiveThirtyEight.
           Generational definitions: Pew Research Center.

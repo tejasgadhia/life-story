@@ -122,7 +122,8 @@ Font size controls scale all text elements:
 
 ### Font Classes (Tailwind)
 - `font-display`: Playfair Display (headings)
-- `font-body`: Courier Prime (body text)
+- `font-sans`: DM Sans (Timeline body text)
+- `font-body`: Courier Prime (legacy, still in config)
 - `font-blackletter`: UnifrakturMaguntia (Newspaper masthead)
 - `font-typewriter`: Special Elite (CaseFile theme)
 

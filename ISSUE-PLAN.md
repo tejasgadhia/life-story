@@ -1,18 +1,18 @@
 # Issue Plan - Life Story
 
 **Updated**: 2026-02-05
-**Open**: 7 issues | **Closed this session**: 6 (#61, #60, #64, #62, #63, #59)
+**Open**: 3 issues | **Closed this session**: 4 (#67, #55, #65, #54)
 
 ---
 
-## Phase 4: Theme & Readability Polish (4 issues, ~2 hr) ← CURRENT
+## Phase 4: Theme & Readability Polish (4 issues, ~2 hr) ← COMPLETE
 
 | #   | Title                                                                  | Effort | Status  |
 |-----|------------------------------------------------------------------------|--------|---------|
-| 55  | Constrain line length with max-w-prose for better readability          | easy   | pending |
-| 54  | Add 'back to landing page' navigation element                         | easy   | pending |
-| 67  | Timeline theme: switch body text to a sans-serif font for readability  | easy   | pending |
-| 65  | Newspaper theme: fix word spacing by reducing font size or increasing column width | easy   | pending |
+| 55  | Constrain line length with max-w-prose for better readability          | easy   | done    |
+| 54  | Add 'back to landing page' navigation element                         | easy   | done    |
+| 67  | Timeline theme: switch body text to a sans-serif font for readability  | easy   | done    |
+| 65  | Newspaper theme: fix word spacing by reducing font size or increasing column width | easy   | done    |
 
 ## Backlog (Nice-to-Have)
 
@@ -25,6 +25,12 @@
 ---
 
 ## Archive (Completed)
+
+### Phase 4: Theme & Readability Polish
+- ✓ #67 - Timeline theme: switched body text from Courier Prime to DM Sans (sans-serif)
+- ✓ #55 - Constrained line length with max-w-prose in Timeline and CaseFile themes
+- ✓ #65 - Newspaper theme: added CSS hyphens for better justified text word spacing
+- ✓ #54 - Added "New Report" back-to-landing navigation in ThemeSwitcher (desktop sidebar + mobile sheet)
 
 ### Phase 3: Content Quality
 - ✓ #59 - Curate celebrity birthday lists to max 10 recognizable names per day (fame scoring engine, 12 monthly files transformed)

@@ -155,7 +155,7 @@ function NewspaperTheme({ data, currentTab: propTab = 0, setTab: propSetTab, fon
           </p>
 
           {/* Main text - 1 column on mobile, 2 columns on desktop */}
-          <div className={`columns-1 md:columns-2 gap-5 ${contentFontSize} leading-[1.9] text-justify`} style={{ columnRule: '1px solid var(--color-column-rule)' }}>
+          <div className={`columns-1 md:columns-2 gap-5 ${contentFontSize} leading-[1.9] text-justify`} style={{ columnRule: '1px solid var(--color-column-rule)', hyphens: 'auto', WebkitHyphens: 'auto' }}>
             <p className="mb-4">
               <span className="float-left text-5xl md:text-6xl font-display font-black mr-2 leading-none text-stone-800">T</span>
               he subject of this comprehensive report entered the world on the {getOrdinalWord(data.birthDay)} day of {getMonthName(data.birthMonth)}, {data.birthYear},
@@ -275,6 +275,7 @@ function NewspaperTheme({ data, currentTab: propTab = 0, setTab: propSetTab, fon
                    [&_.pull-quote]:font-display
                    [&_.stat-box]:bg-stone-800
                    [&_.stat-box]:text-stone-100`}
+          style={{ hyphens: 'auto', WebkitHyphens: 'auto' }}
           dangerouslySetInnerHTML={{ __html: content }}
         />
       </article>

@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { useNavigate, useParams, useLocation } from 'react-router-dom'
 import { useFontSize } from '../context/FontSizeContext'
-import { LayoutDashboard, Newspaper, FolderOpen, Settings } from 'lucide-react'
+import { LayoutDashboard, Newspaper, FolderOpen, Settings, Home } from 'lucide-react'
 
 // Theme Switcher - Desktop sidebar + Mobile FAB with bottom sheet
 export default function ThemeSwitcher() {
@@ -103,6 +103,17 @@ export default function ThemeSwitcher() {
       {/* Desktop sidebar - hidden on mobile */}
       <div className="fixed left-0 top-1/2 -translate-y-1/2 z-50 hidden md:block">
         <div className="bg-dark-brown/95 backdrop-blur rounded-r-lg py-3 px-2 shadow-xl flex flex-col gap-1">
+          <button
+            onClick={() => navigate('/life-story/')}
+            className="group relative px-3 py-2 rounded transition-all text-vintage-cream hover:bg-vintage-cream/20 active:scale-[0.98] focus:ring-2 focus:ring-vintage-cream/50 focus:outline-none"
+            title="New Report"
+          >
+            <Home className="w-5 h-5" aria-hidden="true" />
+            <span className="absolute left-full ml-2 top-1/2 -translate-y-1/2 bg-dark-brown text-vintage-cream text-xs px-2 py-1 rounded whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none shadow-lg">
+              New Report
+            </span>
+          </button>
+          <div className="h-px bg-vintage-cream/20 my-2" />
           <p className="text-[10px] font-body text-vintage-cream uppercase tracking-wider text-center mb-1 px-1">
             Theme
           </p>
@@ -242,10 +253,21 @@ export default function ThemeSwitcher() {
               </div>
             </div>
 
+            {/* New Report */}
+            <div className="mt-6 pt-4 border-t border-vintage-cream/20">
+              <button
+                onClick={() => { navigate('/life-story/'); setIsMobileMenuOpen(false); }}
+                className="w-full py-4 px-4 rounded-lg transition-all flex items-center justify-center gap-3 bg-vintage-cream/10 text-vintage-cream active:bg-vintage-cream/20"
+              >
+                <Home className="w-5 h-5" aria-hidden="true" />
+                <span className="text-sm font-medium">New Report</span>
+              </button>
+            </div>
+
             {/* Close button */}
             <button
               onClick={closeMenu}
-              className="mt-6 w-full py-4 bg-vintage-cream/10 text-vintage-cream rounded-lg
+              className="mt-3 w-full py-4 bg-vintage-cream/10 text-vintage-cream rounded-lg
                          font-medium active:bg-vintage-cream/20 transition-colors"
             >
               Close
