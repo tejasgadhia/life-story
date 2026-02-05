@@ -109,10 +109,9 @@ export async function assembleReport({ year, month, day }) {
   // Get generation metadata
   const generation = getGeneration(year)
 
-  // Extract and sort celebrities
-  const allCelebrities = Object.values(birthday.celebrities_categorized || {})
-    .flat()
-    .sort((a, b) => a.year - b.year)
+  // Celebrities are pre-curated to max 10 recognizable names per day,
+  // stored as a flat array sorted by birth year (oldest first)
+  const celebrities = birthday.celebrities || []
 
   // Resolve year events (may contain placeholders)
   const resolvedYearEvents = (yearData.year_events || []).map(
@@ -129,8 +128,7 @@ export async function assembleReport({ year, month, day }) {
     generationSpan: generation.span,
     birthdayRank: birthday.rank,
     birthdayPercentile: birthday.percentile,
-    celebrities: allCelebrities,
-    celebritiesCategorized: birthday.celebrities_categorized,
+    celebrities,
     sections: resolvedSections,
     yearEvents: resolvedYearEvents,
     // Expose placeholder map for any additional uses
