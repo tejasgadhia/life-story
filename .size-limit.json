@@ -1,0 +1,14 @@
+[
+  {
+    "name": "Main JS (gzipped)",
+    "path": "dist/assets/index-*.js",
+    "limit": "75 KB",
+    "gzip": true
+  },
+  {
+    "name": "Main CSS (gzipped)",
+    "path": "dist/assets/index-*.css",
+    "limit": "15 KB",
+    "gzip": true
+  }
+]

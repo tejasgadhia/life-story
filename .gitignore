@@ -24,7 +24,9 @@ npm-debug.log*
 
 # Cache
 .cache/
-.github/workflows/
+
+# Bundle analyzer output
+stats.html
 
 # Development artifacts
 screenshots/
