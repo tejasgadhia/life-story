@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { useNavigate, useParams, useLocation } from 'react-router-dom'
 import { useFontSize } from '../context/FontSizeContext'
+import { LayoutDashboard, Newspaper, FolderOpen, Settings } from 'lucide-react'
 
 // Theme Switcher - Desktop sidebar + Mobile FAB with bottom sheet
 export default function ThemeSwitcher() {
@@ -65,9 +66,9 @@ export default function ThemeSwitcher() {
   const currentSlug = tab || 'overview'
 
   const themes = [
-    { id: 'timeline', label: 'Timeline', icon: '📊' },
-    { id: 'newspaper', label: 'Newspaper', icon: '📰' },
-    { id: 'casefile', label: 'Case File', icon: '📁' },
+    { id: 'timeline', label: 'Timeline', Icon: LayoutDashboard },
+    { id: 'newspaper', label: 'Newspaper', Icon: Newspaper },
+    { id: 'casefile', label: 'Case File', Icon: FolderOpen },
   ]
 
   const fontSizes = [
@@ -117,7 +118,7 @@ export default function ThemeSwitcher() {
                 }`}
               title={theme.label}
             >
-              <span className="text-lg" aria-hidden="true">{theme.icon}</span>
+              <theme.Icon className="w-5 h-5" aria-hidden="true" />
               <span className="absolute left-full ml-2 top-1/2 -translate-y-1/2 bg-dark-brown text-vintage-cream
                              text-xs px-2 py-1 rounded whitespace-nowrap opacity-0 group-hover:opacity-100
                              transition-opacity pointer-events-none shadow-lg">
@@ -167,7 +168,7 @@ export default function ThemeSwitcher() {
                    active:scale-95 transition-transform"
         aria-label="Open theme settings"
       >
-        <span className="text-vintage-cream" aria-hidden="true">⚙️</span>
+        <Settings className="w-6 h-6 text-vintage-cream" aria-hidden="true" />
       </button>
 
       {/* Mobile bottom sheet overlay */}
@@ -208,7 +209,7 @@ export default function ThemeSwitcher() {
                         : 'bg-vintage-cream/10 text-vintage-cream/70 active:bg-vintage-cream/20'
                       }`}
                   >
-                    <span className="text-2xl" aria-hidden="true">{theme.icon}</span>
+                    <theme.Icon className="w-6 h-6" aria-hidden="true" />
                     <span className="text-sm font-medium">{theme.label}</span>
                   </button>
                 ))}

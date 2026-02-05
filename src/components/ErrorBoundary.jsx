@@ -1,4 +1,5 @@
 import { Component } from 'react'
+import { FileWarning } from 'lucide-react'
 
 class ErrorBoundary extends Component {
   constructor(props) {
@@ -25,7 +26,9 @@ class ErrorBoundary extends Component {
         <div className="min-h-screen bg-dark-brown flex items-center justify-center p-8">
           <div className="max-w-md text-center">
             {/* Error icon */}
-            <div className="text-6xl mb-6">📜</div>
+            <div className="mb-6" aria-hidden="true">
+              <FileWarning className="w-16 h-16 mx-auto text-vintage-cream/80" />
+            </div>
             
             <h1 
               className="text-3xl text-vintage-cream mb-4"

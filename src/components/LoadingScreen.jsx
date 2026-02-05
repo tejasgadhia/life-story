@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
+import { Sparkles, Flower2 } from 'lucide-react'
 
 const LOADING_STAGES = [
   { text: 'Accessing historical archives...', duration: 600 },
@@ -84,7 +85,7 @@ function LoadingScreen({ onComplete, birthYear = 1988 }) {
           </h1>
           <div className="flex items-center justify-center gap-2 md:gap-3">
             <div className="w-12 md:w-16 h-px bg-charcoal-300" />
-            <span className="text-amber text-xl md:text-2xl">⚜</span>
+            <Sparkles className="w-5 h-5 md:w-6 md:h-6 text-amber" aria-hidden="true" />
             <div className="w-12 md:w-16 h-px bg-charcoal-300" />
           </div>
         </div>
@@ -140,10 +141,18 @@ function LoadingScreen({ onComplete, birthYear = 1988 }) {
       </div>
 
       {/* Corner decorations - hidden on small screens */}
-      <div className="absolute top-4 md:top-8 left-4 md:left-8 text-charcoal-200 text-xl md:text-3xl hidden sm:block">❧</div>
-      <div className="absolute top-4 md:top-8 right-4 md:right-8 text-charcoal-200 text-xl md:text-3xl hidden sm:block">❧</div>
-      <div className="absolute bottom-4 md:bottom-8 left-4 md:left-8 text-charcoal-200 text-xl md:text-3xl hidden sm:block">❧</div>
-      <div className="absolute bottom-4 md:bottom-8 right-4 md:right-8 text-charcoal-200 text-xl md:text-3xl hidden sm:block">❧</div>
+      <div className="absolute top-4 md:top-8 left-4 md:left-8 hidden sm:block" aria-hidden="true">
+        <Flower2 className="w-5 h-5 md:w-7 md:h-7 text-charcoal-200" />
+      </div>
+      <div className="absolute top-4 md:top-8 right-4 md:right-8 hidden sm:block" aria-hidden="true">
+        <Flower2 className="w-5 h-5 md:w-7 md:h-7 text-charcoal-200 scale-x-[-1]" />
+      </div>
+      <div className="absolute bottom-4 md:bottom-8 left-4 md:left-8 hidden sm:block" aria-hidden="true">
+        <Flower2 className="w-5 h-5 md:w-7 md:h-7 text-charcoal-200 rotate-180 scale-x-[-1]" />
+      </div>
+      <div className="absolute bottom-4 md:bottom-8 right-4 md:right-8 hidden sm:block" aria-hidden="true">
+        <Flower2 className="w-5 h-5 md:w-7 md:h-7 text-charcoal-200 rotate-180" />
+      </div>
     </div>
   )
 }

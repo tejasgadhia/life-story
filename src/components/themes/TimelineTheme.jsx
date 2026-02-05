@@ -2,11 +2,37 @@ import { memo, useRef, useCallback } from 'react'
 import { TABS as BASE_TABS } from '../../config/tabs'
 import { useTabState } from '../../hooks/useTabState'
 import { CelebrityList } from '../shared/CelebrityList'
+import {
+  LayoutDashboard,
+  GraduationCap,
+  Globe,
+  Lightbulb,
+  Cake,
+  Users,
+  TrendingUp,
+  Home,
+  Film,
+  Monitor,
+  Scroll,
+  Briefcase,
+  DollarSign,
+  MessageCircle,
+  Search,
+  Map
+} from 'lucide-react'
+
+// Tab icon components
+const TAB_ICONS = {
+  overview: LayoutDashboard,
+  formative: GraduationCap,
+  world: Globe,
+  personal: Lightbulb
+}
 
 // Extend base tabs with theme-specific icons
 const TABS = BASE_TABS.map(tab => ({
   ...tab,
-  icon: { overview: '📊', formative: '💒', world: '🌍', personal: '💡' }[tab.id]
+  Icon: TAB_ICONS[tab.id]
 }))
 
 // Tab IDs for ARIA
@@ -14,18 +40,18 @@ const getTabId = (tabId) => `timeline-tab-${tabId}`
 const getTabPanelId = (tabId) => `timeline-tabpanel-${tabId}`
 
 const SECTION_CONFIG = {
-  birthday: { title: 'Birthday Analysis', icon: '🎂', key: null },
-  generation: { title: 'Your Generation', icon: '👥', key: 'generational_identity' },
-  comparison: { title: 'Generational Comparison', icon: '📈', key: 'comparison' },
-  childhood: { title: 'Childhood', icon: '💒', key: 'childhood_context' },
-  popculture: { title: 'Pop Culture', icon: '🎬', key: 'pop_culture' },
-  technology: { title: 'Technology', icon: '💻', key: 'technology' },
-  history: { title: 'Historical Milestones', icon: '📜', key: 'historical_milestones' },
-  career: { title: 'Career', icon: '💼', key: 'career' },
-  financial: { title: 'Financial', icon: '💰', key: 'financial' },
-  relationships: { title: 'Relationships', icon: '💬', key: 'relationships' },
-  blindspots: { title: 'Blind Spots', icon: '🔍', key: 'blind_spots' },
-  roadmap: { title: 'Life Roadmap', icon: '🗺️', key: 'life_roadmap' },
+  birthday: { title: 'Birthday Analysis', Icon: Cake, key: null },
+  generation: { title: 'Your Generation', Icon: Users, key: 'generational_identity' },
+  comparison: { title: 'Generational Comparison', Icon: TrendingUp, key: 'comparison' },
+  childhood: { title: 'Childhood', Icon: Home, key: 'childhood_context' },
+  popculture: { title: 'Pop Culture', Icon: Film, key: 'pop_culture' },
+  technology: { title: 'Technology', Icon: Monitor, key: 'technology' },
+  history: { title: 'Historical Milestones', Icon: Scroll, key: 'historical_milestones' },
+  career: { title: 'Career', Icon: Briefcase, key: 'career' },
+  financial: { title: 'Financial', Icon: DollarSign, key: 'financial' },
+  relationships: { title: 'Relationships', Icon: MessageCircle, key: 'relationships' },
+  blindspots: { title: 'Blind Spots', Icon: Search, key: 'blind_spots' },
+  roadmap: { title: 'Life Roadmap', Icon: Map, key: 'life_roadmap' },
 }
 
 // Export TABS for use in App.jsx routing
@@ -113,7 +139,7 @@ function TimelineTheme({ data, currentTab: propTab = 0, setTab: propSetTab, font
     return (
       <div className="bg-white/50 rounded-lg border border-sepia-brown/10 p-4 md:p-6 h-full">
         <div className="flex items-center gap-2 md:gap-3 mb-3 md:mb-4 pb-3 border-b border-sepia-brown/20">
-          <span className="text-xl md:text-2xl" aria-hidden="true">{config.icon}</span>
+          <config.Icon className="w-5 h-5 md:w-6 md:h-6" aria-hidden="true" />
           <h2 className="font-display text-lg md:text-xl text-dark-brown">{config.title}</h2>
         </div>
         
@@ -147,7 +173,7 @@ function TimelineTheme({ data, currentTab: propTab = 0, setTab: propSetTab, font
         <div className="max-w-7xl mx-auto px-4 md:px-6 flex items-center justify-between">
           <h1 className="font-display text-base md:text-lg hidden sm:block">Life Story</h1>
           <div className="text-center flex-1 sm:flex-none">
-            <span className="text-xl md:text-2xl mr-1 md:mr-2" aria-hidden="true">🎂</span>
+            <Cake className="w-5 h-5 md:w-6 md:h-6 mr-1 md:mr-2 inline" aria-hidden="true" />
             <span className="font-display text-lg md:text-xl">{data.birthDate}</span>
           </div>
           <p className="font-body text-xs md:text-sm text-vintage-cream/70 hidden sm:block">Your Life Story Report</p>
@@ -179,7 +205,7 @@ function TimelineTheme({ data, currentTab: propTab = 0, setTab: propSetTab, font
                     : 'border-transparent text-sepia-brown hover:text-dark-brown hover:bg-vintage-cream/50'
                   }`}
               >
-                <span className="xs:mr-1 md:mr-2" aria-hidden="true">{tab.icon}</span>
+                <tab.Icon className="w-4 h-4 xs:mr-1 md:mr-2 inline" aria-hidden="true" />
                 <span className="hidden md:inline">{tab.title}</span>
                 <span className="hidden xs:inline md:hidden">{tab.title.split(' ')[0]}</span>
               </button>

@@ -1,6 +1,7 @@
 import { memo, useRef, useCallback } from 'react'
 import { TABS } from '../../config/tabs'
 import { useTabState } from '../../hooks/useTabState'
+import { Star } from 'lucide-react'
 
 // Tab IDs for ARIA
 const getTabId = (tabId) => `newspaper-tab-${tabId}`
@@ -282,7 +283,7 @@ function NewspaperTheme({ data, currentTab: propTab = 0, setTab: propSetTab, fon
 
           <div className="flex items-center justify-center gap-2 md:gap-3 my-2">
             <div className="flex-1 max-w-16 md:max-w-24 h-px bg-stone-500" aria-hidden="true" />
-            <span className="text-lg md:text-xl text-stone-600" aria-hidden="true">✦</span>
+            <Star className="w-4 h-4 md:w-5 md:h-5 text-stone-600 fill-stone-600" aria-hidden="true" />
             <div className="flex-1 max-w-16 md:max-w-24 h-px bg-stone-500" aria-hidden="true" />
           </div>
 
