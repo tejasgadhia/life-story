@@ -24,7 +24,7 @@ Enter a birthdate and get a ~5,000 word magazine-style report about your generat
 
 ## Tech Stack
 
-- React 18 + Vite
+- React 19 + Vite
 - Tailwind CSS
 - React Router v7 (client-side routing)
 - vite-plugin-pwa (offline caching)
