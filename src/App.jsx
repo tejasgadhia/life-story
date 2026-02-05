@@ -5,6 +5,7 @@ import LoadingScreen from './components/LoadingScreen'
 
 import { assembleReport } from './utils/assembleReport'
 import { useMetaTags } from './hooks/useMetaTags'
+import { loadReportFonts, loadThemeFonts } from './utils/loadFonts'
 
 // Lazy load theme components for code splitting
 const TimelineTheme = lazy(() => import('./components/themes/TimelineTheme'))
@@ -269,6 +270,12 @@ function ThemeWrapper({ ThemeComponent, themePath }) {
 
   // Update meta tags for social sharing
   useMetaTags(reportData, birthday, themePath)
+
+  // Load report fonts and theme-specific fonts
+  useEffect(() => {
+    loadReportFonts()
+    loadThemeFonts(themePath)
+  }, [themePath])
 
   // Redirect to landing if invalid date
   useEffect(() => {
