@@ -1,4 +1,4 @@
-import { memo } from 'react'
+import { memo, useRef, useCallback } from 'react'
 import { TABS as BASE_TABS } from '../../config/tabs'
 import { useTabState } from '../../hooks/useTabState'
 import { CelebrityList } from '../shared/CelebrityList'
@@ -8,6 +8,10 @@ const TABS = BASE_TABS.map(tab => ({
   ...tab,
   icon: { overview: '📊', formative: '💒', world: '🌍', personal: '💡' }[tab.id]
 }))
+
+// Tab IDs for ARIA
+const getTabId = (tabId) => `timeline-tab-${tabId}`
+const getTabPanelId = (tabId) => `timeline-tabpanel-${tabId}`
 
 const SECTION_CONFIG = {
   birthday: { title: 'Birthday Analysis', icon: '🎂', key: null },
@@ -29,6 +33,29 @@ export { TABS }
 
 function TimelineTheme({ data, currentTab: propTab = 0, setTab: propSetTab, fontSize = 'base' }) {
   const [activeTab, setActiveTab] = useTabState(propTab, propSetTab)
+  const tabRefs = useRef([])
+
+  // Keyboard navigation for tabs (WAI-ARIA APG)
+  const handleTabKeyDown = useCallback((e, index) => {
+    let newIndex = null
+    if (e.key === 'ArrowRight') {
+      e.preventDefault()
+      newIndex = (index + 1) % TABS.length
+    } else if (e.key === 'ArrowLeft') {
+      e.preventDefault()
+      newIndex = (index - 1 + TABS.length) % TABS.length
+    } else if (e.key === 'Home') {
+      e.preventDefault()
+      newIndex = 0
+    } else if (e.key === 'End') {
+      e.preventDefault()
+      newIndex = TABS.length - 1
+    }
+    if (newIndex !== null) {
+      setActiveTab(newIndex)
+      tabRefs.current[newIndex]?.focus()
+    }
+  }, [setActiveTab])
 
   // Font size scaling for all text elements
   const fontSizeClasses = {
@@ -49,9 +76,9 @@ function TimelineTheme({ data, currentTab: propTab = 0, setTab: propSetTab, font
       <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4 items-stretch">
         {/* Left - Generation */}
         <div className="aged-paper rounded-lg p-4 md:p-5 border border-sepia-brown/20 text-center flex flex-col justify-center">
-          <p className="font-body text-xs uppercase tracking-wider text-sepia-brown/70 mb-1">Generation</p>
+          <p className="font-body text-xs uppercase tracking-wider text-sepia-brown mb-1">Generation</p>
           <p className="font-display text-xl md:text-2xl text-dark-brown">{data.generation}</p>
-          <p className="font-body text-sm text-sepia-brown/70">{data.generationSpan}</p>
+          <p className="font-body text-sm text-sepia-brown">{data.generationSpan}</p>
         </div>
 
         {/* Right - Rank/Percentile */}
@@ -67,7 +94,7 @@ function TimelineTheme({ data, currentTab: propTab = 0, setTab: propSetTab, font
               <p className="font-body text-xs text-sepia-brown">Percentile</p>
             </div>
           </div>
-          <p className="font-body text-xs text-sepia-brown/60 mt-2">
+          <p className="font-body text-xs text-sepia-brown mt-2">
             {data.birthdayRank < 183 ? 'More common' : 'Less common'} than avg (of 366)
           </p>
         </div>
@@ -86,7 +113,7 @@ function TimelineTheme({ data, currentTab: propTab = 0, setTab: propSetTab, font
     return (
       <div className="bg-white/50 rounded-lg border border-sepia-brown/10 p-4 md:p-6 h-full">
         <div className="flex items-center gap-2 md:gap-3 mb-3 md:mb-4 pb-3 border-b border-sepia-brown/20">
-          <span className="text-xl md:text-2xl">{config.icon}</span>
+          <span className="text-xl md:text-2xl" aria-hidden="true">{config.icon}</span>
           <h2 className="font-display text-lg md:text-xl text-dark-brown">{config.title}</h2>
         </div>
         
@@ -120,7 +147,7 @@ function TimelineTheme({ data, currentTab: propTab = 0, setTab: propSetTab, font
         <div className="max-w-7xl mx-auto px-4 md:px-6 flex items-center justify-between">
           <h1 className="font-display text-base md:text-lg hidden sm:block">Life Story</h1>
           <div className="text-center flex-1 sm:flex-none">
-            <span className="text-xl md:text-2xl mr-1 md:mr-2">🎂</span>
+            <span className="text-xl md:text-2xl mr-1 md:mr-2" aria-hidden="true">🎂</span>
             <span className="font-display text-lg md:text-xl">{data.birthDate}</span>
           </div>
           <p className="font-body text-xs md:text-sm text-vintage-cream/70 hidden sm:block">Your Life Story Report</p>
@@ -128,14 +155,23 @@ function TimelineTheme({ data, currentTab: propTab = 0, setTab: propSetTab, font
       </header>
 
       {/* Tab Navigation */}
-      <nav className="bg-aged-paper border-b border-sepia-brown/30 sticky top-0 z-40">
+      <nav className="bg-aged-paper border-b border-sepia-brown/30 sticky top-0 z-40" aria-label="Report sections">
         <div className="max-w-7xl mx-auto px-2 md:px-6">
-          <div className="flex overflow-x-auto scrollbar-hide -mx-2 px-2 md:mx-0 md:px-0 md:justify-center gap-1 md:gap-2">
+          <div 
+            role="tablist" 
+            className="flex overflow-x-auto scrollbar-hide -mx-2 px-2 md:mx-0 md:px-0 md:justify-center gap-1 md:gap-2"
+          >
             {TABS.map((tab, index) => (
               <button
                 key={tab.id}
+                ref={(el) => (tabRefs.current[index] = el)}
+                role="tab"
+                id={getTabId(tab.id)}
+                aria-selected={activeTab === index}
+                aria-controls={getTabPanelId(tab.id)}
+                tabIndex={activeTab === index ? 0 : -1}
                 onClick={() => setActiveTab(index)}
-                aria-label={tab.title}
+                onKeyDown={(e) => handleTabKeyDown(e, index)}
                 className={`min-w-fit px-2 xs:px-3 md:px-6 py-3 font-body text-sm border-b-2 whitespace-nowrap
                   transition-colors duration-200 active:scale-[0.98] focus:ring-2 focus:ring-dark-brown/30 focus:outline-none
                   ${activeTab === index
@@ -143,7 +179,7 @@ function TimelineTheme({ data, currentTab: propTab = 0, setTab: propSetTab, font
                     : 'border-transparent text-sepia-brown hover:text-dark-brown hover:bg-vintage-cream/50'
                   }`}
               >
-                <span className="xs:mr-1 md:mr-2">{tab.icon}</span>
+                <span className="xs:mr-1 md:mr-2" aria-hidden="true">{tab.icon}</span>
                 <span className="hidden md:inline">{tab.title}</span>
                 <span className="hidden xs:inline md:hidden">{tab.title.split(' ')[0]}</span>
               </button>
@@ -153,7 +189,12 @@ function TimelineTheme({ data, currentTab: propTab = 0, setTab: propSetTab, font
       </nav>
 
       {/* Main Content */}
-      <main className="max-w-7xl mx-auto px-4 md:px-6 py-4 md:py-6">
+      <main 
+        role="tabpanel"
+        id={getTabPanelId(currentTabData.id)}
+        aria-labelledby={getTabId(currentTabData.id)}
+        className="max-w-7xl mx-auto px-4 md:px-6 py-4 md:py-6"
+      >
         {activeTab === 0 ? (
           <div className="space-y-4 md:space-y-6">
             {renderBirthdaySection()}

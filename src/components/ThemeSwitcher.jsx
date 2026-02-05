@@ -102,7 +102,7 @@ export default function ThemeSwitcher() {
       {/* Desktop sidebar - hidden on mobile */}
       <div className="fixed left-0 top-1/2 -translate-y-1/2 z-50 hidden md:block">
         <div className="bg-dark-brown/95 backdrop-blur rounded-r-lg py-3 px-2 shadow-xl flex flex-col gap-1">
-          <p className="text-[10px] font-body text-vintage-cream/50 uppercase tracking-wider text-center mb-1 px-1">
+          <p className="text-[10px] font-body text-vintage-cream/80 uppercase tracking-wider text-center mb-1 px-1">
             Theme
           </p>
           {themes.map((theme) => (
@@ -117,7 +117,7 @@ export default function ThemeSwitcher() {
                 }`}
               title={theme.label}
             >
-              <span className="text-lg">{theme.icon}</span>
+              <span className="text-lg" aria-hidden="true">{theme.icon}</span>
               <span className="absolute left-full ml-2 top-1/2 -translate-y-1/2 bg-dark-brown text-vintage-cream
                              text-xs px-2 py-1 rounded whitespace-nowrap opacity-0 group-hover:opacity-100
                              transition-opacity pointer-events-none shadow-lg">
@@ -128,7 +128,7 @@ export default function ThemeSwitcher() {
 
           <div className="h-px bg-vintage-cream/20 my-2" />
 
-          <p className="text-[10px] font-body text-vintage-cream/50 uppercase tracking-wider text-center mb-1 px-1">
+          <p className="text-[10px] font-body text-vintage-cream/80 uppercase tracking-wider text-center mb-1 px-1">
             Size
           </p>
           <div className="flex flex-col gap-1">
@@ -167,7 +167,7 @@ export default function ThemeSwitcher() {
                    active:scale-95 transition-transform"
         aria-label="Open theme settings"
       >
-        <span className="text-vintage-cream">⚙️</span>
+        <span className="text-vintage-cream" aria-hidden="true">⚙️</span>
       </button>
 
       {/* Mobile bottom sheet overlay */}
@@ -194,7 +194,7 @@ export default function ThemeSwitcher() {
 
             {/* Theme selection */}
             <div className="mb-6">
-              <p className="text-xs font-body text-vintage-cream/50 uppercase tracking-wider mb-3">
+              <p className="text-xs font-body text-vintage-cream/80 uppercase tracking-wider mb-3">
                 Theme
               </p>
               <div className="flex gap-3">
@@ -208,7 +208,7 @@ export default function ThemeSwitcher() {
                         : 'bg-vintage-cream/10 text-vintage-cream/70 active:bg-vintage-cream/20'
                       }`}
                   >
-                    <span className="text-2xl">{theme.icon}</span>
+                    <span className="text-2xl" aria-hidden="true">{theme.icon}</span>
                     <span className="text-sm font-medium">{theme.label}</span>
                   </button>
                 ))}
@@ -217,7 +217,7 @@ export default function ThemeSwitcher() {
 
             {/* Font size selection */}
             <div>
-              <p className="text-xs font-body text-vintage-cream/50 uppercase tracking-wider mb-3">
+              <p className="text-xs font-body text-vintage-cream/80 uppercase tracking-wider mb-3">
                 Text Size
               </p>
               <div className="flex gap-3">

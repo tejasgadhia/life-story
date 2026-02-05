@@ -185,7 +185,7 @@ export default function DatePicker({ onSubmit }) {
               className={`w-full px-5 py-4 text-lg font-sans text-center rounded-xl border-2 transition-all duration-200 focus:outline-none bg-white border-charcoal-200 text-charcoal-800 placeholder-charcoal-400 focus:border-amber focus:ring-2 focus:ring-amber/20 ${isLoading ? 'opacity-50 cursor-not-allowed' : ''}`}
               autoComplete="off"
             />
-            <p className="text-xs font-sans text-center mt-2 text-charcoal-400">
+            <p className="text-xs font-sans text-center mt-2 text-charcoal-500">
               Supporting birth years from {MIN_YEAR} to {MAX_YEAR}
             </p>
           </div>
@@ -232,7 +232,7 @@ export default function DatePicker({ onSubmit }) {
         </div>
 
         {/* Privacy note */}
-        <p className="text-xs font-sans text-center mt-6 md:mt-8 text-charcoal-400 px-2">
+        <p className="text-xs font-sans text-center mt-6 md:mt-8 text-charcoal-500 px-2">
           Your birth date is used only to generate your personalized report.
           <br className="hidden sm:block" />
           <span className="sm:hidden"> </span>
