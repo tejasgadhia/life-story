@@ -7,6 +7,7 @@ export default {
   theme: {
     extend: {
       screens: {
+        'xs': '475px',
         'desktop': '1280px',
       },
       animation: {

@@ -127,16 +127,17 @@ function TimelineTheme({ data, currentTab: propTab = 0, setTab: propSetTab, font
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(index)}
-                className={`min-w-fit px-3 md:px-6 py-3 font-body text-sm border-b-2 whitespace-nowrap
+                aria-label={tab.title}
+                className={`min-w-fit px-2 xs:px-3 md:px-6 py-3 font-body text-sm border-b-2 whitespace-nowrap
                   transition-colors duration-200 active:scale-[0.98] focus:ring-2 focus:ring-dark-brown/30 focus:outline-none
                   ${activeTab === index
                     ? 'border-dark-brown text-dark-brown font-bold bg-vintage-cream'
                     : 'border-transparent text-sepia-brown hover:text-dark-brown hover:bg-vintage-cream/50'
                   }`}
               >
-                <span className="mr-1 md:mr-2">{tab.icon}</span>
-                <span className="hidden sm:inline">{tab.title}</span>
-                <span className="sm:hidden">{tab.title.split(' ')[0]}</span>
+                <span className="xs:mr-1 md:mr-2">{tab.icon}</span>
+                <span className="hidden md:inline">{tab.title}</span>
+                <span className="hidden xs:inline md:hidden">{tab.title.split(' ')[0]}</span>
               </button>
             ))}
           </div>
