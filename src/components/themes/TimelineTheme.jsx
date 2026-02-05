@@ -90,12 +90,20 @@ function TimelineTheme({ data, currentTab: propTab = 0, setTab: propSetTab, font
           <h2 className="font-display text-lg md:text-xl text-dark-brown">{config.title}</h2>
         </div>
         
-        <div 
+        <div
           className={`font-body text-dark-brown/90 leading-relaxed
-                   [&>h2]:hidden 
-                   [&>p]:mb-4 
+                   [&>h2]:hidden
+                   [&>p]:mb-4
                    [&>p]:leading-[1.7]
                    [&>strong]:font-bold
+                   [&_.hero-callout]:bg-aged-paper/60
+                   [&_.hero-callout]:border-sepia-brown
+                   [&_.hero-callout]:text-dark-brown
+                   [&_.pull-quote]:text-xl
+                   [&_.pull-quote]:border-sepia-brown/30
+                   [&_.pull-quote]:text-dark-brown
+                   [&_.stat-box]:bg-dark-brown
+                   [&_.stat-box]:text-vintage-cream
                    ${fontSizeClasses[fontSize]}`}
           dangerouslySetInnerHTML={{ __html: content }}
         />

@@ -87,7 +87,15 @@ function CaseFileTheme({ data, currentTab: propTab = 0, setTab: propSetTab, font
           className={`${contentFontSize} leading-[1.8]
                    [&>h2]:hidden
                    [&>p]:mb-4
-                   [&>strong]:font-bold`}
+                   [&>strong]:font-bold
+                   [&_.hero-callout]:bg-manila/30
+                   [&_.hero-callout]:border-muted-red
+                   [&_.hero-callout]:text-dark-brown
+                   [&_.pull-quote]:text-xl
+                   [&_.pull-quote]:border-sepia-brown/40
+                   [&_.pull-quote]:text-dark-brown
+                   [&_.stat-box]:bg-muted-red
+                   [&_.stat-box]:text-vintage-cream`}
           dangerouslySetInnerHTML={{ __html: content }}
         />
       </div>

@@ -27,6 +27,80 @@ function calculateAge(birthYear, birthMonth, birthDay) {
 }
 
 /**
+ * Get a descriptive phrase for an age (for "You were X when Y happened")
+ * @param {number} age - Age at the time of the event
+ * @returns {string} - Descriptive phrase like "a toddler" or "in high school"
+ */
+function getAgeDescriptor(age) {
+  if (age < 0) return 'not yet born'
+  if (age === 0) return 'a newborn'
+  if (age === 1) return 'a baby'
+  if (age >= 2 && age <= 3) return 'a toddler'
+  if (age >= 4 && age <= 5) return 'in preschool'
+  if (age >= 6 && age <= 10) return 'in elementary school'
+  if (age >= 11 && age <= 13) return 'in middle school'
+  if (age >= 14 && age <= 17) return 'in high school'
+  if (age === 18) return 'graduating high school'
+  if (age >= 19 && age <= 22) return 'in college'
+  if (age >= 23 && age <= 29) return 'in your twenties'
+  if (age >= 30 && age <= 39) return 'in your thirties'
+  if (age >= 40 && age <= 49) return 'in your forties'
+  if (age >= 50 && age <= 59) return 'in your fifties'
+  if (age >= 60 && age <= 69) return 'in your sixties'
+  if (age >= 70) return 'in your seventies or beyond'
+  return `${age} years old`
+}
+
+/**
+ * Get the grade level for an age (US school system)
+ * @param {number} age - Age to get grade for
+ * @returns {string} - Grade level like "3rd grade" or "freshman year"
+ */
+function getGradeLevel(age) {
+  if (age < 5) return 'not yet in school'
+  if (age === 5) return 'kindergarten'
+  if (age === 6) return '1st grade'
+  if (age === 7) return '2nd grade'
+  if (age === 8) return '3rd grade'
+  if (age === 9) return '4th grade'
+  if (age === 10) return '5th grade'
+  if (age === 11) return '6th grade'
+  if (age === 12) return '7th grade'
+  if (age === 13) return '8th grade'
+  if (age === 14) return 'freshman year of high school'
+  if (age === 15) return 'sophomore year of high school'
+  if (age === 16) return 'junior year of high school'
+  if (age === 17) return 'senior year of high school'
+  if (age === 18) return 'freshman year of college'
+  if (age === 19) return 'sophomore year of college'
+  if (age === 20) return 'junior year of college'
+  if (age === 21) return 'senior year of college'
+  return 'out of school'
+}
+
+/**
+ * Get life stage descriptor for current age
+ * @param {number} age - Current age
+ * @returns {string} - Life stage like "in your early thirties"
+ */
+function getLifeStage(age) {
+  if (age < 13) return 'in childhood'
+  if (age >= 13 && age <= 19) return 'in your teenage years'
+  if (age >= 20 && age <= 24) return 'in your early twenties'
+  if (age >= 25 && age <= 29) return 'in your late twenties'
+  if (age >= 30 && age <= 34) return 'in your early thirties'
+  if (age >= 35 && age <= 39) return 'in your late thirties'
+  if (age >= 40 && age <= 44) return 'in your early forties'
+  if (age >= 45 && age <= 49) return 'in your late forties'
+  if (age >= 50 && age <= 54) return 'in your early fifties'
+  if (age >= 55 && age <= 59) return 'in your late fifties'
+  if (age >= 60 && age <= 64) return 'in your early sixties'
+  if (age >= 65 && age <= 69) return 'in your late sixties'
+  if (age >= 70) return 'in your seventies or beyond'
+  return `${age} years old`
+}
+
+/**
  * Format number with commas (e.g., 3900000 -> "3,900,000")
  * @param {number} num
  * @returns {string}
@@ -86,6 +160,18 @@ export function buildPlaceholderMap({ birthYear, birthMonth, birthDay, yearData 
     'AGE_AT_COVID': Math.max(0, 2020 - birthYear),
     'AGE_AT_IPHONE': Math.max(0, 2007 - birthYear),
     'AGE_AT_FACEBOOK': Math.max(0, 2004 - birthYear),
+    // Descriptive age phrases for storytelling
+    'AGE_DESCRIPTOR_911': getAgeDescriptor(2001 - birthYear),
+    'AGE_DESCRIPTOR_IPHONE': getAgeDescriptor(2007 - birthYear),
+    'AGE_DESCRIPTOR_2008_CRISIS': getAgeDescriptor(2008 - birthYear),
+    'AGE_DESCRIPTOR_COVID': getAgeDescriptor(2020 - birthYear),
+    'AGE_DESCRIPTOR_FACEBOOK': getAgeDescriptor(2004 - birthYear),
+    // Grade levels at key events
+    'GRADE_AT_911': getGradeLevel(2001 - birthYear),
+    'GRADE_AT_IPHONE': getGradeLevel(2007 - birthYear),
+    'GRADE_AT_2008_CRISIS': getGradeLevel(2008 - birthYear),
+    // Current life stage
+    'LIFE_STAGE_NOW': getLifeStage(currentAge),
     // Graduation estimates (approximate)
     'HS_GRADUATION_YEAR': birthYear + 18,
     'COLLEGE_GRADUATION_YEAR': birthYear + 22,
@@ -147,4 +233,7 @@ export default {
   buildPlaceholderMap,
   resolvePlaceholders,
   resolveInSections,
+  getAgeDescriptor,
+  getGradeLevel,
+  getLifeStage,
 }

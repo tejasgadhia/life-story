@@ -218,7 +218,16 @@ function NewspaperTheme({ data, currentTab: propTab = 0, setTab: propSetTab, fon
                    [&>p:first-of-type]:first-letter:font-display
                    [&>p:first-of-type]:first-letter:font-black
                    [&>p:first-of-type]:first-letter:mr-2
-                   [&>p:first-of-type]:first-letter:leading-none`}
+                   [&>p:first-of-type]:first-letter:leading-none
+                   [&_.hero-callout]:bg-stone-100
+                   [&_.hero-callout]:border-stone-700
+                   [&_.hero-callout]:text-stone-800
+                   [&_.pull-quote]:text-xl
+                   [&_.pull-quote]:border-stone-400
+                   [&_.pull-quote]:text-stone-900
+                   [&_.pull-quote]:font-display
+                   [&_.stat-box]:bg-stone-800
+                   [&_.stat-box]:text-stone-100`}
           dangerouslySetInnerHTML={{ __html: content }}
         />
       </article>

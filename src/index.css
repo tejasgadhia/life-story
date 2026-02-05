@@ -104,3 +104,58 @@ h1, h2, h3, h4, h5, h6 {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.08'/%3E%3C/svg%3E"),
     linear-gradient(to bottom, var(--color-newsprint, #f5f1e8), var(--color-newsprint-dark, #ebe5d6));
 }
+
+/* ==========================================================================
+   Storytelling Visual Emphasis Classes
+   These are base styles - themes override via arbitrary Tailwind selectors
+   ========================================================================== */
+
+/* Hero Callout - "You were X when Y happened" personal milestone moments */
+.hero-callout {
+  display: block;
+  margin: 1.5rem 0;
+  padding: 1rem 1.25rem;
+  border-left-width: 4px;
+  border-left-style: solid;
+  font-style: italic;
+}
+
+/* Pull Quote - Standout statements for visual emphasis */
+.pull-quote {
+  display: block;
+  margin: 1.5rem 0;
+  padding: 1rem 0;
+  text-align: center;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  border-top-width: 1px;
+  border-bottom-width: 1px;
+  border-style: solid;
+}
+
+/* Pull quote decorative quotation marks */
+.pull-quote::before {
+  content: '\201C';
+  font-size: 2rem;
+  line-height: 0;
+  vertical-align: -0.3em;
+  margin-right: 0.25rem;
+  opacity: 0.5;
+}
+.pull-quote::after {
+  content: '\201D';
+  font-size: 2rem;
+  line-height: 0;
+  vertical-align: -0.3em;
+  margin-left: 0.25rem;
+  opacity: 0.5;
+}
+
+/* Stat Box - Inline statistics for emphasis */
+.stat-box {
+  display: inline;
+  padding: 0.125rem 0.5rem;
+  border-radius: 0.25rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
