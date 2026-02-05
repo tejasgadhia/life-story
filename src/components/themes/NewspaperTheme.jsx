@@ -1,4 +1,4 @@
-import { memo, useRef, useCallback } from 'react'
+import { memo, useRef, useCallback, useState, useEffect } from 'react'
 import { TABS } from '../../config/tabs'
 import { useTabState } from '../../hooks/useTabState'
 import { Star } from 'lucide-react'
@@ -50,6 +50,24 @@ const SECTION_CONFIG = {
 function NewspaperTheme({ data, currentTab: propTab = 0, setTab: propSetTab, fontSize = 'base' }) {
   const [currentPage, setCurrentPage] = useTabState(propTab, propSetTab)
   const tabRefs = useRef([])
+  const tabListRef = useRef(null)
+  const [canScrollLeft, setCanScrollLeft] = useState(false)
+  const [canScrollRight, setCanScrollRight] = useState(false)
+
+  const updateScrollIndicators = useCallback(() => {
+    const el = tabListRef.current
+    if (!el) return
+    setCanScrollLeft(el.scrollLeft > 0)
+    setCanScrollRight(el.scrollLeft + el.clientWidth < el.scrollWidth - 1)
+  }, [])
+
+  useEffect(() => {
+    updateScrollIndicators()
+    window.addEventListener('resize', updateScrollIndicators)
+    return () => window.removeEventListener('resize', updateScrollIndicators)
+  }, [updateScrollIndicators])
+
+  useEffect(() => { updateScrollIndicators() }, [currentPage, updateScrollIndicators])
 
   // Keyboard navigation for tabs (WAI-ARIA APG)
   const handleTabKeyDown = useCallback((e, index) => {
@@ -142,7 +160,7 @@ function NewspaperTheme({ data, currentTab: propTab = 0, setTab: propSetTab, fon
               <span className="float-left text-5xl md:text-6xl font-display font-black mr-2 leading-none text-stone-800">T</span>
               he subject of this comprehensive report entered the world on the {getOrdinalWord(data.birthDay)} day of {getMonthName(data.birthMonth)}, {data.birthYear},
               a date ranking <strong>#{data.birthdayRank}</strong> among all 366 possible calendar dates for frequency of birth.
-              This places the subject in the <strong>{data.birthdayPercentile}th percentile</strong> for birthday commonality.
+              This places the subject in the <strong>{data.birthdayPercentile}{getOrdinalSuffix(data.birthdayPercentile)} percentile</strong> for birthday commonality.
             </p>
             <p className="mb-4">
               As a member of the {data.generation} generation ({data.generationSpan}), this individual belongs
@@ -266,7 +284,7 @@ function NewspaperTheme({ data, currentTab: propTab = 0, setTab: propSetTab, fon
   const currentTabData = TABS[currentPage]
 
   return (
-    <div className="min-h-screen py-4 md:py-6 px-2 md:px-4 bg-stone-400">
+    <div className="min-h-screen py-4 md:py-6 px-2 md:px-4 bg-stone-400 overflow-x-hidden">
       <div
         className="max-w-6xl mx-auto shadow-2xl relative newspaper-texture"
       >
@@ -298,10 +316,12 @@ function NewspaperTheme({ data, currentTab: propTab = 0, setTab: propSetTab, fon
         </header>
 
         {/* PAGE NAVIGATION */}
-        <nav aria-label="Report sections">
+        <nav aria-label="Report sections" className="relative">
           <div 
+            ref={tabListRef}
             role="tablist" 
             className="flex overflow-x-auto scrollbar-hide bg-stone-800 border-b-2 border-stone-900"
+            onScroll={updateScrollIndicators}
           >
             {TABS.map((tab, i) => (
               <button
@@ -326,6 +346,13 @@ function NewspaperTheme({ data, currentTab: propTab = 0, setTab: propSetTab, fon
               </button>
             ))}
           </div>
+          {/* Scroll indicators */}
+          {canScrollLeft && (
+            <div className="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-stone-800 to-transparent pointer-events-none md:hidden" aria-hidden="true" />
+          )}
+          {canScrollRight && (
+            <div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-stone-800 to-transparent pointer-events-none md:hidden" aria-hidden="true" />
+          )}
         </nav>
 
         {/* MAIN CONTENT */}

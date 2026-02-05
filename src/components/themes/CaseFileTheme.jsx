@@ -1,4 +1,4 @@
-import { memo, useRef, useCallback } from 'react'
+import { memo, useRef, useCallback, useState, useEffect } from 'react'
 import { TABS } from '../../config/tabs'
 import { useTabState } from '../../hooks/useTabState'
 import { CelebrityList } from '../shared/CelebrityList'
@@ -25,6 +25,24 @@ const SECTION_CONFIG = {
 function CaseFileTheme({ data, currentTab: propTab = 0, setTab: propSetTab, fontSize = 'base' }) {
   const [activeTab, setActiveTab] = useTabState(propTab, propSetTab)
   const tabRefs = useRef([])
+  const tabListRef = useRef(null)
+  const [canScrollLeft, setCanScrollLeft] = useState(false)
+  const [canScrollRight, setCanScrollRight] = useState(false)
+
+  const updateScrollIndicators = useCallback(() => {
+    const el = tabListRef.current
+    if (!el) return
+    setCanScrollLeft(el.scrollLeft > 0)
+    setCanScrollRight(el.scrollLeft + el.clientWidth < el.scrollWidth - 1)
+  }, [])
+
+  useEffect(() => {
+    updateScrollIndicators()
+    window.addEventListener('resize', updateScrollIndicators)
+    return () => window.removeEventListener('resize', updateScrollIndicators)
+  }, [updateScrollIndicators])
+
+  useEffect(() => { updateScrollIndicators() }, [activeTab, updateScrollIndicators])
 
   // Keyboard navigation for tabs (WAI-ARIA APG)
   const handleTabKeyDown = useCallback((e, index) => {
@@ -85,6 +103,7 @@ function CaseFileTheme({ data, currentTab: propTab = 0, setTab: propSetTab, font
         <div className="border-b-2 border-sepia-brown/30 pb-3">
           <span className="text-sepia-brown block text-xs md:text-sm mb-1">PERCENTILE</span>
           <span className="font-bold text-base md:text-lg">{data.birthdayPercentile}%</span>
+          <span className="text-sepia-brown block text-xs mt-1">{data.birthdayRank < 183 ? 'More' : 'Less'} common than average</span>
         </div>
       </div>
 
@@ -132,14 +151,16 @@ function CaseFileTheme({ data, currentTab: propTab = 0, setTab: propSetTab, font
   const currentTabData = TABS[activeTab]
 
   return (
-    <div className="min-h-screen bg-zinc-800 p-4 md:p-6 font-typewriter">
+    <div className="min-h-screen bg-zinc-800 p-4 md:p-6 font-typewriter overflow-x-hidden">
       {/* Manila folder container */}
       <div className="max-w-6xl mx-auto">
         {/* File tabs */}
-        <nav aria-label="Report sections">
+        <nav aria-label="Report sections" className="relative">
           <div 
+            ref={tabListRef}
             role="tablist" 
             className="flex overflow-x-auto scrollbar-hide gap-1 mb-0 relative -mx-1 px-1"
+            onScroll={updateScrollIndicators}
           >
             {TABS.map((tab, index) => (
               <button
@@ -165,6 +186,13 @@ function CaseFileTheme({ data, currentTab: propTab = 0, setTab: propSetTab, font
               </button>
             ))}
           </div>
+          {/* Scroll indicators */}
+          {canScrollLeft && (
+            <div className="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-zinc-800 to-transparent pointer-events-none md:hidden z-10" aria-hidden="true" />
+          )}
+          {canScrollRight && (
+            <div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-zinc-800 to-transparent pointer-events-none md:hidden z-10" aria-hidden="true" />
+          )}
         </nav>
 
         {/* Main folder */}

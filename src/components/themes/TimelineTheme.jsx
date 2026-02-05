@@ -1,4 +1,4 @@
-import { memo, useRef, useCallback } from 'react'
+import { memo, useRef, useCallback, useState, useEffect } from 'react'
 import { TABS as BASE_TABS } from '../../config/tabs'
 import { useTabState } from '../../hooks/useTabState'
 import { CelebrityList } from '../shared/CelebrityList'
@@ -60,6 +60,24 @@ export { TABS }
 function TimelineTheme({ data, currentTab: propTab = 0, setTab: propSetTab, fontSize = 'base' }) {
   const [activeTab, setActiveTab] = useTabState(propTab, propSetTab)
   const tabRefs = useRef([])
+  const tabListRef = useRef(null)
+  const [canScrollLeft, setCanScrollLeft] = useState(false)
+  const [canScrollRight, setCanScrollRight] = useState(false)
+
+  const updateScrollIndicators = useCallback(() => {
+    const el = tabListRef.current
+    if (!el) return
+    setCanScrollLeft(el.scrollLeft > 0)
+    setCanScrollRight(el.scrollLeft + el.clientWidth < el.scrollWidth - 1)
+  }, [])
+
+  useEffect(() => {
+    updateScrollIndicators()
+    window.addEventListener('resize', updateScrollIndicators)
+    return () => window.removeEventListener('resize', updateScrollIndicators)
+  }, [updateScrollIndicators])
+
+  useEffect(() => { updateScrollIndicators() }, [activeTab, updateScrollIndicators])
 
   // Keyboard navigation for tabs (WAI-ARIA APG)
   const handleTabKeyDown = useCallback((e, index) => {
@@ -109,19 +127,20 @@ function TimelineTheme({ data, currentTab: propTab = 0, setTab: propSetTab, font
 
         {/* Right - Rank/Percentile */}
         <div className="aged-paper rounded-lg p-4 md:p-5 border border-sepia-brown/20 text-center flex flex-col justify-center">
+          <p className="font-body text-xs uppercase tracking-wider text-sepia-brown mb-2">Birthday Popularity</p>
           <div className="flex items-center justify-center gap-4 md:gap-6">
             <div className="text-center">
               <p className="text-xl md:text-2xl font-display text-dark-brown">#{data.birthdayRank}</p>
-              <p className="font-body text-xs text-sepia-brown">Rank</p>
+              <p className="font-body text-xs text-sepia-brown">Birthday Rank</p>
             </div>
             <div className="w-px h-10 bg-sepia-brown/30" />
             <div className="text-center">
               <p className="text-xl md:text-2xl font-display text-dark-brown">{data.birthdayPercentile}%</p>
-              <p className="font-body text-xs text-sepia-brown">Percentile</p>
+              <p className="font-body text-xs text-sepia-brown">Popularity</p>
             </div>
           </div>
           <p className="font-body text-xs text-sepia-brown mt-2">
-            {data.birthdayRank < 183 ? 'More common' : 'Less common'} than avg (of 366)
+            Your birthday is {data.birthdayRank < 183 ? 'more' : 'less'} common than the average calendar date
           </p>
         </div>
       </div>
@@ -167,7 +186,7 @@ function TimelineTheme({ data, currentTab: propTab = 0, setTab: propSetTab, font
   const currentTabData = TABS[activeTab]
 
   return (
-    <div className="min-h-screen bg-vintage-cream">
+    <div className="min-h-screen bg-vintage-cream overflow-x-hidden">
       {/* Header - Now includes birthday */}
       <header className="bg-dark-brown text-vintage-cream py-3">
         <div className="max-w-7xl mx-auto px-4 md:px-6 flex items-center justify-between">
@@ -182,10 +201,12 @@ function TimelineTheme({ data, currentTab: propTab = 0, setTab: propSetTab, font
 
       {/* Tab Navigation */}
       <nav className="bg-aged-paper border-b border-sepia-brown/30 sticky top-0 z-40" aria-label="Report sections">
-        <div className="max-w-7xl mx-auto px-2 md:px-6">
+        <div className="max-w-7xl mx-auto px-2 md:px-6 relative">
           <div 
+            ref={tabListRef}
             role="tablist" 
             className="flex overflow-x-auto scrollbar-hide -mx-2 px-2 md:mx-0 md:px-0 md:justify-center gap-1 md:gap-2"
+            onScroll={updateScrollIndicators}
           >
             {TABS.map((tab, index) => (
               <button
@@ -205,12 +226,19 @@ function TimelineTheme({ data, currentTab: propTab = 0, setTab: propSetTab, font
                     : 'border-transparent text-sepia-brown hover:text-dark-brown hover:bg-vintage-cream/50'
                   }`}
               >
-                <tab.Icon className="w-4 h-4 xs:mr-1 md:mr-2 inline" aria-hidden="true" />
+                <tab.Icon className="w-4 h-4 mr-1 md:mr-2 inline" aria-hidden="true" />
                 <span className="hidden md:inline">{tab.title}</span>
-                <span className="hidden xs:inline md:hidden">{tab.title.split(' ')[0]}</span>
+                <span className="md:hidden">{tab.title.split(' ')[0]}</span>
               </button>
             ))}
           </div>
+          {/* Scroll indicators */}
+          {canScrollLeft && (
+            <div className="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-aged-paper to-transparent pointer-events-none md:hidden" aria-hidden="true" />
+          )}
+          {canScrollRight && (
+            <div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-aged-paper to-transparent pointer-events-none md:hidden" aria-hidden="true" />
+          )}
         </div>
       </nav>
 
