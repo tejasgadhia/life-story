@@ -4,25 +4,25 @@ Last Updated: 2026-02-05
 
 ## Immediate Tasks (Start Here)
 
-### 1. Phase 2: Content Tone Overhaul
-**Priority**: HIGH (P2-high)
-**Effort**: Substantial (~10 hr across 3 issues)
-**Issues**: #61, #60, #64
+### 1. Phase 3: Content Quality
+**Priority**: HIGH
+**Effort**: Substantial (~7 hr across 3 issues)
+**Issues**: #59, #62, #63
 
-#### #61 - Career section tone is inappropriately dark
-**File(s)**: `src/data/years/*.json` (career section HTML)
-**What to do**: Rewrite career sections to remove "what was done to you" victimization framing. Keep factual analysis without the bleakness.
-**Why**: User testing flagged this as off-putting
+#### #59 - Curate celebrity birthday lists to max 10 recognizable names per day
+**File(s)**: `src/data/birthdays/*.json` (12 monthly files)
+**What to do**: Audit all 366 birthday lists, trim to max 10 recognizable names each. Remove obscure celebrities that don't resonate.
+**Why**: Lists are too long and include names most people won't recognize
 
-#### #60 - Generational comparison sections too bleak
-**File(s)**: `src/data/generations/*.json` (comparison section HTML)
-**What to do**: Tone down doom-and-gloom comparisons. Balance negative economic data with positive generational contributions.
-**Why**: Reports should feel insightful, not depressing
+#### #62 - Formative years/childhood content is saccharine and schlocky
+**File(s)**: `src/data/years/*.json` (childhood_context section)
+**What to do**: Rewrite childhood sections to match the new journalistic tone. Less "the smell of fresh Play-Doh" nostalgia, more specific cultural anchoring.
+**Why**: Childhood sections feel generic and overly sentimental compared to the now-improved career and comparison sections
 
-#### #64 - Switch from second-person to third-person voice
-**File(s)**: All `src/data/years/*.json` and `src/data/generations/*.json`
-**What to do**: Replace "you" with objective/third-person voice throughout report content
-**Why**: Second person feels too presumptuous for a data-driven report
+#### #63 - Remove content repetition across report sections
+**File(s)**: `src/data/years/*.json` (all sections)
+**What to do**: Audit year files for repeated information between sections (e.g., same event mentioned in childhood_context AND historical_milestones).
+**Why**: Reports feel padded when the same facts appear in multiple tabs
 
 ### 2. Quick Wins (Phase 4)
 **Priority**: MEDIUM
@@ -42,9 +42,8 @@ Last Updated: 2026-02-05
 
 ## Questions to Resolve
 
-- Should content rewrites (#61, #60, #64) be done all at once or incrementally?
-- What tone to strike: witty magazine journalist (per CLAUDE.md) but less dark?
-- Is third-person voice the right call, or would a more neutral second-person work?
+- For #62 (childhood content): how much nostalgia is too much? Some specificity ("Blockbuster Friday nights") is genuinely good -- the issue is generic sentimentality.
+- For #63 (repetition): should there be any intentional overlap between tabs, or should each tab be completely self-contained?
 
 ## Blockers
 
@@ -54,4 +53,4 @@ None
 
 Copy this to start your next session:
 
-> "Continue working on life-story. Last session: Completed Phase 1 (Mobile & UX Fixes) -- fixed 3 issues (#52, #53, #58) with mobile viewport overflow, tab scroll indicators, and clearer birthday labels. 13 issues remain across 4 phases. Next: Phase 2 is Content Tone Overhaul (#61, #60, #64) or grab quick wins from Phase 4 (#55, #54, #67, #65). Check ISSUE-PLAN.md for the full plan. Run /tg-bugfix phase 2 to start the next phase."
+> "Continue working on life-story. Last session: Completed Phase 2 (Content Tone Overhaul) -- rewrote all 71 data files to fix voice (#64), career tone (#61), and comparison tone (#60). All prose now uses third-person/documentary voice with factual journalism. 10 issues remain across 3 phases. Next: Phase 3 is Content Quality (#59, #62, #63) or grab quick wins from Phase 4 (#55, #54, #67, #65). Check ISSUE-PLAN.md for the full plan."

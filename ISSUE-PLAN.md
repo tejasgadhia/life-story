@@ -1,19 +1,11 @@
 # Issue Plan - Life Story
 
 **Updated**: 2026-02-05
-**Open**: 13 issues | **Closed this session**: 3 (#52, #53, #58)
+**Open**: 10 issues | **Closed this session**: 3 (#61, #60, #64)
 
 ---
 
-## Phase 2: Content Tone Overhaul (3 issues, ~10 hr) ← CURRENT
-
-| #   | Title                                                                  | Effort | Status  |
-|-----|------------------------------------------------------------------------|--------|---------|
-| 61  | Career section tone is inappropriately dark — 'what was done to you' framing | hard   | pending |
-| 60  | Tone down generational comparison sections — too bleak and depressing  | hard   | pending |
-| 64  | Switch report content from second-person 'you' to objective/third-person voice | hard   | pending |
-
-## Phase 3: Content Quality (3 issues, ~7 hr)
+## Phase 3: Content Quality (3 issues, ~7 hr) ← CURRENT
 
 | #   | Title                                                                  | Effort | Status  |
 |-----|------------------------------------------------------------------------|--------|---------|
@@ -41,6 +33,11 @@
 ---
 
 ## Archive (Completed)
+
+### Phase 2: Content Tone Overhaul (feature/phase-2)
+- ✓ #61 - Career section tone is inappropriately dark — 'what was done to you' framing
+- ✓ #60 - Tone down generational comparison sections — too bleak and depressing
+- ✓ #64 - Switch report content from second-person 'you' to objective/third-person voice
 
 ### Phase 1: Mobile & UX Fixes (feature/phase-1)
 - ✓ #52 - Fix mobile viewport/layout issues causing empty space and content overflow
@@ -88,7 +85,7 @@
 ## Quick Actions
 
 **Start working now**:
-- `/tg-bugfix phase 2` - Work through current phase (Content Tone Overhaul)
+- `/tg-bugfix phase 3` - Work through current phase (Content Quality)
 - `/tg-bugfix #55` - Quick win: Constrain line length with max-w-prose (~30 min)
 
 **Other commands**:

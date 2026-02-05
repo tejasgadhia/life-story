@@ -22,6 +22,9 @@ Last Updated: 2026-02-05
 - Clear birthday rank/percentile labeling in all themes
 - Mobile-friendly tab text labels (no icon-only tabs)
 - No horizontal overflow on mobile viewports
+- Third-person/documentary prose voice (no second-person "you")
+- Journalistic career tone (factual, not victimhood framing)
+- Informative comparison sections (contrast, not doom)
 
 **Launch Status:** Live at https://tejasgadhia.github.io/life-story/
 
@@ -32,29 +35,29 @@ Last Updated: 2026-02-05
 - PDF export
 - Heat map visualization
 - Additional themes
-- Content tone overhaul (Phase 2 in ISSUE-PLAN.md)
+- Content quality pass (Phase 3 in ISSUE-PLAN.md)
 
 ## Recent Changes
 
+### 2026-02-05 Session - Phase 2: Content Tone Overhaul
+- Rewrote all 71 data files (67 year files + 4 generation files)
+- Fixed 3 interconnected issues in single pass:
+  - #64: Removed second-person "you/your" voice from all prose
+  - #61: Replaced dark career victimhood framing with factual journalism
+  - #60: Replaced bleak comparison sections with informative contrast
+- Approach: generation files first as golden examples, then 14 batches of year files
+  via fast-model sub-agents (4 in parallel), followed by 2-pass QA
+- Automated QA confirmed: 0 prose leaks, 0 banned phrases, 0 heading issues
+- All 159 placeholders preserved, all 20 tests pass, build succeeds
+
 ### 2026-02-05 Session - Phase 1: Mobile & UX Fixes
-- Triaged 16 new GitHub issues into 5 phases (ISSUE-PLAN.md)
-- Fixed 3 issues in Phase 1 via worktree branch (feature/phase-1):
-  - #58: Added "Birthday Popularity" heading and clearer labels to TimelineTheme,
-    percentile context to CaseFileTheme, fixed ordinal suffix bug in NewspaperTheme
-  - #52: Added overflow-x-hidden to all themes, made Timeline tab text always visible
-  - #53: Added gradient scroll indicators to tab nav in all three themes
-- Verified at 375px viewport -- no overflow, all tabs show text, gradients work
-- Build passes, 20/20 tests pass, zero linter errors
+- Fixed 3 issues (#52, #53, #58): mobile viewport overflow, tab scroll indicators,
+  clearer birthday labels
+- Verified at 375px viewport
 
 ### 2026-02-05 Session - Pre-Launch Review & Polish
 - Ran comprehensive tg-review with 4 specialized subagents
 - Fixed 6 accessibility issues and 3 code quality issues
-- Review score improved: 78 -> 81/100
-
-### 2026-02-05 Session - Accessibility Fixes (PR #51)
-- Added ARIA tab pattern to all 3 themes
-- Implemented keyboard navigation (ArrowLeft/Right, Home/End)
-- Fixed color contrast issues across all themes
 
 ## Architecture
 
@@ -84,13 +87,11 @@ src/
 
 ## Known Issues
 
-- 13 open GitHub issues remaining (Phases 2-5 in ISSUE-PLAN.md)
-- Content tone needs work (career section too dark, comparisons too bleak)
+- 10 open GitHub issues remaining (Phases 3-5 in ISSUE-PLAN.md)
 - squirrelscan low scores are expected (SPA/client-rendered)
 
 ## Next Priorities
 
-1. Phase 2: Content Tone Overhaul (#61, #60, #64) -- P2-high, ~10 hr
-2. Phase 3: Content Quality (#59, #62, #63) -- ~7 hr
-3. Phase 4: Theme & Readability Polish (#55, #54, #67, #65) -- ~2 hr
-4. Phase 5: Nice-to-Have (#57, #56, #66)
+1. Phase 3: Content Quality (#59, #62, #63) -- ~7 hr
+2. Phase 4: Theme & Readability Polish (#55, #54, #67, #65) -- ~2 hr
+3. Phase 5: Nice-to-Have (#57, #56, #66)
