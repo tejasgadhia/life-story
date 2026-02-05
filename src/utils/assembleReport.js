@@ -1,10 +1,10 @@
 /**
  * Report assembly utilities
- * Loads year data, generation data, and birthday data, then merges them
- * with placeholder resolution
+ * Loads year data and birthday data, resolves placeholders,
+ * and returns the complete report object
  */
 
-import { getGenerationId, getGeneration } from './generations'
+import { getGeneration } from './generations'
 import { buildPlaceholderMap, resolveInSections, resolvePlaceholders } from './placeholders'
 import { MIN_YEAR, MAX_YEAR } from '../config/constants'
 
@@ -51,21 +51,6 @@ async function loadYearData(year) {
 }
 
 /**
- * Dynamically import generation data
- * @param {string} generationId - boomer, genx, millennial, genz
- * @returns {Promise<object>}
- */
-async function loadGenerationData(generationId) {
-  try {
-    const module = await import(`../data/generations/${generationId}.json`)
-    return module.default || module
-  } catch (error) {
-    console.error(`Failed to load generation data for ${generationId}:`, error)
-    throw new Error(`Generation data not available for ${generationId}`)
-  }
-}
-
-/**
  * Month names for dynamic imports
  */
 const MONTH_NAMES = ['january', 'february', 'march', 'april', 'may', 'june',
@@ -104,11 +89,8 @@ async function loadBirthdayData(month, day) {
  */
 export async function assembleReport({ year, month, day }) {
   // Load all data in parallel
-  const generationId = getGenerationId(year)
-
-  const [yearData, generationData, birthday] = await Promise.all([
+  const [yearData, birthday] = await Promise.all([
     loadYearData(year),
-    loadGenerationData(generationId),
     loadBirthdayData(month, day)
   ])
 
@@ -120,15 +102,9 @@ export async function assembleReport({ year, month, day }) {
     yearData: yearData
   })
 
-  // Merge year-specific sections with generation-shared sections
-  // Year data takes precedence (more specific)
-  const mergedSections = {
-    ...generationData.sections,  // Generation-level (shared)
-    ...yearData.sections          // Year-level (specific, overwrites)
-  }
-
   // Resolve placeholders in all sections
-  const resolvedSections = resolveInSections(mergedSections, placeholderMap)
+  // (All content lives in year-specific files; generation-level sections removed in v2.1)
+  const resolvedSections = resolveInSections(yearData.sections, placeholderMap)
 
   // Get generation metadata
   const generation = getGeneration(year)

@@ -1,17 +1,15 @@
 # Issue Plan - Life Story
 
 **Updated**: 2026-02-05
-**Open**: 10 issues | **Closed this session**: 3 (#61, #60, #64)
+**Open**: 8 issues | **Closed this session**: 5 (#61, #60, #64, #62, #63)
 
 ---
 
-## Phase 3: Content Quality (3 issues, ~7 hr) ← CURRENT
+## Phase 3: Content Quality (1 issue remaining) ← CURRENT
 
 | #   | Title                                                                  | Effort | Status  |
 |-----|------------------------------------------------------------------------|--------|---------|
 | 59  | Curate celebrity birthday lists to max 10 recognizable names per day   | hard   | pending |
-| 62  | Formative years/childhood content is saccharine and schlocky           | hard   | pending |
-| 63  | Remove content repetition across report sections                       | med    | pending |
 
 ## Phase 4: Theme & Readability Polish (4 issues, ~2 hr)
 
@@ -33,6 +31,10 @@
 ---
 
 ## Archive (Completed)
+
+### Phase 3: Content Quality
+- ✓ #62 - Formative years/childhood content rewritten in documentary journalism tone (67 files)
+- ✓ #63 - Remove content repetition: dead generation sections removed, assembleReport.js simplified
 
 ### Phase 2: Content Tone Overhaul (feature/phase-2)
 - ✓ #61 - Career section tone is inappropriately dark — 'what was done to you' framing
@@ -85,7 +87,7 @@
 ## Quick Actions
 
 **Start working now**:
-- `/tg-bugfix phase 3` - Work through current phase (Content Quality)
+- `/tg-bugfix #59` - Curate celebrity lists (last Phase 3 item)
 - `/tg-bugfix #55` - Quick win: Constrain line length with max-w-prose (~30 min)
 
 **Other commands**:
