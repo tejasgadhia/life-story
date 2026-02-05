@@ -3,34 +3,38 @@ Last Updated: 2026-02-05
 
 ## Immediate Tasks (Start Here)
 
-### 1. Phase 4 Quick Wins (4 issues, ~2 hours total)
-**Priority**: HIGH
+### 1. Share/Copy URL Button (#57)
+**Priority**: MEDIUM
+**File(s)**: `src/components/ThemeSwitcher.jsx`
+**What to do**: Add a "Copy Link" or "Share" button to the ThemeSwitcher sidebar/bottom sheet. Use `navigator.clipboard.writeText(window.location.href)` with a brief toast/feedback.
+**Why**: URLs are already shareable — users just need a button to copy them easily.
+**Estimated effort**: Quick (30 min)
 
-- **#55 - max-w-prose**: Add `max-w-prose` to content areas for readable line length (~30 min)
-  - Files: All 3 theme components in `src/components/themes/`
-  - What: Wrap content sections in `max-w-prose mx-auto` for optimal reading width
-  - Why: Long lines are hard to read on wide screens
+### 2. Reading Progress Indicator (#56)
+**Priority**: MEDIUM
+**File(s)**: New component, integrate into theme layouts
+**What to do**: Add a thin progress bar at the top of the page that fills as the user scrolls through content. Could be a simple scroll-percentage bar.
+**Why**: Reports are ~5,000 words — progress feedback helps users orient themselves.
+**Estimated effort**: Quick (30 min)
 
-- **#54 - Back navigation**: Add "back to landing page" link/button to report view (~30 min)
-  - Files: Theme components or `src/components/layout/MainLayout.jsx`
-  - What: Add a navigation element that returns to the date picker
-  - Why: No way to go back and generate a different report
-
-- **#67 - Sans-serif body**: Switch Timeline theme body text from Courier Prime to a sans-serif (~20 min)
-  - Files: `src/components/themes/TimelineTheme.jsx`, possibly `tailwind.config.js`
-  - What: Change body text font class from `font-body` (Courier Prime) to a sans-serif
-  - Why: Monospace body text hurts readability
-
-- **#65 - Newspaper spacing**: Fix word spacing in Newspaper theme columns (~30 min)
-  - Files: `src/components/themes/NewspaperTheme.jsx`
-  - What: Reduce font size or increase column width to fix word-spacing artifacts
-  - Why: Justified text in narrow columns creates large gaps between words
+### 3. CaseFile Theme Evaluation (#66)
+**Priority**: LOW
+**File(s)**: `src/components/themes/CaseFileTheme.jsx`
+**What to do**: Either redesign the CaseFile theme to feel more sophisticated, or remove it entirely. The "CLASSIFIED" stamps and paperclip decoration may feel cheesy.
+**Why**: User feedback suggests the FBI dossier aesthetic doesn't land well.
+**Estimated effort**: Substantial (2-4 hours)
 
 ## Future Enhancements
 
-- #57 - Share/copy URL button for reports
-- #56 - Reading progress indicator
-- #66 - Case file theme redesign or removal
+- PDF export of reports
+- Heat map visualization for birthday data
+- Additional years beyond 1946-2012
+- Dark mode support
+
+## Questions to Resolve
+
+- Is the CaseFile theme worth redesigning, or should it be replaced with something else entirely?
+- Should share button use Web Share API on mobile vs clipboard on desktop?
 
 ## Blockers
 
@@ -38,4 +42,4 @@ Last Updated: 2026-02-05
 
 ## Next Session Starter Prompt
 
-> "Continue working on life-story. Last session: Completed #59 (celebrity curation) — built fame scoring engine with ~900-name allow-list, curated all 12 monthly birthday files to max 10 recognizable names/day, simplified CelebrityList.jsx and assembleReport.js. Phase 3 is now fully complete (6 issues closed across 3 sessions). Next: Phase 4 quick wins — #55 max-w-prose, #54 back nav, #67 sans-serif body, #65 newspaper spacing. Check ISSUE-PLAN.md for the full plan."
+> "Continue working on life-story. Last session: Completed Phase 4 — 4 theme/readability issues (#67 sans-serif, #55 max-w-prose, #65 newspaper hyphens, #54 back nav). All 4 phases now complete (25+ issues closed). Next: Backlog nice-to-haves — #57 share button, #56 progress indicator. Check ISSUE-PLAN.md for the full plan."

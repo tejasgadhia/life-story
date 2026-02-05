@@ -4,65 +4,70 @@ Last Updated: 2026-02-05
 ## Current State
 
 **What's Working:**
-- Full report generation for all birthdates 1946-2012
-- 3 themes (Timeline, Newspaper, Case File) with 4 tabs each
-- URL-based routing with shareable report links
-- Mobile responsive with accessible tab navigation
-- Documentary journalism voice across all content (Phase 2 + Phase 3)
-- Childhood sections rewritten from nostalgia bait to contextual journalism
-- Content repetition reduced — dead generation-level sections removed, assembleReport.js simplified
-- Celebrity lists curated to max 10 recognizable names per day (fame scoring engine)
+- Full birthday report generation for all dates 1946-2012
+- Three visual themes: Timeline, Newspaper, Case File
+- Shareable URLs with birthday in path
+- Dynamic meta tags for social sharing
+- Mobile-responsive layout with scroll indicators
+- ARIA tab navigation across all themes
+- Font size controls (S/M/L) persisted to localStorage
+- Loading screen with vintage aesthetic
+- Session caching for fast theme switching
+- PWA with offline service worker
+- GitHub Pages auto-deployment on push to main
+- "New Report" back-to-landing navigation (desktop sidebar + mobile bottom sheet)
+- max-w-prose line length constraint for readability (Timeline, CaseFile)
+- CSS hyphens for justified text in Newspaper columns
+- DM Sans body text + Playfair Display headings in Timeline theme
 
 **In Progress:**
-- Phase 3 (Content Quality) is complete — all 3 issues closed
-- Phase 4 (Theme & Readability Polish) queued with 4 easy issues
+- Nothing actively in progress
 
-**Not Started:**
-- Backlog items: share/copy URL button, reading progress indicator, case file theme redesign
+**Not Started (Backlog):**
+- #57 - Share/copy URL button for reports (easy)
+- #56 - Reading progress indicator (easy)
+- #66 - CaseFile theme redesign or removal (hard)
 
 ## Recent Changes
 
-### 2026-02-05 Session (Phase 3: Celebrity Curation)
-- Built `scripts/curate-celebrities.mjs` — fame scoring engine with ~900-name allow-list + multi-criteria keyword scoring
-- Curated all 12 monthly birthday JSON files: from `celebrities_categorized` (30-50+/day) to flat `celebrities` array (max 10/day)
-- Simplified `assembleReport.js` — removed categorized flattening logic, uses pre-curated array directly
-- Simplified `CelebrityList.jsx` — removed expand/collapse "Show all" button (no longer needed)
-- Closed #59, completing Phase 3
+### 2026-02-05 Session (Phase 4: Theme & Readability Polish)
+- Switched Timeline body text from Courier Prime to DM Sans (#67)
+- Added max-w-prose to Timeline and CaseFile content sections (#55)
+- Added CSS hyphens to Newspaper justified text (#65)
+- Added "New Report" navigation to ThemeSwitcher (#54)
+- 6 files changed, 51 insertions, 21 deletions
 
-### 2026-02-05 Prior Session (Phase 3: Content Quality)
-- Rewrote all 67 `childhood_context` sections — documentary journalism tone
-- Removed 4 dead section keys from 4 generation files (generational_identity, relationships, blind_spots, comparison)
-- Simplified `assembleReport.js` — removed `loadGenerationData`, direct year data usage
-- Closed #62 and #63
-
-### 2026-02-05 Prior Session (Phase 2: Content Tone Overhaul)
-- Rewrote all 71 data files (67 year + 4 generation) for voice, career tone, comparison tone
-- Closed #61, #60, #64
+### Previous Sessions
+- Phase 3: Celebrity curation with fame scoring engine, childhood content rewrite, repetition removal
+- Phase 2: Content tone overhaul — career tone, comparison tone, second-person to third-person
+- Phase 1: Mobile UX fixes, accessibility (ARIA tabs, contrast, aria-hidden)
 
 ## Architecture
 
 **Tech Stack:**
-- Vite + React (JSX, no TypeScript)
-- Tailwind CSS
-- Vitest for testing
-- GitHub Pages deployment via GitHub Actions
+- React 19 + Vite 7
+- Tailwind CSS 4
+- React Router DOM 7
+- Lucide React (icons)
+- Vitest (testing)
 
-**Data Architecture:**
-- `src/data/years/*.json` (67 files) — ALL report content lives here now
-- `src/data/generations/*.json` (4 files) — metadata only (sections removed in v2.1)
-- `src/data/birthdays/*.json` (12 files) — curated celebrity data (max 10/day, flat array)
-- `src/utils/assembleReport.js` — loads year + birthday data, resolves placeholders
-- `src/utils/placeholders.js` — runtime placeholder resolution (ages, dates, cohort sizes)
-- `scripts/curate-celebrities.mjs` — offline curation tool for celebrity data
+**Key Files:**
+- `src/components/themes/TimelineTheme.jsx` - Default theme, DM Sans body + Playfair Display headings
+- `src/components/themes/NewspaperTheme.jsx` - 1880s newspaper with CSS hyphens
+- `src/components/themes/CaseFileTheme.jsx` - FBI dossier with max-w-prose
+- `src/components/ThemeSwitcher.jsx` - Desktop sidebar + mobile FAB with "New Report" button
+- `src/data/years/*.json` - 67 year-specific content files
+- `src/data/birthdays/*.json` - 12 monthly celebrity files (curated, max 10/day)
+- `src/utils/assembleReport.js` - Report data assembly
 
 ## Known Issues
 
-- Line length unconstrained — hard to read on wide screens (#55)
-- No back-to-landing-page navigation (#54)
-- Timeline theme body text uses monospace font (#67)
-- Newspaper theme word spacing issues (#65)
+- CaseFile theme may feel cheesy (#66, backlog)
+- No share/copy URL button (#57, backlog)
+- No reading progress indicator (#56, backlog)
 
 ## Next Priorities
 
-1. Phase 4 quick wins: #55 max-w-prose, #54 back nav, #67 sans-serif, #65 newspaper spacing
-2. Backlog: share button, reading progress, case file redesign
+1. Share/copy URL button (#57) - easy win for shareability
+2. Reading progress indicator (#56) - nice UX polish
+3. CaseFile theme evaluation (#66) - bigger effort, lower priority

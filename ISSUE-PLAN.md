@@ -88,8 +88,8 @@
 ## Quick Actions
 
 **Start working now**:
-- `/tg-bugfix #55` - Quick win: Constrain line length with max-w-prose (~30 min)
-- `/tg-bugfix #54` - Quick win: Add back-to-landing-page navigation (~30 min)
+- `/tg-bugfix #57` - Quick win: Add share/copy URL button (~30 min)
+- `/tg-bugfix #56` - Quick win: Add reading progress indicator (~30 min)
 
 **Other commands**:
 - `/tg-issue` - Log a new issue
