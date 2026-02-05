@@ -35,7 +35,10 @@ jobs:
 
       - name: Build
         run: npm run build
-      
+
+      - name: Check bundle size
+        run: npm run size
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
       
