@@ -49,11 +49,18 @@ Tab slugs: `overview`, `formative-years`, `world-events`, `personal-insights`
 
 | File | Purpose |
 |------|---------|
-| `src/App.jsx` | Router, theme switcher, font size context |
+| `src/App.jsx` | Entry point - font size provider, router setup |
+| `src/routes/AppRoutes.jsx` | All route definitions |
+| `src/context/FontSizeContext.js` | Font size context + useFontSize hook |
+| `src/config/constants.js` | MIN_YEAR, MAX_YEAR, TAB_SLUGS |
+| `src/config/themeSwitcher.js` | Theme and font size config arrays |
+| `src/components/ThemeSwitcher.jsx` | Desktop sidebar + mobile FAB |
+| `src/components/ThemeWrapper.jsx` | Data loading, tab state, theme rendering |
+| `src/components/LandingPage.jsx` | DatePicker with pre-loading |
+| `src/components/layout/MainLayout.jsx` | Layout wrapper with ThemeSwitcher |
 | `src/components/themes/*.jsx` | The three theme components |
-| `src/components/shared/CelebrityList.jsx` | Shared celebrity list component |
 | `src/config/tabs.js` | Centralized tab configuration |
-| `src/hooks/useTabState.js` | Shared tab state management |
+| `src/utils/birthdayUtils.js` | URL parsing/formatting for birthdays |
 | `src/data/years/*.json` | Year-specific content (67 files: 1946-2012) |
 | `src/data/generations/*.json` | Generation definitions (boomer, genx, millennial, genz) |
 | `src/data/birthdays/*.json` | Birthday rankings, celebrities (12 monthly files) |
@@ -88,12 +95,12 @@ Tab slugs: `overview`, `formative-years`, `world-events`, `personal-insights`
 
 ### Add a new theme
 1. Create `src/components/themes/NewTheme.jsx`
-2. Add routes in `App.jsx`
-3. Add to theme switcher in `App.jsx`
+2. Add routes in `src/routes/AppRoutes.jsx`
+3. Add to `themes` array in `src/config/themeSwitcher.js`
 
 ### Change tab structure
 1. Update `TABS` array in `src/config/tabs.js` (centralized)
-2. Update `TAB_SLUGS` in `App.jsx` for URL routing
+2. Update `TAB_SLUGS` in `src/config/constants.js` for URL routing
 
 ### Add content for new year
 1. Create `src/data/years/YYYY.json` following existing year file structure
