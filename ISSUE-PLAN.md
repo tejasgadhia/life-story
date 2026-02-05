@@ -1,17 +1,11 @@
 # Issue Plan - Life Story
 
 **Updated**: 2026-02-05
-**Open**: 8 issues | **Closed this session**: 5 (#61, #60, #64, #62, #63)
+**Open**: 7 issues | **Closed this session**: 6 (#61, #60, #64, #62, #63, #59)
 
 ---
 
-## Phase 3: Content Quality (1 issue remaining) ← CURRENT
-
-| #   | Title                                                                  | Effort | Status  |
-|-----|------------------------------------------------------------------------|--------|---------|
-| 59  | Curate celebrity birthday lists to max 10 recognizable names per day   | hard   | pending |
-
-## Phase 4: Theme & Readability Polish (4 issues, ~2 hr)
+## Phase 4: Theme & Readability Polish (4 issues, ~2 hr) ← CURRENT
 
 | #   | Title                                                                  | Effort | Status  |
 |-----|------------------------------------------------------------------------|--------|---------|
@@ -33,6 +27,7 @@
 ## Archive (Completed)
 
 ### Phase 3: Content Quality
+- ✓ #59 - Curate celebrity birthday lists to max 10 recognizable names per day (fame scoring engine, 12 monthly files transformed)
 - ✓ #62 - Formative years/childhood content rewritten in documentary journalism tone (67 files)
 - ✓ #63 - Remove content repetition: dead generation sections removed, assembleReport.js simplified
 
@@ -87,8 +82,8 @@
 ## Quick Actions
 
 **Start working now**:
-- `/tg-bugfix #59` - Curate celebrity lists (last Phase 3 item)
 - `/tg-bugfix #55` - Quick win: Constrain line length with max-w-prose (~30 min)
+- `/tg-bugfix #54` - Quick win: Add back-to-landing-page navigation (~30 min)
 
 **Other commands**:
 - `/tg-issue` - Log a new issue
