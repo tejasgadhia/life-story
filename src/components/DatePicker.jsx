@@ -1,8 +1,6 @@
 import { useState, useRef } from 'react'
 import { Sparkles, Clock, Globe, Compass } from 'lucide-react'
-
-const MIN_YEAR = 1946
-const MAX_YEAR = 2012
+import { MIN_YEAR, MAX_YEAR } from '../config/constants'
 
 const SECTION_CARDS = [
   {
