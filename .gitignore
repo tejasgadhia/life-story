@@ -34,12 +34,7 @@ scripts/
 LEARNINGS.md
 NEXT-STEPS.md
 PROJECT-STATUS.md
-docs/sessions/
-docs/plans/
-docs/archive/
-docs/learnings/
-docs/troubleshooting/
-docs/test-results/
-docs/issues/
-docs/future/
-.ui-design/reviews/
+ISSUE-PLAN.md
+REVIEW-REPORT*.md
+docs/
+.ui-design/
