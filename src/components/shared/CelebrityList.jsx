@@ -23,15 +23,15 @@ export function CelebrityList({ celebrities, defaultVisible = 10, variant = 'tim
   if (variant === 'casefile') {
     return (
       <div className="bg-vintage-cream/30 border-2 border-sepia-brown/20 p-4 md:p-6">
-        <h4 className="font-bold text-sm md:text-base mb-3 md:mb-4 text-sepia-brown/70 tracking-wider">
+        <h4 className="font-bold text-sm md:text-base mb-3 md:mb-4 text-sepia-brown tracking-wider">
           KNOWN BIRTHDAY ASSOCIATES:
         </h4>
         <div className="bg-vintage-cream/50 p-3 md:p-4 border-2 border-sepia-brown/20">
           <div className="overflow-hidden transition-all duration-300 ease-in-out">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-1 md:gap-2">
-              {visibleCelebrities.map((celeb, i) => (
+              {visibleCelebrities.map((celeb) => (
                 <a
-                  key={i}
+                  key={`${celeb.name}-${celeb.year}`}
                   href={getWikiUrl(celeb.name)}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -39,6 +39,7 @@ export function CelebrityList({ celebrities, defaultVisible = 10, variant = 'tim
                   title={celeb.description}
                 >
                   • {celeb.name} ({celeb.year})
+                  <span className="sr-only"> (opens in new tab)</span>
                 </a>
               ))}
             </div>
@@ -46,8 +47,8 @@ export function CelebrityList({ celebrities, defaultVisible = 10, variant = 'tim
           {hasMore && (
             <button
               onClick={() => setExpanded(!expanded)}
-              className="mt-4 px-4 py-2 text-sm text-sepia-brown/70
-                         hover:text-sepia-brown transition-colors duration-200 flex items-center gap-2
+              className="mt-4 px-4 py-2 text-sm text-sepia-brown
+                         hover:text-dark-brown transition-colors duration-200 flex items-center gap-2
                          focus:outline-none focus:ring-2 focus:ring-sepia-brown/50 focus:ring-offset-1 rounded"
             >
               {expanded ? 'Show less' : `Show all ${celebrities.length}`}
@@ -69,9 +70,9 @@ export function CelebrityList({ celebrities, defaultVisible = 10, variant = 'tim
       </p>
       <div className="overflow-hidden transition-all duration-300 ease-in-out">
         <div className="flex flex-col sm:flex-row sm:flex-wrap justify-center gap-2">
-          {visibleCelebrities.map((celeb, i) => (
+          {visibleCelebrities.map((celeb) => (
             <a
-              key={i}
+              key={`${celeb.name}-${celeb.year}`}
               href={getWikiUrl(celeb.name)}
               target="_blank"
               rel="noopener noreferrer"
@@ -82,6 +83,7 @@ export function CelebrityList({ celebrities, defaultVisible = 10, variant = 'tim
               title={celeb.description}
             >
               {celeb.name} ({celeb.year})
+              <span className="sr-only"> (opens in new tab)</span>
             </a>
           ))}
         </div>
@@ -89,8 +91,8 @@ export function CelebrityList({ celebrities, defaultVisible = 10, variant = 'tim
       {hasMore && (
         <button
           onClick={() => setExpanded(!expanded)}
-          className="mt-4 mx-auto px-4 py-2 text-sm font-body text-sepia-brown/70
-                     hover:text-sepia-brown transition-colors duration-200 flex items-center gap-2
+          className="mt-4 mx-auto px-4 py-2 text-sm font-body text-sepia-brown
+                     hover:text-dark-brown transition-colors duration-200 flex items-center gap-2
                      focus:outline-none focus:ring-2 focus:ring-dark-brown/30 focus:ring-offset-1 rounded"
         >
           {expanded ? 'Show less' : `Show all ${celebrities.length}`}

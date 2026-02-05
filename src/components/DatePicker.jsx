@@ -154,7 +154,7 @@ export default function DatePicker({ onSubmit }) {
   const isComplete = month.length === 2 && day.length === 2 && year.length === 4
 
   return (
-    <div className="min-h-screen flex items-center justify-center px-4 py-8 bg-gradient-to-b from-charcoal-50 to-charcoal-100">
+    <main id="main-content" className="min-h-screen flex items-center justify-center px-4 py-8 bg-gradient-to-b from-charcoal-50 to-charcoal-100">
       <div className="max-w-lg w-full">
         {/* Header */}
         <div className="text-center mb-8 md:mb-10">
@@ -182,6 +182,8 @@ export default function DatePicker({ onSubmit }) {
               onKeyDown={handleKeyDown}
               placeholder="MM / DD / YYYY"
               disabled={isLoading}
+              aria-describedby={error ? 'birthdate-error' : undefined}
+              aria-invalid={error ? 'true' : undefined}
               className={`w-full px-5 py-4 text-lg font-sans text-center rounded-xl border-2 transition-all duration-200 focus:outline-none bg-white border-charcoal-200 text-charcoal-800 placeholder-charcoal-400 focus:border-amber focus:ring-2 focus:ring-amber/20 ${isLoading ? 'opacity-50 cursor-not-allowed' : ''}`}
               autoComplete="off"
             />
@@ -191,7 +193,7 @@ export default function DatePicker({ onSubmit }) {
           </div>
 
           {error && (
-            <p className="text-red-500 text-sm font-sans text-center" role="alert">
+            <p id="birthdate-error" className="text-red-500 text-sm font-sans text-center" role="alert">
               {error}
             </p>
           )}
@@ -239,6 +241,6 @@ export default function DatePicker({ onSubmit }) {
           No data is stored or shared.
         </p>
       </div>
-    </div>
+    </main>
   )
 }

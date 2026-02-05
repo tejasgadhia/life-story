@@ -170,7 +170,7 @@ function CaseFileTheme({ data, currentTab: propTab = 0, setTab: propSetTab, font
         {/* Main folder */}
         <div className="bg-manila rounded-b-lg rounded-tr-lg shadow-2xl relative">
           {/* Paperclip decoration */}
-          <div className="absolute -top-2 left-10 w-10 h-20 z-20 text-metal-gray">
+          <div className="absolute -top-2 left-10 w-10 h-20 z-20 text-metal-gray" aria-hidden="true">
             <svg viewBox="0 0 32 64" className="w-full h-full drop-shadow-lg">
               <path
                 d="M16 4 C8 4 4 10 4 18 L4 46 C4 54 10 60 18 60 C26 60 30 54 30 46 L30 18 C30 12 26 8 20 8 L20 46 C20 50 18 52 16 52 C14 52 12 50 12 46 L12 18"
@@ -186,7 +186,7 @@ function CaseFileTheme({ data, currentTab: propTab = 0, setTab: propSetTab, font
           <div className="bg-dark-brown text-vintage-cream py-3 md:py-4 px-4 md:px-8 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 sm:gap-0 rounded-tr-lg">
             <div className="flex items-center gap-3 md:gap-6">
               <span className="text-muted-red font-bold text-sm md:text-base"><span aria-hidden="true">● </span>CONFIDENTIAL</span>
-              <span className="text-xs md:text-sm text-vintage-cream/80 hidden sm:inline">LIFE STORY DIVISION</span>
+              <span className="text-xs md:text-sm text-vintage-cream hidden sm:inline">LIFE STORY DIVISION</span>
             </div>
             <div className="text-xs md:text-sm text-vintage-cream/80">
               FILE: LS-{data.birthYear}-{String(data.birthMonth).padStart(2, '0')}{String(data.birthDay).padStart(2, '0')}

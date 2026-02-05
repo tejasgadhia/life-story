@@ -6,6 +6,7 @@
 
 import { getGenerationId, getGeneration } from './generations'
 import { buildPlaceholderMap, resolveInSections, resolvePlaceholders } from './placeholders'
+import { MIN_YEAR, MAX_YEAR } from '../config/constants'
 
 /**
  * Format month-day as MM-DD string (zero-padded)
@@ -170,10 +171,10 @@ export async function assembleReport({ year, month, day }) {
  */
 export function validateDate(year, month, day) {
   // Check year range
-  if (year < 1946 || year > 2012) {
+  if (year < MIN_YEAR || year > MAX_YEAR) {
     return {
       valid: false,
-      error: 'Year must be between 1946 and 2012'
+      error: `Year must be between ${MIN_YEAR} and ${MAX_YEAR}`
     }
   }
 

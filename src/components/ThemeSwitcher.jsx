@@ -103,7 +103,7 @@ export default function ThemeSwitcher() {
       {/* Desktop sidebar - hidden on mobile */}
       <div className="fixed left-0 top-1/2 -translate-y-1/2 z-50 hidden md:block">
         <div className="bg-dark-brown/95 backdrop-blur rounded-r-lg py-3 px-2 shadow-xl flex flex-col gap-1">
-          <p className="text-[10px] font-body text-vintage-cream/80 uppercase tracking-wider text-center mb-1 px-1">
+          <p className="text-[10px] font-body text-vintage-cream uppercase tracking-wider text-center mb-1 px-1">
             Theme
           </p>
           {themes.map((theme) => (
@@ -114,7 +114,7 @@ export default function ThemeSwitcher() {
                 active:scale-[0.98] focus:ring-2 focus:ring-vintage-cream/50 focus:outline-none
                 ${currentTheme === theme.id
                   ? 'bg-vintage-cream text-dark-brown'
-                  : 'text-vintage-cream/70 hover:bg-vintage-cream/20 hover:text-vintage-cream'
+                  : 'text-vintage-cream hover:bg-vintage-cream/20'
                 }`}
               title={theme.label}
             >
@@ -129,7 +129,7 @@ export default function ThemeSwitcher() {
 
           <div className="h-px bg-vintage-cream/20 my-2" />
 
-          <p className="text-[10px] font-body text-vintage-cream/80 uppercase tracking-wider text-center mb-1 px-1">
+          <p className="text-[10px] font-body text-vintage-cream uppercase tracking-wider text-center mb-1 px-1">
             Size
           </p>
           <div className="flex flex-col gap-1">
@@ -141,7 +141,7 @@ export default function ThemeSwitcher() {
                   active:scale-[0.98] focus:ring-2 focus:ring-vintage-cream/50 focus:outline-none
                   ${fontSize === size.id
                     ? 'bg-vintage-cream text-dark-brown'
-                    : 'text-vintage-cream/70 hover:bg-vintage-cream/20 hover:text-vintage-cream'
+                    : 'text-vintage-cream hover:bg-vintage-cream/20'
                   }`}
                 title={size.label}
               >
@@ -165,7 +165,8 @@ export default function ThemeSwitcher() {
         onClick={() => setIsMobileMenuOpen(true)}
         className="fixed bottom-6 right-6 z-50 md:hidden w-14 h-14 bg-dark-brown/95 backdrop-blur
                    rounded-full shadow-xl flex items-center justify-center text-2xl
-                   active:scale-95 transition-transform"
+                   active:scale-95 transition-transform
+                   focus:outline-none focus:ring-2 focus:ring-vintage-cream focus:ring-offset-2 focus:ring-offset-dark-brown"
         aria-label="Open theme settings"
       >
         <Settings className="w-6 h-6 text-vintage-cream" aria-hidden="true" />
@@ -187,7 +188,7 @@ export default function ThemeSwitcher() {
             aria-modal="true"
             aria-label="Theme settings"
             className="absolute bottom-0 left-0 right-0 bg-dark-brown rounded-t-2xl p-6 pb-8
-                       animate-slide-up"
+                       animate-slide-up motion-reduce:animate-none"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Handle */}
@@ -195,7 +196,7 @@ export default function ThemeSwitcher() {
 
             {/* Theme selection */}
             <div className="mb-6">
-              <p className="text-xs font-body text-vintage-cream/80 uppercase tracking-wider mb-3">
+              <p className="text-xs font-body text-vintage-cream uppercase tracking-wider mb-3">
                 Theme
               </p>
               <div className="flex gap-3">
@@ -206,7 +207,7 @@ export default function ThemeSwitcher() {
                     className={`flex-1 py-4 px-4 rounded-lg transition-all flex flex-col items-center gap-2
                       ${currentTheme === theme.id
                         ? 'bg-vintage-cream text-dark-brown'
-                        : 'bg-vintage-cream/10 text-vintage-cream/70 active:bg-vintage-cream/20'
+                        : 'bg-vintage-cream/10 text-vintage-cream active:bg-vintage-cream/20'
                       }`}
                   >
                     <theme.Icon className="w-6 h-6" aria-hidden="true" />
@@ -218,7 +219,7 @@ export default function ThemeSwitcher() {
 
             {/* Font size selection */}
             <div>
-              <p className="text-xs font-body text-vintage-cream/80 uppercase tracking-wider mb-3">
+              <p className="text-xs font-body text-vintage-cream uppercase tracking-wider mb-3">
                 Text Size
               </p>
               <div className="flex gap-3">
@@ -229,7 +230,7 @@ export default function ThemeSwitcher() {
                     className={`flex-1 py-4 px-4 rounded-lg transition-all flex flex-col items-center gap-2 font-body
                       ${fontSize === size.id
                         ? 'bg-vintage-cream text-dark-brown'
-                        : 'bg-vintage-cream/10 text-vintage-cream/70 active:bg-vintage-cream/20'
+                        : 'bg-vintage-cream/10 text-vintage-cream active:bg-vintage-cream/20'
                       }`}
                   >
                     <span className={idx === 0 ? 'text-base' : idx === 1 ? 'text-xl' : 'text-2xl'}>

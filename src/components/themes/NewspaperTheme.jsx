@@ -110,9 +110,9 @@ function NewspaperTheme({ data, currentTab: propTab = 0, setTab: propSetTab, fon
               Notable {getMonthName(data.birthMonth)} {data.birthDay}{getOrdinalSuffix(data.birthDay)} Births
             </h4>
             <div className="grid grid-cols-2 md:grid-cols-1 gap-0">
-              {data.celebrities.slice(0, 8).map((celeb, i) => (
+              {data.celebrities.slice(0, 8).map((celeb) => (
                 <a
-                  key={i}
+                  key={`${celeb.name}-${celeb.year}`}
                   href={`https://en.wikipedia.org/wiki/${celeb.name.replace(/ /g, '_')}`}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -120,6 +120,7 @@ function NewspaperTheme({ data, currentTab: propTab = 0, setTab: propSetTab, fon
                   title={celeb.description}
                 >
                   • {celeb.name} ({celeb.year})
+                  <span className="sr-only"> (opens in new tab)</span>
                 </a>
               ))}
             </div>
@@ -174,7 +175,7 @@ function NewspaperTheme({ data, currentTab: propTab = 0, setTab: propSetTab, fon
                   <span>Birthday Rank</span>
                   <span>#{data.birthdayRank}</span>
                 </div>
-                <p className="text-xs text-stone-500 mt-1">
+                <p className="text-xs text-stone-600 mt-1">
                   Out of 366 possible dates
                 </p>
               </div>
@@ -183,7 +184,7 @@ function NewspaperTheme({ data, currentTab: propTab = 0, setTab: propSetTab, fon
                   <span>Percentile</span>
                   <span>{data.birthdayPercentile}%</span>
                 </div>
-                <p className="text-xs text-stone-500 mt-1">
+                <p className="text-xs text-stone-600 mt-1">
                   {data.birthdayRank < 183 ? 'More common' : 'Less common'} than average
                 </p>
               </div>
@@ -192,7 +193,7 @@ function NewspaperTheme({ data, currentTab: propTab = 0, setTab: propSetTab, fon
                   <span>Generation</span>
                   <span>{data.generation}</span>
                 </div>
-                <p className="text-xs text-stone-500 mt-1">
+                <p className="text-xs text-stone-600 mt-1">
                   ~72 million in the U.S.
                 </p>
               </div>
@@ -201,7 +202,7 @@ function NewspaperTheme({ data, currentTab: propTab = 0, setTab: propSetTab, fon
                   <span>Birth Year</span>
                   <span>{data.birthYear}</span>
                 </div>
-                <p className="text-xs text-stone-500 mt-1">
+                <p className="text-xs text-stone-600 mt-1">
                   ~3.9 million born that year
                 </p>
               </div>
@@ -236,7 +237,7 @@ function NewspaperTheme({ data, currentTab: propTab = 0, setTab: propSetTab, fon
         <h2 className="font-display text-lg md:text-xl font-black text-stone-900 uppercase tracking-wide border-b-2 border-stone-700 pb-2 mb-2">
           {config.title}
         </h2>
-        <p className="text-[10px] md:text-xs text-stone-500 italic mb-3 md:mb-4 uppercase tracking-wider">{config.subtitle}</p>
+        <p className="text-[10px] md:text-xs text-stone-600 italic mb-3 md:mb-4 uppercase tracking-wider">{config.subtitle}</p>
         <div
           className={`${contentFontSize} leading-[1.8] text-justify text-stone-800
                    [&>h2]:hidden [&>p]:mb-4
@@ -270,7 +271,7 @@ function NewspaperTheme({ data, currentTab: propTab = 0, setTab: propSetTab, fon
         className="max-w-6xl mx-auto shadow-2xl relative newspaper-texture"
       >
         {/* TOP TAGLINE */}
-        <div className="flex justify-between items-center px-6 py-2 border-b border-stone-400 text-xs tracking-[0.15em] text-stone-500 italic">
+        <div className="flex justify-between items-center px-6 py-2 border-b border-stone-400 text-xs tracking-[0.15em] text-stone-600 italic">
           <span>A Personal Historical Record</span>
           <span>Est. {data.birthYear}</span>
         </div>
@@ -374,7 +375,7 @@ function NewspaperTheme({ data, currentTab: propTab = 0, setTab: propSetTab, fon
             </div>
           </div>
 
-          <div className="text-center py-2 border-t border-stone-400 text-[10px] md:text-xs text-stone-500">
+          <div className="text-center py-2 border-t border-stone-400 text-[10px] md:text-xs text-stone-600">
             © {new Date().getFullYear()} The Personal Tribune
           </div>
         </footer>

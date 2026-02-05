@@ -176,7 +176,7 @@ function TimelineTheme({ data, currentTab: propTab = 0, setTab: propSetTab, font
             <Cake className="w-5 h-5 md:w-6 md:h-6 mr-1 md:mr-2 inline" aria-hidden="true" />
             <span className="font-display text-lg md:text-xl">{data.birthDate}</span>
           </div>
-          <p className="font-body text-xs md:text-sm text-vintage-cream/70 hidden sm:block">Your Life Story Report</p>
+          <p className="font-body text-xs md:text-sm text-vintage-cream hidden sm:block">Your Life Story Report</p>
         </div>
       </header>
 
@@ -243,7 +243,7 @@ function TimelineTheme({ data, currentTab: propTab = 0, setTab: propSetTab, font
 
       {/* Footer */}
       <footer className="bg-aged-paper py-4 border-t border-sepia-brown/20">
-        <p className="font-body text-xs text-sepia-brown/60 max-w-2xl mx-auto text-center leading-relaxed px-4 md:px-6">
+        <p className="font-body text-xs text-sepia-brown max-w-2xl mx-auto text-center leading-relaxed px-4 md:px-6">
           This report analyzes US cultural and historical context. Generational
           characteristics are research-based generalizations. Birthday data: FiveThirtyEight.
           Generational definitions: Pew Research Center.
