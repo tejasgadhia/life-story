@@ -1,97 +1,107 @@
 # Learnings - Life Story
-
 Last Updated: 2026-02-05
 
 ## What Worked Well
 
-### Parallel sub-agent architecture for bulk content rewrites
-**Context**: Needed to rewrite 67 year files with consistent voice/tone changes
-**What we did**: Wrote 4 generation files first as "golden examples," then dispatched year files in batches of 5 across 4 parallel fast-model sub-agents
-**Why it worked**: Each agent had a small, focused scope (5 files) with clear rules and examples. Parallel execution meant 20 files processed simultaneously.
-**Reuse for**: Any bulk content transformation across many similar files
+### Parallel Sub-Agents for Bulk File Edits
+**Context**: Needed to rewrite 67 childhood_context sections across all year files
+**What we did**: Split into 4 parallel sub-agents (one per generation: Boomers 1946-1964, Gen X 1965-1980, Millennials 1981-1996, Gen Z 1997-2012)
+**Why it worked**: Each agent got ~16-19 files, ran simultaneously, completed in minutes instead of hours. Detailed prompt with tone guidelines, anti-patterns, and era-specific context produced consistent quality across all 4 agents.
+**Reuse for**: Any bulk content editing across many files (celebrity curation next session, or any future content pass)
 
-### Generation files as golden examples before year files
-**Context**: Voice/tone consistency across 67 year files was the biggest risk
-**What we did**: Rewrote the 4 generation files first (current model, not fast), then extracted key phrases/patterns as reference examples for sub-agent prompts
-**Why it worked**: Sub-agents had concrete examples of target voice, not just abstract rules. Consistency was much better than if all files were rewritten independently.
-**Reuse for**: Any project where many files need consistent style -- establish the template first, then batch-process
+### Audit Script Before Manual Edits
+**Context**: Needed to understand cross-section repetition before fixing it (#63)
+**What we did**: Wrote a Node script that scanned all 67 year files, matched ~40 topic patterns across sections, and produced a per-year report of duplicated content
+**Why it worked**: Turned a vague "there's repetition" into specific data: 785 instances, top offenders by topic (retirement/pensions in all 67 files, 2008 crisis in 64, etc.). Revealed that `life_roadmap` and `comparison` sections naturally reference other sections (not actually problematic).
+**Reuse for**: Any content quality audit. Write a diagnostic script first, read its output, then decide what actually needs fixing.
 
-### Automated QA pipeline after each batch
-**Context**: With 71 files being rewritten by sub-agents, quality drift was a real risk
-**What we did**: Built a Node.js QA script checking: JSON validity, you/your regex scan, placeholder count, banned phrase scan, heading consistency
-**Why it worked**: Caught 89 prose leaks, 34 banned phrases, and 77 non-standard headings that sub-agents missed. Two QA passes got everything to zero.
-**Reuse for**: Any bulk content operation -- always build automated verification
+### Dead Code Identification via Data Flow Analysis
+**Context**: Generation files had 4 section keys that were always overwritten by year files
+**What we did**: Traced the spread-merge pattern in assembleReport.js (`{...generationData.sections, ...yearData.sections}`) and realized year data always wins. Confirmed all 67 year files have all 11 section keys. Generation sections = dead code.
+**Why it worked**: Simple code reading + data verification. Saved maintaining ~4,000 words of duplicate content across 4 files.
+**Reuse for**: Before editing content, always check if it's actually used. Trace the data flow from file to render.
+
+### Combining Issues Into a Single Pass
+**Context**: User was frustrated about doing yet another pass through 67 year files after 3 prior passes
+**What we did**: Combined #62 (childhood rewrite) and #63 (repetition fix) into a single pass, with the repetition audit run first as a read-only diagnostic
+**Why it worked**: Reduced user fatigue, produced the same quality outcome, and the childhood rewrites naturally addressed the worst repetition by focusing content on domestic/family context rather than events that belong in other sections.
+**Reuse for**: Always look for ways to batch related changes into a single pass, especially for large-scale content edits.
 
 ## What Didn't Work
 
-### Sub-agents not changing h2 headings
-**What we tried**: Initial batches (1-8) received voice/tone rules but not heading change instructions
-**Why it failed**: The instruction set was incomplete -- we forgot to specify that "Your Generation: ..." headings needed updating too
-**What we did instead**: Added heading instructions to later batches, then wrote a script to fix all headings across files that were already done
-**Lesson**: Include ALL formatting changes in the initial prompt, not just prose content changes. Headings, section titles, and structural elements need explicit instructions.
+### Generation-Level Content Sharing
+**What we tried**: Original architecture had generation files provide shared sections (relationships, blind_spots, etc.) that year files could optionally override
+**Why it failed**: Every year file ended up providing its own version of every section. The generation-level content was never displayed. It was dead code from the moment it was written.
+**What we did instead**: Removed generation sections entirely, simplified the assembly pipeline
+**Lesson**: Shared/inherited content patterns only work if there's actual variation — some files using the shared version, some overriding. If every file overrides, the shared layer is waste.
 
-### First QA pass acceptable-context list was too narrow
-**What we tried**: Regex scan for you/your with a short list of acceptable contexts (song titles, etc.)
-**Why it failed**: Missed many legitimate uses: Ferris Bueller quotes, passed notes, branded phrases, dialogue
-**What we did instead**: Built a comprehensive acceptable-contexts list (30+ entries) covering song titles, movie quotes, historical quotes, dialogue, brand names, and idiomatic expressions
-**Lesson**: When doing regex-based content audits, the exception list needs to be extensive. Build it iteratively based on false positives.
-
-### Some sub-agents didn't fully apply fixes in second pass
-**What we tried**: Dispatched fix agents for specific prose leaks identified in QA
-**Why it failed**: 2007.json and 2008.json still had leaks after the fix agent reported them as fixed
-**What we did instead**: Manual targeted fixes for the ~5 remaining leaks
-**Lesson**: Always re-verify after fix agents complete. Trust but verify.
+### Sensory-Overload Writing Pattern
+**What we tried**: Original childhood sections opened with nostalgic sensory lists ("The smell of X. The feel of Y. The taste of Z.")
+**Why it failed**: User feedback called it "saccharine and schlocky" — reads as AI-generated nostalgia bait. Product catalogs (listing 5+ brand names) aren't storytelling.
+**What we did instead**: Documentary journalism — lead with era-defining context, focus on family dynamics and domestic atmosphere, max 2-3 specific cultural touchpoints
+**Lesson**: Specificity comes from narrative context, not from listing period-appropriate nouns. "At seven, they watched men walk on the moon" is better than "The crinkle of Tang packets. The hiss of the TV warming up."
 
 ## Technical Patterns
 
-### Batched JSON content rewriting with quality gates
-**Implementation**: Read file -> rewrite section HTML -> preserve non-HTML fields -> write file -> run QA script
-**Use case**: Any project with many JSON data files containing prose content
-**Benefits**: Catches corruption early, prevents placeholder loss, ensures consistency
+### JSON Content Editing with StrReplace
+**Implementation**: Match the `"childhood_context": {` opening through its closing `}` to replace entire section content within JSON files
+**Use case**: Editing HTML content embedded in JSON data files
+**Benefits**: Precise replacement without risking other parts of the file. The section key + opening brace is unique enough to match reliably.
+**Gotcha**: The old_string must be unique within the file. For JSON sections, matching from the key through the first ~100 chars of content is usually sufficient.
 
-### Comprehensive regex scan for voice consistency
-**Implementation**:
-```javascript
-const regex = /\b[Yy]ou(?:['r ]|rself|'ve|'ll|'d)/g;
-// Plus acceptable-context filtering for song titles, quotes, etc.
-```
-**Use case**: Any voice/person conversion across many files
-**Benefits**: Catches subtle leaks like "yourself" and "you'd" that simple "you " searches miss
+### Placeholder System (No Placeholders in Childhood)
+**Discovery**: The childhood_context sections use zero placeholders — they're entirely static HTML
+**Why this matters**: Made bulk rewrites simpler (no placeholder preservation needed). Other sections use `{{AGE_AT_911}}`, `{{BIRTH_YEAR_COHORT}}`, etc.
+**Lesson**: Before editing content, check what dynamic elements exist. It changes the complexity of the rewrite.
+
+### assembleReport.js Simplification
+**Before**: Load year data + generation data + birthday data in parallel, spread-merge generation sections under year sections
+**After**: Load year data + birthday data in parallel, use year sections directly
+**Benefit**: One fewer network request, simpler code, no dead code path. Generation files still exist for metadata reference but aren't loaded at runtime.
 
 ## Efficiency Improvements
 
 ### Better Questions to Ask Upfront
-- "Should h2 headings also change, or just prose content?" -- would have saved the heading fix pass
-- "What quoted phrases should be preserved in original voice?" -- would have made the first QA scan more accurate
+- "Is the generation-level content actually being displayed?" — would have caught the dead code earlier
+- "What percentage of the flagged repetition is in summary sections (life_roadmap, comparison)?" — would have scoped the fix better from the start
 
 ### Workflow Optimizations
-- Dispatching 4 sub-agents in parallel cuts wall-clock time by ~75% vs sequential
-- Building the QA script once and running it repeatedly is far more reliable than manual spot-checking
-- Writing golden examples first (generation files) then referencing them in sub-agent prompts produces much more consistent output than rules alone
+- Running a diagnostic script before manual edits saves massive time — turns gut feelings into actionable data
+- Sub-agent parallelism for bulk edits: 4 agents x 17 files each = minutes instead of sequential hours
+- Combining related issues into a single pass reduces both wall-clock time and user fatigue
+
+## Dependencies & Tools
+
+### Repetition Audit Script (deleted after use)
+**What it did**: Scanned 67 year files for 40+ topic patterns, identified cross-section repetition
+**Why we chose it**: Needed data before deciding how to fix repetition
+**Gotchas**: Pattern matching isn't perfect — "internet" matches many contexts. Topic-level patterns (2008 crisis, 9/11) are more useful than phrase-level matching.
+**Alternative**: Manual reading of all sections (impractical at 67 files x 11 sections)
 
 ## Session Efficiency Metrics
 
 ### Time Distribution (Estimated)
-- Planning/Setup: 5%
-- Implementation (generation files, current model): 10%
-- Implementation (year files, sub-agents): 50%
-- QA & Fix passes: 25%
-- Documentation & Commit: 10%
+- Planning/Design: 15%
+- Implementation: 60%
+- Debugging: 5%
+- Testing/Verification: 10%
+- Documentation: 10%
 
 ### Iteration Count
-- Generation files: 1 pass (written correctly first time)
-- Year files: 1 main rewrite + 1 fix pass for leaks/banned phrases + 1 heading fix
-- Total: 3 iterations to get all 71 files clean
+- Dead code cleanup (#63A): 1 iteration (clean, mechanical)
+- Repetition audit script: 1 iteration (ran successfully first try)
+- Childhood rewrites (67 files): 1 iteration (parallel sub-agents all succeeded)
+- Total features: 3, all first-try
 
 ### Context Efficiency
-- Requirements were clear from the plan file -- zero clarifications needed
-- Backtracking: heading instructions missing from initial batches (recovered with script)
-- Files read: 6 sample files to understand structure before starting
+- Times requirements were clarified: 1 (user asked about combining passes)
+- Times we backtracked: 0
+- Files read multiple times: ~6 (spot-checking samples across generations)
 
 ### Tool Usage
-- Most used: Task (sub-agents), Shell (QA scripts), Write (generation files)
-- Tools that saved time: Task with fast model -- 14 batches of content rewrites completed in minutes vs hours
-- Regex-based QA scripts caught issues no human spot-check would find at this scale
+- Most used tools: StrReplace (73 file edits), Task/sub-agents (4 parallel batches), Shell (build/test/git)
+- Tools that saved time: Parallel sub-agents (4x speedup on bulk edits), diagnostic script (scoped the repetition problem)
+- Tools that slowed us down: None notable
 
 ### Next Session Improvement
-> **Actionable insight**: When dispatching sub-agents for content rewrites, include ALL formatting requirements (headings, structure, metadata) in the FIRST prompt, not just prose rules. The heading fix pass added unnecessary iteration. Also build the QA acceptable-exceptions list upfront by scanning a few sample files first.
+> **Actionable insight**: For celebrity curation (#59), write the scoring/filtering script first and run it before any manual edits. The audit-then-edit pattern worked well this session and should be repeated. Consider using Wikipedia page view API data as an objective recognizability signal rather than subjective scoring.
