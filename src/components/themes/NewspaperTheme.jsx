@@ -1,6 +1,10 @@
-import { memo } from 'react'
+import { memo, useRef, useCallback } from 'react'
 import { TABS } from '../../config/tabs'
 import { useTabState } from '../../hooks/useTabState'
+
+// Tab IDs for ARIA
+const getTabId = (tabId) => `newspaper-tab-${tabId}`
+const getTabPanelId = (tabId) => `newspaper-tabpanel-${tabId}`
 
 // Helper to get ordinal suffix (1st, 2nd, 3rd, etc.)
 const getOrdinalSuffix = (n) => {
@@ -44,6 +48,29 @@ const SECTION_CONFIG = {
 
 function NewspaperTheme({ data, currentTab: propTab = 0, setTab: propSetTab, fontSize = 'base' }) {
   const [currentPage, setCurrentPage] = useTabState(propTab, propSetTab)
+  const tabRefs = useRef([])
+
+  // Keyboard navigation for tabs (WAI-ARIA APG)
+  const handleTabKeyDown = useCallback((e, index) => {
+    let newIndex = null
+    if (e.key === 'ArrowRight') {
+      e.preventDefault()
+      newIndex = (index + 1) % TABS.length
+    } else if (e.key === 'ArrowLeft') {
+      e.preventDefault()
+      newIndex = (index - 1 + TABS.length) % TABS.length
+    } else if (e.key === 'Home') {
+      e.preventDefault()
+      newIndex = 0
+    } else if (e.key === 'End') {
+      e.preventDefault()
+      newIndex = TABS.length - 1
+    }
+    if (newIndex !== null) {
+      setCurrentPage(newIndex)
+      tabRefs.current[newIndex]?.focus()
+    }
+  }, [setCurrentPage])
 
   const fontSizeClasses = { sm: 'content-scale-sm', base: 'content-scale-base', lg: 'content-scale-lg' }
   const contentFontSize = fontSizeClasses[fontSize] || 'text-base'
@@ -71,7 +98,7 @@ function NewspaperTheme({ data, currentTab: propTab = 0, setTab: propSetTab, fon
             <p className="text-center text-sm text-stone-600 border-t border-stone-400 pt-2">
               {data.generationSpan}
             </p>
-            <p className="text-center text-xs text-stone-500 mt-1">
+            <p className="text-center text-xs text-stone-600 mt-1">
               Born {data.birthDate}
             </p>
           </div>
@@ -254,9 +281,9 @@ function NewspaperTheme({ data, currentTab: propTab = 0, setTab: propSetTab, fon
           </h1>
 
           <div className="flex items-center justify-center gap-2 md:gap-3 my-2">
-            <div className="flex-1 max-w-16 md:max-w-24 h-px bg-stone-500" />
-            <span className="text-lg md:text-xl text-stone-600">✦</span>
-            <div className="flex-1 max-w-16 md:max-w-24 h-px bg-stone-500" />
+            <div className="flex-1 max-w-16 md:max-w-24 h-px bg-stone-500" aria-hidden="true" />
+            <span className="text-lg md:text-xl text-stone-600" aria-hidden="true">✦</span>
+            <div className="flex-1 max-w-16 md:max-w-24 h-px bg-stone-500" aria-hidden="true" />
           </div>
 
           <div className="flex flex-col sm:flex-row items-center justify-between gap-1 sm:gap-0 text-[10px] sm:text-xs text-stone-600 tracking-wider px-2 md:px-4">
@@ -269,26 +296,43 @@ function NewspaperTheme({ data, currentTab: propTab = 0, setTab: propSetTab, fon
         </header>
 
         {/* PAGE NAVIGATION */}
-        <div className="flex overflow-x-auto scrollbar-hide bg-stone-800 border-b-2 border-stone-900">
-          {TABS.map((tab, i) => (
-            <button
-              key={tab.id}
-              onClick={() => setCurrentPage(i)}
-              className={`flex-1 min-w-fit px-3 sm:px-6 md:px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider sm:tracking-widest whitespace-nowrap
-                transition-colors duration-200 active:scale-[0.98] focus:ring-2 focus:ring-stone-400/50 focus:outline-none
-                ${currentPage === i
-                  ? 'bg-stone-100 text-stone-900'
-                  : 'bg-stone-800 text-stone-300 hover:bg-stone-700 hover:text-stone-100'
-                }`}
-            >
-              <span className="hidden sm:inline">{tab.title}</span>
-              <span className="sm:hidden">{tab.title.split(' ')[0]}</span>
-            </button>
-          ))}
-        </div>
+        <nav aria-label="Report sections">
+          <div 
+            role="tablist" 
+            className="flex overflow-x-auto scrollbar-hide bg-stone-800 border-b-2 border-stone-900"
+          >
+            {TABS.map((tab, i) => (
+              <button
+                key={tab.id}
+                ref={(el) => (tabRefs.current[i] = el)}
+                role="tab"
+                id={getTabId(tab.id)}
+                aria-selected={currentPage === i}
+                aria-controls={getTabPanelId(tab.id)}
+                tabIndex={currentPage === i ? 0 : -1}
+                onClick={() => setCurrentPage(i)}
+                onKeyDown={(e) => handleTabKeyDown(e, i)}
+                className={`flex-1 min-w-fit px-3 sm:px-6 md:px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider sm:tracking-widest whitespace-nowrap
+                  transition-colors duration-200 active:scale-[0.98] focus:ring-2 focus:ring-stone-400/50 focus:outline-none
+                  ${currentPage === i
+                    ? 'bg-stone-100 text-stone-900'
+                    : 'bg-stone-800 text-stone-300 hover:bg-stone-700 hover:text-stone-100'
+                  }`}
+              >
+                <span className="hidden sm:inline">{tab.title}</span>
+                <span className="sm:hidden">{tab.title.split(' ')[0]}</span>
+              </button>
+            ))}
+          </div>
+        </nav>
 
         {/* MAIN CONTENT */}
-        <div className="p-3 sm:p-4 md:p-6">
+        <div 
+          role="tabpanel"
+          id={getTabPanelId(currentTabData.id)}
+          aria-labelledby={getTabId(currentTabData.id)}
+          className="p-3 sm:p-4 md:p-6"
+        >
           {currentPage === 0 ? (
             <div className="grid grid-cols-1 gap-4 md:gap-6">
               {renderBirthdaySection()}

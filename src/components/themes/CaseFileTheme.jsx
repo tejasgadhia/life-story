@@ -1,7 +1,11 @@
-import { memo } from 'react'
+import { memo, useRef, useCallback } from 'react'
 import { TABS } from '../../config/tabs'
 import { useTabState } from '../../hooks/useTabState'
 import { CelebrityList } from '../shared/CelebrityList'
+
+// Tab IDs for ARIA
+const getTabId = (tabId) => `casefile-tab-${tabId}`
+const getTabPanelId = (tabId) => `casefile-tabpanel-${tabId}`
 
 const SECTION_CONFIG = {
   birthday: { title: 'Subject Profile', key: null },
@@ -20,6 +24,29 @@ const SECTION_CONFIG = {
 
 function CaseFileTheme({ data, currentTab: propTab = 0, setTab: propSetTab, fontSize = 'base' }) {
   const [activeTab, setActiveTab] = useTabState(propTab, propSetTab)
+  const tabRefs = useRef([])
+
+  // Keyboard navigation for tabs (WAI-ARIA APG)
+  const handleTabKeyDown = useCallback((e, index) => {
+    let newIndex = null
+    if (e.key === 'ArrowRight') {
+      e.preventDefault()
+      newIndex = (index + 1) % TABS.length
+    } else if (e.key === 'ArrowLeft') {
+      e.preventDefault()
+      newIndex = (index - 1 + TABS.length) % TABS.length
+    } else if (e.key === 'Home') {
+      e.preventDefault()
+      newIndex = 0
+    } else if (e.key === 'End') {
+      e.preventDefault()
+      newIndex = TABS.length - 1
+    }
+    if (newIndex !== null) {
+      setActiveTab(newIndex)
+      tabRefs.current[newIndex]?.focus()
+    }
+  }, [setActiveTab])
 
   // Font size mapping
   const fontSizeClasses = { sm: 'content-scale-sm', base: 'content-scale-base', lg: 'content-scale-lg' }
@@ -29,34 +56,34 @@ function CaseFileTheme({ data, currentTab: propTab = 0, setTab: propSetTab, font
 
   const renderBirthdaySection = () => (
     <div className="bg-vintage-cream/30 border-2 border-sepia-brown/20 p-4 md:p-6">
-      <h3 className="font-bold text-base md:text-lg mb-4 md:mb-6 text-sepia-brown/70 tracking-wider border-b-2 border-sepia-brown/30 pb-2">
+      <h3 className="font-bold text-base md:text-lg mb-4 md:mb-6 text-sepia-brown tracking-wider border-b-2 border-sepia-brown/30 pb-2">
         SUBJECT PROFILE
       </h3>
 
       {/* Subject Info Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6 text-base mb-6 md:mb-8">
         <div className="border-b-2 border-sepia-brown/30 pb-3">
-          <span className="text-sepia-brown/70 block text-xs md:text-sm mb-1">DATE OF BIRTH</span>
+          <span className="text-sepia-brown block text-xs md:text-sm mb-1">DATE OF BIRTH</span>
           <span className="font-bold text-base md:text-lg">{data.birthDate}</span>
         </div>
         <div className="border-b-2 border-sepia-brown/30 pb-3">
-          <span className="text-sepia-brown/70 block text-xs md:text-sm mb-1">CASE NUMBER</span>
+          <span className="text-sepia-brown block text-xs md:text-sm mb-1">CASE NUMBER</span>
           <span className="font-bold text-base md:text-lg">LS-{data.birthYear}-{String(data.birthMonth).padStart(2, '0')}{String(data.birthDay).padStart(2, '0')}</span>
         </div>
         <div className="border-b-2 border-sepia-brown/30 pb-3">
-          <span className="text-sepia-brown/70 block text-xs md:text-sm mb-1">GENERATION</span>
+          <span className="text-sepia-brown block text-xs md:text-sm mb-1">GENERATION</span>
           <span className="font-bold text-base md:text-lg">{data.generation}</span>
         </div>
         <div className="border-b-2 border-sepia-brown/30 pb-3">
-          <span className="text-sepia-brown/70 block text-xs md:text-sm mb-1">COHORT SPAN</span>
+          <span className="text-sepia-brown block text-xs md:text-sm mb-1">COHORT SPAN</span>
           <span className="font-bold text-base md:text-lg">{data.generationSpan}</span>
         </div>
         <div className="border-b-2 border-sepia-brown/30 pb-3">
-          <span className="text-sepia-brown/70 block text-xs md:text-sm mb-1">BIRTHDAY RANK</span>
+          <span className="text-sepia-brown block text-xs md:text-sm mb-1">BIRTHDAY RANK</span>
           <span className="font-bold text-base md:text-lg">#{data.birthdayRank} of 366</span>
         </div>
         <div className="border-b-2 border-sepia-brown/30 pb-3">
-          <span className="text-sepia-brown/70 block text-xs md:text-sm mb-1">PERCENTILE</span>
+          <span className="text-sepia-brown block text-xs md:text-sm mb-1">PERCENTILE</span>
           <span className="font-bold text-base md:text-lg">{data.birthdayPercentile}%</span>
         </div>
       </div>
@@ -80,9 +107,9 @@ function CaseFileTheme({ data, currentTab: propTab = 0, setTab: propSetTab, font
 
     return (
       <div className="bg-vintage-cream/30 border-2 border-sepia-brown/20 p-4 md:p-6 h-full">
-        <h3 className="font-bold text-base md:text-lg mb-3 md:mb-4 text-sepia-brown/70 tracking-wider border-b-2 border-sepia-brown/30 pb-2">
-          {config.title.toUpperCase()}
-        </h3>
+      <h3 className="font-bold text-base md:text-lg mb-3 md:mb-4 text-sepia-brown tracking-wider border-b-2 border-sepia-brown/30 pb-2">
+        {config.title.toUpperCase()}
+      </h3>
         <div
           className={`${contentFontSize} leading-[1.8]
                    [&>h2]:hidden
@@ -109,24 +136,36 @@ function CaseFileTheme({ data, currentTab: propTab = 0, setTab: propSetTab, font
       {/* Manila folder container */}
       <div className="max-w-6xl mx-auto">
         {/* File tabs */}
-        <div className="flex overflow-x-auto scrollbar-hide gap-1 mb-0 relative -mx-1 px-1">
-          {TABS.map((tab, index) => (
-            <button
-              key={tab.id}
-              onClick={() => setActiveTab(index)}
-              className={`min-w-fit px-3 sm:px-4 md:px-6 py-3 text-xs sm:text-sm font-bold uppercase tracking-wide rounded-t-lg
-                        relative flex-1 text-center whitespace-nowrap transition-colors duration-200
-                        active:scale-[0.98] focus:ring-2 focus:ring-sepia-brown/50 focus:outline-none
-                ${activeTab === index
-                  ? 'bg-manila text-dark-brown z-10 -mb-px border-t-2 border-x-2 border-sepia-brown/30'
-                  : 'bg-sepia-brown/40 text-vintage-cream/80 hover:bg-sepia-brown/60'
-                }`}
-            >
-              <span className="hidden sm:inline">{tab.title}</span>
-              <span className="sm:hidden">{tab.title.split(' ')[0]}</span>
-            </button>
-          ))}
-        </div>
+        <nav aria-label="Report sections">
+          <div 
+            role="tablist" 
+            className="flex overflow-x-auto scrollbar-hide gap-1 mb-0 relative -mx-1 px-1"
+          >
+            {TABS.map((tab, index) => (
+              <button
+                key={tab.id}
+                ref={(el) => (tabRefs.current[index] = el)}
+                role="tab"
+                id={getTabId(tab.id)}
+                aria-selected={activeTab === index}
+                aria-controls={getTabPanelId(tab.id)}
+                tabIndex={activeTab === index ? 0 : -1}
+                onClick={() => setActiveTab(index)}
+                onKeyDown={(e) => handleTabKeyDown(e, index)}
+                className={`min-w-fit px-3 sm:px-4 md:px-6 py-3 text-xs sm:text-sm font-bold uppercase tracking-wide rounded-t-lg
+                          relative flex-1 text-center whitespace-nowrap transition-colors duration-200
+                          active:scale-[0.98] focus:ring-2 focus:ring-sepia-brown/50 focus:outline-none
+                  ${activeTab === index
+                    ? 'bg-manila text-dark-brown z-10 -mb-px border-t-2 border-x-2 border-sepia-brown/30'
+                    : 'bg-sepia-brown/40 text-vintage-cream hover:bg-sepia-brown/60'
+                  }`}
+              >
+                <span className="hidden sm:inline">{tab.title}</span>
+                <span className="sm:hidden">{tab.title.split(' ')[0]}</span>
+              </button>
+            ))}
+          </div>
+        </nav>
 
         {/* Main folder */}
         <div className="bg-manila rounded-b-lg rounded-tr-lg shadow-2xl relative">
@@ -146,16 +185,21 @@ function CaseFileTheme({ data, currentTab: propTab = 0, setTab: propSetTab, font
           {/* Classification header */}
           <div className="bg-dark-brown text-vintage-cream py-3 md:py-4 px-4 md:px-8 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 sm:gap-0 rounded-tr-lg">
             <div className="flex items-center gap-3 md:gap-6">
-              <span className="text-muted-red font-bold text-sm md:text-base">● CONFIDENTIAL</span>
-              <span className="text-xs md:text-sm opacity-70 hidden sm:inline">LIFE STORY DIVISION</span>
+              <span className="text-muted-red font-bold text-sm md:text-base"><span aria-hidden="true">● </span>CONFIDENTIAL</span>
+              <span className="text-xs md:text-sm text-vintage-cream/80 hidden sm:inline">LIFE STORY DIVISION</span>
             </div>
-            <div className="text-xs md:text-sm opacity-70">
+            <div className="text-xs md:text-sm text-vintage-cream/80">
               FILE: LS-{data.birthYear}-{String(data.birthMonth).padStart(2, '0')}{String(data.birthDay).padStart(2, '0')}
             </div>
           </div>
 
           {/* Document content - standardized responsive padding */}
-          <div className="p-4 md:p-6 min-h-[400px] md:min-h-[600px]">
+          <div 
+            role="tabpanel"
+            id={getTabPanelId(currentTabData.id)}
+            aria-labelledby={getTabId(currentTabData.id)}
+            className="p-4 md:p-6 min-h-[400px] md:min-h-[600px]"
+          >
             {/* Section header */}
             <div className="border-b-4 border-dark-brown pb-3 md:pb-4 mb-6 md:mb-8">
               <h2 className="text-xl md:text-2xl font-bold text-dark-brown uppercase tracking-wider">
