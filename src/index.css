@@ -1,6 +1,63 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  /* Custom breakpoints */
+  --breakpoint-xs: 475px;
+  --breakpoint-desktop: 1280px;
+
+  /* Custom colors - vintage theme */
+  --color-vintage-cream: #F5F0E8;
+  --color-aged-paper: #E8DCC4;
+  --color-sepia-brown: #8B7355;
+  --color-dark-brown: #3E2723;
+  --color-muted-red: #A4493D;
+  --color-muted-blue: #4A6FA5;
+  --color-aged-black: #1A1A1A;
+  --color-manila: #D4B896;
+  --color-metal-gray: #8B8B8B;
+
+  /* Custom colors - charcoal scale */
+  --color-charcoal-50: #FAFAF9;
+  --color-charcoal-100: #F5F5F4;
+  --color-charcoal-200: #E7E5E4;
+  --color-charcoal-300: #D6D3D1;
+  --color-charcoal-400: #A8A29E;
+  --color-charcoal-500: #78716C;
+  --color-charcoal-600: #57534E;
+  --color-charcoal-700: #44403C;
+  --color-charcoal-800: #292524;
+  --color-charcoal-900: #1C1917;
+  --color-charcoal-950: #141414;
+  --color-charcoal: #292524;
+
+  /* Custom colors - amber */
+  --color-amber: #D99E46;
+  --color-amber-dark: #C48B35;
+  --color-amber-light: #E5B564;
+
+  /* Font families */
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'Courier Prime', 'Courier New', monospace;
+  --font-accent: 'Lora', Georgia, serif;
+  --font-blackletter: 'UnifrakturMaguntia', 'Old English Text MT', serif;
+  --font-typewriter: 'Special Elite', 'Courier New', monospace;
+  --font-heading: 'Fraunces', Georgia, serif;
+  --font-sans: 'DM Sans', system-ui, sans-serif;
+
+  /* Animations */
+  --animate-slide-up: slide-up 0.3s ease-out;
+  --animate-fade-up: fade-up 0.2s ease-out;
+
+  @keyframes slide-up {
+    0% { transform: translateY(100%); }
+    100% { transform: translateY(0); }
+  }
+
+  @keyframes fade-up {
+    0% { opacity: 0; transform: translateY(8px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+}
 
 :root {
   --color-vintage-cream: #F5F0E8;
