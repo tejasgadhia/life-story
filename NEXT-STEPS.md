@@ -35,4 +35,4 @@ Last Updated: February 5, 2026
 
 ## Next Session Starter Prompt
 
-> "Continue working on life-story. Last session: replaced desktop sidebar theme switcher with unified FAB + popover (#69), refactored ThemeWrapper loading. Next: mobile responsive polish across all three themes. Reference NEXT-STEPS.md for details."
+> "Continue working on life-story. Last session: fixed loading screen so it always appears when generating a new report (4.3s staged animation), stabilized animation callbacks, moved loading orchestration to ThemeWrapper. Next: mobile responsive polish across all three themes. Reference NEXT-STEPS.md for details."

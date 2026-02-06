@@ -9,7 +9,8 @@ Last Updated: February 5, 2026
 - Unified FAB theme switcher (desktop popover + mobile bottom sheet)
 - URL-based routing with shareable report URLs
 - Font size controls, tab navigation, celebrity lists
-- Loading screen with progress indicator
+- Loading screen with ~4.3s staged animation on new report generation
+- Session caching — loading screen skipped on theme/tab switches
 - PWA with offline support
 - GitHub Pages auto-deploy via Actions
 
@@ -24,13 +25,19 @@ Last Updated: February 5, 2026
 
 ## Recent Changes
 
-### February 5, 2026 Session
+### February 5, 2026 Session (Loading Screen Fix)
+- Fixed loading screen never appearing (was pre-cached before navigation)
+- Moved report loading from `LandingPage.jsx` to `ThemeWrapper.jsx`
+- Loading screen now shows synchronously for uncached birthdays
+- Skips loading animation on theme/tab switches (data in sessionStorage)
+- Stabilized `onComplete` callback with `useCallback` to prevent animation restarts
+- `LoadingScreen.jsx` unchanged — 7-stage progress animation (~4.3s total)
+
+### February 5, 2026 Session (FAB + Popover)
 - Replaced intrusive desktop sidebar theme switcher with unified FAB + popover (#69)
 - FAB in bottom-right corner on all screen sizes
 - Desktop: compact popover above FAB; Mobile: bottom sheet (unchanged)
 - Added `fade-up` animation for desktop popover
-- Refactored ThemeWrapper loading flow for better state management
-- Simplified LandingPage to delegate loading to ThemeWrapper
 
 ## Architecture
 
@@ -41,8 +48,10 @@ Last Updated: February 5, 2026
 - GitHub Pages deployment
 
 **Key Files:**
+- `src/pages/LandingPage.jsx` — DatePicker, navigates immediately to report URL
+- `src/components/ThemeWrapper.jsx` — Report loading, caching, loading screen orchestration
+- `src/components/LoadingScreen.jsx` — 7-stage animated loading screen
 - `src/components/ThemeSwitcher.jsx` — Unified FAB with popover/bottom-sheet
-- `src/components/ThemeWrapper.jsx` — Report loading and caching
 - `src/components/themes/*.jsx` — Three theme components
 - `src/data/` — Year, generation, and birthday JSON data
 - `src/utils/assembleReport.js` — Report data assembly
