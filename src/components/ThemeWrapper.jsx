@@ -40,32 +40,40 @@ export default function ThemeWrapper({ ThemeComponent, themePath }) {
   useEffect(() => {
     if (!parsedDate) return
 
+    // Reset state when birthday changes to avoid showing stale data
+    setReportData(null)
+    setIsLoading(true)
+    setShowLoading(false)
+
     const loadReport = async () => {
-      // Check session cache first
       const cacheKey = `life-story-report-${birthday}`
       const cachedReport = sessionStorage.getItem(cacheKey)
 
+      let report = null
+
+      // Try session cache first
       if (cachedReport) {
         try {
-          setReportData(JSON.parse(cachedReport))
-          setIsLoading(false)
-          return
+          report = JSON.parse(cachedReport)
         } catch (e) {
           sessionStorage.removeItem(cacheKey)
         }
       }
 
-      // No cache, need to load - show loading screen
-      setShowLoading(true)
-
-      try {
-        const report = await assembleReport(parsedDate)
-        sessionStorage.setItem(cacheKey, JSON.stringify(report))
-        setReportData(report)
-      } catch (error) {
-        console.error('Failed to load report:', error)
-        navigate('/life-story', { replace: true })
+      // No cache hit, load fresh
+      if (!report) {
+        try {
+          report = await assembleReport(parsedDate)
+          sessionStorage.setItem(cacheKey, JSON.stringify(report))
+        } catch (error) {
+          console.error('Failed to load report:', error)
+          navigate('/life-story', { replace: true })
+          return
+        }
       }
+
+      setReportData(report)
+      setShowLoading(true)
     }
 
     loadReport()

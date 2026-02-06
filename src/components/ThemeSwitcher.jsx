@@ -1,48 +1,84 @@
 import { useState, useEffect, useRef } from 'react'
 import { useNavigate, useParams, useLocation } from 'react-router-dom'
 import { useFontSize } from '../context/FontSizeContext'
-import { LayoutDashboard, Newspaper, FolderOpen, Settings, Home } from 'lucide-react'
+import { LayoutDashboard, Newspaper, FolderOpen, Settings, Home, X } from 'lucide-react'
 
-// Theme Switcher - Desktop sidebar + Mobile FAB with bottom sheet
+// Theme Switcher - Unified FAB with desktop popover + mobile bottom sheet
 export default function ThemeSwitcher() {
   const navigate = useNavigate()
   const { birthday, tab } = useParams()
   const location = useLocation()
   const { fontSize, setFontSize } = useFontSize()
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   // Refs for focus management
   const triggerButtonRef = useRef(null)
-  const bottomSheetRef = useRef(null)
+  const desktopPanelRef = useRef(null)
+  const mobilePanelRef = useRef(null)
 
-  // Focus trap for mobile bottom sheet
+  // Get the active panel ref based on screen size
+  const getActivePanel = () => {
+    // Desktop panel is hidden on mobile via CSS, so check visibility
+    if (desktopPanelRef.current && desktopPanelRef.current.offsetParent !== null) {
+      return desktopPanelRef.current
+    }
+    return mobilePanelRef.current
+  }
+
+  // Close on click outside (desktop popover)
   useEffect(() => {
-    if (!isMobileMenuOpen) return
+    if (!isMenuOpen) return
 
-    const sheet = bottomSheetRef.current
-    if (!sheet) return
-
-    // Get all focusable elements
-    const focusableSelector = 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
-    const getFocusableElements = () => sheet.querySelectorAll(focusableSelector)
-
-    // Focus first element when sheet opens
-    const focusables = getFocusableElements()
-    if (focusables.length > 0) {
-      focusables[0].focus()
+    const handleClickOutside = (e) => {
+      const activePanel = getActivePanel()
+      if (
+        activePanel && !activePanel.contains(e.target) &&
+        triggerButtonRef.current && !triggerButtonRef.current.contains(e.target)
+      ) {
+        closeMenu()
+      }
     }
 
-    // Handle keyboard navigation
+    // Small delay so the opening click doesn't immediately close it
+    const timer = setTimeout(() => {
+      document.addEventListener('mousedown', handleClickOutside)
+    }, 0)
+
+    return () => {
+      clearTimeout(timer)
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [isMenuOpen])
+
+  // Focus trap and keyboard handling
+  useEffect(() => {
+    if (!isMenuOpen) return
+
+    // Small delay to let DOM render and CSS apply
+    const setupTimer = setTimeout(() => {
+      const panel = getActivePanel()
+      if (!panel) return
+
+      const focusableSelector = 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+      const focusables = panel.querySelectorAll(focusableSelector)
+      if (focusables.length > 0) {
+        focusables[0].focus()
+      }
+    }, 50)
+
     const handleKeyDown = (e) => {
       if (e.key === 'Escape') {
-        setIsMobileMenuOpen(false)
-        triggerButtonRef.current?.focus()
+        closeMenu()
         return
       }
 
       if (e.key !== 'Tab') return
 
-      const focusables = getFocusableElements()
+      const panel = getActivePanel()
+      if (!panel) return
+
+      const focusableSelector = 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+      const focusables = panel.querySelectorAll(focusableSelector)
       const first = focusables[0]
       const last = focusables[focusables.length - 1]
 
@@ -56,12 +92,14 @@ export default function ThemeSwitcher() {
     }
 
     document.addEventListener('keydown', handleKeyDown)
-    return () => document.removeEventListener('keydown', handleKeyDown)
-  }, [isMobileMenuOpen])
+    return () => {
+      clearTimeout(setupTimer)
+      document.removeEventListener('keydown', handleKeyDown)
+    }
+  }, [isMenuOpen])
 
   // Determine current theme from path
   const pathParts = location.pathname.split('/').filter(Boolean)
-  // Path: life-story / birthday / theme / tab?
   const currentTheme = pathParts[2] || 'timeline'
   const currentSlug = tab || 'overview'
 
@@ -78,115 +116,127 @@ export default function ThemeSwitcher() {
   ]
 
   const handleThemeChange = (themeId) => {
-    // Preserve birthday and current tab when switching themes
     if (currentSlug === 'overview') {
       navigate(`/life-story/${birthday}/${themeId}`)
     } else {
       navigate(`/life-story/${birthday}/${themeId}/${currentSlug}`)
     }
-    setIsMobileMenuOpen(false)
+    setIsMenuOpen(false)
   }
 
   const handleFontSizeChange = (sizeId) => {
     setFontSize(sizeId)
-    setIsMobileMenuOpen(false)
+    setIsMenuOpen(false)
   }
 
-  // Close menu and return focus to trigger button
   const closeMenu = () => {
-    setIsMobileMenuOpen(false)
+    setIsMenuOpen(false)
     triggerButtonRef.current?.focus()
   }
 
-  return (
+  // Shared panel content (used by both desktop popover and mobile bottom sheet)
+  const panelContent = (
     <>
-      {/* Desktop sidebar - hidden on mobile */}
-      <div className="fixed left-0 top-1/2 -translate-y-1/2 z-50 hidden md:block">
-        <div className="bg-dark-brown/95 backdrop-blur rounded-r-lg py-3 px-2 shadow-xl flex flex-col gap-1">
-          <button
-            onClick={() => navigate('/life-story/')}
-            className="group relative px-3 py-2 rounded transition-all text-vintage-cream hover:bg-vintage-cream/20 active:scale-[0.98] focus:ring-2 focus:ring-vintage-cream/50 focus:outline-none"
-            title="New Report"
-          >
-            <Home className="w-5 h-5" aria-hidden="true" />
-            <span className="absolute left-full ml-2 top-1/2 -translate-y-1/2 bg-dark-brown text-vintage-cream text-xs px-2 py-1 rounded whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none shadow-lg">
-              New Report
-            </span>
-          </button>
-          <div className="h-px bg-vintage-cream/20 my-2" />
-          <p className="text-[10px] font-body text-vintage-cream uppercase tracking-wider text-center mb-1 px-1">
-            Theme
-          </p>
+      {/* Theme selection */}
+      <div className="mb-5">
+        <p className="text-xs font-body text-vintage-cream uppercase tracking-wider mb-3">
+          Theme
+        </p>
+        <div className="flex gap-2 md:gap-3">
           {themes.map((theme) => (
             <button
               key={theme.id}
               onClick={() => handleThemeChange(theme.id)}
-              className={`group relative px-3 py-2 rounded transition-all
-                active:scale-[0.98] focus:ring-2 focus:ring-vintage-cream/50 focus:outline-none
+              className={`flex-1 py-3 md:py-2.5 px-3 rounded-lg transition-all flex flex-col items-center gap-1.5
                 ${currentTheme === theme.id
                   ? 'bg-vintage-cream text-dark-brown'
-                  : 'text-vintage-cream hover:bg-vintage-cream/20'
+                  : 'bg-vintage-cream/10 text-vintage-cream hover:bg-vintage-cream/20 active:bg-vintage-cream/20'
                 }`}
-              title={theme.label}
             >
               <theme.Icon className="w-5 h-5" aria-hidden="true" />
-              <span className="absolute left-full ml-2 top-1/2 -translate-y-1/2 bg-dark-brown text-vintage-cream
-                             text-xs px-2 py-1 rounded whitespace-nowrap opacity-0 group-hover:opacity-100
-                             transition-opacity pointer-events-none shadow-lg">
-                {theme.label}
-              </span>
+              <span className="text-xs font-medium">{theme.label}</span>
             </button>
           ))}
-
-          <div className="h-px bg-vintage-cream/20 my-2" />
-
-          <p className="text-[10px] font-body text-vintage-cream uppercase tracking-wider text-center mb-1 px-1">
-            Size
-          </p>
-          <div className="flex flex-col gap-1">
-            {fontSizes.map((size, idx) => (
-              <button
-                key={size.id}
-                onClick={() => setFontSize(size.id)}
-                className={`group relative px-3 py-1.5 rounded transition-all font-body
-                  active:scale-[0.98] focus:ring-2 focus:ring-vintage-cream/50 focus:outline-none
-                  ${fontSize === size.id
-                    ? 'bg-vintage-cream text-dark-brown'
-                    : 'text-vintage-cream hover:bg-vintage-cream/20'
-                  }`}
-                title={size.label}
-              >
-                <span className={idx === 0 ? 'text-xs' : idx === 1 ? 'text-sm' : 'text-base'}>
-                  {size.icon}
-                </span>
-                <span className="absolute left-full ml-2 top-1/2 -translate-y-1/2 bg-dark-brown text-vintage-cream
-                               text-xs px-2 py-1 rounded whitespace-nowrap opacity-0 group-hover:opacity-100
-                               transition-opacity pointer-events-none shadow-lg">
-                  {size.label}
-                </span>
-              </button>
-            ))}
-          </div>
         </div>
       </div>
 
-      {/* Mobile FAB - visible only on mobile */}
+      {/* Font size selection */}
+      <div>
+        <p className="text-xs font-body text-vintage-cream uppercase tracking-wider mb-3">
+          Text Size
+        </p>
+        <div className="flex gap-2 md:gap-3">
+          {fontSizes.map((size, idx) => (
+            <button
+              key={size.id}
+              onClick={() => handleFontSizeChange(size.id)}
+              className={`flex-1 py-3 md:py-2.5 px-3 rounded-lg transition-all flex flex-col items-center gap-1.5 font-body
+                ${fontSize === size.id
+                  ? 'bg-vintage-cream text-dark-brown'
+                  : 'bg-vintage-cream/10 text-vintage-cream hover:bg-vintage-cream/20 active:bg-vintage-cream/20'
+                }`}
+            >
+              <span className={idx === 0 ? 'text-sm' : idx === 1 ? 'text-lg' : 'text-xl'}>
+                {size.icon}
+              </span>
+              <span className="text-xs font-medium">{size.label}</span>
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {/* New Report */}
+      <div className="mt-4 pt-3 border-t border-vintage-cream/20">
+        <button
+          onClick={() => { navigate('/life-story/'); setIsMenuOpen(false); }}
+          className="w-full py-3 md:py-2.5 px-3 rounded-lg transition-all flex items-center justify-center gap-2 bg-vintage-cream/10 text-vintage-cream hover:bg-vintage-cream/20 active:bg-vintage-cream/20"
+        >
+          <Home className="w-4 h-4" aria-hidden="true" />
+          <span className="text-xs font-medium">New Report</span>
+        </button>
+      </div>
+    </>
+  )
+
+  return (
+    <>
+      {/* FAB trigger - visible on all screen sizes */}
       <button
         ref={triggerButtonRef}
-        onClick={() => setIsMobileMenuOpen(true)}
-        className="fixed bottom-6 right-6 z-50 md:hidden w-14 h-14 bg-dark-brown/95 backdrop-blur
-                   rounded-full shadow-xl flex items-center justify-center text-2xl
-                   active:scale-95 transition-transform
-                   focus:outline-none focus:ring-2 focus:ring-vintage-cream focus:ring-offset-2 focus:ring-offset-dark-brown"
-        aria-label="Open theme settings"
+        onClick={() => setIsMenuOpen(!isMenuOpen)}
+        className={`fixed bottom-6 right-6 z-50 w-12 h-12 backdrop-blur
+                   rounded-full shadow-xl flex items-center justify-center
+                   active:scale-95 transition-all
+                   focus:outline-none focus:ring-2 focus:ring-vintage-cream focus:ring-offset-2 focus:ring-offset-dark-brown
+                   ${isMenuOpen ? 'bg-vintage-cream text-dark-brown' : 'bg-dark-brown/95 text-vintage-cream'}`}
+        aria-label={isMenuOpen ? 'Close theme settings' : 'Open theme settings'}
+        aria-expanded={isMenuOpen}
       >
-        <Settings className="w-6 h-6 text-vintage-cream" aria-hidden="true" />
+        {isMenuOpen
+          ? <X className="w-5 h-5" aria-hidden="true" />
+          : <Settings className="w-5 h-5" aria-hidden="true" />
+        }
       </button>
 
-      {/* Mobile bottom sheet overlay */}
-      {isMobileMenuOpen && (
+      {/* Desktop popover - hidden on mobile */}
+      {isMenuOpen && (
         <div
-          className="fixed inset-0 z-50 md:hidden"
+          ref={desktopPanelRef}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Theme settings"
+          className="fixed bottom-20 right-6 z-50 hidden md:block
+                     w-72 bg-dark-brown/95 backdrop-blur rounded-xl p-5 shadow-2xl
+                     animate-fade-up motion-reduce:animate-none"
+        >
+          {panelContent}
+        </div>
+      )}
+
+      {/* Mobile bottom sheet - hidden on desktop */}
+      {isMenuOpen && (
+        <div
+          className="fixed inset-0 z-40 md:hidden"
           onClick={closeMenu}
         >
           {/* Backdrop */}
@@ -194,7 +244,7 @@ export default function ThemeSwitcher() {
 
           {/* Bottom sheet */}
           <div
-            ref={bottomSheetRef}
+            ref={mobilePanelRef}
             role="dialog"
             aria-modal="true"
             aria-label="Theme settings"
@@ -205,69 +255,12 @@ export default function ThemeSwitcher() {
             {/* Handle */}
             <div className="w-10 h-1 bg-vintage-cream/30 rounded-full mx-auto mb-6" />
 
-            {/* Theme selection */}
-            <div className="mb-6">
-              <p className="text-xs font-body text-vintage-cream uppercase tracking-wider mb-3">
-                Theme
-              </p>
-              <div className="flex gap-3">
-                {themes.map((theme) => (
-                  <button
-                    key={theme.id}
-                    onClick={() => handleThemeChange(theme.id)}
-                    className={`flex-1 py-4 px-4 rounded-lg transition-all flex flex-col items-center gap-2
-                      ${currentTheme === theme.id
-                        ? 'bg-vintage-cream text-dark-brown'
-                        : 'bg-vintage-cream/10 text-vintage-cream active:bg-vintage-cream/20'
-                      }`}
-                  >
-                    <theme.Icon className="w-6 h-6" aria-hidden="true" />
-                    <span className="text-sm font-medium">{theme.label}</span>
-                  </button>
-                ))}
-              </div>
-            </div>
+            {panelContent}
 
-            {/* Font size selection */}
-            <div>
-              <p className="text-xs font-body text-vintage-cream uppercase tracking-wider mb-3">
-                Text Size
-              </p>
-              <div className="flex gap-3">
-                {fontSizes.map((size, idx) => (
-                  <button
-                    key={size.id}
-                    onClick={() => handleFontSizeChange(size.id)}
-                    className={`flex-1 py-4 px-4 rounded-lg transition-all flex flex-col items-center gap-2 font-body
-                      ${fontSize === size.id
-                        ? 'bg-vintage-cream text-dark-brown'
-                        : 'bg-vintage-cream/10 text-vintage-cream active:bg-vintage-cream/20'
-                      }`}
-                  >
-                    <span className={idx === 0 ? 'text-base' : idx === 1 ? 'text-xl' : 'text-2xl'}>
-                      {size.icon}
-                    </span>
-                    <span className="text-sm font-medium">{size.label}</span>
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            {/* New Report */}
-            <div className="mt-6 pt-4 border-t border-vintage-cream/20">
-              <button
-                onClick={() => { navigate('/life-story/'); setIsMobileMenuOpen(false); }}
-                className="w-full py-4 px-4 rounded-lg transition-all flex items-center justify-center gap-3 bg-vintage-cream/10 text-vintage-cream active:bg-vintage-cream/20"
-              >
-                <Home className="w-5 h-5" aria-hidden="true" />
-                <span className="text-sm font-medium">New Report</span>
-              </button>
-            </div>
-
-            {/* Close button */}
+            {/* Close button - mobile only */}
             <button
               onClick={closeMenu}
-              className="mt-3 w-full py-4 bg-vintage-cream/10 text-vintage-cream rounded-lg
+              className="mt-4 w-full py-4 bg-vintage-cream/10 text-vintage-cream rounded-lg
                          font-medium active:bg-vintage-cream/20 transition-colors"
             >
               Close
