@@ -15,17 +15,26 @@ Last Updated: February 6, 2026
 - GitHub Pages auto-deploy via Actions
 - **Tailwind CSS v4** with CSS-first config (`@theme` block in index.css)
 - **Vite Plugin React v5** (drop-in upgrade from v4)
+- **Mobile responsive polish** — WCAG touch targets, tighter 320px padding, text fixes
 
 **In Progress:**
 - Nothing actively in progress
 
 **Not Started:**
-- Mobile responsive polish (CLAUDE.md priority #1)
 - PDF export (CLAUDE.md priority #2)
 - Heat map visualization (CLAUDE.md priority #3)
 - Share/copy URL button (#57)
 
 ## Recent Changes
+
+### February 6, 2026 Session (Mobile Responsive Polish)
+- Added 44px+ touch targets on tab buttons across all 3 themes (`py-4 md:py-3`)
+- Tightened content padding at 320px (`p-3 sm:p-4 md:p-6`) across Timeline, CaseFile, and outer containers
+- Fixed justified text on mobile Newspaper theme (`text-left md:text-justify`) — eliminates awkward word spacing
+- Scaled down drop cap on mobile Newspaper (`text-4xl sm:text-5xl md:text-6xl`)
+- Increased CaseFile celebrity link touch targets (`py-3 md:py-2`)
+- Capped large font scale at 1rem on mobile, 1.125rem at 640px+ (prevents text overflow)
+- 5 files changed, 18 insertions, 15 deletions
 
 ### February 6, 2026 Session (Tailwind v4 Migration)
 - Migrated from Tailwind CSS v3 (PostCSS) to v4 (Vite plugin + CSS-first config)
@@ -33,18 +42,14 @@ Last Updated: February 6, 2026
 - Replaced `tailwind.config.js` with `@theme` block in `src/index.css`
 - Added `@tailwindcss/vite` plugin to `vite.config.js`
 - Removed `postcss.config.js`, `autoprefixer`, `postcss` dependencies
-- Cleaned up unused `src/App.css` (Vite starter boilerplate)
 - Closed Dependabot PR #68, created and merged PR #70
-- Bumped CSS size limit from 10KB to 12KB (TW v4 includes more base styles)
 
 ### February 5, 2026 Session (Loading Screen Fix)
 - Fixed loading screen never appearing (was pre-cached before navigation)
 - Moved report loading from `LandingPage.jsx` to `ThemeWrapper.jsx`
-- Loading screen now shows synchronously for uncached birthdays
 
 ### February 5, 2026 Session (FAB + Popover)
 - Replaced intrusive desktop sidebar theme switcher with unified FAB + popover (#69)
-- FAB in bottom-right corner on all screen sizes
 
 ## Architecture
 
@@ -64,16 +69,11 @@ Last Updated: February 6, 2026
 - `src/utils/assembleReport.js` — Report data assembly
 - `src/index.css` — Tailwind v4 `@theme` config + custom CSS classes
 
-**Deleted in Migration:**
-- `tailwind.config.js` — Theme config moved to `@theme` block in `src/index.css`
-- `postcss.config.js` — Replaced by `@tailwindcss/vite` plugin
-- `src/App.css` — Unused Vite starter CSS
-
 ## Known Issues
 - Case file theme feels cheesy (#66)
 - No share button for report URLs (#57)
 
 ## Next Priorities
-1. Mobile responsive polish
-2. PDF export
-3. Heat map visualization
+1. PDF export
+2. Heat map visualization
+3. Share/copy URL button (#57)

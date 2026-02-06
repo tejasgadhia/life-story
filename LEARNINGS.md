@@ -3,6 +3,12 @@ Last Updated: February 6, 2026
 
 ## What Worked Well
 
+### Plan Mode for Responsive Polish
+**Context**: Needed to make targeted mobile fixes across 5 files without breaking desktop
+**What we did**: Used plan mode to identify exact class changes, line numbers, and verification steps before writing any code
+**Why it worked**: Zero iteration — all 15 edits landed correctly on the first pass, build + tests passed immediately
+**Reuse for**: Any cross-cutting CSS/class changes that touch multiple files
+
 ### Tailwind v4 Migration via Git Worktree
 **Context**: Dependabot PR #68 tried to auto-bump Tailwind v3→v4 + two other major versions — would have broken the build
 **What we did**: Closed the Dependabot PR, created a worktree, did a proper manual migration with the CSS-first config approach
@@ -20,12 +26,6 @@ Last Updated: February 6, 2026
 **What we did**: Set `setShowLoading(!hasCachedData)` synchronously in `useEffect` before the async `loadReport()` call
 **Why it worked**: React batches async state updates differently than synchronous ones
 **Reuse for**: Any "show overlay before async work" pattern
-
-### useCallback for Stable Callback References
-**Context**: `LoadingScreen` animation was restarting because `onComplete` changed on every render
-**What we did**: Wrapped `handleLoadingComplete` in `useCallback(() => setShowLoading(false), [])`
-**Why it worked**: Stable reference means child's `useEffect` deps don't change
-**Reuse for**: Any callback passed to a child that uses it in a `useEffect` dependency array
 
 ### Unified FAB Pattern (Desktop + Mobile)
 **Context**: Desktop had a persistent sidebar, mobile had a gear FAB
@@ -49,6 +49,21 @@ Last Updated: February 6, 2026
 
 ## Technical Patterns
 
+### Mobile Responsive Padding Pattern
+**Implementation**: `p-3 sm:p-4 md:p-6` — three tiers instead of two
+**Use case**: Any content container that needs to work at 320px
+**Benefits**: Gains ~16px content width on smallest screens without affecting tablet/desktop. The `p-4 md:p-6` two-tier pattern wastes space below 640px.
+
+### WCAG Touch Target Pattern
+**Implementation**: `py-4 md:py-3` on tab buttons, `py-3 md:py-2` on list items
+**Use case**: Any interactive element that needs 44px+ on mobile but tighter on desktop
+**Benefits**: Mobile gets comfortable tap targets, desktop stays compact. Always add the mobile-first value then restrict at `md:`.
+
+### Justified Text Mobile Fix
+**Implementation**: `text-left md:text-justify`
+**Use case**: Any long-form justified text that looks bad on narrow screens
+**Benefits**: Justified text causes uneven word spacing on narrow columns. Left-align below `md:` breakpoint.
+
 ### Tailwind v4 CSS-First Config
 **Implementation**:
 ```css
@@ -69,44 +84,40 @@ Last Updated: February 6, 2026
 **Use case**: All Tailwind v4 projects — replaces `tailwind.config.js`
 **Benefits**: Single file, CSS-native, no JS build step for config, auto content detection via Vite plugin
 
-### Tailwind v4 Vite Plugin Setup
+### Font Scale Cap with Media Query
 **Implementation**:
-```js
-import tailwindcss from '@tailwindcss/vite'
-// Add tailwindcss() BEFORE react() in plugins array
-plugins: [tailwindcss(), react(), ...]
+```css
+.content-scale-lg p, .content-scale-lg li { font-size: 1rem; line-height: 1.7; }
+@media (min-width: 640px) {
+  .content-scale-lg p, .content-scale-lg li { font-size: 1.125rem; }
+}
 ```
-**Use case**: Any Vite + Tailwind v4 project
-**Benefits**: Replaces PostCSS config entirely, faster builds, no autoprefixer needed
-
-### Loading Screen Orchestration (ThemeWrapper)
-**Implementation**: Check sessionStorage → set showLoading synchronously → async load data → animation runs independently via onComplete callback
-**Use case**: Any data-driven page needing polished loading UX
-**Benefits**: Loading animation and data loading run in parallel
+**Use case**: User-controlled font size that could overflow on small screens
+**Benefits**: Large mode stays readable at 320px without horizontal scrolling
 
 ## Session Efficiency Metrics
 
 ### Time Distribution (Estimated)
-- Planning/Design: 15%
-- Implementation: 55%
-- Debugging: 5%
-- Testing: 20%
-- Documentation: 5%
+- Planning/Design: 30% (plan mode for responsive audit)
+- Implementation: 50% (all edits)
+- Debugging: 0% (zero issues)
+- Testing: 15% (build + tests)
+- Documentation: 5% (recap)
 
 ### Iteration Count
-- Features implemented on first try: 1 (Tailwind v4 migration)
+- Features implemented on first try: 1 (mobile responsive polish — all 15 edits)
 - Features requiring iteration: 0
 - Average iterations per feature: 1
 
 ### Context Efficiency
-- Times requirements were clarified: 0 (clear plan from plan mode)
+- Times requirements were clarified: 0 (plan mode handled everything)
 - Times we backtracked: 0
-- Files read multiple times: 1 (index.css — read in main, then in worktree)
+- Files read multiple times: 0
 
 ### Tool Usage
-- Most used: Read, Write, Bash (npm install/build), Chrome DevTools (screenshot verification)
-- Saved time: Chrome DevTools for visual verification of all 3 themes without manual browser switching
-- Saved time: Plan mode — having a clear migration plan prevented any trial-and-error
+- Most used: Read (5 files), Edit (15 edits), Bash (build + test)
+- Saved time: Plan mode — identified exact line numbers and class changes upfront, zero trial-and-error
+- Saved time: Parallel edits — made independent file edits simultaneously
 
 ### Next Session Improvement
-> **Actionable insight**: For dependency migrations, always use plan mode first. This session had zero backtracking because the plan identified every file to change and every risk area to test. Apply this to mobile responsive polish next — plan which breakpoints/components to test before coding.
+> **Actionable insight**: The plan-first approach continues to pay off. For the next feature (PDF export), research client-side PDF libraries first via geminicli, then plan mode to choose approach before coding.
