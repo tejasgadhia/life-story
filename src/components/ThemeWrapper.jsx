@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo, Suspense } from 'react'
+import { useState, useEffect, useCallback, useMemo, Suspense } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { useFontSize } from '../context/FontSizeContext'
 import { TAB_SLUGS } from '../config/constants'
@@ -40,13 +40,17 @@ export default function ThemeWrapper({ ThemeComponent, themePath }) {
   useEffect(() => {
     if (!parsedDate) return
 
-    // Reset state when birthday changes to avoid showing stale data
+    // Reset data state
     setReportData(null)
     setIsLoading(true)
-    setShowLoading(false)
+
+    // Show loading screen only for first visit to this birthday
+    // (skip on theme switches where data is already cached)
+    const cacheKey = `life-story-report-${birthday}`
+    const hasCachedData = sessionStorage.getItem(cacheKey) !== null
+    setShowLoading(!hasCachedData)
 
     const loadReport = async () => {
-      const cacheKey = `life-story-report-${birthday}`
       const cachedReport = sessionStorage.getItem(cacheKey)
 
       let report = null
@@ -73,24 +77,23 @@ export default function ThemeWrapper({ ThemeComponent, themePath }) {
       }
 
       setReportData(report)
-      setShowLoading(true)
+      setIsLoading(false)
     }
 
     loadReport()
   }, [birthday, parsedDate, navigate])
 
-  // Handle loading screen completion
-  const handleLoadingComplete = () => {
+  // Handle loading screen completion - stable reference to prevent animation restarts
+  const handleLoadingComplete = useCallback(() => {
     setShowLoading(false)
-    setIsLoading(false)
+  }, [])
+
+  // Show loading screen while animation plays
+  if (showLoading) {
+    return <LoadingScreen onComplete={handleLoadingComplete} birthYear={parsedDate?.year} />
   }
 
-  // Show loading screen if needed
-  if (showLoading && reportData) {
-    return <LoadingScreen onComplete={handleLoadingComplete} birthYear={reportData.birthYear} />
-  }
-
-  // Still loading (either parsing or assembling)
+  // Still loading data (animation done but data not ready yet)
   if (isLoading || !reportData) {
     return null
   }
