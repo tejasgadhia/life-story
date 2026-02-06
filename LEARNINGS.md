@@ -120,4 +120,4 @@ Last Updated: February 6, 2026
 - Saved time: Parallel edits — made independent file edits simultaneously
 
 ### Next Session Improvement
-> **Actionable insight**: The plan-first approach continues to pay off. For the next feature (PDF export), research client-side PDF libraries first via geminicli, then plan mode to choose approach before coding.
+> **Actionable insight**: The plan-first approach continues to pay off. For the next feature (heat map visualization), research D3.js calendar heatmap examples first via geminicli, then plan mode to choose approach before coding.

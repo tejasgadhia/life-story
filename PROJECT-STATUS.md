@@ -21,9 +21,8 @@ Last Updated: February 6, 2026
 - Nothing actively in progress
 
 **Not Started:**
-- PDF export (CLAUDE.md priority #2)
-- Heat map visualization (CLAUDE.md priority #3)
-- Share/copy URL button (#57)
+- Heat map visualization (CLAUDE.md priority #1)
+- Case file theme redesign (#66)
 
 ## Recent Changes
 
@@ -71,9 +70,7 @@ Last Updated: February 6, 2026
 
 ## Known Issues
 - Case file theme feels cheesy (#66)
-- No share button for report URLs (#57)
 
 ## Next Priorities
-1. PDF export
-2. Heat map visualization
-3. Share/copy URL button (#57)
+1. Heat map visualization
+2. Case file theme redesign (#66)

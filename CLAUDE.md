@@ -154,6 +154,5 @@ git push --tags
 
 ## Next Priorities
 
-1. Mobile responsive
-2. PDF export
-3. Heat map visualization
+1. Heat map visualization
+2. Case file theme redesign (#66)
