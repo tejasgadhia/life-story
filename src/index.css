@@ -47,6 +47,7 @@
   /* Animations */
   --animate-slide-up: slide-up 0.3s ease-out;
   --animate-fade-up: fade-up 0.2s ease-out;
+  --animate-heatmap-pulse: heatmap-pulse 2s ease-in-out infinite;
 
   @keyframes slide-up {
     0% { transform: translateY(100%); }
@@ -56,6 +57,11 @@
   @keyframes fade-up {
     0% { opacity: 0; transform: translateY(8px); }
     100% { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes heatmap-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
   }
 }
 
@@ -138,6 +144,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
+}
+
+/* Heat map birthday pulse animation */
+.heatmap-pulse {
+  animation: heatmap-pulse 2s ease-in-out infinite;
 }
 
 /* Reduced motion support */

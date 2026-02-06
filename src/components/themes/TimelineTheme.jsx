@@ -1,4 +1,4 @@
-import { memo, useRef, useCallback, useState, useEffect } from 'react'
+import { memo, useRef, useCallback, useState, useEffect, lazy, Suspense } from 'react'
 import { TABS as BASE_TABS } from '../../config/tabs'
 import { useTabState } from '../../hooks/useTabState'
 import { CelebrityList } from '../shared/CelebrityList'
@@ -20,6 +20,8 @@ import {
   Search,
   Map
 } from 'lucide-react'
+
+const BirthdayHeatMap = lazy(() => import('../shared/BirthdayHeatMap'))
 
 // Tab icon components
 const TAB_ICONS = {
@@ -63,6 +65,7 @@ function TimelineTheme({ data, currentTab: propTab = 0, setTab: propSetTab, font
   const tabListRef = useRef(null)
   const [canScrollLeft, setCanScrollLeft] = useState(false)
   const [canScrollRight, setCanScrollRight] = useState(false)
+  const [isHeatMapOpen, setIsHeatMapOpen] = useState(false)
 
   const updateScrollIndicators = useCallback(() => {
     const el = tabListRef.current
@@ -125,8 +128,13 @@ function TimelineTheme({ data, currentTab: propTab = 0, setTab: propSetTab, font
           <p className="font-sans text-sm text-sepia-brown">{data.generationSpan}</p>
         </div>
 
-        {/* Right - Rank/Percentile */}
-        <div className="aged-paper rounded-lg p-4 md:p-5 border border-sepia-brown/20 text-center flex flex-col justify-center">
+        {/* Right - Rank/Percentile (clickable → opens heat map) */}
+        <button
+          onClick={() => setIsHeatMapOpen(true)}
+          className="aged-paper rounded-lg p-4 md:p-5 border border-sepia-brown/20 text-center flex flex-col justify-center w-full
+                     cursor-pointer hover:border-sepia-brown/40 hover:shadow-md transition-all duration-200
+                     focus:outline-none focus:ring-2 focus:ring-dark-brown/30 focus:ring-offset-1"
+        >
           <p className="font-sans text-xs uppercase tracking-wider text-sepia-brown mb-2">Birthday Popularity</p>
           <div className="flex items-center justify-center gap-4 md:gap-6">
             <div className="text-center">
@@ -142,7 +150,8 @@ function TimelineTheme({ data, currentTab: propTab = 0, setTab: propSetTab, font
           <p className="font-sans text-xs text-sepia-brown mt-2">
             Your birthday is {data.birthdayRank < 183 ? 'more' : 'less'} common than the average calendar date
           </p>
-        </div>
+          <p className="font-sans text-xs text-dark-brown/60 mt-1">View all 366 days →</p>
+        </button>
       </div>
 
     </div>
@@ -277,6 +286,21 @@ function TimelineTheme({ data, currentTab: propTab = 0, setTab: propSetTab, font
           Generational definitions: Pew Research Center.
         </p>
       </footer>
+
+      {/* Heat Map Overlay */}
+      {isHeatMapOpen && (
+        <Suspense fallback={null}>
+          <BirthdayHeatMap
+            userMonth={data.birthMonth}
+            userDay={data.birthDay}
+            birthdayRank={data.birthdayRank}
+            birthdayPercentile={data.birthdayPercentile}
+            variant="timeline"
+            isOpen={isHeatMapOpen}
+            onClose={() => setIsHeatMapOpen(false)}
+          />
+        </Suspense>
+      )}
     </div>
   )
 }

@@ -1,7 +1,9 @@
-import { memo, useRef, useCallback, useState, useEffect } from 'react'
+import { memo, useRef, useCallback, useState, useEffect, lazy, Suspense } from 'react'
 import { TABS } from '../../config/tabs'
 import { useTabState } from '../../hooks/useTabState'
 import { CelebrityList } from '../shared/CelebrityList'
+
+const BirthdayHeatMap = lazy(() => import('../shared/BirthdayHeatMap'))
 
 // Tab IDs for ARIA
 const getTabId = (tabId) => `casefile-tab-${tabId}`
@@ -28,6 +30,7 @@ function CaseFileTheme({ data, currentTab: propTab = 0, setTab: propSetTab, font
   const tabListRef = useRef(null)
   const [canScrollLeft, setCanScrollLeft] = useState(false)
   const [canScrollRight, setCanScrollRight] = useState(false)
+  const [isHeatMapOpen, setIsHeatMapOpen] = useState(false)
 
   const updateScrollIndicators = useCallback(() => {
     const el = tabListRef.current
@@ -96,15 +99,26 @@ function CaseFileTheme({ data, currentTab: propTab = 0, setTab: propSetTab, font
           <span className="text-sepia-brown block text-xs md:text-sm mb-1">COHORT SPAN</span>
           <span className="font-bold text-base md:text-lg">{data.generationSpan}</span>
         </div>
-        <div className="border-b-2 border-sepia-brown/30 pb-3">
+        <button
+          onClick={() => setIsHeatMapOpen(true)}
+          className="border-b-2 border-sepia-brown/30 pb-3 text-left w-full cursor-pointer
+                     hover:bg-vintage-cream/50 -mx-1 px-1 rounded transition-colors duration-200
+                     focus:outline-none focus:ring-2 focus:ring-sepia-brown/50 focus:ring-offset-1"
+        >
           <span className="text-sepia-brown block text-xs md:text-sm mb-1">BIRTHDAY RANK</span>
           <span className="font-bold text-base md:text-lg">#{data.birthdayRank} of 366</span>
-        </div>
-        <div className="border-b-2 border-sepia-brown/30 pb-3">
+          <span className="text-dark-brown/50 block text-xs mt-1">View all 366 days →</span>
+        </button>
+        <button
+          onClick={() => setIsHeatMapOpen(true)}
+          className="border-b-2 border-sepia-brown/30 pb-3 text-left w-full cursor-pointer
+                     hover:bg-vintage-cream/50 -mx-1 px-1 rounded transition-colors duration-200
+                     focus:outline-none focus:ring-2 focus:ring-sepia-brown/50 focus:ring-offset-1"
+        >
           <span className="text-sepia-brown block text-xs md:text-sm mb-1">PERCENTILE</span>
           <span className="font-bold text-base md:text-lg">{data.birthdayPercentile}%</span>
           <span className="text-sepia-brown block text-xs mt-1">{data.birthdayRank < 183 ? 'More' : 'Less'} common than average</span>
-        </div>
+        </button>
       </div>
 
       {/* Classification stamps */}
@@ -294,6 +308,21 @@ function CaseFileTheme({ data, currentTab: propTab = 0, setTab: propSetTab, font
       <p className="text-center text-xs md:text-sm text-zinc-500 mt-6 md:mt-10 max-w-lg mx-auto leading-relaxed px-4">
         This report analyzes US cultural and historical context. For entertainment purposes only.
       </p>
+
+      {/* Heat Map Overlay */}
+      {isHeatMapOpen && (
+        <Suspense fallback={null}>
+          <BirthdayHeatMap
+            userMonth={data.birthMonth}
+            userDay={data.birthDay}
+            birthdayRank={data.birthdayRank}
+            birthdayPercentile={data.birthdayPercentile}
+            variant="casefile"
+            isOpen={isHeatMapOpen}
+            onClose={() => setIsHeatMapOpen(false)}
+          />
+        </Suspense>
+      )}
     </div>
   )
 }

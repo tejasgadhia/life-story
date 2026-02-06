@@ -1,7 +1,9 @@
-import { memo, useRef, useCallback, useState, useEffect } from 'react'
+import { memo, useRef, useCallback, useState, useEffect, lazy, Suspense } from 'react'
 import { TABS } from '../../config/tabs'
 import { useTabState } from '../../hooks/useTabState'
 import { Star } from 'lucide-react'
+
+const BirthdayHeatMap = lazy(() => import('../shared/BirthdayHeatMap'))
 
 // Tab IDs for ARIA
 const getTabId = (tabId) => `newspaper-tab-${tabId}`
@@ -53,6 +55,7 @@ function NewspaperTheme({ data, currentTab: propTab = 0, setTab: propSetTab, fon
   const tabListRef = useRef(null)
   const [canScrollLeft, setCanScrollLeft] = useState(false)
   const [canScrollRight, setCanScrollRight] = useState(false)
+  const [isHeatMapOpen, setIsHeatMapOpen] = useState(false)
 
   const updateScrollIndicators = useCallback(() => {
     const el = tabListRef.current
@@ -188,24 +191,32 @@ function NewspaperTheme({ data, currentTab: propTab = 0, setTab: propSetTab, fon
               By The Numbers
             </h4>
             <div className={`space-y-3 ${contentFontSize}`}>
-              <div className="border-b border-stone-300 pb-2">
-                <div className="flex justify-between font-bold">
-                  <span>Birthday Rank</span>
-                  <span>#{data.birthdayRank}</span>
+              {/* Clickable birthday stats → opens heat map */}
+              <button
+                onClick={() => setIsHeatMapOpen(true)}
+                className="w-full text-left space-y-3 cursor-pointer hover:bg-stone-200 -m-2 p-2 rounded transition-colors duration-200
+                           focus:outline-none focus:ring-2 focus:ring-stone-500/50 focus:ring-offset-1"
+              >
+                <div className="border-b border-stone-300 pb-2">
+                  <div className="flex justify-between font-bold">
+                    <span>Birthday Rank</span>
+                    <span>#{data.birthdayRank}</span>
+                  </div>
+                  <p className="text-xs text-stone-600 mt-1">
+                    Out of 366 possible dates
+                  </p>
                 </div>
-                <p className="text-xs text-stone-600 mt-1">
-                  Out of 366 possible dates
-                </p>
-              </div>
-              <div className="border-b border-stone-300 pb-2">
-                <div className="flex justify-between font-bold">
-                  <span>Percentile</span>
-                  <span>{data.birthdayPercentile}%</span>
+                <div className="border-b border-stone-300 pb-2">
+                  <div className="flex justify-between font-bold">
+                    <span>Percentile</span>
+                    <span>{data.birthdayPercentile}%</span>
+                  </div>
+                  <p className="text-xs text-stone-600 mt-1">
+                    {data.birthdayRank < 183 ? 'More common' : 'Less common'} than average
+                  </p>
                 </div>
-                <p className="text-xs text-stone-600 mt-1">
-                  {data.birthdayRank < 183 ? 'More common' : 'Less common'} than average
-                </p>
-              </div>
+                <p className="text-xs text-stone-500 text-center">View all 366 days →</p>
+              </button>
               <div className="border-b border-stone-300 pb-2">
                 <div className="flex justify-between font-bold">
                   <span>Generation</span>
@@ -408,6 +419,21 @@ function NewspaperTheme({ data, currentTab: propTab = 0, setTab: propSetTab, fon
           </div>
         </footer>
       </div>
+
+      {/* Heat Map Overlay */}
+      {isHeatMapOpen && (
+        <Suspense fallback={null}>
+          <BirthdayHeatMap
+            userMonth={data.birthMonth}
+            userDay={data.birthDay}
+            birthdayRank={data.birthdayRank}
+            birthdayPercentile={data.birthdayPercentile}
+            variant="newspaper"
+            isOpen={isHeatMapOpen}
+            onClose={() => setIsHeatMapOpen(false)}
+          />
+        </Suspense>
+      )}
     </div>
   )
 }
