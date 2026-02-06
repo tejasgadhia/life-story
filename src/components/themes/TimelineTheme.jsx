@@ -115,7 +115,7 @@ function TimelineTheme({ data, currentTab: propTab = 0, setTab: propSetTab, font
   }
 
   const renderBirthdaySection = () => (
-    <div className="bg-white/50 rounded-lg border border-sepia-brown/10 p-4 md:p-6">
+    <div className="bg-white/50 rounded-lg border border-sepia-brown/10 p-3 sm:p-4 md:p-6">
       {/* 2-column layout for Generation + Rank/Percentile */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4 items-stretch">
         {/* Left - Generation */}
@@ -156,7 +156,7 @@ function TimelineTheme({ data, currentTab: propTab = 0, setTab: propSetTab, font
     if (!content) return null
 
     return (
-      <div className="bg-white/50 rounded-lg border border-sepia-brown/10 p-4 md:p-6 h-full">
+      <div className="bg-white/50 rounded-lg border border-sepia-brown/10 p-3 sm:p-4 md:p-6 h-full">
         <div className="flex items-center gap-2 md:gap-3 mb-3 md:mb-4 pb-3 border-b border-sepia-brown/20">
           <config.Icon className="w-5 h-5 md:w-6 md:h-6" aria-hidden="true" />
           <h2 className="font-display text-lg md:text-xl text-dark-brown">{config.title}</h2>
@@ -219,7 +219,7 @@ function TimelineTheme({ data, currentTab: propTab = 0, setTab: propSetTab, font
                 tabIndex={activeTab === index ? 0 : -1}
                 onClick={() => setActiveTab(index)}
                 onKeyDown={(e) => handleTabKeyDown(e, index)}
-                className={`min-w-fit px-2 xs:px-3 md:px-6 py-3 font-sans text-sm border-b-2 whitespace-nowrap
+                className={`min-w-fit px-2 xs:px-3 md:px-6 py-4 md:py-3 font-sans text-sm border-b-2 whitespace-nowrap
                   transition-colors duration-200 active:scale-[0.98] focus:ring-2 focus:ring-dark-brown/30 focus:outline-none
                   ${activeTab === index
                     ? 'border-dark-brown text-dark-brown font-bold bg-vintage-cream'
@@ -247,7 +247,7 @@ function TimelineTheme({ data, currentTab: propTab = 0, setTab: propSetTab, font
         role="tabpanel"
         id={getTabPanelId(currentTabData.id)}
         aria-labelledby={getTabId(currentTabData.id)}
-        className="max-w-7xl mx-auto px-4 md:px-6 py-4 md:py-6"
+        className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 py-4 md:py-6"
       >
         {activeTab === 0 ? (
           <div className="space-y-4 md:space-y-6">

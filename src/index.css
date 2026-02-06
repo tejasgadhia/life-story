@@ -153,7 +153,10 @@ h1, h2, h3, h4, h5, h6 {
 /* Content font scaling - these classes affect paragraph and list text */
 .content-scale-sm p, .content-scale-sm li { font-size: 0.875rem; line-height: 1.7; }
 .content-scale-base p, .content-scale-base li { font-size: 1rem; line-height: 1.7; }
-.content-scale-lg p, .content-scale-lg li { font-size: 1.125rem; line-height: 1.7; }
+.content-scale-lg p, .content-scale-lg li { font-size: 1rem; line-height: 1.7; }
+@media (min-width: 640px) {
+  .content-scale-lg p, .content-scale-lg li { font-size: 1.125rem; }
+}
 
 /* Newspaper texture class */
 .newspaper-texture {

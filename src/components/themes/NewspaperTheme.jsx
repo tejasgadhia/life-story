@@ -155,9 +155,9 @@ function NewspaperTheme({ data, currentTab: propTab = 0, setTab: propSetTab, fon
           </p>
 
           {/* Main text - 1 column on mobile, 2 columns on desktop */}
-          <div className={`columns-1 md:columns-2 gap-5 ${contentFontSize} leading-[1.9] text-justify`} style={{ columnRule: '1px solid var(--color-column-rule)', hyphens: 'auto', WebkitHyphens: 'auto' }}>
+          <div className={`columns-1 md:columns-2 gap-5 ${contentFontSize} leading-[1.9] text-left md:text-justify`} style={{ columnRule: '1px solid var(--color-column-rule)', hyphens: 'auto', WebkitHyphens: 'auto' }}>
             <p className="mb-4">
-              <span className="float-left text-5xl md:text-6xl font-display font-black mr-2 leading-none text-stone-800">T</span>
+              <span className="float-left text-4xl sm:text-5xl md:text-6xl font-display font-black mr-2 leading-none text-stone-800">T</span>
               he subject of this comprehensive report entered the world on the {getOrdinalWord(data.birthDay)} day of {getMonthName(data.birthMonth)}, {data.birthYear},
               a date ranking <strong>#{data.birthdayRank}</strong> among all 366 possible calendar dates for frequency of birth.
               This places the subject in the <strong>{data.birthdayPercentile}{getOrdinalSuffix(data.birthdayPercentile)} percentile</strong> for birthday commonality.
@@ -257,7 +257,7 @@ function NewspaperTheme({ data, currentTab: propTab = 0, setTab: propSetTab, fon
         </h2>
         <p className="text-[10px] md:text-xs text-stone-600 italic mb-3 md:mb-4 uppercase tracking-wider">{config.subtitle}</p>
         <div
-          className={`${contentFontSize} leading-[1.8] text-justify text-stone-800
+          className={`${contentFontSize} leading-[1.8] text-left md:text-justify text-stone-800
                    [&>h2]:hidden [&>p]:mb-4
                    [&>p:first-of-type]:first-letter:float-left
                    [&>p:first-of-type]:first-letter:text-3xl
@@ -335,7 +335,7 @@ function NewspaperTheme({ data, currentTab: propTab = 0, setTab: propSetTab, fon
                 tabIndex={currentPage === i ? 0 : -1}
                 onClick={() => setCurrentPage(i)}
                 onKeyDown={(e) => handleTabKeyDown(e, i)}
-                className={`flex-1 min-w-fit px-3 sm:px-6 md:px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider sm:tracking-widest whitespace-nowrap
+                className={`flex-1 min-w-fit px-3 sm:px-6 md:px-8 py-4 md:py-3 text-xs sm:text-sm font-bold uppercase tracking-wider sm:tracking-widest whitespace-nowrap
                   transition-colors duration-200 active:scale-[0.98] focus:ring-2 focus:ring-stone-400/50 focus:outline-none
                   ${currentPage === i
                     ? 'bg-stone-100 text-stone-900'

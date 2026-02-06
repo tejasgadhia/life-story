@@ -73,7 +73,7 @@ function CaseFileTheme({ data, currentTab: propTab = 0, setTab: propSetTab, font
   const getContent = (key) => data.sections[key]?.html || ''
 
   const renderBirthdaySection = () => (
-    <div className="bg-vintage-cream/30 border-2 border-sepia-brown/20 p-4 md:p-6">
+    <div className="bg-vintage-cream/30 border-2 border-sepia-brown/20 p-3 sm:p-4 md:p-6">
       <h3 className="font-bold text-base md:text-lg mb-4 md:mb-6 text-sepia-brown tracking-wider border-b-2 border-sepia-brown/30 pb-2">
         SUBJECT PROFILE
       </h3>
@@ -125,7 +125,7 @@ function CaseFileTheme({ data, currentTab: propTab = 0, setTab: propSetTab, font
     if (!content) return null
 
     return (
-      <div className="bg-vintage-cream/30 border-2 border-sepia-brown/20 p-4 md:p-6 h-full">
+      <div className="bg-vintage-cream/30 border-2 border-sepia-brown/20 p-3 sm:p-4 md:p-6 h-full">
       <h3 className="font-bold text-base md:text-lg mb-3 md:mb-4 text-sepia-brown tracking-wider border-b-2 border-sepia-brown/30 pb-2">
         {config.title.toUpperCase()}
       </h3>
@@ -151,7 +151,7 @@ function CaseFileTheme({ data, currentTab: propTab = 0, setTab: propSetTab, font
   const currentTabData = TABS[activeTab]
 
   return (
-    <div className="min-h-screen bg-zinc-800 p-4 md:p-6 font-typewriter overflow-x-hidden">
+    <div className="min-h-screen bg-zinc-800 p-3 sm:p-4 md:p-6 font-typewriter overflow-x-hidden">
       {/* Manila folder container */}
       <div className="max-w-6xl mx-auto">
         {/* File tabs */}
@@ -173,7 +173,7 @@ function CaseFileTheme({ data, currentTab: propTab = 0, setTab: propSetTab, font
                 tabIndex={activeTab === index ? 0 : -1}
                 onClick={() => setActiveTab(index)}
                 onKeyDown={(e) => handleTabKeyDown(e, index)}
-                className={`min-w-fit px-3 sm:px-4 md:px-6 py-3 text-xs sm:text-sm font-bold uppercase tracking-wide rounded-t-lg
+                className={`min-w-fit px-3 sm:px-4 md:px-6 py-4 md:py-3 text-xs sm:text-sm font-bold uppercase tracking-wide rounded-t-lg
                           relative flex-1 text-center whitespace-nowrap transition-colors duration-200
                           active:scale-[0.98] focus:ring-2 focus:ring-sepia-brown/50 focus:outline-none
                   ${activeTab === index
@@ -226,7 +226,7 @@ function CaseFileTheme({ data, currentTab: propTab = 0, setTab: propSetTab, font
             role="tabpanel"
             id={getTabPanelId(currentTabData.id)}
             aria-labelledby={getTabId(currentTabData.id)}
-            className="p-4 md:p-6 min-h-[400px] md:min-h-[600px]"
+            className="p-3 sm:p-4 md:p-6 min-h-[400px] md:min-h-[600px]"
           >
             {/* Section header */}
             <div className="border-b-4 border-dark-brown pb-3 md:pb-4 mb-6 md:mb-8">

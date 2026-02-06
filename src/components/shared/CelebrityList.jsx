@@ -29,7 +29,7 @@ export function CelebrityList({ celebrities, variant = 'timeline' }) {
                 href={getWikiUrl(celeb.name)}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="py-2 md:py-2 text-sm md:text-base hover:text-muted-blue transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-sepia-brown/50 focus:ring-offset-1 rounded"
+                className="py-3 md:py-2 text-sm md:text-base hover:text-muted-blue transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-sepia-brown/50 focus:ring-offset-1 rounded"
                 title={celeb.description}
               >
                 • {celeb.name} ({celeb.year})
