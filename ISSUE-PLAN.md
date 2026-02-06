@@ -1,7 +1,7 @@
 # Issue Plan - Life Story
 
-**Updated**: 2026-02-05
-**Open**: 3 issues | **Closed this session**: 4 (#67, #55, #65, #54)
+**Updated**: 2026-02-06
+**Open**: 2 issues | **Closed this session**: 1 (#56)
 
 ---
 
@@ -19,12 +19,14 @@
 | #   | Title                                                                  | Effort | Status  |
 |-----|------------------------------------------------------------------------|--------|---------|
 | 57  | Add share/copy URL button for reports                                  | easy   | pending |
-| 56  | Add reading progress indicator for long content                        | easy   | pending |
 | 66  | Case file theme feels cheesy — consider redesign or removal            | hard   | pending |
 
 ---
 
 ## Archive (Completed)
+
+### UI Polish
+- ✓ #56 - Added reading progress indicator bar (useScrollProgress hook + MainLayout fixed bar)
 
 ### Phase 4: Theme & Readability Polish
 - ✓ #67 - Timeline theme: switched body text from Courier Prime to DM Sans (sans-serif)
@@ -89,7 +91,6 @@
 
 **Start working now**:
 - `/tg-bugfix #57` - Quick win: Add share/copy URL button (~30 min)
-- `/tg-bugfix #56` - Quick win: Add reading progress indicator (~30 min)
 
 **Other commands**:
 - `/tg-issue` - Log a new issue
