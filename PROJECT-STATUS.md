@@ -1,5 +1,5 @@
 # Project Status - Life Story
-Last Updated: February 5, 2026
+Last Updated: February 6, 2026
 
 ## Current State
 
@@ -13,6 +13,8 @@ Last Updated: February 5, 2026
 - Session caching — loading screen skipped on theme/tab switches
 - PWA with offline support
 - GitHub Pages auto-deploy via Actions
+- **Tailwind CSS v4** with CSS-first config (`@theme` block in index.css)
+- **Vite Plugin React v5** (drop-in upgrade from v4)
 
 **In Progress:**
 - Nothing actively in progress
@@ -25,26 +27,31 @@ Last Updated: February 5, 2026
 
 ## Recent Changes
 
+### February 6, 2026 Session (Tailwind v4 Migration)
+- Migrated from Tailwind CSS v3 (PostCSS) to v4 (Vite plugin + CSS-first config)
+- Upgraded `@vitejs/plugin-react` from v4 to v5
+- Replaced `tailwind.config.js` with `@theme` block in `src/index.css`
+- Added `@tailwindcss/vite` plugin to `vite.config.js`
+- Removed `postcss.config.js`, `autoprefixer`, `postcss` dependencies
+- Cleaned up unused `src/App.css` (Vite starter boilerplate)
+- Closed Dependabot PR #68, created and merged PR #70
+- Bumped CSS size limit from 10KB to 12KB (TW v4 includes more base styles)
+
 ### February 5, 2026 Session (Loading Screen Fix)
 - Fixed loading screen never appearing (was pre-cached before navigation)
 - Moved report loading from `LandingPage.jsx` to `ThemeWrapper.jsx`
 - Loading screen now shows synchronously for uncached birthdays
-- Skips loading animation on theme/tab switches (data in sessionStorage)
-- Stabilized `onComplete` callback with `useCallback` to prevent animation restarts
-- `LoadingScreen.jsx` unchanged — 7-stage progress animation (~4.3s total)
 
 ### February 5, 2026 Session (FAB + Popover)
 - Replaced intrusive desktop sidebar theme switcher with unified FAB + popover (#69)
 - FAB in bottom-right corner on all screen sizes
-- Desktop: compact popover above FAB; Mobile: bottom sheet (unchanged)
-- Added `fade-up` animation for desktop popover
 
 ## Architecture
 
 **Tech Stack:**
-- React 18 + React Router
+- React 19 + React Router 7
 - Vite 7 build tooling
-- Tailwind CSS 3
+- Tailwind CSS 4 (CSS-first config via @tailwindcss/vite)
 - GitHub Pages deployment
 
 **Key Files:**
@@ -55,6 +62,12 @@ Last Updated: February 5, 2026
 - `src/components/themes/*.jsx` — Three theme components
 - `src/data/` — Year, generation, and birthday JSON data
 - `src/utils/assembleReport.js` — Report data assembly
+- `src/index.css` — Tailwind v4 `@theme` config + custom CSS classes
+
+**Deleted in Migration:**
+- `tailwind.config.js` — Theme config moved to `@theme` block in `src/index.css`
+- `postcss.config.js` — Replaced by `@tailwindcss/vite` plugin
+- `src/App.css` — Unused Vite starter CSS
 
 ## Known Issues
 - Case file theme feels cheesy (#66)
