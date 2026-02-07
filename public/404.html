@@ -39,10 +39,10 @@
     <!-- Content Security Policy (hardened — no 'unsafe-inline' for scripts) -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none';">
 
-    <!-- GitHub Pages SPA redirect encoder (external script for CSP compliance) -->
+    <!-- GitHub Pages SPA redirect encoder (external script for CSP compliance)
+         Uses sessionStorage (primary) with query-param fallback. See spa-404-redirect.js -->
     <script src="/life-story/spa-404-redirect.js"></script>
   </head>
   <body>
-    Redirecting...
   </body>
 </html>

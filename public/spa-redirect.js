@@ -4,9 +4,9 @@
  * This script is external (not inline) to comply with CSP script-src without
  * 'unsafe-inline'. It runs synchronously before React/Vite module scripts.
  *
- * 1) SPA redirect: GitHub Pages serves 404.html for unknown routes, which
- *    encodes the path as a query parameter. This decodes it back so React
- *    Router can handle the original URL.
+ * 1) SPA redirect: Restores the original URL saved by 404.html's redirect.
+ *    Primary: reads from sessionStorage (clean URL redirect).
+ *    Fallback: reads from query param (/?/path format).
  *
  * 2) Font swap: Converts the <link rel="preload"> for critical fonts into a
  *    stylesheet link. This replaces the old onload="this.media='all'" inline
@@ -15,6 +15,23 @@
 
 // --- SPA redirect ---
 ;(function (l) {
+  // Primary: restore path from sessionStorage (set by 404.html)
+  try {
+    var saved = sessionStorage.getItem('spa-redirect')
+    if (saved) {
+      sessionStorage.removeItem('spa-redirect')
+      var redirect = JSON.parse(saved)
+      if (redirect.pathname !== l.pathname || redirect.search !== l.search) {
+        window.history.replaceState(null, null,
+          redirect.pathname + redirect.search + redirect.hash
+        )
+      }
+      return
+    }
+  } catch (e) {
+    // sessionStorage unavailable — fall through to query-param check
+  }
+  // Fallback: restore path from query param (/?/path/here format)
   if (l.search[1] === '/') {
     var decoded = l.search
       .slice(1)
@@ -28,8 +45,6 @@
 })(window.location)
 
 // --- Non-blocking font loading ---
-// Convert preload to stylesheet after the browser has fetched it without blocking render.
-// The preload ensures the font CSS is fetched early; converting to stylesheet applies it.
 ;(function () {
   var fontLink = document.getElementById('critical-fonts')
   if (fontLink) {
