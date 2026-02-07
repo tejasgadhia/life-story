@@ -252,7 +252,7 @@ function TimelineTheme({ data, currentTab: propTab = 0, setTab: propSetTab, font
       </nav>
 
       {/* Main Content */}
-      <main 
+      <div
         role="tabpanel"
         id={getTabPanelId(currentTabData.id)}
         aria-labelledby={getTabId(currentTabData.id)}
@@ -276,7 +276,7 @@ function TimelineTheme({ data, currentTab: propTab = 0, setTab: propSetTab, font
             ))}
           </div>
         )}
-      </main>
+      </div>
 
       {/* Footer */}
       <footer className="bg-aged-paper py-4 border-t border-sepia-brown/20">

@@ -8,7 +8,7 @@
   /* Custom colors - vintage theme */
   --color-vintage-cream: #F5F0E8;
   --color-aged-paper: #E8DCC4;
-  --color-sepia-brown: #8B7355;
+  --color-sepia-brown: #705A42;
   --color-dark-brown: #3E2723;
   --color-muted-red: #A4493D;
   --color-muted-blue: #4A6FA5;
@@ -34,11 +34,11 @@
   --color-amber: #D99E46;
   --color-amber-dark: #C48B35;
   --color-amber-light: #E5B564;
+  --color-amber-text: #8A6C1F;
 
   /* Font families */
   --font-display: 'Playfair Display', Georgia, serif;
   --font-body: 'Courier Prime', 'Courier New', monospace;
-  --font-accent: 'Lora', Georgia, serif;
   --font-blackletter: 'UnifrakturMaguntia', 'Old English Text MT', serif;
   --font-typewriter: 'Special Elite', 'Courier New', monospace;
   --font-heading: 'Fraunces', Georgia, serif;
@@ -68,7 +68,7 @@
 :root {
   --color-vintage-cream: #F5F0E8;
   --color-aged-paper: #E8DCC4;
-  --color-sepia-brown: #8B7355;
+  --color-sepia-brown: #705A42;
   --color-dark-brown: #3E2723;
   --color-aged-black: #1A1A1A;
   --color-newsprint: #f5f1e8;

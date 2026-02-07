@@ -204,7 +204,7 @@ export default function ThemeSwitcher() {
       <button
         ref={triggerButtonRef}
         onClick={() => setIsMenuOpen(!isMenuOpen)}
-        className={`fixed bottom-6 right-6 z-50 w-12 h-12 backdrop-blur
+        className={`fixed bottom-6 right-6 z-50 w-12 h-12 cursor-pointer backdrop-blur
                    rounded-full shadow-xl flex items-center justify-center
                    active:scale-95 transition-all
                    focus:outline-none focus:ring-2 focus:ring-vintage-cream focus:ring-offset-2 focus:ring-offset-dark-brown

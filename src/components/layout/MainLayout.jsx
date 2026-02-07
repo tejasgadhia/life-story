@@ -10,7 +10,7 @@ export default function MainLayout({ children }) {
   const isReportPage = pathname.split('/').filter(Boolean).length >= 3
 
   return (
-    <div id="main-content" className="min-h-screen">
+    <main id="main-content" className="min-h-screen">
       {isReportPage && progress > 0 && (
         <div
           className="fixed top-0 left-0 h-0.5 bg-dark-brown/70 z-[60]"
@@ -24,6 +24,6 @@ export default function MainLayout({ children }) {
       )}
       <ThemeSwitcher />
       {children}
-    </div>
+    </main>
   )
 }

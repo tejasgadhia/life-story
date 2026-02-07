@@ -221,12 +221,12 @@ export default function DatePicker({ onSubmit }) {
               <div className="w-8 h-8 rounded-lg flex items-center justify-center mb-3 bg-charcoal-50">
                 <Icon className="w-4 h-4 text-amber" />
               </div>
-              <h3 className="font-sans text-sm sm:text-[13px] font-semibold mb-1 text-charcoal-800">
+              <h2 className="font-sans text-sm sm:text-[13px] font-semibold mb-1 text-charcoal-800">
                 {title}
-              </h3>
+              </h2>
               <p className="font-sans text-xs sm:text-[12px] leading-relaxed text-charcoal-500">
                 {description}{description && ' '}
-                <span className="text-amber font-medium">{highlight}</span>
+                <span className="text-amber-text font-medium">{highlight}</span>
                 {suffix && ` ${suffix}`}
               </p>
             </div>
