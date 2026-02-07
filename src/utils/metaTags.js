@@ -51,7 +51,7 @@ function updateCanonical(url) {
  * @param {Object} reportData - The assembled report data
  * @returns {string} - Page title
  */
-export function generateTitle(reportData) {
+function generateTitle(reportData) {
   if (!reportData) return DEFAULTS.title
 
   const { birthDate, generation } = reportData
@@ -63,7 +63,7 @@ export function generateTitle(reportData) {
  * @param {Object} reportData - The assembled report data
  * @returns {string} - Meta description (max 160 chars)
  */
-export function generateDescription(reportData) {
+function generateDescription(reportData) {
   if (!reportData) return DEFAULTS.description
 
   const { generation, generationSpan } = reportData
@@ -77,7 +77,7 @@ export function generateDescription(reportData) {
  * @param {string} theme - Theme name
  * @returns {string} - Full URL
  */
-export function generateUrl(birthday, theme) {
+function generateUrl(birthday, theme) {
   if (!birthday) return DEFAULTS.url
   return `${BASE_URL}/${birthday}/${theme}`
 }

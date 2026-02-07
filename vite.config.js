@@ -18,11 +18,56 @@ export default defineConfig({
     VitePWA({
       registerType: 'autoUpdate',
       workbox: {
-        skipWaiting: true,           // Force new SW to activate immediately
-        clientsClaim: true,          // Take control of all clients immediately
-        cleanupOutdatedCaches: true, // Remove old precached assets
-        globPatterns: ['**/*.{js,css,html,ico,png,svg,json}'],
+        skipWaiting: true,
+        clientsClaim: true,
+        cleanupOutdatedCaches: true,
+        globPatterns: ['**/*.{js,css,html,ico,png,svg}'],
+        // Exclude on-demand data chunks and dev artifacts from precache
+        globIgnores: [
+          'stats.html',
+          'assets/19*-*.js',   // Year data chunks (1946-1999)
+          'assets/20*-*.js',   // Year data chunks (2000-2012)
+          'assets/january-*.js', 'assets/february-*.js', 'assets/march-*.js',
+          'assets/april-*.js', 'assets/may-*.js', 'assets/june-*.js',
+          'assets/july-*.js', 'assets/august-*.js', 'assets/september-*.js',
+          'assets/october-*.js', 'assets/november-*.js', 'assets/december-*.js',
+          'assets/heatmap-*.js',
+        ],
         runtimeCaching: [
+          {
+            // Cache data chunks on first access (year data, birthday data, heatmap)
+            urlPattern: /\/assets\/(19|20)\d{2}-.*\.js$/,
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'life-story-year-data',
+              expiration: {
+                maxEntries: 70,
+                maxAgeSeconds: 60 * 60 * 24 * 30, // 30 days
+              },
+            },
+          },
+          {
+            urlPattern: /\/assets\/(january|february|march|april|may|june|july|august|september|october|november|december)-.*\.js$/,
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'life-story-birthday-data',
+              expiration: {
+                maxEntries: 12,
+                maxAgeSeconds: 60 * 60 * 24 * 30, // 30 days
+              },
+            },
+          },
+          {
+            urlPattern: /\/assets\/heatmap-.*\.js$/,
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'life-story-heatmap',
+              expiration: {
+                maxEntries: 1,
+                maxAgeSeconds: 60 * 60 * 24 * 30, // 30 days
+              },
+            },
+          },
           {
             urlPattern: /^https:\/\/fonts\.googleapis\.com/,
             handler: 'StaleWhileRevalidate',
@@ -43,7 +88,7 @@ export default defineConfig({
           },
         ],
       },
-      manifest: false, // Use existing manifest.json in public/
+      manifest: false,
     })
   ],
   base: '/life-story/'

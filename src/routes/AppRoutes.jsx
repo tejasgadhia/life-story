@@ -1,5 +1,5 @@
-import { useEffect, lazy } from 'react'
-import { Routes, Route, Navigate, useNavigate } from 'react-router-dom'
+import { lazy } from 'react'
+import { Routes, Route, Navigate } from 'react-router-dom'
 import LandingPage from '../pages/LandingPage'
 import MainLayout from '../components/layout/MainLayout'
 import ThemeWrapper from '../components/ThemeWrapper'
@@ -8,17 +8,6 @@ import ThemeWrapper from '../components/ThemeWrapper'
 const TimelineTheme = lazy(() => import('../components/themes/TimelineTheme'))
 const NewspaperTheme = lazy(() => import('../components/themes/NewspaperTheme'))
 const CaseFileTheme = lazy(() => import('../components/themes/CaseFileTheme'))
-
-// Redirect handler for old URL format (without birthday)
-function LegacyRedirect() {
-  const navigate = useNavigate()
-
-  useEffect(() => {
-    navigate('/life-story', { replace: true })
-  }, [navigate])
-
-  return null
-}
 
 export default function AppRoutes() {
   return (
@@ -40,12 +29,9 @@ export default function AppRoutes() {
       <Route path="/life-story/:birthday/casefile/:tab" element={<MainLayout><ThemeWrapper key="casefile" ThemeComponent={CaseFileTheme} themePath="casefile" /></MainLayout>} />
 
       {/* Legacy redirects - old URLs without birthday */}
-      <Route path="/life-story/timeline" element={<LegacyRedirect />} />
-      <Route path="/life-story/timeline/:tab" element={<LegacyRedirect />} />
-      <Route path="/life-story/newspaper" element={<LegacyRedirect />} />
-      <Route path="/life-story/newspaper/:tab" element={<LegacyRedirect />} />
-      <Route path="/life-story/casefile" element={<LegacyRedirect />} />
-      <Route path="/life-story/casefile/:tab" element={<LegacyRedirect />} />
+      <Route path="/life-story/timeline/*" element={<Navigate to="/life-story" replace />} />
+      <Route path="/life-story/newspaper/*" element={<Navigate to="/life-story" replace />} />
+      <Route path="/life-story/casefile/*" element={<Navigate to="/life-story" replace />} />
 
       {/* Fallback */}
       <Route path="*" element={<Navigate to="/life-story" replace />} />

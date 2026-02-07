@@ -229,11 +229,3 @@ export function resolveInSections(sections, placeholderMap) {
   return resolved
 }
 
-export default {
-  buildPlaceholderMap,
-  resolvePlaceholders,
-  resolveInSections,
-  getAgeDescriptor,
-  getGradeLevel,
-  getLifeStage,
-}

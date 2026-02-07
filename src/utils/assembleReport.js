@@ -172,9 +172,3 @@ export function validateDate(year, month, day) {
   return { valid: true }
 }
 
-export default {
-  assembleReport,
-  validateDate,
-  formatBirthdayKey,
-  formatFullDate,
-}

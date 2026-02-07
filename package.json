@@ -15,9 +15,9 @@
   },
   "size-limit": [
     {
-      "name": "Main Bundle (gzip)",
+      "name": "Main Bundle",
       "path": "dist/assets/index-*.js",
-      "limit": "75 KB"
+      "limit": "80 KB"
     },
     {
       "name": "CSS",

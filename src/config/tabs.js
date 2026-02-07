@@ -48,14 +48,3 @@ export const SECTION_KEYS = {
   roadmap: 'life_roadmap',
 }
 
-/**
- * Get content for a section by ID
- * @param {object} sections - The data.sections object
- * @param {string} sectionId - Section ID (e.g., 'generation')
- * @returns {string|null} - HTML content or null
- */
-export function getSectionContent(sections, sectionId) {
-  const key = SECTION_KEYS[sectionId]
-  if (!key) return null
-  return sections[key]?.html || null
-}
