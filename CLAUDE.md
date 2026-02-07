@@ -106,8 +106,14 @@ Tab slugs: `overview`, `formative-years`, `world-events`, `personal-insights`
 - **Content areas**: `p-4 md:p-6` (standardized)
 
 ### Font Classes (Tailwind)
-- `font-display`: Playfair Display (headings)
-- `font-sans`: DM Sans (body text)
+- `font-display`: Newsreader (headings)
+- `font-sans`: Inter (body text)
+
+### Color Tokens
+- `primary-*`: Amber scale (50-950), CTA/accent color
+- `secondary-*`: Charcoal scale (50-950), text/backgrounds
+- `heritage-*`: cream, paper, sepia, ink — warm editorial tones
+- Full reference: `.ui-design/design-system.md`
 
 ## Writing Style Rules
 
