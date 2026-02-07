@@ -374,6 +374,7 @@ function NewspaperTheme({ data, currentTab: propTab = 0, setTab: propSetTab, fon
           aria-labelledby={getTabId(currentTabData.id)}
           className="p-3 sm:p-4 md:p-6"
         >
+          <h2 className="sr-only">{currentTabData.title}</h2>
           {currentPage === 0 ? (
             <div className="grid grid-cols-1 gap-4 md:gap-6">
               {renderBirthdaySection()}

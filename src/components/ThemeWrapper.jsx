@@ -50,6 +50,8 @@ export default function ThemeWrapper({ ThemeComponent, themePath }) {
     const hasCachedData = sessionStorage.getItem(cacheKey) !== null
     setShowLoading(!hasCachedData)
 
+    let cancelled = false
+
     const loadReport = async () => {
       const cachedReport = sessionStorage.getItem(cacheKey)
 
@@ -68,19 +70,29 @@ export default function ThemeWrapper({ ThemeComponent, themePath }) {
       if (!report) {
         try {
           report = await assembleReport(parsedDate)
-          sessionStorage.setItem(cacheKey, JSON.stringify(report))
+          try {
+            sessionStorage.setItem(cacheKey, JSON.stringify(report))
+          } catch (e) {
+            // sessionStorage may be full or unavailable (private browsing)
+          }
         } catch (error) {
-          console.error('Failed to load report:', error)
-          navigate('/life-story', { replace: true })
+          if (!cancelled) {
+            console.error('Failed to load report:', error)
+            navigate('/life-story', { replace: true })
+          }
           return
         }
       }
 
-      setReportData(report)
-      setIsLoading(false)
+      if (!cancelled) {
+        setReportData(report)
+        setIsLoading(false)
+      }
     }
 
     loadReport()
+
+    return () => { cancelled = true }
   }, [birthday, parsedDate, navigate])
 
   // Handle loading screen completion - stable reference to prevent animation restarts

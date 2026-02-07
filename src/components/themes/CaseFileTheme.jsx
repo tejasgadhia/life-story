@@ -242,6 +242,7 @@ function CaseFileTheme({ data, currentTab: propTab = 0, setTab: propSetTab, font
             aria-labelledby={getTabId(currentTabData.id)}
             className="p-3 sm:p-4 md:p-6 min-h-[400px] md:min-h-[600px]"
           >
+            <h2 className="sr-only">{currentTabData.title}</h2>
             {/* Section header */}
             <div className="border-b-4 border-dark-brown pb-3 md:pb-4 mb-6 md:mb-8">
               <h2 className="text-xl md:text-2xl font-bold text-dark-brown uppercase tracking-wider">

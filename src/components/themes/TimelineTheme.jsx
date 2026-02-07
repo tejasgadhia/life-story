@@ -258,6 +258,7 @@ function TimelineTheme({ data, currentTab: propTab = 0, setTab: propSetTab, font
         aria-labelledby={getTabId(currentTabData.id)}
         className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 py-4 md:py-6"
       >
+        <h2 className="sr-only">{currentTabData.title}</h2>
         {activeTab === 0 ? (
           <div className="space-y-4 md:space-y-6">
             {renderBirthdaySection()}
