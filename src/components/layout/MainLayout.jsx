@@ -1,10 +1,14 @@
 import { useLocation } from 'react-router-dom'
 import ThemeSwitcher from '../ThemeSwitcher'
 import { useScrollProgress } from '../../hooks/useScrollProgress'
+import { useRouteChangeReset } from '../../hooks/useRouteChangeReset'
 
 export default function MainLayout({ children }) {
   const progress = useScrollProgress()
   const { pathname } = useLocation()
+
+  // Reset scroll and focus on page-level route changes (not tab switches)
+  useRouteChangeReset('main-content')
 
   // Only show progress bar on report pages (has a birthday in the URL)
   const isReportPage = pathname.split('/').filter(Boolean).length >= 3
