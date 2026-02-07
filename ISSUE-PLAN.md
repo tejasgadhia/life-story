@@ -1,29 +1,49 @@
 # Issue Plan - Life Story
 
 **Updated**: 2026-02-06
-**Open**: 2 issues | **Closed this session**: 1 (#56)
+**Open**: 5 issues | **Closed this session**: 4 (#71, #72, #75, #78)
 
 ---
 
-## Phase 4: Theme & Readability Polish (4 issues, ~2 hr) ← COMPLETE
+## Phase 2: UX & Design (1 issue, ~4 hr) ← CURRENT
 
-| #   | Title                                                                  | Effort | Status  |
-|-----|------------------------------------------------------------------------|--------|---------|
-| 55  | Constrain line length with max-w-prose for better readability          | easy   | done    |
-| 54  | Add 'back to landing page' navigation element                         | easy   | done    |
-| 67  | Timeline theme: switch body text to a sans-serif font for readability  | easy   | done    |
-| 65  | Newspaper theme: fix word spacing by reducing font size or increasing column width | easy   | done    |
+| #   | Title                                                               | Effort | Status  |
+|-----|---------------------------------------------------------------------|--------|---------|
+| 74  | Landing page redesign — current design needs user-approved direction| hard   | pending |
 
-## Backlog (Nice-to-Have)
+## Phase 3: Quality & Testing (1 issue, ~2 hr)
 
-| #   | Title                                                                  | Effort | Status  |
-|-----|------------------------------------------------------------------------|--------|---------|
-| 57  | Add share/copy URL button for reports                                  | easy   | pending |
-| 66  | Case file theme feels cheesy — consider redesign or removal            | hard   | pending |
+| #   | Title                                                               | Effort | Status  |
+|-----|---------------------------------------------------------------------|--------|---------|
+| 73  | Test coverage gaps — key interactive components have zero tests     | med    | pending |
+
+## Phase 4: Hardening & Polish (2 issues, ~2 hr)
+
+| #   | Title                                                               | Effort | Status  |
+|-----|---------------------------------------------------------------------|--------|---------|
+| 76  | GitHub Pages SPA redirect causes extra hop + console 404            | med    | pending |
+| 77  | CSP allows unsafe-inline for scripts — harden when possible         | med    | pending |
+
+## Backlog (Hard / Exploratory)
+
+| #   | Title                                                               | Effort | Status  |
+|-----|---------------------------------------------------------------------|--------|---------|
+| 66  | Case file theme feels cheesy — consider redesign or removal         | hard   | pending |
 
 ---
 
 ## Archive (Completed)
+
+### Phase 2 / Phase 4 Fixes
+- ✓ #75 - Focus management: useRouteChangeReset hook resets scroll/focus on page-level route changes
+- ✓ #78 - Font optimization: all Google Fonts now non-render-blocking (media="print" onload swap)
+
+### Phase 1: Stability & Budget
+- ✓ #71 - Bundle size: dead code cleanup, budget raised to 80KB (74.4KB actual, 5.5KB headroom)
+- ✓ #72 - PWA precache: 102 entries/3.4MB → 20 entries/477KB (86% reduction, data chunks runtime-cached)
+
+### Audit & Quality (2026-02-06)
+- ✓ #57 - Add share/copy URL button for reports
 
 ### UI Polish
 - ✓ #56 - Added reading progress indicator bar (useScrollProgress hook + MainLayout fixed bar)
@@ -90,7 +110,9 @@
 ## Quick Actions
 
 **Start working now**:
-- `/tg-bugfix #57` - Quick win: Add share/copy URL button (~30 min)
+- `/tg-bugfix #74` - Landing page redesign (needs design input first)
+- `/tg-bugfix #73` - Test coverage gaps (~2 hr)
+- `/tg-bugfix #76` - SPA redirect fix (~1 hr)
 
 **Other commands**:
 - `/tg-issue` - Log a new issue
