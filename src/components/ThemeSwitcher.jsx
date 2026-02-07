@@ -30,9 +30,12 @@ export default function ThemeSwitcher() {
     if (!isMenuOpen) return
 
     const handleClickOutside = (e) => {
-      const activePanel = getActivePanel()
+      // Only needed for desktop popover — mobile uses backdrop onClick
+      const desktopPanel = desktopPanelRef.current
+      if (!desktopPanel || desktopPanel.offsetParent === null) return
+
       if (
-        activePanel && !activePanel.contains(e.target) &&
+        !desktopPanel.contains(e.target) &&
         triggerButtonRef.current && !triggerButtonRef.current.contains(e.target)
       ) {
         closeMenu()
