@@ -3,39 +3,19 @@ Last Updated: February 6, 2026
 
 ## Immediate Tasks (Start Here)
 
-### 1. Landing Page Redesign
+### 1. Landing Page Redesign (#74)
 **Priority**: HIGH — user unhappy with current design, multiple attempts failed
-**File(s)**: `src/components/DatePicker.jsx`
+**File(s)**: `src/components/DatePicker.jsx` (currently the landing page component)
 **What to do**: Use `/tg-themes` to present 4-6 design options BEFORE writing code. Get user approval on direction first. The current light charcoal/amber design is intentional — don't assume it needs to revert to vintage brown.
 **Why**: User expressed dissatisfaction in previous sessions. Multiple blind fix attempts failed.
 **Estimated effort**: Medium (design review) + Substantial (implementation)
 
-### 2. Case File Theme Redesign (#66)
-**Priority**: MEDIUM
-**File(s)**: `src/components/themes/CaseFileTheme.jsx`
-**What to do**: Review current implementation, propose design improvements
-**Why**: Issue #66 — current design feels cheesy
-
-### 3. Reduce PWA Precache Size
-**Priority**: MEDIUM — 102 entries / 3.4MB is excessive
-**File(s)**: `vite.config.js` (VitePWA globPatterns config)
-**What to do**: Exclude year data JSON chunks from precache. These load on-demand and don't need offline support. Consider switching to NetworkFirst runtime caching for data files.
-**Why**: 3.4MB precache slows first load. Year data is 67 files that only load when a specific birthday is entered.
-**Estimated effort**: Quick
-
-### 4. Add Test Coverage
-**Priority**: LOW — no tests for key interactive components
-**File(s)**: `src/components/ThemeSwitcher.jsx`, `DatePicker.jsx`, `ThemeWrapper.jsx`, `ErrorBoundary.jsx`
-**What to do**: Add unit tests for ThemeSwitcher (open/close, theme change navigation), DatePicker (validation, formatting), ThemeWrapper (data loading, error states), ErrorBoundary (error rendering)
-**Why**: 33 tests pass but key interactive components are untested
-**Estimated effort**: Substantial
-
 ## Future Enhancements
 
 - Lighthouse CI in GitHub Actions (a11y >= 90, perf >= 80 thresholds)
-- CSP hardening — move inline SPA redirect script to external file
-- Bundle size monitoring — currently at 99.2% of 75KB budget
-- Focus management on route changes (useEffect in ThemeWrapper to focus tabpanel)
+- E2E tests (Playwright) for full report generation flow
+- Consider adding back themes in the future once core design is solid
+- Consider preact or other React alternatives if bundle budget becomes tight
 
 ## Blockers
 
@@ -43,4 +23,4 @@ Last Updated: February 6, 2026
 
 ## Next Session Starter Prompt
 
-> "Continue working on life-story. Last session: ran comprehensive 4-phase audit (production verification, build analysis, Lighthouse, visual regression). Fixed 7 accessibility/quality issues: contrast ratios, heading order, main landmark, FAB cursor, deprecated meta tag, unused font variable. All critical items from previous sessions resolved — CSS cascade verified on production, theme switcher confirmed clickable, PWA config already correct. Next: landing page redesign (present options with /tg-themes first). Reference NEXT-STEPS.md for details."
+> "Continue working on life-story. Last session: fixed mobile bottom sheet bug (#85), then removed Newspaper/Case File themes + ThemeSwitcher + font size controls entirely (-1,402 lines). App is now Timeline-only: cleaner codebase, smaller bundle (CSS -28%, precache -11%), 80 tests passing. Only open issue: #74 (landing page redesign). Start with `/tg-themes` to present design options — don't code until design is approved."

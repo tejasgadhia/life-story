@@ -4,70 +4,69 @@ Last Updated: February 6, 2026
 ## Current State
 
 **What's Working (verified on production):**
-- CSS cascade layer fix — Tailwind v4 utilities override base styles correctly (verified via computed styles on production)
-- All 3 themes render with proper padding, fonts, spacing (Timeline, Newspaper, Case File)
-- Landing page (DatePicker) has correct Fraunces heading, padded input/button/cards
-- WCAG AA contrast ratios passing: sepia-brown 5.73:1 on cream, amber-text 4.95:1 on white
-- Heading hierarchy correct (h1 → h2, no skips)
-- `<main>` landmark present for screen readers
-- Theme switcher FAB has pointer cursor and is clickable (z-index verified via elementFromPoint)
+- Timeline theme — the only theme, clean and focused
+- CSS cascade layer fix — Tailwind v4 utilities override base styles correctly
+- Landing page (DatePicker) with Fraunces heading, padded input/button/cards
+- WCAG AA contrast ratios passing: sepia-brown 5.73:1, amber-text 4.95:1
 - 67 year files (1946-2012) with curated content
 - Birthday popularity heat map visualization
-- URL-based routing with shareable report URLs
-- Font size controls, tab navigation, celebrity lists
-- Loading screen with staged animation
+- URL-based routing with shareable report URLs (`/life-story/{date}/timeline/{tab}`)
+- Tab navigation, celebrity lists
+- Focus/scroll reset on route navigation (useRouteChangeReset hook)
+- Non-render-blocking Google Fonts (preload + external JS swap)
+- CSP hardened: no `unsafe-inline` for scripts, all inline scripts externalized
+- SPA redirect uses sessionStorage (no URL flash, no extra 404 hop)
 - GitHub Pages auto-deploy via Actions
-- PWA service worker config has skipWaiting + clientsClaim (was already correct)
+- PWA: 18 entries / 428KB precache, data chunks runtime-cached
+- Bundle: main JS 261KB (83KB gzip), CSS 42KB (8KB gzip)
 - Lighthouse: Performance 88-91, Accessibility 90-98, Best Practices 96-100, SEO 100
-- Tests: 33/33 passing
+- Tests: 80 passing across 5 test files
 - Build: clean, no warnings
 
+**Removed This Session:**
+- Newspaper theme, Case File theme, ThemeSwitcher FAB, font size controls, FontSizeContext
+- Saved 1,402 lines of code, CSS -28%, precache -11%
+
 **Needs Design Review:**
-- Landing page — user unhappy with current design, needs proper restyle with input
-- Case file theme redesign (#66)
+- Landing page — user unhappy with current design, needs proper restyle with input (#74)
 
 ## Recent Changes
 
-### February 6, 2026 Session (Comprehensive Audit + Fixes)
-- **Full 4-phase audit**: Production verification, local build analysis, Lighthouse audits, visual regression across all themes/viewports
-- **Contrast fixes** (`9cfc396`): Darkened sepia-brown #8B7355 → #705A42 (5.73:1 on cream). Added amber-text #8A6C1F for text-on-white (4.95:1).
-- **Heading order fix**: h3 → h2 in DatePicker section cards
-- **Main landmark**: `<div>` → `<main>` in MainLayout.jsx, removed nested `<main>` from TimelineTheme
-- **FAB cursor**: Added `cursor-pointer` to ThemeSwitcher button
-- **Meta tag**: Replaced deprecated `apple-mobile-web-app-capable` with `mobile-web-app-capable`
-- **Cleanup**: Removed unused `--font-accent` (Lora) variable
-- **Verified on production**: CSS cascade fix, theme switcher clickability, contrast ratios, fonts
+### February 6, 2026 Session 3 (Theme Removal + Bug Fix)
+
+**#85 Bug Fix: Mobile bottom sheet buttons not working**
+- `f18a01e` — Moved `onClick={closeMenu}` from outer wrapper to backdrop div
+- `0fee15a` — Disabled `mousedown` document listener on mobile (was racing with button clicks)
+- Root cause: two competing close mechanisms — wrapper onClick intercepted button clicks, and mousedown document listener raced with click events on real mobile touch devices
+
+**Theme Removal: Simplified to Timeline only**
+- `79f64ea` — Deleted NewspaperTheme, CaseFileTheme, ThemeSwitcher, FontSizeContext
+- Simplified: App.jsx, AppRoutes, MainLayout, ThemeWrapper, CelebrityList, BirthdayHeatMap, loadFonts, CSS
+- Legacy theme URLs (`/newspaper/*`, `/casefile/*`) redirect to landing page
+- 16 files changed, -1,402 lines
 
 ### Previous Sessions
-- `dd23ab2`: Session recap — CSS cascade layer fix, theme switcher investigation
-- `646bc3b`: CSS cascade layer fix (Tailwind v4 `@layer` conflict)
-- `64ac830`: Case File icon swap (FolderOpen → FileText)
-- `a29eb98`: Birthday popularity heat map
+- Session 2: 7-issue sweep — bundle, PWA, CSP, tests, SPA redirect, fonts, scroll reset
+- Session 1: Comprehensive audit — contrast, headings, landmarks, cursor, meta tags
 
 ## Architecture
 
 **Tech Stack:** React 19 + React Router 7 + Vite 7 + Tailwind CSS 4
 
 **Key Files:**
-- `src/index.css` — Tailwind v4 `@theme` config + `@layer base/components` custom styles
-- `src/App.jsx` — Router, theme switching
-- `src/components/ThemeSwitcher.jsx` — FAB with popover/bottom-sheet
-- `src/components/layout/MainLayout.jsx` — `<main>` landmark wrapper with progress bar
-- `src/components/themes/*.jsx` — Three theme components
-- `src/data/` — Year, generation, and birthday JSON data
+- `src/App.jsx` — Bare BrowserRouter wrapper (no more FontSizeContext)
+- `src/routes/AppRoutes.jsx` — Timeline routes + legacy redirects
+- `src/components/ThemeWrapper.jsx` — Data loading, tab routing, hardcoded timeline path
+- `src/components/themes/TimelineTheme.jsx` — The one theme
+- `src/components/layout/MainLayout.jsx` — `<main>` landmark, progress bar, route change reset
+- `src/hooks/useRouteChangeReset.js` — Focus/scroll management on navigation
+- `src/utils/loadFonts.js` — Non-blocking font loading (report fonts only, no theme fonts)
+- `vite.config.js` — Build config, PWA precache + runtime caching
 
 ## Known Issues
 
-- Bundle at 74.42KB brotli (99.2% of 75KB budget) — next feature may exceed
-- PWA precache has 102 entries / 3.4MB — year data chunks should be excluded
-- SPA redirect on GitHub Pages causes extra hop + console 404 (GH Pages limitation)
-- CSP allows `unsafe-inline` for scripts (needed for GH Pages SPA redirect script)
-- Lighthouse report page shows "errors-in-console" due to SPA redirect 404
+- #74: Landing page redesign — needs design input before implementation
 
 ## Next Priorities
 
-1. Landing page redesign (with user input first)
-2. Case file theme redesign (#66)
-3. Reduce PWA precache size (exclude year data from service worker)
-4. Test coverage for ThemeSwitcher, DatePicker, ThemeWrapper, ErrorBoundary
-5. Bundle size optimization if approaching limit
+1. Landing page redesign — present design options with `/tg-themes` first (#74)

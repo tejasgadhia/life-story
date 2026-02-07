@@ -1,38 +1,37 @@
 # Issue Plan - Life Story
 
 **Updated**: 2026-02-06
-**Open**: 5 issues | **Closed this session**: 4 (#71, #72, #75, #78)
+**Open**: 2 issues | **Closed this session**: 10 (#71, #72, #75, #78, #79, #80, #81, #82, #83, #84)
 
 ---
 
-## Phase 2: UX & Design (1 issue, ~4 hr) ← CURRENT
+## Remaining: Design Work (2 issues, both need user input)
 
 | #   | Title                                                               | Effort | Status  |
 |-----|---------------------------------------------------------------------|--------|---------|
 | 74  | Landing page redesign — current design needs user-approved direction| hard   | pending |
-
-## Phase 3: Quality & Testing (1 issue, ~2 hr)
-
-| #   | Title                                                               | Effort | Status  |
-|-----|---------------------------------------------------------------------|--------|---------|
-| 73  | Test coverage gaps — key interactive components have zero tests     | med    | pending |
-
-## Phase 4: Hardening & Polish (2 issues, ~2 hr)
-
-| #   | Title                                                               | Effort | Status  |
-|-----|---------------------------------------------------------------------|--------|---------|
-| 76  | GitHub Pages SPA redirect causes extra hop + console 404            | med    | pending |
-| 77  | CSP allows unsafe-inline for scripts — harden when possible         | med    | pending |
-
-## Backlog (Hard / Exploratory)
-
-| #   | Title                                                               | Effort | Status  |
-|-----|---------------------------------------------------------------------|--------|---------|
 | 66  | Case file theme feels cheesy — consider redesign or removal         | hard   | pending |
+
+Both issues require design direction — not standard bugfixes. Use `/tg-themes` to explore options.
 
 ---
 
 ## Archive (Completed)
+
+### Milestone Review Fixes (#79-#84)
+- ✓ #79 - Race condition in ThemeWrapper async data loading (cancelled flag + cleanup)
+- ✓ #80 - WCAG AA contrast failures in DatePicker (charcoal-500 → charcoal-600)
+- ✓ #81 - Heat map legend contrast for Timeline/CaseFile (sepia-brown → dark-brown)
+- ✓ #82 - Scroll indicators already aria-hidden (decorative gradients, no fix needed)
+- ✓ #83 - Tab panels sr-only headings added to all 3 themes
+- ✓ #84 - sessionStorage.setItem wrapped in try-catch
+
+### Quality & Testing
+- ✓ #73 - Test coverage: DatePicker, ThemeSwitcher, useTabState (95 tests)
+
+### Hardening & Polish
+- ✓ #76 - SPA redirect merged with CSP-compliant external scripts
+- ✓ #77 - CSP hardened: script-src, style-src, connect-src directives tightened
 
 ### Phase 2 / Phase 4 Fixes
 - ✓ #75 - Focus management: useRouteChangeReset hook resets scroll/focus on page-level route changes
@@ -109,10 +108,9 @@
 
 ## Quick Actions
 
-**Start working now**:
-- `/tg-bugfix #74` - Landing page redesign (needs design input first)
-- `/tg-bugfix #73` - Test coverage gaps (~2 hr)
-- `/tg-bugfix #76` - SPA redirect fix (~1 hr)
+**Design work** (both need user direction first):
+- `/tg-themes` then `/tg-bugfix #74` - Landing page redesign
+- `/tg-themes` then `/tg-bugfix #66` - Case file theme redesign
 
 **Other commands**:
 - `/tg-issue` - Log a new issue
