@@ -235,12 +235,9 @@ export default function ThemeSwitcher() {
 
       {/* Mobile bottom sheet - hidden on desktop */}
       {isMenuOpen && (
-        <div
-          className="fixed inset-0 z-40 md:hidden"
-          onClick={closeMenu}
-        >
+        <div className="fixed inset-0 z-40 md:hidden">
           {/* Backdrop */}
-          <div className="absolute inset-0 bg-black/50" />
+          <div className="absolute inset-0 bg-black/50" onClick={closeMenu} />
 
           {/* Bottom sheet */}
           <div
@@ -250,7 +247,6 @@ export default function ThemeSwitcher() {
             aria-label="Theme settings"
             className="absolute bottom-0 left-0 right-0 bg-dark-brown rounded-t-2xl p-6 pb-8
                        animate-slide-up motion-reduce:animate-none"
-            onClick={(e) => e.stopPropagation()}
           >
             {/* Handle */}
             <div className="w-10 h-1 bg-vintage-cream/30 rounded-full mx-auto mb-6" />
