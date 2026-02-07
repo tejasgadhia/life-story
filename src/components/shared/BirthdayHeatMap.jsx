@@ -196,6 +196,7 @@ export default function BirthdayHeatMap({
               className="w-full h-auto min-w-[320px]"
               role="img"
               aria-label="Calendar heat map grid. Each cell represents one day of the year colored by birthday popularity."
+              onMouseLeave={clearTooltip}
             >
               {/* Month rows */}
               {Array.from({ length: 12 }, (_, monthIdx) => {
@@ -231,7 +232,6 @@ export default function BirthdayHeatMap({
                         <g
                           key={`${monthNum}-${dayNum}`}
                           onMouseEnter={() => handleCellInteraction(monthNum, dayNum, rank, percentile)}
-                          onMouseLeave={clearTooltip}
                           onClick={(e) => {
                             e.stopPropagation()
                             handleCellInteraction(monthNum, dayNum, rank, percentile)
@@ -276,17 +276,23 @@ export default function BirthdayHeatMap({
           <div className={`text-center py-8 ${theme.subtext}`}>Loading...</div>
         )}
 
-        {/* Tooltip */}
-        {tooltip && (
-          <div
-            className={`text-center text-sm py-2 px-3 mt-2 rounded ${theme.tooltip}`}
-            aria-live="polite"
-          >
-            {MONTH_LABELS_FULL[tooltip.month - 1]} {tooltip.day}
-            {tooltip.month === userMonth && tooltip.day === userDay ? ' (Your birthday)' : ''}
-            {' — '}Rank #{tooltip.rank} • {tooltip.percentile}th percentile
-          </div>
-        )}
+        {/* Tooltip — always rendered to reserve space and prevent layout shift jitter */}
+        <div
+          className={`text-center text-sm py-2 px-3 mt-2 rounded ${theme.tooltip} ${
+            tooltip ? 'opacity-100' : 'opacity-0'
+          }`}
+          aria-live="polite"
+        >
+          {tooltip ? (
+            <>
+              {MONTH_LABELS_FULL[tooltip.month - 1]} {tooltip.day}
+              {tooltip.month === userMonth && tooltip.day === userDay ? ' (Your birthday)' : ''}
+              {' — '}Rank #{tooltip.rank} • {tooltip.percentile}th percentile
+            </>
+          ) : (
+            '\u00A0'
+          )}
+        </div>
 
         {/* Legend */}
         <div className="flex items-center justify-center gap-2 mt-3 md:mt-4">
