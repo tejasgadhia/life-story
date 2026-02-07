@@ -39,11 +39,11 @@
     <!-- Content Security Policy -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:;">
 
-    <!-- Font loading strategy: Critical fonts preloaded, report/theme fonts lazy loaded -->
+    <!-- Font loading strategy: Critical fonts loaded non-blocking, report/theme fonts lazy loaded -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Critical fonts (landing page): DM Sans + Fraunces - preloaded for fast initial render -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <!-- Critical fonts (landing page): DM Sans + Fraunces - loaded non-blocking via media swap -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:wght@400;500;600;700&display=swap"></noscript>
     <!-- Report fonts (Playfair, Courier Prime, Lora) and theme fonts (Special Elite, UnifrakturMaguntia) loaded via src/utils/loadFonts.js -->
     <!-- GitHub Pages SPA redirect handler -->
