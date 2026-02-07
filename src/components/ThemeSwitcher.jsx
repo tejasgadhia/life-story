@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { useNavigate, useParams, useLocation } from 'react-router-dom'
 import { useFontSize } from '../context/FontSizeContext'
-import { LayoutDashboard, Newspaper, FolderOpen, Settings, Home, X } from 'lucide-react'
+import { LayoutDashboard, Newspaper, FileText, Settings, Home, X } from 'lucide-react'
 
 // Theme Switcher - Unified FAB with desktop popover + mobile bottom sheet
 export default function ThemeSwitcher() {
@@ -106,7 +106,7 @@ export default function ThemeSwitcher() {
   const themes = [
     { id: 'timeline', label: 'Timeline', Icon: LayoutDashboard },
     { id: 'newspaper', label: 'Newspaper', Icon: Newspaper },
-    { id: 'casefile', label: 'Case File', Icon: FolderOpen },
+    { id: 'casefile', label: 'Case File', Icon: FileText },
   ]
 
   const fontSizes = [
