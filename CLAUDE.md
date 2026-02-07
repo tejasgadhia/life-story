@@ -4,25 +4,19 @@ Quick reference for Claude to understand this project. Read this first.
 
 ## What This Is
 
-Birthday analysis webapp. User enters birthdate → gets personalized ~5,000 word report about their generation, historical context, and cultural touchstones. Vintage magazine aesthetic (TIME 1950s-70s style).
+Birthday analysis webapp. User enters birthdate → gets personalized ~5,000 word report about their generation, historical context, and cultural touchstones. Magazine aesthetic (TIME 1950s-70s style).
 
-## Current State (v0.4.0)
+## Current State (v1.0.0)
 
 - **Supports**: All birthdates from 1946-2012
 - **Live URL**: https://tejasgadhia.github.io/life-story/
 - **Local path**: `/Users/tejasgadhia/Claude/life-story`
-
-## Three Themes
-
-| Theme | File | Style |
-|-------|------|-------|
-| Timeline | `TimelineTheme.jsx` | Modern, clean, default |
-| Newspaper | `NewspaperTheme.jsx` | 1880s newspaper |
-| Case File | `CaseFileTheme.jsx` | FBI dossier |
+- **Theme**: Timeline (single theme — clean, modern layout)
+- **Tests**: 80 tests across 5 suites
 
 ## Navigation Structure
 
-4 tabs across all themes:
+4 tabs:
 1. **Overview** - Birthday, Generation, Comparison
 2. **Formative Years** - Childhood, Pop Culture, Technology
 3. **World Events** - History, Career, Financial
@@ -32,28 +26,36 @@ Birthday analysis webapp. User enters birthdate → gets personalized ~5,000 wor
 
 ```
 /life-story/                              → Landing page (DatePicker)
-/life-story/{YYYY-MM-DD}/{theme}          → Report view (default: overview tab)
-/life-story/{YYYY-MM-DD}/{theme}/{tab}    → Report view with specific tab
+/life-story/{YYYY-MM-DD}                  → Report view (Overview tab)
+/life-story/{YYYY-MM-DD}/{tab}            → Report with specific tab
 
 Examples:
-/life-story/1988-06-09/timeline           → Timeline theme, Overview tab
-/life-story/1988-06-09/newspaper/world-events
-/life-story/1965-03-15/casefile/personal-insights
+/life-story/1988-06-09                    → Overview tab
+/life-story/1965-03-15/world-events       → World Events tab
 ```
 
 Tab slugs: `overview`, `formative-years`, `world-events`, `personal-insights`
 
-**Shareable URLs**: Reports can now be shared/bookmarked - the birthday is in the URL.
+**Shareable URLs**: Reports can be shared/bookmarked — the birthday is in the URL.
 
 ## Key Files
 
 | File | Purpose |
 |------|---------|
-| `src/App.jsx` | Router, theme switcher, font size context |
-| `src/components/themes/*.jsx` | The three theme components |
-| `src/components/shared/CelebrityList.jsx` | Shared celebrity list component |
+| `src/App.jsx` | Router and app shell |
+| `src/components/themes/TimelineTheme.jsx` | Report theme component |
+| `src/components/shared/BirthdayHeatMap.jsx` | 366-day interactive calendar grid |
+| `src/components/shared/CelebrityList.jsx` | Celebrity birthday list |
+| `src/components/layout/MainLayout.jsx` | Page layout wrapper |
+| `src/components/ThemeWrapper.jsx` | Theme context/styling |
+| `src/components/DatePicker.jsx` | Landing page date input |
+| `src/pages/LandingPage.jsx` | Landing page |
+| `src/routes/AppRoutes.jsx` | Route definitions |
 | `src/config/tabs.js` | Centralized tab configuration |
-| `src/hooks/useTabState.js` | Shared tab state management |
+| `src/hooks/useTabState.js` | Tab navigation state |
+| `src/hooks/useMetaTags.js` | Document head management |
+| `src/hooks/useScrollProgress.js` | Scroll position tracking |
+| `src/hooks/useRouteChangeReset.js` | Reset UI on route change |
 | `src/data/years/*.json` | Year-specific content (67 files: 1946-2012) |
 | `src/data/generations/*.json` | Generation definitions (boomer, genx, millennial, genz) |
 | `src/data/birthdays/*.json` | Birthday rankings, celebrities (12 monthly files) |
@@ -86,11 +88,6 @@ Tab slugs: `overview`, `formative-years`, `world-events`, `personal-insights`
 
 ## Common Tasks
 
-### Add a new theme
-1. Create `src/components/themes/NewTheme.jsx`
-2. Add routes in `App.jsx`
-3. Add to theme switcher in `App.jsx`
-
 ### Change tab structure
 1. Update `TABS` array in `src/config/tabs.js` (centralized)
 2. Update `TAB_SLUGS` in `App.jsx` for URL routing
@@ -102,30 +99,15 @@ Tab slugs: `overview`, `formative-years`, `world-events`, `personal-insights`
 ## Design System
 
 ### Button Padding
-- **Desktop theme/controls**: `px-3 py-2` (sidebar buttons)
-- **Desktop font size buttons**: `px-3 py-1.5` (smaller)
 - **Mobile buttons**: `py-4 px-4` (44px+ touch targets)
 - **Tab buttons**: `py-3` with responsive horizontal padding
 
 ### Responsive Padding Pattern
-- **Content areas**: `p-4 md:p-6` (standardized across themes)
-
-### Font Size Scaling (TimelineTheme)
-Font size controls scale all text elements:
-```jsx
-{
-  sm: '[&_p]:text-sm [&_h2]:text-lg [&_h3]:text-base [&_strong]:text-sm',
-  base: '[&_p]:text-base [&_h2]:text-xl [&_h3]:text-lg [&_strong]:text-base',
-  lg: '[&_p]:text-lg [&_h2]:text-2xl [&_h3]:text-xl [&_strong]:text-lg',
-}
-```
+- **Content areas**: `p-4 md:p-6` (standardized)
 
 ### Font Classes (Tailwind)
 - `font-display`: Playfair Display (headings)
-- `font-sans`: DM Sans (Timeline body text)
-- `font-body`: Courier Prime (legacy, still in config)
-- `font-blackletter`: UnifrakturMaguntia (Newspaper masthead)
-- `font-typewriter`: Special Elite (CaseFile theme)
+- `font-sans`: DM Sans (body text)
 
 ## Writing Style Rules
 
@@ -148,11 +130,6 @@ git commit -m "Description"
 git push
 
 # For releases
-git tag -a v0.X.0 -m "Release notes"
+git tag -a vX.Y.Z -m "Release notes"
 git push --tags
 ```
-
-## Next Priorities
-
-1. Heat map visualization
-2. Case file theme redesign (#66)

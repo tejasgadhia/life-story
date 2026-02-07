@@ -2,6 +2,27 @@
 
 All notable changes to Life Story will be documented in this file.
 
+## [1.0.0] - 2026-02-07
+
+### Added
+- **Birthday Heatmap**: Interactive 366-day calendar grid showing birthday frequency across the year, with hover tooltips displaying rank and percentile
+- **WCAG AA Compliance**: Full accessibility audit and fixes (#79-#84) — keyboard navigation, screen reader support, contrast ratios, ARIA labels
+- **80 Tests**: 5 test suites covering DatePicker, BirthdayHeatMap, useTabState, useRouteChangeReset, and assembleReport
+
+### Removed
+- **Newspaper Theme**: Removed entirely (Timeline is the sole theme)
+- **Case File Theme**: Removed entirely
+- **ThemeSwitcher**: No longer needed with single theme
+- **Font Size Controls**: Removed to simplify the interface
+
+### Fixed
+- Heatmap tooltip jitter on hover — three root causes fixed: conditional rendering, cell-level mouse events, and CSS transitions (#86)
+- Mobile bottom sheet race condition — document mousedown listener firing before button click (#85)
+
+### Changed
+- **URL Structure**: Simplified from `/life-story/{YYYY-MM-DD}/{theme}/{tab}` to `/life-story/{YYYY-MM-DD}/{tab}` (no theme segment)
+- **Architecture**: Cleaner component hierarchy with ThemeWrapper, MainLayout, and dedicated hooks
+
 ## [0.5.0] - 2026-02-04
 
 ### Changed

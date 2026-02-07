@@ -8,25 +8,26 @@
 
 Enter a birthdate and get a ~5,000 word magazine-style report about your generation, cultural touchstones, and historical context. The report covers everything from how common your birthday is to what technology shaped your childhood to what historical events defined your formative years.
 
+Supports all birthdates from **1946 to 2012** (67 years of data spanning Boomers through Gen Z).
+
 ## Features
 
 - **12-Section Report**: Birthday analysis, generational identity, childhood context, pop culture, technology timeline, historical milestones, career patterns, financial psychology, relationships, blind spots, and life roadmap
-- **Three Visual Themes**:
-  - Timeline (default) - Modern, clean layout
-  - Newspaper - Vintage 1880s newspaper aesthetic
-  - Case File - FBI dossier style
+- **Birthday Heatmap**: Interactive 366-day calendar grid showing birthday frequency across the year, with hover tooltips showing rank and percentile
 - **4-Tab Navigation**: Overview, Formative Years, World Events, Personal Insights
-- **Birthday Ranking**: How common is your birthday? (1-366)
+- **Birthday Ranking**: How common is your birthday? (1-366 with percentile)
 - **Celebrity Birthdays**: Wikipedia-linked, sorted by birth year
-- **Font Size Controls**: Small, Medium, Large
 - **Shareable URLs**: Bookmarkable reports with birthday in URL
+- **Accessibility**: WCAG AA compliant, keyboard navigable, screen reader support
 - **Offline Support**: Works offline after first visit (via service worker)
+- **80 Tests**: 5 test suites covering components, hooks, and utilities
 
 ## Tech Stack
 
 - React 19 + Vite
-- Tailwind CSS
+- Tailwind CSS v4
 - React Router v7 (client-side routing)
+- Vitest + Testing Library
 - vite-plugin-pwa (offline caching)
 - GitHub Pages (static hosting)
 - GitHub Actions (auto-deploy on push)
@@ -35,20 +36,23 @@ Enter a birthdate and get a ~5,000 word magazine-style report about your generat
 
 ```
 /life-story/                              → Landing page (DatePicker)
-/life-story/{YYYY-MM-DD}/{theme}          → Report view
-/life-story/{YYYY-MM-DD}/{theme}/{tab}    → Report with specific tab
+/life-story/{YYYY-MM-DD}                  → Report view (Overview tab)
+/life-story/{YYYY-MM-DD}/{tab}            → Report with specific tab
 
 Examples:
-/life-story/1988-06-09/timeline           → Timeline, Overview tab
-/life-story/1965-03-15/newspaper/world-events
-/life-story/2000-01-01/casefile/personal-insights
+/life-story/1988-06-09                    → Overview tab
+/life-story/1965-03-15/world-events       → World Events tab
+/life-story/2000-01-01/personal-insights  → Personal Insights tab
 ```
+
+Tab slugs: `overview`, `formative-years`, `world-events`, `personal-insights`
 
 ## Local Development
 
 ```bash
 npm install
 npm run dev      # Start dev server at localhost:5173
+npm test         # Run test suite (80 tests)
 npm run build    # Build for production
 npm run preview  # Preview production build
 ```
@@ -66,13 +70,6 @@ npm run preview  # Preview production build
 - GitHub Actions auto-deploys on push to main
 - SPA routing uses 404.html redirect hack (GitHub Pages limitation)
 
-### Verifying Deployment
-
-1. Push changes to main
-2. Wait for Actions workflow to complete (~1-2 min)
-3. Visit https://tejasgadhia.github.io/life-story/
-4. Test a deep link: `/life-story/1988-06-09/timeline`
-
 ## Data Sources
 
 - **Birthday frequency**: FiveThirtyEight (CDC/SSA 1994-2014)
@@ -85,33 +82,42 @@ npm run preview  # Preview production build
 src/
 ├── components/
 │   ├── themes/
-│   │   ├── TimelineTheme.jsx
-│   │   ├── NewspaperTheme.jsx
-│   │   └── CaseFileTheme.jsx
+│   │   └── TimelineTheme.jsx    # Report theme
 │   ├── shared/
-│   │   └── CelebrityList.jsx
-│   ├── DatePicker.jsx
-│   ├── LoadingScreen.jsx
-│   └── ErrorBoundary.jsx
-├── config/
-│   └── tabs.js              # Centralized tab configuration
+│   │   ├── BirthdayHeatMap.jsx  # 366-day calendar grid
+│   │   └── CelebrityList.jsx    # Celebrity birthday list
+│   ├── layout/
+│   │   └── MainLayout.jsx       # Page layout wrapper
+│   ├── DatePicker.jsx           # Landing page date input
+│   ├── ThemeWrapper.jsx         # Theme context/styling
+│   ├── LoadingScreen.jsx        # Skeleton loading UI
+│   └── ErrorBoundary.jsx        # Error handling
 ├── hooks/
-│   └── useTabState.js       # Shared tab state management
+│   ├── useTabState.js           # Tab navigation state
+│   ├── useMetaTags.js           # Document head management
+│   ├── useScrollProgress.js     # Scroll position tracking
+│   └── useRouteChangeReset.js   # Reset UI on route change
+├── config/
+│   ├── tabs.js                  # Tab configuration
+│   └── constants.js             # App-wide constants
+├── pages/
+│   └── LandingPage.jsx          # Date picker page
+├── routes/
+│   └── AppRoutes.jsx            # Route definitions
 ├── data/
-│   ├── years/               # 67 year files (1946-2012)
-│   ├── generations/         # 4 generation definitions
-│   └── birthdays/           # 12 monthly celebrity files
+│   ├── years/                   # 67 year files (1946-2012)
+│   ├── generations/             # 4 generation definitions
+│   └── birthdays/               # 12 monthly celebrity files
 ├── utils/
-│   └── assembleReport.js    # Report data assembly
-├── App.jsx                  # Router, theme switching, font size
-└── main.jsx
+│   ├── assembleReport.js        # Report data assembly
+│   ├── dateUrl.js               # URL date encoding
+│   ├── generations.js           # Generation lookups
+│   ├── metaTags.js              # SEO meta tag generation
+│   ├── loadFonts.js             # Font loading
+│   └── placeholders.js          # Loading/error placeholders
+├── App.jsx                      # Router and app shell
+└── main.jsx                     # Entry point
 ```
-
-## Current Limitations
-
-- Supports birthdates from 1946-2012 only
-- US-centric content and data
-- Desktop-optimized (mobile responsive but not mobile-first)
 
 ## License
 
