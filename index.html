@@ -46,12 +46,37 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:wght@400;500;600;700&display=swap"></noscript>
     <!-- Report fonts (Playfair, Courier Prime, Lora) and theme fonts (Special Elite, UnifrakturMaguntia) loaded via src/utils/loadFonts.js -->
-    <!-- GitHub Pages SPA redirect handler -->
+    <!--
+      GitHub Pages SPA Redirect (Step 2 of 2)
+      See public/404.html for the full explanation of how this works.
+      This script runs before React mounts and restores the original URL
+      that was saved by the 404.html trampoline page.
+    -->
     <script type="text/javascript">
       (function(l) {
-        if (l.search[1] === '/' ) {
-          var decoded = l.search.slice(1).split('&').map(function(s) { 
-            return s.replace(/~and~/g, '&')
+        // Primary method: restore path from sessionStorage (clean URL redirect)
+        try {
+          var saved = sessionStorage.getItem('spa-redirect');
+          if (saved) {
+            sessionStorage.removeItem('spa-redirect');
+            var redirect = JSON.parse(saved);
+            // Only replaceState if the saved path differs from current
+            // (prevents unnecessary replaceState on normal landing page loads)
+            if (redirect.pathname !== l.pathname || redirect.search !== l.search) {
+              window.history.replaceState(null, null,
+                redirect.pathname + redirect.search + redirect.hash
+              );
+            }
+            return;
+          }
+        } catch (e) {
+          // sessionStorage unavailable — fall through to query-param check
+        }
+        // Fallback: restore path from query param (/?/path/here format)
+        // This handles the case where 404.html fell back to query-param encoding
+        if (l.search[1] === '/') {
+          var decoded = l.search.slice(1).split('&').map(function(s) {
+            return s.replace(/~and~/g, '&');
           }).join('?');
           window.history.replaceState(null, null,
             l.pathname.slice(0, -1) + decoded + l.hash

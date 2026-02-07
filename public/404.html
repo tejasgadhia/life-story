@@ -36,21 +36,72 @@
     <!-- Canonical -->
     <link rel="canonical" href="https://tejasgadhia.github.io/life-story/">
 
+    <!--
+      GitHub Pages SPA Redirect (Step 1 of 2)
+      =========================================
+      WHY THIS EXISTS:
+      GitHub Pages only serves static files. Any path that doesn't map to a real
+      file (e.g. /life-story/1988-06-09/timeline) returns a 404. GitHub Pages
+      lets you customize the 404 page, so we use it as a trampoline to bounce
+      users back to index.html where React Router can handle the route.
+
+      HOW IT WORKS:
+      1. This 404.html saves the original path+search+hash to sessionStorage
+      2. Redirects to the app root (/life-story/) — a clean URL, no query params
+      3. index.html (Step 2) reads sessionStorage and calls history.replaceState
+         to restore the original URL before React mounts
+
+      WHY sessionStorage INSTEAD OF query params:
+      - The URL bar stays clean during the redirect (no /?/path/here flash)
+      - No need for ~and~ encoding of & characters in the URL
+      - sessionStorage is cleared automatically when the tab closes
+      - Survives the single redirect hop but nothing more
+
+      FALLBACK:
+      If sessionStorage is unavailable (private browsing in some browsers, or
+      storage disabled), falls back to the original query-param method so the
+      redirect still works.
+
+      UNAVOIDABLE LIMITATIONS (GitHub Pages constraint):
+      - The 404 HTTP status still appears in DevTools Network tab. There is no
+        way to serve a 200 for unknown paths without a real server. This is
+        cosmetic only and does not affect functionality.
+      - There is still one redirect hop (404.html -> index.html). This adds
+        roughly 50-100ms. The only way to eliminate it is server-side routing
+        (Netlify _redirects, Vercel rewrites, etc).
+      - If both sessionStorage AND JavaScript are disabled, the user sees a
+        blank page. This is acceptable for an SPA.
+    -->
     <script type="text/javascript">
-      // GitHub Pages SPA redirect hack
-      // Converts the path into a query parameter so the SPA can handle it
-      var pathSegmentsToKeep = 1; // life-story is the repo name
-      var l = window.location;
-      l.replace(
-        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
-        l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?/' +
-        l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
-        (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
-        l.hash
-      );
+      (function() {
+        var loc = window.location;
+        try {
+          // Primary method: save path in sessionStorage for a clean redirect URL
+          sessionStorage.setItem('spa-redirect', JSON.stringify({
+            pathname: loc.pathname,
+            search: loc.search,
+            hash: loc.hash
+          }));
+          // Redirect to app root — index.html will restore the original path
+          loc.replace(
+            loc.protocol + '//' + loc.hostname + (loc.port ? ':' + loc.port : '') +
+            '/life-story/'
+          );
+        } catch (e) {
+          // Fallback: encode path as query param (original spa-github-pages method)
+          // This handles cases where sessionStorage is unavailable
+          var pathSegmentsToKeep = 1;
+          loc.replace(
+            loc.protocol + '//' + loc.hostname + (loc.port ? ':' + loc.port : '') +
+            loc.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?/' +
+            loc.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
+            (loc.search ? '&' + loc.search.slice(1).replace(/&/g, '~and~') : '') +
+            loc.hash
+          );
+        }
+      })();
     </script>
   </head>
   <body>
-    Redirecting...
   </body>
 </html>
