@@ -1,5 +1,4 @@
 import { useLocation } from 'react-router-dom'
-import ThemeSwitcher from '../ThemeSwitcher'
 import { useScrollProgress } from '../../hooks/useScrollProgress'
 import { useRouteChangeReset } from '../../hooks/useRouteChangeReset'
 
@@ -26,7 +25,6 @@ export default function MainLayout({ children }) {
           aria-label="Reading progress"
         />
       )}
-      <ThemeSwitcher />
       {children}
     </main>
   )

@@ -5,41 +5,17 @@ const DAYS_IN_MONTH = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 const MONTH_LABELS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
 const MONTH_LABELS_FULL = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 
-// Theme-specific config (follows CelebrityList variant pattern)
+// Theme config
 const THEME_CONFIG = {
-  timeline: {
-    overlay: 'bg-white/95 backdrop-blur-sm',
-    header: 'font-display text-dark-brown',
-    subtext: 'font-sans text-sepia-brown',
-    legend: 'font-sans text-dark-brown',
-    close: 'bg-dark-brown text-vintage-cream hover:bg-sepia-brown',
-    border: 'border-sepia-brown/20',
-    monthLabel: 'fill-sepia-brown font-sans',
-    tooltip: 'bg-dark-brown text-vintage-cream',
-    colorScale: ['#E8DCC4', '#C4A97D', '#8B7355', '#3E2723'], // aged-paper → dark-brown
-  },
-  newspaper: {
-    overlay: 'bg-stone-50/95 backdrop-blur-sm',
-    header: 'font-display text-stone-900',
-    subtext: 'text-stone-600',
-    legend: 'text-stone-600',
-    close: 'bg-stone-800 text-stone-100 hover:bg-stone-700',
-    border: 'border-stone-300',
-    monthLabel: 'fill-stone-600',
-    tooltip: 'bg-stone-800 text-stone-100',
-    colorScale: ['#E7E5E4', '#A8A29E', '#57534E', '#1C1917'], // stone scale
-  },
-  casefile: {
-    overlay: 'bg-manila/95 backdrop-blur-sm',
-    header: 'font-typewriter text-dark-brown',
-    subtext: 'font-typewriter text-sepia-brown',
-    legend: 'font-typewriter text-dark-brown',
-    close: 'bg-dark-brown text-vintage-cream hover:bg-sepia-brown',
-    border: 'border-sepia-brown/30',
-    monthLabel: 'fill-sepia-brown font-typewriter',
-    tooltip: 'bg-dark-brown text-vintage-cream font-typewriter',
-    colorScale: ['#D4B896', '#B8956A', '#A4493D', '#6B1D14'], // manila → deep red
-  },
+  overlay: 'bg-white/95 backdrop-blur-sm',
+  header: 'font-display text-dark-brown',
+  subtext: 'font-sans text-sepia-brown',
+  legend: 'font-sans text-dark-brown',
+  close: 'bg-dark-brown text-vintage-cream hover:bg-sepia-brown',
+  border: 'border-sepia-brown/20',
+  monthLabel: 'fill-sepia-brown font-sans',
+  tooltip: 'bg-dark-brown text-vintage-cream',
+  colorScale: ['#E8DCC4', '#C4A97D', '#8B7355', '#3E2723'], // aged-paper → dark-brown
 }
 
 /**
@@ -76,7 +52,6 @@ function getColor(percentile, colorScale) {
  * @param {number} userDay - 1-31
  * @param {number} birthdayRank - 1-366
  * @param {number} birthdayPercentile - 0-100
- * @param {string} variant - 'timeline' | 'newspaper' | 'casefile'
  * @param {boolean} isOpen
  * @param {function} onClose
  */
@@ -85,7 +60,6 @@ export default function BirthdayHeatMap({
   userDay,
   birthdayRank,
   birthdayPercentile,
-  variant = 'timeline',
   isOpen,
   onClose,
 }) {
@@ -93,7 +67,7 @@ export default function BirthdayHeatMap({
   const [tooltip, setTooltip] = useState(null)
   const overlayRef = useRef(null)
   const closeButtonRef = useRef(null)
-  const theme = THEME_CONFIG[variant] || THEME_CONFIG.timeline
+  const theme = THEME_CONFIG
 
   // Load heatmap data lazily when first opened
   useEffect(() => {
@@ -285,7 +259,7 @@ export default function BirthdayHeatMap({
                               height={cellSize + 2}
                               rx={3}
                               fill="none"
-                              stroke={variant === 'casefile' ? '#A4493D' : '#3E2723'}
+                              stroke="#3E2723"
                               strokeWidth={2}
                               className="heatmap-pulse"
                             />

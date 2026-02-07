@@ -1,18 +1,16 @@
 import { useState, useEffect, useCallback, useMemo, Suspense } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
-import { useFontSize } from '../context/FontSizeContext'
 import { TAB_SLUGS } from '../config/constants'
 import { parseBirthdayFromUrl } from '../utils/dateUrl'
 import { assembleReport } from '../utils/assembleReport'
 import { useMetaTags } from '../hooks/useMetaTags'
-import { loadReportFonts, loadThemeFonts } from '../utils/loadFonts'
+import { loadReportFonts } from '../utils/loadFonts'
 import LoadingScreen from './LoadingScreen'
 
-// Generic wrapper for themes with tab state from URL (slug-based)
-export default function ThemeWrapper({ ThemeComponent, themePath }) {
+// Wrapper for timeline theme with tab state from URL (slug-based)
+export default function ThemeWrapper({ ThemeComponent }) {
   const { birthday, tab } = useParams()
   const navigate = useNavigate()
-  const { fontSize } = useFontSize()
   const [reportData, setReportData] = useState(null)
   const [isLoading, setIsLoading] = useState(true)
   const [showLoading, setShowLoading] = useState(false)
@@ -21,13 +19,12 @@ export default function ThemeWrapper({ ThemeComponent, themePath }) {
   const parsedDate = useMemo(() => parseBirthdayFromUrl(birthday), [birthday])
 
   // Update meta tags for social sharing
-  useMetaTags(reportData, birthday, themePath)
+  useMetaTags(reportData, birthday, 'timeline')
 
-  // Load report fonts and theme-specific fonts
+  // Load report fonts
   useEffect(() => {
     loadReportFonts()
-    loadThemeFonts(themePath)
-  }, [themePath])
+  }, [])
 
   // Redirect to landing if invalid date
   useEffect(() => {
@@ -116,22 +113,22 @@ export default function ThemeWrapper({ ThemeComponent, themePath }) {
 
   // Redirect if invalid tab
   if (tab && tabIndex < 0) {
-    navigate(`/life-story/${birthday}/${themePath}`, { replace: true })
+    navigate(`/life-story/${birthday}/timeline`, { replace: true })
     return null
   }
 
   const setTab = (newTabIndex) => {
     const slug = TAB_SLUGS[newTabIndex] || 'overview'
     if (newTabIndex === 0) {
-      navigate(`/life-story/${birthday}/${themePath}`)
+      navigate(`/life-story/${birthday}/timeline`)
     } else {
-      navigate(`/life-story/${birthday}/${themePath}/${slug}`)
+      navigate(`/life-story/${birthday}/timeline/${slug}`)
     }
   }
 
   return (
     <Suspense fallback={<div className="min-h-screen bg-charcoal-50" />}>
-      <ThemeComponent data={reportData} currentTab={currentTab} setTab={setTab} fontSize={fontSize} />
+      <ThemeComponent data={reportData} currentTab={currentTab} setTab={setTab} />
     </Suspense>
   )
 }

@@ -59,7 +59,7 @@ const SECTION_CONFIG = {
 // Export TABS for use in App.jsx routing
 export { TABS }
 
-function TimelineTheme({ data, currentTab: propTab = 0, setTab: propSetTab, fontSize = 'base' }) {
+function TimelineTheme({ data, currentTab: propTab = 0, setTab: propSetTab }) {
   const [activeTab, setActiveTab] = useTabState(propTab, propSetTab)
   const tabRefs = useRef([])
   const tabListRef = useRef(null)
@@ -103,13 +103,6 @@ function TimelineTheme({ data, currentTab: propTab = 0, setTab: propSetTab, font
       tabRefs.current[newIndex]?.focus()
     }
   }, [setActiveTab])
-
-  // Font size scaling for all text elements
-  const fontSizeClasses = {
-    sm: '[&_p]:text-sm [&_h2]:text-lg [&_h3]:text-base [&_strong]:text-sm',
-    base: '[&_p]:text-base [&_h2]:text-xl [&_h3]:text-lg [&_strong]:text-base',
-    lg: '[&_p]:text-lg [&_h2]:text-2xl [&_h3]:text-xl [&_strong]:text-lg',
-  }
 
   const getSectionContent = (sectionId) => {
     const config = SECTION_CONFIG[sectionId]
@@ -185,7 +178,7 @@ function TimelineTheme({ data, currentTab: propTab = 0, setTab: propSetTab, font
                    [&_.pull-quote]:text-dark-brown
                    [&_.stat-box]:bg-dark-brown
                    [&_.stat-box]:text-vintage-cream
-                   ${fontSizeClasses[fontSize]}`}
+                   [&_p]:text-base [&_h2]:text-xl [&_h3]:text-lg [&_strong]:text-base`}
           dangerouslySetInnerHTML={{ __html: content }}
         />
       </div>
@@ -296,7 +289,6 @@ function TimelineTheme({ data, currentTab: propTab = 0, setTab: propSetTab, font
             userDay={data.birthDay}
             birthdayRank={data.birthdayRank}
             birthdayPercentile={data.birthdayPercentile}
-            variant="timeline"
             isOpen={isHeatMapOpen}
             onClose={() => setIsHeatMapOpen(false)}
           />

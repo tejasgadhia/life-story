@@ -22,7 +22,6 @@ const defaultProps = {
   userDay: 9,
   birthdayRank: 121,
   birthdayPercentile: 67,
-  variant: 'timeline',
   isOpen: true,
   onClose: vi.fn(),
 }
@@ -140,15 +139,4 @@ describe('BirthdayHeatMap', () => {
     })
   })
 
-  it('supports newspaper variant', async () => {
-    render(<BirthdayHeatMap {...defaultProps} variant="newspaper" />)
-    const dialog = await screen.findByRole('dialog')
-    expect(dialog).toBeInTheDocument()
-  })
-
-  it('supports casefile variant', async () => {
-    render(<BirthdayHeatMap {...defaultProps} variant="casefile" />)
-    const dialog = await screen.findByRole('dialog')
-    expect(dialog).toBeInTheDocument()
-  })
 })

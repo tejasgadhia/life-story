@@ -19,9 +19,9 @@ describe('getPageKey', () => {
   })
 
   it('strips the tab segment for different tabs', () => {
-    expect(getPageKey('/life-story/1988-06-09/newspaper/world-events')).toBe('/life-story/1988-06-09/newspaper')
-    expect(getPageKey('/life-story/1988-06-09/casefile/personal-insights')).toBe('/life-story/1988-06-09/casefile')
     expect(getPageKey('/life-story/1988-06-09/timeline/formative-years')).toBe('/life-story/1988-06-09/timeline')
+    expect(getPageKey('/life-story/1988-06-09/timeline/world-events')).toBe('/life-story/1988-06-09/timeline')
+    expect(getPageKey('/life-story/1988-06-09/timeline/personal-insights')).toBe('/life-story/1988-06-09/timeline')
   })
 
   it('handles root path', () => {
