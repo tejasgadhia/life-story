@@ -158,7 +158,7 @@ export default function DatePicker({ onSubmit }) {
       <div className="max-w-lg w-full">
         {/* Header */}
         <div className="text-center mb-8 md:mb-10">
-          <h1 className="font-display text-4xl sm:text-5xl md:text-[52px] font-semibold mb-2 sm:mb-3 text-vintage-cream">
+          <h1 className="font-display text-4xl sm:text-5xl md:text-[52px] font-bold mb-2 sm:mb-3 text-vintage-cream">
             Life Story
           </h1>
           <p className="font-body text-base sm:text-[17px] text-vintage-cream/70 px-2">
@@ -184,7 +184,7 @@ export default function DatePicker({ onSubmit }) {
               disabled={isLoading}
               aria-describedby={error ? 'birthdate-error' : undefined}
               aria-invalid={error ? 'true' : undefined}
-              className={`w-full px-5 py-4 text-lg font-body text-center rounded-xl border-2 transition-all duration-200 focus:outline-none bg-dark-brown border-vintage-cream/30 text-vintage-cream placeholder-vintage-cream/40 focus:border-amber focus:ring-2 focus:ring-amber/20 ${isLoading ? 'opacity-50 cursor-not-allowed' : ''}`}
+              className={`w-full px-5 py-4 text-lg font-body text-center rounded-xl border-2 transition-all duration-200 focus:outline-none bg-vintage-cream border-aged-paper text-dark-brown placeholder-sepia-brown/60 focus:border-amber focus:ring-2 focus:ring-amber/30 ${isLoading ? 'opacity-50 cursor-not-allowed' : ''}`}
               autoComplete="off"
             />
             <p className="text-xs font-body text-center mt-2 text-vintage-cream/50">
@@ -203,8 +203,8 @@ export default function DatePicker({ onSubmit }) {
             disabled={isLoading || !isComplete}
             className={`w-full py-4 px-6 text-base font-body font-semibold rounded-xl transition-all duration-200 ${
               isLoading || !isComplete
-                ? 'bg-vintage-cream/20 text-vintage-cream/40 cursor-not-allowed'
-                : 'bg-amber text-dark-brown hover:bg-amber-dark active:scale-[0.98] shadow-lg shadow-amber/20 focus:ring-2 focus:ring-amber/50 focus:outline-none'
+                ? 'bg-sepia-brown/40 text-vintage-cream/40 cursor-not-allowed'
+                : 'bg-amber text-dark-brown hover:bg-amber-dark active:scale-[0.98] shadow-lg shadow-amber/30 focus:ring-2 focus:ring-amber/50 focus:outline-none'
             }`}
           >
             {isLoading ? 'Loading your story...' : 'Discover Your Story'}
@@ -216,9 +216,9 @@ export default function DatePicker({ onSubmit }) {
           {SECTION_CARDS.map(({ id, title, description, highlight, suffix, Icon }) => (
             <div
               key={id}
-              className="p-4 rounded-xl bg-vintage-cream/10 hover:bg-vintage-cream/15 transition-all duration-200"
+              className="p-4 rounded-xl bg-aged-paper/15 border border-vintage-cream/10 hover:bg-aged-paper/20 transition-all duration-200"
             >
-              <div className="w-8 h-8 rounded-lg flex items-center justify-center mb-3 bg-vintage-cream/10">
+              <div className="w-8 h-8 rounded-lg flex items-center justify-center mb-3 bg-amber/15">
                 <Icon className="w-4 h-4 text-amber" />
               </div>
               <h3 className="font-body text-sm sm:text-[13px] font-semibold mb-1 text-vintage-cream">
