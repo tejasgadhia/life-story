@@ -111,39 +111,39 @@ function TimelineTheme({ data, currentTab: propTab = 0, setTab: propSetTab }) {
   }
 
   const renderBirthdaySection = () => (
-    <div className="bg-white/50 rounded-lg border border-sepia-brown/10 p-3 sm:p-4 md:p-6">
+    <div className="bg-white/50 rounded-lg border border-heritage-sepia/10 p-3 sm:p-4 md:p-6">
       {/* 2-column layout for Generation + Rank/Percentile */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4 items-stretch">
         {/* Left - Generation */}
-        <div className="aged-paper rounded-lg p-4 md:p-5 border border-sepia-brown/20 text-center flex flex-col justify-center">
-          <p className="font-sans text-xs uppercase tracking-wider text-sepia-brown mb-1">Generation</p>
-          <p className="font-display text-xl md:text-2xl text-dark-brown">{data.generation}</p>
-          <p className="font-sans text-sm text-sepia-brown">{data.generationSpan}</p>
+        <div className="heritage-paper rounded-lg p-4 md:p-5 border border-heritage-sepia/20 text-center flex flex-col justify-center">
+          <p className="font-sans text-xs uppercase tracking-wider text-heritage-sepia mb-1">Generation</p>
+          <p className="font-display text-xl md:text-2xl text-heritage-ink">{data.generation}</p>
+          <p className="font-sans text-sm text-heritage-sepia">{data.generationSpan}</p>
         </div>
 
         {/* Right - Rank/Percentile (clickable → opens heat map) */}
         <button
           onClick={() => setIsHeatMapOpen(true)}
-          className="aged-paper rounded-lg p-4 md:p-5 border border-sepia-brown/20 text-center flex flex-col justify-center w-full
-                     cursor-pointer hover:border-sepia-brown/40 hover:shadow-md transition-all duration-200
-                     focus:outline-none focus:ring-2 focus:ring-dark-brown/30 focus:ring-offset-1"
+          className="heritage-paper rounded-lg p-4 md:p-5 border border-heritage-sepia/20 text-center flex flex-col justify-center w-full
+                     cursor-pointer hover:border-heritage-sepia/40 hover:shadow-md transition-all duration-200
+                     focus:outline-none focus:ring-2 focus:ring-heritage-ink/30 focus:ring-offset-1"
         >
-          <p className="font-sans text-xs uppercase tracking-wider text-sepia-brown mb-2">Birthday Popularity</p>
+          <p className="font-sans text-xs uppercase tracking-wider text-heritage-sepia mb-2">Birthday Popularity</p>
           <div className="flex items-center justify-center gap-4 md:gap-6">
             <div className="text-center">
-              <p className="text-xl md:text-2xl font-display text-dark-brown">#{data.birthdayRank}</p>
-              <p className="font-sans text-xs text-sepia-brown">Birthday Rank</p>
+              <p className="text-xl md:text-2xl font-display text-heritage-ink">#{data.birthdayRank}</p>
+              <p className="font-sans text-xs text-heritage-sepia">Birthday Rank</p>
             </div>
-            <div className="w-px h-10 bg-sepia-brown/30" />
+            <div className="w-px h-10 bg-heritage-sepia/30" />
             <div className="text-center">
-              <p className="text-xl md:text-2xl font-display text-dark-brown">{data.birthdayPercentile}%</p>
-              <p className="font-sans text-xs text-sepia-brown">Popularity</p>
+              <p className="text-xl md:text-2xl font-display text-heritage-ink">{data.birthdayPercentile}%</p>
+              <p className="font-sans text-xs text-heritage-sepia">Popularity</p>
             </div>
           </div>
-          <p className="font-sans text-xs text-sepia-brown mt-2">
+          <p className="font-sans text-xs text-heritage-sepia mt-2">
             Your birthday is {data.birthdayRank < 183 ? 'more' : 'less'} common than the average calendar date
           </p>
-          <p className="font-sans text-xs text-dark-brown/60 mt-1">View all 366 days →</p>
+          <p className="font-sans text-xs text-heritage-ink/60 mt-1">View all 366 days →</p>
         </button>
       </div>
 
@@ -158,26 +158,26 @@ function TimelineTheme({ data, currentTab: propTab = 0, setTab: propSetTab }) {
     if (!content) return null
 
     return (
-      <div className="bg-white/50 rounded-lg border border-sepia-brown/10 p-3 sm:p-4 md:p-6 h-full">
-        <div className="flex items-center gap-2 md:gap-3 mb-3 md:mb-4 pb-3 border-b border-sepia-brown/20">
+      <div className="bg-white/50 rounded-lg border border-heritage-sepia/10 p-3 sm:p-4 md:p-6 h-full">
+        <div className="flex items-center gap-2 md:gap-3 mb-3 md:mb-4 pb-3 border-b border-heritage-sepia/20">
           <config.Icon className="w-5 h-5 md:w-6 md:h-6" aria-hidden="true" />
-          <h2 className="font-display text-lg md:text-xl text-dark-brown">{config.title}</h2>
+          <h2 className="font-display text-lg md:text-xl text-heritage-ink">{config.title}</h2>
         </div>
         
         <div
-          className={`font-sans text-dark-brown/90 leading-relaxed max-w-prose
+          className={`font-sans text-heritage-ink/90 leading-relaxed max-w-prose
                    [&>h2]:hidden
                    [&>p]:mb-4
                    [&>p]:leading-[1.7]
                    [&>strong]:font-bold
-                   [&_.hero-callout]:bg-aged-paper/60
-                   [&_.hero-callout]:border-sepia-brown
-                   [&_.hero-callout]:text-dark-brown
+                   [&_.hero-callout]:bg-heritage-paper/60
+                   [&_.hero-callout]:border-heritage-sepia
+                   [&_.hero-callout]:text-heritage-ink
                    [&_.pull-quote]:text-xl
-                   [&_.pull-quote]:border-sepia-brown/30
-                   [&_.pull-quote]:text-dark-brown
-                   [&_.stat-box]:bg-dark-brown
-                   [&_.stat-box]:text-vintage-cream
+                   [&_.pull-quote]:border-heritage-sepia/30
+                   [&_.pull-quote]:text-heritage-ink
+                   [&_.stat-box]:bg-heritage-ink
+                   [&_.stat-box]:text-heritage-cream
                    [&_p]:text-base [&_h2]:text-xl [&_h3]:text-lg [&_strong]:text-base`}
           dangerouslySetInnerHTML={{ __html: content }}
         />
@@ -188,21 +188,21 @@ function TimelineTheme({ data, currentTab: propTab = 0, setTab: propSetTab }) {
   const currentTabData = TABS[activeTab]
 
   return (
-    <div className="min-h-screen bg-vintage-cream overflow-x-hidden">
+    <div className="min-h-screen bg-heritage-cream overflow-x-hidden">
       {/* Header - Now includes birthday */}
-      <header className="bg-dark-brown text-vintage-cream py-3">
+      <header className="bg-heritage-ink text-heritage-cream py-3">
         <div className="max-w-7xl mx-auto px-4 md:px-6 flex items-center justify-between">
           <h1 className="font-display text-base md:text-lg hidden sm:block">Life Story</h1>
           <div className="text-center flex-1 sm:flex-none">
             <Cake className="w-5 h-5 md:w-6 md:h-6 mr-1 md:mr-2 inline" aria-hidden="true" />
             <span className="font-display text-lg md:text-xl">{data.birthDate}</span>
           </div>
-          <p className="font-sans text-xs md:text-sm text-vintage-cream hidden sm:block">Your Life Story Report</p>
+          <p className="font-sans text-xs md:text-sm text-heritage-cream hidden sm:block">Your Life Story Report</p>
         </div>
       </header>
 
       {/* Tab Navigation */}
-      <nav className="bg-aged-paper border-b border-sepia-brown/30 sticky top-0 z-40" aria-label="Report sections">
+      <nav className="bg-heritage-paper border-b border-heritage-sepia/30 sticky top-0 z-40" aria-label="Report sections">
         <div className="max-w-7xl mx-auto px-2 md:px-6 relative">
           <div 
             ref={tabListRef}
@@ -222,10 +222,10 @@ function TimelineTheme({ data, currentTab: propTab = 0, setTab: propSetTab }) {
                 onClick={() => setActiveTab(index)}
                 onKeyDown={(e) => handleTabKeyDown(e, index)}
                 className={`min-w-fit px-2 xs:px-3 md:px-6 py-4 md:py-3 font-sans text-sm border-b-2 whitespace-nowrap
-                  transition-colors duration-200 active:scale-[0.98] focus:ring-2 focus:ring-dark-brown/30 focus:outline-none
+                  transition-colors duration-200 active:scale-[0.98] focus:ring-2 focus:ring-heritage-ink/30 focus:outline-none
                   ${activeTab === index
-                    ? 'border-dark-brown text-dark-brown font-bold bg-vintage-cream'
-                    : 'border-transparent text-sepia-brown hover:text-dark-brown hover:bg-vintage-cream/50'
+                    ? 'border-heritage-ink text-heritage-ink font-bold bg-heritage-cream'
+                    : 'border-transparent text-heritage-sepia hover:text-heritage-ink hover:bg-heritage-cream/50'
                   }`}
               >
                 <tab.Icon className="w-4 h-4 mr-1 md:mr-2 inline" aria-hidden="true" />
@@ -236,10 +236,10 @@ function TimelineTheme({ data, currentTab: propTab = 0, setTab: propSetTab }) {
           </div>
           {/* Scroll indicators */}
           {canScrollLeft && (
-            <div className="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-aged-paper to-transparent pointer-events-none md:hidden" aria-hidden="true" />
+            <div className="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-heritage-paper to-transparent pointer-events-none md:hidden" aria-hidden="true" />
           )}
           {canScrollRight && (
-            <div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-aged-paper to-transparent pointer-events-none md:hidden" aria-hidden="true" />
+            <div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-heritage-paper to-transparent pointer-events-none md:hidden" aria-hidden="true" />
           )}
         </div>
       </nav>
@@ -273,8 +273,8 @@ function TimelineTheme({ data, currentTab: propTab = 0, setTab: propSetTab }) {
       </div>
 
       {/* Footer */}
-      <footer className="bg-aged-paper py-4 border-t border-sepia-brown/20">
-        <p className="font-sans text-xs text-sepia-brown max-w-2xl mx-auto text-center leading-relaxed px-4 md:px-6">
+      <footer className="bg-heritage-paper py-4 border-t border-heritage-sepia/20">
+        <p className="font-sans text-xs text-heritage-sepia max-w-2xl mx-auto text-center leading-relaxed px-4 md:px-6">
           This report analyzes US cultural and historical context. Generational
           characteristics are research-based generalizations. Birthday data: FiveThirtyEight.
           Generational definitions: Pew Research Center.

@@ -23,40 +23,40 @@ class ErrorBoundary extends Component {
   render() {
     if (this.state.hasError) {
       return (
-        <div className="min-h-screen bg-dark-brown flex items-center justify-center p-8">
+        <div className="min-h-screen bg-heritage-ink flex items-center justify-center p-8">
           <div className="max-w-md text-center">
             {/* Error icon */}
             <div className="mb-6" aria-hidden="true">
-              <FileWarning className="w-16 h-16 mx-auto text-vintage-cream/80" />
+              <FileWarning className="w-16 h-16 mx-auto text-heritage-cream/80" />
             </div>
             
             <h1 
-              className="text-3xl text-vintage-cream mb-4"
-              style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
+              className="text-3xl text-heritage-cream mb-4"
+              style={{ fontFamily: "'Newsreader', Georgia, serif" }}
             >
               Something Went Wrong
             </h1>
             
-            <p className="text-sepia-brown/80 mb-8 font-body leading-relaxed">
+            <p className="text-heritage-sepia/80 mb-8 font-sans leading-relaxed">
               The archives have encountered an unexpected error. 
               Our historians are investigating the matter.
             </p>
 
-            <div className="border-2 border-sepia-brown/30 bg-sepia-brown/10 rounded-lg p-4 mb-8">
-              <p className="text-xs text-sepia-brown/60 font-mono">
+            <div className="border-2 border-heritage-sepia/30 bg-heritage-sepia/10 rounded-lg p-4 mb-8">
+              <p className="text-xs text-heritage-sepia/60 font-sans">
                 {this.state.error?.message || 'Unknown error'}
               </p>
             </div>
 
             <button
               onClick={this.handleRetry}
-              className="bg-vintage-cream text-dark-brown px-8 py-3 rounded font-body text-base 
-                       hover:bg-aged-paper transition-colors"
+              className="bg-heritage-cream text-heritage-ink px-8 py-3 rounded font-sans text-base 
+                       hover:bg-heritage-paper transition-colors"
             >
               Try Again
             </button>
 
-            <p className="mt-8 text-xs text-sepia-brown/50">
+            <p className="mt-8 text-xs text-heritage-sepia/50">
               If the problem persists, please refresh the page.
             </p>
           </div>

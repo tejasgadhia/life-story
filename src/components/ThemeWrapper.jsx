@@ -127,7 +127,7 @@ export default function ThemeWrapper({ ThemeComponent }) {
   }
 
   return (
-    <Suspense fallback={<div className="min-h-screen bg-charcoal-50" />}>
+    <Suspense fallback={<div className="min-h-screen bg-secondary-50" />}>
       <ThemeComponent data={reportData} currentTab={currentTab} setTab={setTab} />
     </Suspense>
   )

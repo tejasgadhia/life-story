@@ -8,14 +8,14 @@ const MONTH_LABELS_FULL = ['January', 'February', 'March', 'April', 'May', 'June
 // Theme config
 const THEME_CONFIG = {
   overlay: 'bg-white/95 backdrop-blur-sm',
-  header: 'font-display text-dark-brown',
-  subtext: 'font-sans text-sepia-brown',
-  legend: 'font-sans text-dark-brown',
-  close: 'bg-dark-brown text-vintage-cream hover:bg-sepia-brown',
-  border: 'border-sepia-brown/20',
-  monthLabel: 'fill-sepia-brown font-sans',
-  tooltip: 'bg-dark-brown text-vintage-cream',
-  colorScale: ['#E8DCC4', '#C4A97D', '#8B7355', '#3E2723'], // aged-paper → dark-brown
+  header: 'font-display text-heritage-ink',
+  subtext: 'font-sans text-heritage-sepia',
+  legend: 'font-sans text-heritage-ink',
+  close: 'bg-heritage-ink text-heritage-cream hover:bg-heritage-sepia',
+  border: 'border-heritage-sepia/20',
+  monthLabel: 'fill-heritage-sepia font-sans',
+  tooltip: 'bg-heritage-ink text-heritage-cream',
+  colorScale: ['#E8DCC4', '#C4A97D', '#8B7355', '#3E2723'], // heritage-paper → heritage-ink
 }
 
 /**

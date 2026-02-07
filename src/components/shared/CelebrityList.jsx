@@ -14,8 +14,8 @@ const getWikiUrl = (name) => `https://en.wikipedia.org/wiki/${name.replace(/ /g,
  */
 export function CelebrityList({ celebrities }) {
   return (
-    <div className="bg-white/50 rounded-lg border border-sepia-brown/10 p-4 md:p-6">
-      <p className="font-body text-xs text-sepia-brown uppercase tracking-wider mb-3 md:mb-4 text-center">
+    <div className="bg-white/50 rounded-lg border border-heritage-sepia/10 p-4 md:p-6">
+      <p className="font-sans text-xs text-heritage-sepia uppercase tracking-wider mb-3 md:mb-4 text-center">
         You share your birthday with
       </p>
       <div className="flex flex-col sm:flex-row sm:flex-wrap justify-center gap-2">
@@ -25,10 +25,10 @@ export function CelebrityList({ celebrities }) {
             href={getWikiUrl(celeb.name)}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-aged-paper px-3 py-3 rounded font-body text-sm text-dark-brown
-                     hover:bg-sepia-brown hover:text-vintage-cream transition-colors duration-200
-                     border border-sepia-brown/20 text-center sm:text-left
-                     focus:outline-none focus:ring-2 focus:ring-dark-brown/50 focus:ring-offset-1"
+            className="bg-heritage-paper px-3 py-3 rounded font-sans text-sm text-heritage-ink
+                     hover:bg-heritage-sepia hover:text-heritage-cream transition-colors duration-200
+                     border border-heritage-sepia/20 text-center sm:text-left
+                     focus:outline-none focus:ring-2 focus:ring-heritage-ink/50 focus:ring-offset-1"
             title={celeb.description}
           >
             {celeb.name} ({celeb.year})

@@ -16,7 +16,7 @@ export default function MainLayout({ children }) {
     <main id="main-content" className="min-h-screen">
       {isReportPage && progress > 0 && (
         <div
-          className="fixed top-0 left-0 h-0.5 bg-dark-brown/70 z-[60]"
+          className="fixed top-0 left-0 h-0.5 bg-heritage-ink/70 z-[60]"
           style={{ width: `${progress * 100}%` }}
           role="progressbar"
           aria-valuenow={Math.round(progress * 100)}
