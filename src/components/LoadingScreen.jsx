@@ -65,8 +65,7 @@ function LoadingScreen({ onComplete, birthYear = 1988 }) {
         {/* Logo/Brand */}
         <div className="mb-8 md:mb-12">
           <h1
-            className="text-4xl sm:text-5xl md:text-6xl text-primary-500 mb-3 md:mb-4"
-            style={{ fontFamily: "'Newsreader', Georgia, serif" }}
+            className="text-4xl sm:text-5xl md:text-6xl text-primary-500 mb-3 md:mb-4 font-display"
           >
             Life Story
           </h1>
