@@ -36,29 +36,30 @@
     <!-- Canonical -->
     <link rel="canonical" href="https://tejasgadhia.github.io/life-story/">
 
-    <!-- Content Security Policy -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:;">
+    <!-- Content Security Policy
+         - script-src: no 'unsafe-inline' — all scripts are external files
+         - style-src: 'unsafe-inline' required for Google Fonts (@font-face inline styles)
+           and runtime style injection by React/Tailwind
+         - connect-src: self + Google Fonts for font CSS fetches + service worker
+         - object-src 'none': blocks Flash/Java plugin embeds (XSS vector)
+         - base-uri 'self': prevents <base> tag injection attacks
+         - form-action 'self': prevents form submissions to external domains
+         - frame-ancestors 'none': prevents clickjacking (equivalent to X-Frame-Options: DENY)
+    -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none';">
 
     <!-- Font loading strategy: Critical fonts loaded non-blocking, report/theme fonts lazy loaded -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Critical fonts (landing page): DM Sans + Fraunces - loaded non-blocking via media swap -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
+    <!-- Critical fonts (landing page): DM Sans + Fraunces
+         Loaded as preload to avoid render-blocking; swapped to stylesheet by spa-redirect.js
+         The preload+JS swap replaces the old media="print" onload="this.media='all'" pattern
+         which required 'unsafe-inline' in CSP -->
+    <link rel="preload" id="critical-fonts" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:wght@400;500;600;700&display=swap" as="style">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:wght@400;500;600;700&display=swap"></noscript>
     <!-- Report fonts (Playfair, Courier Prime, Lora) and theme fonts (Special Elite, UnifrakturMaguntia) loaded via src/utils/loadFonts.js -->
-    <!-- GitHub Pages SPA redirect handler -->
-    <script type="text/javascript">
-      (function(l) {
-        if (l.search[1] === '/' ) {
-          var decoded = l.search.slice(1).split('&').map(function(s) { 
-            return s.replace(/~and~/g, '&')
-          }).join('?');
-          window.history.replaceState(null, null,
-            l.pathname.slice(0, -1) + decoded + l.hash
-          );
-        }
-      }(window.location))
-    </script>
+    <!-- GitHub Pages SPA redirect handler (external script for CSP compliance — no inline scripts) -->
+    <script src="/life-story/spa-redirect.js"></script>
   </head>
   <body>
     <!-- Skip link for keyboard users -->
