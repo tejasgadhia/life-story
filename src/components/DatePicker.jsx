@@ -154,14 +154,14 @@ export default function DatePicker({ onSubmit }) {
   const isComplete = month.length === 2 && day.length === 2 && year.length === 4
 
   return (
-    <main id="main-content" className="min-h-screen flex items-center justify-center px-4 py-8 bg-gradient-to-b from-charcoal-50 to-charcoal-100">
+    <main id="main-content" className="min-h-screen flex items-center justify-center px-4 py-8 bg-dark-brown">
       <div className="max-w-lg w-full">
         {/* Header */}
         <div className="text-center mb-8 md:mb-10">
-          <h1 className="font-heading text-4xl sm:text-5xl md:text-[52px] font-semibold mb-2 sm:mb-3 text-charcoal-800">
+          <h1 className="font-display text-4xl sm:text-5xl md:text-[52px] font-semibold mb-2 sm:mb-3 text-vintage-cream">
             Life Story
           </h1>
-          <p className="font-sans text-base sm:text-[17px] text-charcoal-500 px-2">
+          <p className="font-body text-base sm:text-[17px] text-vintage-cream/70 px-2">
             Enter your birth date to discover your personalized story
           </p>
         </div>
@@ -184,16 +184,16 @@ export default function DatePicker({ onSubmit }) {
               disabled={isLoading}
               aria-describedby={error ? 'birthdate-error' : undefined}
               aria-invalid={error ? 'true' : undefined}
-              className={`w-full px-5 py-4 text-lg font-sans text-center rounded-xl border-2 transition-all duration-200 focus:outline-none bg-white border-charcoal-200 text-charcoal-800 placeholder-charcoal-400 focus:border-amber focus:ring-2 focus:ring-amber/20 ${isLoading ? 'opacity-50 cursor-not-allowed' : ''}`}
+              className={`w-full px-5 py-4 text-lg font-body text-center rounded-xl border-2 transition-all duration-200 focus:outline-none bg-dark-brown border-vintage-cream/30 text-vintage-cream placeholder-vintage-cream/40 focus:border-amber focus:ring-2 focus:ring-amber/20 ${isLoading ? 'opacity-50 cursor-not-allowed' : ''}`}
               autoComplete="off"
             />
-            <p className="text-xs font-sans text-center mt-2 text-charcoal-500">
+            <p className="text-xs font-body text-center mt-2 text-vintage-cream/50">
               Supporting birth years from {MIN_YEAR} to {MAX_YEAR}
             </p>
           </div>
 
           {error && (
-            <p id="birthdate-error" className="text-red-500 text-sm font-sans text-center" role="alert">
+            <p id="birthdate-error" className="text-red-400 text-sm font-body text-center" role="alert">
               {error}
             </p>
           )}
@@ -201,10 +201,10 @@ export default function DatePicker({ onSubmit }) {
           <button
             type="submit"
             disabled={isLoading || !isComplete}
-            className={`w-full py-4 px-6 text-base font-sans font-semibold rounded-xl transition-all duration-200 ${
+            className={`w-full py-4 px-6 text-base font-body font-semibold rounded-xl transition-all duration-200 ${
               isLoading || !isComplete
-                ? 'bg-charcoal-300 text-charcoal-500 cursor-not-allowed'
-                : 'bg-amber text-charcoal-900 hover:bg-amber-dark active:scale-[0.98] shadow-lg shadow-amber/20 focus:ring-2 focus:ring-amber/50 focus:outline-none'
+                ? 'bg-vintage-cream/20 text-vintage-cream/40 cursor-not-allowed'
+                : 'bg-amber text-dark-brown hover:bg-amber-dark active:scale-[0.98] shadow-lg shadow-amber/20 focus:ring-2 focus:ring-amber/50 focus:outline-none'
             }`}
           >
             {isLoading ? 'Loading your story...' : 'Discover Your Story'}
@@ -216,15 +216,15 @@ export default function DatePicker({ onSubmit }) {
           {SECTION_CARDS.map(({ id, title, description, highlight, suffix, Icon }) => (
             <div
               key={id}
-              className="p-4 rounded-xl bg-white shadow-sm hover:shadow-md transition-all duration-200"
+              className="p-4 rounded-xl bg-vintage-cream/10 hover:bg-vintage-cream/15 transition-all duration-200"
             >
-              <div className="w-8 h-8 rounded-lg flex items-center justify-center mb-3 bg-charcoal-50">
+              <div className="w-8 h-8 rounded-lg flex items-center justify-center mb-3 bg-vintage-cream/10">
                 <Icon className="w-4 h-4 text-amber" />
               </div>
-              <h3 className="font-sans text-sm sm:text-[13px] font-semibold mb-1 text-charcoal-800">
+              <h3 className="font-body text-sm sm:text-[13px] font-semibold mb-1 text-vintage-cream">
                 {title}
               </h3>
-              <p className="font-sans text-xs sm:text-[12px] leading-relaxed text-charcoal-500">
+              <p className="font-body text-xs sm:text-[12px] leading-relaxed text-vintage-cream/60">
                 {description}{description && ' '}
                 <span className="text-amber font-medium">{highlight}</span>
                 {suffix && ` ${suffix}`}
@@ -234,7 +234,7 @@ export default function DatePicker({ onSubmit }) {
         </div>
 
         {/* Privacy note */}
-        <p className="text-xs font-sans text-center mt-6 md:mt-8 text-charcoal-500 px-2">
+        <p className="text-xs font-body text-center mt-6 md:mt-8 text-vintage-cream/40 px-2">
           Your birth date is used only to generate your personalized report.
           <br className="hidden sm:block" />
           <span className="sm:hidden"> </span>
