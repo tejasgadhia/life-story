@@ -6,6 +6,7 @@ Last Updated: February 6, 2026
 **What's Working:**
 - All 3 themes (Timeline, Newspaper, Case File) rendering correctly
 - 67 year files (1946-2012) with curated content
+- Birthday popularity heat map visualization (new — commit `a29eb98`)
 - Unified FAB theme switcher (desktop popover + mobile bottom sheet)
 - URL-based routing with shareable report URLs
 - Font size controls, tab navigation, celebrity lists
@@ -13,42 +14,31 @@ Last Updated: February 6, 2026
 - Session caching — loading screen skipped on theme/tab switches
 - PWA with offline support
 - GitHub Pages auto-deploy via Actions
-- **Tailwind CSS v4** with CSS-first config (`@theme` block in index.css)
-- **Vite Plugin React v5** (drop-in upgrade from v4)
-- **Mobile responsive polish** — WCAG touch targets, tighter 320px padding, text fixes
+- Tailwind CSS v4 with CSS-first config (`@theme` block in index.css)
+- Mobile responsive polish — WCAG touch targets, tighter 320px padding, text fixes
 
-**In Progress:**
-- Nothing actively in progress
+**Needs Fixing (HIGH PRIORITY):**
+- Landing page design is broken — user explicitly unhappy with current charcoal/amber light palette. Needs a proper design review and restyle. Current state: light gradient background (`charcoal-50` to `charcoal-100`) with white cards and amber accents. User says it looks ugly and needs a complete redesign.
+- Theme switcher may have issues — added `key` props to routes but couldn't reproduce the switching bug in testing. Needs real-browser verification.
 
 **Not Started:**
-- Heat map visualization (CLAUDE.md priority #1)
 - Case file theme redesign (#66)
 
 ## Recent Changes
 
+### February 6, 2026 Session (UI Fix Attempt — Mostly Failed)
+- Added `key` props to ThemeWrapper routes in `AppRoutes.jsx` (KEPT — defensive fix)
+- Attempted to restyle DatePicker to dark-brown vintage palette (REVERTED — plan was wrong)
+- Attempted dark-on-dark contrast fix (REVERTED — made it worse)
+- Restored DatePicker to pre-session state (commit `bcfebd6`)
+- **Net result: only `src/routes/AppRoutes.jsx` actually changed (key props)**
+- User is NOT happy — landing page needs a real design overhaul next session
+
+### February 6, 2026 Session (Heat Map)
+- Birthday popularity heat map visualization (commit `a29eb98`)
+
 ### February 6, 2026 Session (Mobile Responsive Polish)
-- Added 44px+ touch targets on tab buttons across all 3 themes (`py-4 md:py-3`)
-- Tightened content padding at 320px (`p-3 sm:p-4 md:p-6`) across Timeline, CaseFile, and outer containers
-- Fixed justified text on mobile Newspaper theme (`text-left md:text-justify`) — eliminates awkward word spacing
-- Scaled down drop cap on mobile Newspaper (`text-4xl sm:text-5xl md:text-6xl`)
-- Increased CaseFile celebrity link touch targets (`py-3 md:py-2`)
-- Capped large font scale at 1rem on mobile, 1.125rem at 640px+ (prevents text overflow)
-- 5 files changed, 18 insertions, 15 deletions
-
-### February 6, 2026 Session (Tailwind v4 Migration)
-- Migrated from Tailwind CSS v3 (PostCSS) to v4 (Vite plugin + CSS-first config)
-- Upgraded `@vitejs/plugin-react` from v4 to v5
-- Replaced `tailwind.config.js` with `@theme` block in `src/index.css`
-- Added `@tailwindcss/vite` plugin to `vite.config.js`
-- Removed `postcss.config.js`, `autoprefixer`, `postcss` dependencies
-- Closed Dependabot PR #68, created and merged PR #70
-
-### February 5, 2026 Session (Loading Screen Fix)
-- Fixed loading screen never appearing (was pre-cached before navigation)
-- Moved report loading from `LandingPage.jsx` to `ThemeWrapper.jsx`
-
-### February 5, 2026 Session (FAB + Popover)
-- Replaced intrusive desktop sidebar theme switcher with unified FAB + popover (#69)
+- WCAG touch targets, tighter 320px padding, text fixes across all themes
 
 ## Architecture
 
@@ -59,18 +49,24 @@ Last Updated: February 6, 2026
 - GitHub Pages deployment
 
 **Key Files:**
-- `src/pages/LandingPage.jsx` — DatePicker, navigates immediately to report URL
+- `src/components/DatePicker.jsx` — Landing page (current: charcoal/amber light palette — NEEDS REDESIGN)
+- `src/pages/LandingPage.jsx` — DatePicker wrapper, navigates to report URL
 - `src/components/ThemeWrapper.jsx` — Report loading, caching, loading screen orchestration
-- `src/components/LoadingScreen.jsx` — 7-stage animated loading screen
 - `src/components/ThemeSwitcher.jsx` — Unified FAB with popover/bottom-sheet
+- `src/routes/AppRoutes.jsx` — React Router routes with lazy-loaded themes + key props
 - `src/components/themes/*.jsx` — Three theme components
 - `src/data/` — Year, generation, and birthday JSON data
-- `src/utils/assembleReport.js` — Report data assembly
 - `src/index.css` — Tailwind v4 `@theme` config + custom CSS classes
 
 ## Known Issues
+
+- Landing page design is ugly (user's words) — needs complete restyle
+- Theme switcher switching may not work in all browsers
 - Case file theme feels cheesy (#66)
+- PWA service worker can serve stale content on deploys
 
 ## Next Priorities
-1. Heat map visualization
-2. Case file theme redesign (#66)
+
+1. **Fix landing page design** — proper design review with user input, not guessing
+2. **Verify theme switcher** — test in real browser after deploy
+3. Case file theme redesign (#66)
