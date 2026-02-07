@@ -184,7 +184,7 @@ export default function DatePicker({ onSubmit }) {
               disabled={isLoading}
               aria-describedby={error ? 'birthdate-error' : undefined}
               aria-invalid={error ? 'true' : undefined}
-              className={`w-full px-5 py-4 text-lg font-sans text-center rounded-xl border-2 transition-all duration-200 focus:outline-none bg-white border-secondary-200 text-secondary-800 placeholder-secondary-400 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 ${isLoading ? 'opacity-50 cursor-not-allowed' : ''}`}
+              className={`w-full px-5 py-4 text-lg font-sans text-center rounded-xl border-2 transition-colors duration-200 focus:outline-none bg-white border-secondary-200 text-secondary-800 placeholder-secondary-400 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 ${isLoading ? 'opacity-50 cursor-not-allowed' : ''}`}
               autoComplete="off"
             />
             <p className="text-xs font-sans text-center mt-2 text-secondary-600">
@@ -201,7 +201,7 @@ export default function DatePicker({ onSubmit }) {
           <button
             type="submit"
             disabled={isLoading || !isComplete}
-            className={`w-full py-4 px-6 text-base font-sans font-semibold rounded-xl transition-all duration-200 ${
+            className={`w-full py-4 px-6 text-base font-sans font-semibold rounded-xl transition-[transform,background-color,box-shadow] duration-200 ${
               isLoading || !isComplete
                 ? 'bg-secondary-300 text-secondary-500 cursor-not-allowed'
                 : 'bg-primary-500 text-secondary-900 hover:bg-primary-600 active:scale-[0.98] shadow-lg shadow-primary-500/20 focus:ring-2 focus:ring-primary-500/50 focus:outline-none'
@@ -216,7 +216,7 @@ export default function DatePicker({ onSubmit }) {
           {SECTION_CARDS.map(({ id, title, description, highlight, suffix, Icon }) => (
             <div
               key={id}
-              className="p-4 rounded-xl bg-white shadow-sm hover:shadow-md transition-all duration-200"
+              className="p-4 rounded-xl bg-white shadow-sm hover:shadow-md transition-shadow duration-200"
             >
               <div className="w-8 h-8 rounded-lg flex items-center justify-center mb-3 bg-secondary-50">
                 <Icon className="w-4 h-4 text-primary-500" />

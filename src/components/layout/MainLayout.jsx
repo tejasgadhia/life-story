@@ -3,7 +3,7 @@ import { useScrollProgress } from '../../hooks/useScrollProgress'
 import { useRouteChangeReset } from '../../hooks/useRouteChangeReset'
 
 export default function MainLayout({ children }) {
-  const progress = useScrollProgress()
+  const progressRef = useScrollProgress()
   const { pathname } = useLocation()
 
   // Reset scroll and focus on page-level route changes (not tab switches)
@@ -14,12 +14,13 @@ export default function MainLayout({ children }) {
 
   return (
     <main id="main-content" className="min-h-screen">
-      {isReportPage && progress > 0 && (
+      {isReportPage && (
         <div
-          className="fixed top-0 left-0 h-0.5 bg-heritage-ink/70 z-[60]"
-          style={{ width: `${progress * 100}%` }}
+          ref={progressRef}
+          className="fixed top-0 left-0 h-0.5 w-full origin-left bg-heritage-ink/70 z-[60]"
+          style={{ transform: 'scaleX(0)' }}
           role="progressbar"
-          aria-valuenow={Math.round(progress * 100)}
+          aria-valuenow={0}
           aria-valuemin={0}
           aria-valuemax={100}
           aria-label="Reading progress"

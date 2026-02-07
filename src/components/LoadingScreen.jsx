@@ -13,7 +13,6 @@ const LOADING_STAGES = [
 
 function LoadingScreen({ onComplete, birthYear = 1988 }) {
   const [currentStage, setCurrentStage] = useState(0)
-  const [progress, setProgress] = useState(0)
   const [showReport, setShowReport] = useState(false)
   const stageRef = useRef(0)
 
@@ -22,21 +21,11 @@ function LoadingScreen({ onComplete, birthYear = 1988 }) {
     stageRef.current = currentStage
   }, [currentStage])
 
+  // Derive progress from stage — CSS transition handles smooth interpolation
+  const progress = ((currentStage + 1) / LOADING_STAGES.length) * 100
+
   useEffect(() => {
     let stageTimeout
-    let progressInterval
-
-    // Progress bar animation - use ref to avoid stale closure
-    progressInterval = setInterval(() => {
-      setProgress(prev => {
-        const target = ((stageRef.current + 1) / LOADING_STAGES.length) * 100
-        const increment = 0.5
-        if (prev < target) {
-          return Math.min(prev + increment, target)
-        }
-        return prev
-      })
-    }, 20)
 
     // Stage progression
     const advanceStage = () => {
@@ -46,7 +35,6 @@ function LoadingScreen({ onComplete, birthYear = 1988 }) {
       } else {
         // Final stage complete
         setTimeout(() => {
-          setProgress(100)
           setTimeout(() => {
             setShowReport(true)
             setTimeout(onComplete, 400)
@@ -59,7 +47,6 @@ function LoadingScreen({ onComplete, birthYear = 1988 }) {
 
     return () => {
       clearTimeout(stageTimeout)
-      clearInterval(progressInterval)
     }
   }, [onComplete])
 
@@ -74,7 +61,7 @@ function LoadingScreen({ onComplete, birthYear = 1988 }) {
       />
 
       {/* Content */}
-      <div className={`relative text-center transition-all duration-500 px-4 ${showReport ? 'scale-110 opacity-0' : 'scale-100 opacity-100'}`}>
+      <div className={`relative text-center transition-[transform,opacity] duration-500 px-4 ${showReport ? 'scale-110 opacity-0' : 'scale-100 opacity-100'}`}>
         {/* Logo/Brand */}
         <div className="mb-8 md:mb-12">
           <h1
@@ -102,8 +89,8 @@ function LoadingScreen({ onComplete, birthYear = 1988 }) {
         <div className="w-full max-w-xs sm:max-w-sm md:max-w-md mx-auto mb-6 md:mb-8">
           <div className="h-2 bg-secondary-200 rounded-full overflow-hidden">
             <div
-              className="h-full bg-gradient-to-r from-primary-500 to-primary-400 rounded-full transition-all duration-100 ease-out"
-              style={{ width: `${progress}%` }}
+              className="h-full w-full origin-left bg-gradient-to-r from-primary-500 to-primary-400 rounded-full transition-transform duration-500 ease-out"
+              style={{ transform: `scaleX(${progress / 100})` }}
             />
           </div>
           <div className="flex justify-center mt-2 text-xs">
@@ -123,7 +110,7 @@ function LoadingScreen({ onComplete, birthYear = 1988 }) {
           {LOADING_STAGES.map((_, idx) => (
             <div
               key={idx}
-              className={`w-1.5 md:w-2 h-1.5 md:h-2 rounded-full transition-all duration-300 ${
+              className={`w-1.5 md:w-2 h-1.5 md:h-2 rounded-full transition-colors duration-300 ${
                 idx <= currentStage
                   ? 'bg-primary-500'
                   : 'bg-secondary-200'

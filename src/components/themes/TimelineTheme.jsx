@@ -125,7 +125,7 @@ function TimelineTheme({ data, currentTab: propTab = 0, setTab: propSetTab }) {
         <button
           onClick={() => setIsHeatMapOpen(true)}
           className="heritage-paper rounded-lg p-4 md:p-5 border border-heritage-sepia/20 text-center flex flex-col justify-center w-full
-                     cursor-pointer hover:border-heritage-sepia/40 hover:shadow-md transition-all duration-200
+                     cursor-pointer hover:border-heritage-sepia/40 hover:shadow-md transition-[border-color,box-shadow] duration-200
                      focus:outline-none focus:ring-2 focus:ring-heritage-ink/30 focus:ring-offset-1"
         >
           <p className="font-sans text-xs uppercase tracking-wider text-heritage-sepia mb-2">Birthday Popularity</p>
