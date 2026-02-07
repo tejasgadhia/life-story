@@ -3,52 +3,55 @@ Last Updated: February 6, 2026
 
 ## Immediate Tasks (Start Here)
 
-### 1. Fix Landing Page Design
-**Priority**: HIGH — User is unhappy, this is the first thing visitors see
-**File(s)**: `src/components/DatePicker.jsx`, possibly `src/index.css`
+### 1. Full Audit of Tailwind v4 Migration
+**Priority**: HIGH — CSS cascade fix was applied but production behavior is unverified
+**File(s)**: `src/index.css`, all component files
 **What to do**:
-- Do NOT guess at colors. Use `/tg-themes` or a proper design review first.
-- The current charcoal/amber light palette was an intentional redesign (commit `afa09f3`) but user doesn't like it
-- The original dark-brown/cream vintage palette (before `afa09f3`) was also not liked when restored
-- Need to design something NEW that works — get user approval on a design direction BEFORE coding
-- Key elements: background, input field, CTA button, section preview cards, typography, spacing
-- Consider the transition from landing page → report themes (currently jarring)
-**Why**: User explicitly said it looks ugly. Multiple fix attempts this session all failed.
-**Estimated effort**: Medium (once design direction is agreed on)
+- Hard refresh production site (Cmd+Shift+R) to bypass service worker cache
+- Check EVERY page/component on production: landing page, all 3 themes (timeline, newspaper, casefile), all 4 tabs, heat map, theme switcher, font size controls
+- For each: verify padding, fonts, colors, spacing, interactive elements
+- If anything is broken: check Chrome DevTools computed styles to see if unlayered CSS is still winning over `@layer utilities`
+- Compare production CSS (`dist/assets/index-*.css`) layer structure to verify `@layer base < @layer components < @layer utilities`
+**Why**: CSS cascade layer fix was verified locally but user reported production still broken. Need to confirm whether it's a real issue or just service worker caching stale CSS.
+**Estimated effort**: Medium (30-60 min thorough check)
 
-### 2. Verify Theme Switcher Works
-**Priority**: HIGH
-**File(s)**: `src/components/ThemeSwitcher.jsx`, `src/routes/AppRoutes.jsx`
+### 2. Fix Theme Switcher Click Handling
+**Priority**: HIGH — core functionality broken
+**File(s)**: `src/components/ThemeSwitcher.jsx`
 **What to do**:
-- Test on live site (https://tejasgadhia.github.io/life-story/) in a real browser
-- Open a report → click gear → try switching between all 3 themes
-- If it doesn't work: the `key` prop fix in AppRoutes may not be sufficient, debug further
-- If it works: close this item
-**Why**: Bug was reported but couldn't be reproduced in automated testing. `key` props were added as a defensive fix.
-**Estimated effort**: Quick (just testing)
+- Open gear icon on production, try clicking each theme button
+- Check if the issue is: (a) z-index/overlay blocking clicks, (b) event handler not firing, (c) navigate() failing, (d) stale service worker JS
+- Investigate whether the desktop popover panel or the close button overlay is intercepting clicks
+- Check if the `onClick={(e) => e.stopPropagation()}` on mobile bottom sheet is causing issues
+- Test on multiple browsers (Chrome, Safari, Firefox)
+**Why**: User explicitly confirmed buttons don't respond. Scripted `element.click()` works but real clicks don't — suggests a CSS/layout issue (invisible overlay, pointer-events, z-index).
+**Estimated effort**: Medium
 
-### 3. Case File Theme Redesign
+### 3. Fix Service Worker Stale Cache
+**Priority**: HIGH — breaks site for all users on every deploy
+**File(s)**: `vite.config.js` (PWA config), possibly `public/sw.js`
+**What to do**:
+- Consider `skipWaiting()` + `clients.claim()` to force immediate activation
+- Or add a "new version available" toast that prompts reload
+- Test: deploy a change, load in incognito, verify new content loads without hard refresh
+**Why**: Every deploy breaks the site until users manually hard refresh. Old chunk filenames get deleted but service worker still references them.
+**Estimated effort**: Medium
+
+### 4. Landing Page Redesign
+**Priority**: MEDIUM — blocked on design approval
+**File(s)**: `src/components/DatePicker.jsx`
+**What to do**: Use `/tg-themes` to present 4-6 design options BEFORE writing code. Get user approval on direction first.
+**Why**: User unhappy with current design. Multiple blind fix attempts failed last 2 sessions.
+
+### 5. Case File Theme Redesign (#66)
 **Priority**: MEDIUM
 **File(s)**: `src/components/themes/CaseFileTheme.jsx`
-**What to do**: Redesign or rethink the case file theme — currently feels cheesy (#66)
-**Why**: Open issue #66
-**Estimated effort**: Substantial
-
-## Future Enhancements
-
-- Additional themes
-- Social sharing (Open Graph meta tags per report)
-
-## Questions to Resolve
-
-- What design direction does user want for landing page? (vintage magazine? modern minimal? something else?)
-- Should landing page match a specific theme or be theme-neutral?
-- Is the charcoal color scale worth keeping in the design system or should it be removed?
 
 ## Blockers
 
-- Landing page fix blocked on user design approval — don't start coding until direction is agreed on
+- Theme switcher and production CSS verification must happen before any new feature work
+- Landing page redesign blocked on user design approval
 
 ## Next Session Starter Prompt
 
-> "Continue working on life-story. Last session was a mess — tried to fix the landing page design based on a bad plan, made it worse, had to revert everything. The landing page (DatePicker.jsx) needs a proper redesign — current charcoal/amber look is not what I want. Let's start fresh: show me design options before writing any code. Also verify theme switching works on the live site. Reference NEXT-STEPS.md for details."
+> "Continue working on life-story. Last session applied a CSS cascade layer fix for the Tailwind v4 migration (unlayered global styles were overriding all utilities). It works locally but production may still be broken — need to hard refresh and do a full audit. CRITICAL: theme switcher buttons don't respond to real user clicks on production. Also service worker serves stale assets after deploys. Start with a full audit of every page/component on production. Reference NEXT-STEPS.md for details."

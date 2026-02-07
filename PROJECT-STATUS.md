@@ -3,70 +3,52 @@ Last Updated: February 6, 2026
 
 ## Current State
 
-**What's Working:**
-- All 3 themes (Timeline, Newspaper, Case File) rendering correctly
+**What's Working (locally verified):**
+- CSS cascade layer fix — Tailwind v4 utilities now override base styles correctly
+- All 3 themes render with proper padding, fonts, spacing (Timeline, Newspaper, Case File)
+- Landing page (DatePicker) has correct Fraunces heading, padded input/button/cards
 - 67 year files (1946-2012) with curated content
-- Birthday popularity heat map visualization (new — commit `a29eb98`)
-- Unified FAB theme switcher (desktop popover + mobile bottom sheet)
+- Birthday popularity heat map visualization
 - URL-based routing with shareable report URLs
 - Font size controls, tab navigation, celebrity lists
-- Loading screen with ~4.3s staged animation on new report generation
-- Session caching — loading screen skipped on theme/tab switches
-- PWA with offline support
+- Loading screen with staged animation
 - GitHub Pages auto-deploy via Actions
-- Tailwind CSS v4 with CSS-first config (`@theme` block in index.css)
-- Mobile responsive polish — WCAG touch targets, tighter 320px padding, text fixes
 
-**Needs Fixing (HIGH PRIORITY):**
-- Landing page design is broken — user explicitly unhappy with current charcoal/amber light palette. Needs a proper design review and restyle. Current state: light gradient background (`charcoal-50` to `charcoal-100`) with white cards and amber accents. User says it looks ugly and needs a complete redesign.
-- Theme switcher may have issues — added `key` props to routes but couldn't reproduce the switching bug in testing. Needs real-browser verification.
+**BROKEN on Production (needs next session audit):**
+- **Theme switcher buttons don't respond to clicks** — user confirmed, could not switch themes after opening the gear icon. MCP scripted clicks worked but real user clicks do not.
+- **PWA service worker serves stale assets** — new deploys cause "Failed to fetch dynamically imported module" errors until hard refresh (Cmd+Shift+R). Users see broken site until they manually clear cache.
+- **CSS fix unverified on production** — cascade layer fix works locally but user's browser still showed broken formatting. May be SW cache issue or production-specific CSS behavior.
 
-**Not Started:**
-- Case file theme redesign (#66)
+**Needs Design Review:**
+- Landing page — user unhappy with current design, needs proper restyle with input
 
 ## Recent Changes
 
-### February 6, 2026 Session (UI Fix Attempt — Mostly Failed)
-- Added `key` props to ThemeWrapper routes in `AppRoutes.jsx` (KEPT — defensive fix)
-- Attempted to restyle DatePicker to dark-brown vintage palette (REVERTED — plan was wrong)
-- Attempted dark-on-dark contrast fix (REVERTED — made it worse)
-- Restored DatePicker to pre-session state (commit `bcfebd6`)
-- **Net result: only `src/routes/AppRoutes.jsx` actually changed (key props)**
-- User is NOT happy — landing page needs a real design overhaul next session
+### February 6, 2026 Session (CSS Cascade Fix)
+- **CSS cascade layer fix** (`646bc3b`): Removed redundant `* { margin: 0; padding: 0 }` reset. Wrapped base styles in `@layer base`, component styles in `@layer components`. Root cause: Tailwind v4's `@import "tailwindcss"` puts utilities in `@layer utilities`, but unlayered global CSS always wins per CSS spec.
+- **Icon swap** (`64ac830`): Changed Case File icon from `FolderOpen` to `FileText` for visual weight parity.
+- **Theme switcher broken** — user reports buttons don't respond to real clicks. Needs investigation next session.
 
-### February 6, 2026 Session (Heat Map)
-- Birthday popularity heat map visualization (commit `a29eb98`)
-
-### February 6, 2026 Session (Mobile Responsive Polish)
-- WCAG touch targets, tighter 320px padding, text fixes across all themes
+### Previous Sessions
+- `78cc843`: Reverted failed landing page restyle
+- `a29eb98`: Birthday popularity heat map
+- `7c4819f`: Mobile responsive polish
 
 ## Architecture
 
-**Tech Stack:**
-- React 19 + React Router 7
-- Vite 7 build tooling
-- Tailwind CSS 4 (CSS-first config via @tailwindcss/vite)
-- GitHub Pages deployment
+**Tech Stack:** React 19 + React Router 7 + Vite 7 + Tailwind CSS 4
 
 **Key Files:**
-- `src/components/DatePicker.jsx` — Landing page (current: charcoal/amber light palette — NEEDS REDESIGN)
-- `src/pages/LandingPage.jsx` — DatePicker wrapper, navigates to report URL
-- `src/components/ThemeWrapper.jsx` — Report loading, caching, loading screen orchestration
-- `src/components/ThemeSwitcher.jsx` — Unified FAB with popover/bottom-sheet
-- `src/routes/AppRoutes.jsx` — React Router routes with lazy-loaded themes + key props
+- `src/index.css` — Tailwind v4 `@theme` config + `@layer base/components` custom styles
+- `src/App.jsx` — Router, theme switching
+- `src/components/ThemeSwitcher.jsx` — FAB with popover/bottom-sheet
 - `src/components/themes/*.jsx` — Three theme components
 - `src/data/` — Year, generation, and birthday JSON data
-- `src/index.css` — Tailwind v4 `@theme` config + custom CSS classes
-
-## Known Issues
-
-- Landing page design is ugly (user's words) — needs complete restyle
-- Theme switcher switching may not work in all browsers
-- Case file theme feels cheesy (#66)
-- PWA service worker can serve stale content on deploys
 
 ## Next Priorities
 
-1. **Fix landing page design** — proper design review with user input, not guessing
-2. **Verify theme switcher** — test in real browser after deploy
-3. Case file theme redesign (#66)
+1. **FULL AUDIT of Tailwind v4 migration** — verify every component works on production
+2. **Fix theme switcher** — buttons not responding to real user clicks
+3. **Fix service worker caching** — stale assets break site after deploys
+4. Landing page redesign (with user input first)
+5. Case file theme redesign (#66)
