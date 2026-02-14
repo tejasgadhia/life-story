@@ -31,11 +31,7 @@ screenshots/
 scripts/
 
 # Internal development docs (keep locally, don't publish)
-LEARNINGS.md
-NEXT-STEPS.md
-PROJECT-STATUS.md
-ISSUE-PLAN.md
-REVIEW-REPORT*.md
+_planning/
 docs/
 .ui-design/
 project-learnings/

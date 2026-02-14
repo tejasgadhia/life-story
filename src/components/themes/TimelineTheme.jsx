@@ -132,16 +132,20 @@ function TimelineTheme({ data, currentTab: propTab = 0, setTab: propSetTab }) {
           <div className="flex items-center justify-center gap-4 md:gap-6">
             <div className="text-center">
               <p className="text-xl md:text-2xl font-display text-heritage-ink">#{data.birthdayRank}</p>
-              <p className="font-sans text-xs text-heritage-sepia">Birthday Rank</p>
+              <p className="font-sans text-xs text-heritage-sepia">of 366 days</p>
             </div>
             <div className="w-px h-10 bg-heritage-sepia/30" />
             <div className="text-center">
               <p className="text-xl md:text-2xl font-display text-heritage-ink">{data.birthdayPercentile}%</p>
-              <p className="font-sans text-xs text-heritage-sepia">Popularity</p>
+              <p className="font-sans text-xs text-heritage-sepia">rarer than</p>
             </div>
           </div>
           <p className="font-sans text-xs text-heritage-sepia mt-2">
-            Your birthday is {data.birthdayRank < 183 ? 'more' : 'less'} common than the average calendar date
+            {data.birthdayRank < 183
+              ? `More common than ${100 - data.birthdayPercentile}% of birthdays`
+              : data.birthdayRank === 366
+                ? 'The rarest birthday of the year'
+                : `Only ${366 - data.birthdayRank} ${366 - data.birthdayRank === 1 ? 'day is' : 'days are'} less common`}
           </p>
           <p className="font-sans text-xs text-heritage-ink/60 mt-1">View all 366 days →</p>
         </button>
