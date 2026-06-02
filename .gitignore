@@ -35,3 +35,6 @@ _planning/
 docs/
 .ui-design/
 project-learnings/
+
+# Personal agent config — never commit
+CLAUDE.local.md

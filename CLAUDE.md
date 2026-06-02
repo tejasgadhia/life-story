@@ -10,7 +10,6 @@ Birthday analysis webapp. User enters birthdate → gets personalized ~5,000 wor
 
 - **Supports**: All birthdates from 1946-2012
 - **Live URL**: https://tejasgadhia.github.io/life-story/
-- **Local path**: `/Users/tejasgadhia/Claude/life-story`
 - **Theme**: Timeline (single theme — clean, modern layout)
 - **Tests**: 80 tests across 5 suites
 
@@ -113,19 +112,6 @@ Tab slugs: `overview`, `formative-years`, `world-events`, `personal-insights`
 - `primary-*`: Amber scale (50-950), CTA/accent color
 - `secondary-*`: Charcoal scale (50-950), text/backgrounds
 - `heritage-*`: cream, paper, sepia, ink — warm editorial tones
-- Full reference: `.ui-design/design-system.md`
-
-## Writing Style Rules
-
-**NEVER use these AI phrases**:
-- "dive into" / "delve into"
-- "unleash" / "unlock potential"
-- "it's worth noting"
-- "at the end of the day"
-- "game changer" / "robust" / "leverage"
-
-**DO**: Write like a witty magazine journalist. Direct, clear, slightly dry humor.
-
 ## Git Workflow
 
 ```bash
