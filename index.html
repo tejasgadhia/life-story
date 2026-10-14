@@ -44,9 +44,9 @@
          - object-src 'none': blocks Flash/Java plugin embeds (XSS vector)
          - base-uri 'self': prevents <base> tag injection attacks
          - form-action 'self': prevents form submissions to external domains
-         - frame-ancestors 'none': prevents clickjacking (equivalent to X-Frame-Options: DENY)
+         - frame-ancestors cannot be set via a meta tag on GitHub Pages; it requires an HTTP header
     -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none';">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com; object-src 'none'; base-uri 'self'; form-action 'self';">
 
     <!-- Font loading strategy: Critical fonts loaded non-blocking, report/theme fonts lazy loaded -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
